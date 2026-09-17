@@ -1,0 +1,5215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Jesus To The World Ministry — Seeking to save the lost."
+    >
+
+    <link
+        rel="canonical"
+        href="https://JesusToTheWorld.com/"
+    >
+
+    <meta
+        property="og:url"
+        content="https://JesusToTheWorld.com/"
+    >
+
+    <meta
+        property="og:site_name"
+        content="Jesus To The World"
+    >
+
+    <title>
+        Jesus To The World | Ministry
+    </title>
+
+
+    <!-- =========================================================
+         PREVENT BROWSER FROM RESTORING AN OLD SCROLL POSITION
+    ========================================================== -->
+
+    <script>
+
+        if ("scrollRestoration" in history) {
+            history.scrollRestoration = "manual";
+        }
+
+    </script>
+
+
+    <style>
+
+        /* =========================================================
+           BRAND COLORS
+        ========================================================== */
+
+        :root {
+
+            --black: #050505;
+            --deep-black: #020202;
+            --charcoal: #0d0d0d;
+            --smoke: #171717;
+
+            --warm-white: #f5f2ea;
+            --white: #ffffff;
+
+            --ash: #a9a9a9;
+            --muted: #737373;
+
+            --ember: #ff4b24;
+            --flame: #ff6a00;
+            --hot-red: #ff1e00;
+
+        }
+
+
+        /* =========================================================
+           GLOBAL RESET
+        ========================================================== */
+
+        * {
+
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+
+        }
+
+
+        html {
+
+            background:
+                var(--black);
+
+            scroll-behavior:
+                smooth;
+
+
+        }
+
+
+        body {
+
+            margin: 0;
+            padding: 0;
+
+            background:
+                var(--black);
+
+            color:
+                var(--warm-white);
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            overflow-x:
+                hidden;
+
+            cursor:
+                none;
+
+        }
+
+
+        a,
+        button,
+        .story-card {
+
+            cursor:
+                none;
+
+        }
+
+
+        /* =========================================================
+           CUSTOM CURSOR
+        ========================================================== */
+
+        .custom-cursor {
+
+            position:
+                fixed;
+
+            top:
+                0;
+
+            left:
+                0;
+
+            width:
+                31px;
+
+            height:
+                31px;
+
+            border-radius:
+                50%;
+
+            background:
+                var(--white);
+
+            mix-blend-mode:
+                difference;
+
+            pointer-events:
+                none;
+
+            z-index:
+                99999;
+
+            opacity:
+                0;
+
+            transform:
+                translate3d(
+                    -50%,
+                    -50%,
+                    0
+                );
+
+            transition:
+                width .22s ease,
+                height .22s ease,
+                transform .12s ease;
+
+            will-change:
+                left,
+                top,
+                transform;
+
+        }
+
+
+        .custom-cursor-glow {
+
+            position:
+                fixed;
+
+            top:
+                0;
+
+            left:
+                0;
+
+            width:
+                58px;
+
+            height:
+                58px;
+
+            border-radius:
+                50%;
+
+            pointer-events:
+                none;
+
+            z-index:
+                99998;
+
+            opacity:
+                0;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(
+                        255,
+                        106,
+                        0,
+                        .18
+                    ) 0%,
+                    rgba(
+                        255,
+                        75,
+                        36,
+                        .08
+                    ) 32%,
+                    transparent 72%
+                );
+
+            filter:
+                blur(6px);
+
+            transform:
+                translate3d(
+                    -50%,
+                    -50%,
+                    0
+                );
+
+            will-change:
+                left,
+                top;
+
+        }
+
+
+        .cursor-ember {
+
+            position:
+                fixed;
+
+            width:
+                3px;
+
+            height:
+                3px;
+
+            border-radius:
+                50%;
+
+            background:
+                var(--flame);
+
+            pointer-events:
+                none;
+
+            z-index:
+                99997;
+
+            opacity:
+                0;
+
+            box-shadow:
+                0 0 8px
+                rgba(
+                    255,
+                    106,
+                    0,
+                    .65
+                );
+
+            will-change:
+                transform,
+                opacity;
+
+        }
+
+
+        .custom-cursor.hovering {
+
+            width:
+                56px;
+
+            height:
+                56px;
+
+        }
+
+
+        .custom-cursor.clicking {
+
+            transform:
+                translate3d(
+                    -50%,
+                    -50%,
+                    0
+                )
+                scale(
+                    .78
+                );
+
+        }
+
+
+        @media (
+            hover: none
+        ),
+        (
+            pointer: coarse
+        ) {
+
+            body {
+
+                cursor:
+                    auto;
+
+            }
+
+            a,
+            button,
+            .story-card {
+
+                cursor:
+                    pointer;
+
+            }
+
+            .custom-cursor,
+            .custom-cursor-glow,
+            .cursor-ember {
+
+                display:
+                    none;
+
+            }
+
+        }
+
+
+        /* =========================================================
+           SNAP SECTIONS
+        ========================================================== */
+
+        .snap-section {
+
+            min-height:
+                100svh;
+
+
+        }
+
+
+        /* =========================================================
+           NAVIGATION
+        ========================================================== */
+
+        .nav {
+
+            position:
+                fixed;
+
+            top:
+                24px;
+
+            left:
+                50%;
+
+            transform:
+                translateX(-50%)
+                translateY(-25px);
+
+            width:
+                calc(
+                    100% - 48px
+                );
+
+            max-width:
+                1240px;
+
+            min-height:
+                62px;
+
+            padding:
+                12px
+                13px
+                12px
+                22px;
+
+            border-radius:
+                999px;
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            justify-content:
+                space-between;
+
+            background:
+                rgba(
+                    245,
+                    242,
+                    234,
+                    .94
+                );
+
+            backdrop-filter:
+                blur(18px);
+
+            -webkit-backdrop-filter:
+                blur(18px);
+
+            box-shadow:
+                0 14px 42px
+                rgba(
+                    0,
+                    0,
+                    0,
+                    .22
+                );
+
+            opacity:
+                0;
+
+            animation:
+                navReveal
+                1.05s
+                cubic-bezier(
+                    .22,
+                    1,
+                    .36,
+                    1
+                )
+                1.15s
+                forwards;
+
+            z-index:
+                1000;
+
+        }
+
+
+        .logo {
+
+            flex-shrink:
+                0;
+
+            color:
+                var(--black);
+
+            font-size:
+                15px;
+
+            font-weight:
+                950;
+
+            line-height:
+                .86;
+
+            letter-spacing:
+                -.5px;
+
+        }
+
+
+        .logo span {
+
+            display:
+                block;
+
+        }
+
+
+        /* =========================================================
+           RIGHT SIDE NAVIGATION
+        ========================================================== */
+
+        .nav-right {
+
+            margin-left:
+                auto;
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            justify-content:
+                flex-end;
+
+            gap:
+                25px;
+
+        }
+
+
+        .nav-links {
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            justify-content:
+                flex-end;
+
+            gap:
+                27px;
+
+        }
+
+
+        .nav-links a {
+
+            color:
+                #090909;
+
+            text-decoration:
+                none;
+
+            font-size:
+                13px;
+
+            font-weight:
+                900;
+
+            letter-spacing:
+                .9px;
+
+            white-space:
+                nowrap;
+
+            transition:
+                opacity .25s ease;
+
+        }
+
+
+        .nav-links a:hover {
+
+            opacity:
+                .45;
+
+        }
+
+
+        .nav-donate {
+
+            display:
+                inline-flex;
+
+            align-items:
+                center;
+
+            justify-content:
+                center;
+
+            flex-shrink:
+                0;
+
+            padding:
+                12px
+                19px;
+
+            border-radius:
+                999px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--ember),
+                    var(--flame)
+                );
+
+            color:
+                #ffffff;
+
+            text-decoration:
+                none;
+
+            font-size:
+                12px;
+
+            font-weight:
+                950;
+
+            letter-spacing:
+                .8px;
+
+            box-shadow:
+                0 8px 20px
+                rgba(
+                    255,
+                    75,
+                    36,
+                    .22
+                );
+
+            transition:
+                transform .25s ease,
+                box-shadow .25s ease;
+
+        }
+
+
+        .nav-donate:hover {
+
+            transform:
+                translateY(-2px)
+                scale(
+                    1.02
+                );
+
+            box-shadow:
+                0 13px 28px
+                rgba(
+                    255,
+                    75,
+                    36,
+                    .34
+                );
+
+        }
+
+
+        /* =========================================================
+           HERO
+        ========================================================== */
+
+        .hero {
+
+            position:
+                relative;
+
+            height:
+                100svh;
+
+            min-height:
+                680px;
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            justify-content:
+                center;
+
+            overflow:
+                hidden;
+
+            isolation:
+                isolate;
+
+            background:
+                var(--black);
+
+        }
+
+
+        /* =========================================================
+           HERO PHOTO
+        ========================================================== */
+
+        .hero-background {
+
+            position:
+                absolute;
+
+            inset:
+                0;
+
+            z-index:
+                -6;
+
+            background-image:
+
+                linear-gradient(
+                    120deg,
+                    rgba(
+                        0,
+                        0,
+                        0,
+                        .76
+                    ),
+                    rgba(
+                        0,
+                        0,
+                        0,
+                        .18
+                    ) 48%,
+                    rgba(
+                        0,
+                        0,
+                        0,
+                        .80
+                    )
+                ),
+
+                url(
+                    "hero.png"
+                ),
+
+                url(
+                    "hero.jpg"
+                );
+
+            background-size:
+                cover;
+
+            /*
+             * Adjusted slightly upward so the
+             * faces remain more prominent on desktop.
+             */
+
+            background-position:
+                center 42%;
+
+            background-repeat:
+                no-repeat;
+
+            transform:
+                scale(
+                    1.06
+                );
+
+            opacity:
+                0;
+
+            animation:
+                heroImageReveal
+                2.15s
+                cubic-bezier(
+                    .22,
+                    1,
+                    .36,
+                    1
+                )
+                .45s
+                forwards;
+
+        }
+
+
+        /* =========================================================
+           CINEMATIC VIGNETTE
+        ========================================================== */
+
+        .hero-vignette {
+
+            position:
+                absolute;
+
+            inset:
+                0;
+
+            z-index:
+                -5;
+
+            background:
+                radial-gradient(
+                    circle at center,
+                    transparent 12%,
+                    rgba(
+                        0,
+                        0,
+                        0,
+                        .14
+                    ) 47%,
+                    rgba(
+                        0,
+                        0,
+                        0,
+                        .74
+                    ) 100%
+                );
+
+        }
+
+
+        .hero-bottom-gradient {
+
+            position:
+                absolute;
+
+            left:
+                0;
+
+            right:
+                0;
+
+            bottom:
+                0;
+
+            height:
+                48%;
+
+            z-index:
+                -4;
+
+            background:
+                linear-gradient(
+                    to top,
+                    rgba(
+                        0,
+                        0,
+                        0,
+                        .94
+                    ),
+                    transparent
+                );
+
+        }
+
+
+        /* =========================================================
+           SUBTLE FIRE ATMOSPHERE
+        ========================================================== */
+
+        .hero-fire {
+
+            position:
+                absolute;
+
+            width:
+                900px;
+
+            height:
+                850px;
+
+            left:
+                50%;
+
+            bottom:
+                -570px;
+
+            transform:
+                translateX(
+                    -50%
+                );
+
+            z-index:
+                -3;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(
+                        255,
+                        106,
+                        0,
+                        .20
+                    ),
+                    rgba(
+                        255,
+                        75,
+                        36,
+                        .10
+                    ) 27%,
+                    rgba(
+                        255,
+                        30,
+                        0,
+                        .04
+                    ) 44%,
+                    transparent 70%
+                );
+
+            filter:
+                blur(48px);
+
+            pointer-events:
+                none;
+
+            animation:
+                firePulse
+                5.5s
+                ease-in-out
+                infinite
+                alternate;
+
+        }
+
+
+        /* =========================================================
+           HERO CONTENT
+        ========================================================== */
+
+        .hero-content {
+
+            position:
+                relative;
+
+            z-index:
+                20;
+
+            width:
+                min(
+                    1300px,
+                    calc(
+                        100% - 48px
+                    )
+                );
+
+            padding-top:
+                63px;
+
+            text-align:
+                center;
+
+        }
+
+
+        .hero-eyebrow {
+
+            margin-bottom:
+                14px;
+
+            font-size:
+                17px;
+
+            font-weight:
+                850;
+
+            letter-spacing:
+                4.8px;
+
+            color:
+                var(--warm-white);
+
+            opacity:
+                0;
+
+            animation:
+                fadeUp
+                1s
+                ease
+                .6s
+                forwards;
+
+        }
+
+
+        /* =========================================================
+           HERO TITLE
+        ========================================================== */
+
+        .hero-title {
+
+            margin:
+                0;
+
+            font-size:
+                clamp(
+                    66px,
+                    11.2vw,
+                    190px
+                );
+
+            line-height:
+                .76;
+
+            font-weight:
+                950;
+
+            letter-spacing:
+                -8px;
+
+            text-transform:
+                uppercase;
+
+            opacity:
+                0;
+
+            transform:
+                scale(
+                    .22
+                )
+                translateY(
+                    38px
+                );
+
+            text-shadow:
+                0 14px 55px
+                rgba(
+                    0,
+                    0,
+                    0,
+                    .45
+                );
+
+            animation:
+                titleExplosion
+                1.5s
+                cubic-bezier(
+                    .16,
+                    1,
+                    .3,
+                    1
+                )
+                .12s
+                forwards;
+
+        }
+
+
+        .hero-title .line {
+
+            display:
+                block;
+
+        }
+
+
+        .hero-title .accent {
+
+            color:
+                var(--ember);
+
+            text-shadow:
+                0 0 30px
+                rgba(
+                    255,
+                    75,
+                    36,
+                    .17
+                ),
+                0 14px 55px
+                rgba(
+                    0,
+                    0,
+                    0,
+                    .43
+                );
+
+        }
+
+
+        /* =========================================================
+           MINISTRY ACCENT
+        ========================================================== */
+
+        .hero-ministry {
+
+            display:
+                inline-block;
+
+            margin-top:
+                13px;
+
+            color:
+                var(--flame);
+
+            font-size:
+                clamp(
+                    15px,
+                    1.8vw,
+                    22px
+                );
+
+            font-weight:
+                950;
+
+            letter-spacing:
+                7px;
+
+            text-transform:
+                uppercase;
+
+            opacity:
+                0;
+
+            transform:
+                translateY(
+                    18px
+                );
+
+            animation:
+                fadeUp
+                1s
+                ease
+                .85s
+                forwards;
+
+        }
+
+
+        /* =========================================================
+           HERO MISSION
+        ========================================================== */
+
+        .hero-bottom {
+
+            margin-top:
+                31px;
+
+            display:
+                flex;
+
+            flex-direction:
+                column;
+
+            align-items:
+                center;
+
+            opacity:
+                0;
+
+            animation:
+                fadeUp
+                1s
+                ease
+                1s
+                forwards;
+
+        }
+
+
+        .hero-mission {
+
+            max-width:
+                650px;
+
+            font-size:
+                clamp(
+                    18px,
+                    2vw,
+                    24px
+                );
+
+            line-height:
+                1.35;
+
+            font-weight:
+                650;
+
+        }
+
+
+        .hero-mission strong {
+
+            font-weight:
+                950;
+
+        }
+
+
+        /* =========================================================
+           HERO ACTIONS
+        ========================================================== */
+
+        .hero-actions {
+
+            margin-top:
+                29px;
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            gap:
+                12px;
+
+            opacity:
+                0;
+
+            animation:
+                buttonReveal
+                .9s
+                cubic-bezier(
+                    .22,
+                    1,
+                    .36,
+                    1
+                )
+                1.3s
+                forwards;
+
+        }
+
+
+        .cta {
+
+            min-width:
+                160px;
+
+            padding:
+                15px
+                24px;
+
+            display:
+                inline-flex;
+
+            align-items:
+                center;
+
+            justify-content:
+                center;
+
+            border-radius:
+                999px;
+
+            text-decoration:
+                none;
+
+            font-size:
+                11px;
+
+            font-weight:
+                950;
+
+            letter-spacing:
+                1px;
+
+            transition:
+                transform .25s ease,
+                box-shadow .25s ease,
+                background .25s ease,
+                color .25s ease;
+
+        }
+
+
+        .cta-primary {
+
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--ember),
+                    var(--flame)
+                );
+
+            color:
+                #ffffff;
+
+            box-shadow:
+                0 12px 27px
+                rgba(
+                    255,
+                    75,
+                    36,
+                    .24
+                );
+
+        }
+
+
+        .cta-primary:hover {
+
+            transform:
+                translateY(-3px)
+                scale(
+                    1.025
+                );
+
+            box-shadow:
+                0 17px 35px
+                rgba(
+                    255,
+                    75,
+                    36,
+                    .33
+                );
+
+        }
+
+
+        .cta-secondary {
+
+            border:
+                1px solid
+                rgba(
+                    255,
+                    255,
+                    255,
+                    .67
+                );
+
+            color:
+                #ffffff;
+
+            background:
+                rgba(
+                    0,
+                    0,
+                    0,
+                    .18
+                );
+
+            backdrop-filter:
+                blur(9px);
+
+        }
+
+
+        .cta-secondary:hover {
+
+            background:
+                var(--warm-white);
+
+            color:
+                var(--black);
+
+            transform:
+                translateY(-3px);
+
+        }
+
+
+        /* =========================================================
+           SCROLL INDICATOR
+        ========================================================== */
+
+        .scroll-indicator {
+
+            position:
+                absolute;
+
+            bottom:
+                25px;
+
+            left:
+                50%;
+
+            transform:
+                translateX(
+                    -50%
+                );
+
+            font-size:
+                9px;
+
+            letter-spacing:
+                4px;
+
+            font-weight:
+                900;
+
+            color:
+                rgba(
+                    245,
+                    242,
+                    234,
+                    .72
+                );
+
+            opacity:
+                0;
+
+            animation:
+                fadeUp
+                1s
+                ease
+                1.65s
+                forwards;
+
+        }
+
+
+        /* =========================================================
+           FIRE DIVIDER
+        ========================================================== */
+
+        .fire-line {
+
+            width:
+                100%;
+
+            height:
+                3px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    transparent,
+                    var(--hot-red),
+                    var(--ember),
+                    var(--flame),
+                    var(--ember),
+                    var(--hot-red),
+                    transparent
+                );
+
+            box-shadow:
+                0 0 22px
+                rgba(
+                    255,
+                    75,
+                    36,
+                    .42
+                );
+
+        }
+
+
+        /* =========================================================
+           MISSION
+        ========================================================== */
+
+        .mission {
+
+            min-height:
+                100svh;
+
+            padding:
+                130px
+                max(
+                    24px,
+                    7vw
+                );
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            background:
+                var(--warm-white);
+
+            color:
+                var(--black);
+
+        }
+
+
+        .mission-inner {
+
+            width:
+                min(
+                    1200px,
+                    100%
+                );
+
+            margin:
+                0 auto;
+
+        }
+
+
+        .mission-label {
+
+            margin-bottom:
+                28px;
+
+            font-size:
+                11px;
+
+            font-weight:
+                950;
+
+            letter-spacing:
+                4px;
+
+        }
+
+
+        .mission h2 {
+
+            margin:
+                0;
+
+            font-size:
+                clamp(
+                    55px,
+                    8.2vw,
+                    130px
+                );
+
+            line-height:
+                .84;
+
+            letter-spacing:
+                -6px;
+
+            font-weight:
+                950;
+
+        }
+
+
+        .mission h2 .red {
+
+            color:
+                var(--ember);
+
+        }
+
+
+        .mission-copy {
+
+            max-width:
+                740px;
+
+            margin-top:
+                47px;
+
+            font-size:
+                19px;
+
+            line-height:
+                1.65;
+
+            color:
+                #262626;
+
+        }
+
+
+        .mission-list {
+
+            margin-top:
+                45px;
+
+            display:
+                flex;
+
+            flex-wrap:
+                wrap;
+
+            gap:
+                9px;
+
+        }
+
+
+        .mission-pill {
+
+            padding:
+                11px
+                15px;
+
+            border:
+                1px solid
+                rgba(
+                    0,
+                    0,
+                    0,
+                    .16
+                );
+
+            border-radius:
+                999px;
+
+            font-size:
+                10px;
+
+            font-weight:
+                950;
+
+            letter-spacing:
+                1px;
+
+        }
+
+
+        /* =========================================================
+           STORIES
+        ========================================================== */
+
+        .stories {
+
+            min-height:
+                100svh;
+
+            padding:
+                120px
+                max(
+                    22px,
+                    6vw
+                );
+
+            background:
+                var(--black);
+
+        }
+
+
+        .stories-header {
+
+            display:
+                flex;
+
+            align-items:
+                flex-end;
+
+            justify-content:
+                space-between;
+
+            gap:
+                35px;
+
+            margin-bottom:
+                55px;
+
+        }
+
+
+        .stories-label {
+
+            margin-bottom:
+                18px;
+
+            color:
+                var(--ember);
+
+            font-size:
+                11px;
+
+            font-weight:
+                950;
+
+            letter-spacing:
+                4px;
+
+        }
+
+
+        .stories-header h2 {
+
+            margin:
+                0;
+
+            font-size:
+                clamp(
+                    50px,
+                    7.8vw,
+                    115px
+                );
+
+            line-height:
+                .87;
+
+            letter-spacing:
+                -6px;
+
+            font-weight:
+                950;
+
+        }
+
+
+        .stories-header p {
+
+            max-width:
+                380px;
+
+            color:
+                #999999;
+
+            font-size:
+                15px;
+
+            line-height:
+                1.55;
+
+        }
+
+
+        .story-grid {
+
+            display:
+                grid;
+
+            grid-template-columns:
+                repeat(
+                    2,
+                    minmax(
+                        0,
+                        1fr
+                    )
+                );
+
+            gap:
+                18px;
+
+        }
+
+
+        .story-card {
+
+            min-height:
+                440px;
+
+            position:
+                relative;
+
+            overflow:
+                hidden;
+
+            background:
+                radial-gradient(
+                    circle at 70% 20%,
+                    rgba(
+                        255,
+                        106,
+                        0,
+                        .17
+                    ),
+                    transparent 35%
+                ),
+                linear-gradient(
+                    145deg,
+                    #222222,
+                    #080808
+                );
+
+            border:
+                1px solid
+                rgba(
+                    255,
+                    255,
+                    255,
+                    .08
+                );
+
+            transition:
+                transform .4s
+                cubic-bezier(
+                    .22,
+                    1,
+                    .36,
+                    1
+                ),
+                border-color .3s ease;
+
+        }
+
+
+        .story-card:hover {
+
+            transform:
+                translateY(
+                    -8px
+                );
+
+            border-color:
+                rgba(
+                    255,
+                    75,
+                    36,
+                    .52
+                );
+
+        }
+
+
+        .story-card::before {
+
+            content:
+                "";
+
+            position:
+                absolute;
+
+            inset:
+                0;
+
+            background:
+                radial-gradient(
+                    circle at 25% 100%,
+                    rgba(
+                        255,
+                        75,
+                        36,
+                        .19
+                    ),
+                    transparent 38%
+                );
+
+        }
+
+
+        .story-card::after {
+
+            content:
+                "";
+
+            position:
+                absolute;
+
+            inset:
+                0;
+
+            background:
+                linear-gradient(
+                    to top,
+                    rgba(
+                        0,
+                        0,
+                        0,
+                        .94
+                    ),
+                    transparent 70%
+                );
+
+        }
+
+
+        .story-text {
+
+            position:
+                absolute;
+
+            left:
+                27px;
+
+            bottom:
+                27px;
+
+            z-index:
+                3;
+
+        }
+
+
+        .story-number {
+
+            margin-bottom:
+                9px;
+
+            color:
+                var(--ember);
+
+            font-size:
+                10px;
+
+            letter-spacing:
+                4px;
+
+            font-weight:
+                950;
+
+        }
+
+
+        .story-card h3 {
+
+            margin:
+                0;
+
+            font-size:
+                clamp(
+                    30px,
+                    4vw,
+                    52px
+                );
+
+            line-height:
+                .89;
+
+            letter-spacing:
+                -2.5px;
+
+            font-weight:
+                950;
+
+        }
+
+
+        /* =========================================================
+           STATEMENT
+        ========================================================== */
+
+        .statement {
+
+            min-height:
+                100svh;
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            justify-content:
+                center;
+
+            padding:
+                110px
+                24px;
+
+            background:
+                var(--charcoal);
+
+            text-align:
+                center;
+
+        }
+
+
+        .statement-inner {
+
+            max-width:
+                1100px;
+
+        }
+
+
+        .statement-small {
+
+            margin-bottom:
+                26px;
+
+            color:
+                var(--ash);
+
+            font-size:
+                11px;
+
+            font-weight:
+                900;
+
+            letter-spacing:
+                4px;
+
+        }
+
+
+        .statement h2 {
+
+            margin:
+                0;
+
+            font-size:
+                clamp(
+                    64px,
+                    10vw,
+                    155px
+                );
+
+            line-height:
+                .79;
+
+            letter-spacing:
+                -8px;
+
+            font-weight:
+                950;
+
+        }
+
+
+        .statement h2 .orange {
+
+            color:
+                var(--ember);
+
+        }
+
+
+        .statement-copy {
+
+            max-width:
+                650px;
+
+            margin:
+                40px
+                auto
+                0;
+
+            color:
+                #a5a5a5;
+
+            font-size:
+                18px;
+
+            line-height:
+                1.55;
+
+        }
+
+
+        /* =========================================================
+           BOOK JONATHAN
+        ========================================================== */
+
+        .book-section {
+
+            min-height:
+                100svh;
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            padding:
+                120px
+                max(
+                    24px,
+                    7vw
+                );
+
+            background:
+                var(--warm-white);
+
+            color:
+                var(--black);
+
+        }
+
+
+        .book-inner {
+
+            width:
+                min(
+                    1150px,
+                    100%
+                );
+
+            margin:
+                0 auto;
+
+        }
+
+
+        .book-label {
+
+            margin-bottom:
+                25px;
+
+            font-size:
+                11px;
+
+            font-weight:
+                950;
+
+            letter-spacing:
+                4px;
+
+        }
+
+
+        .book-title {
+
+            margin:
+                0;
+
+            font-size:
+                clamp(
+                    58px,
+                    9vw,
+                    135px
+                );
+
+            line-height:
+                .82;
+
+            letter-spacing:
+                -7px;
+
+            font-weight:
+                950;
+
+        }
+
+
+        .book-title .orange {
+
+            color:
+                var(--ember);
+
+        }
+
+
+        .book-copy {
+
+            max-width:
+                650px;
+
+            margin-top:
+                40px;
+
+            color:
+                #252525;
+
+            font-size:
+                18px;
+
+            line-height:
+                1.6;
+
+        }
+
+
+        /* =========================================================
+           GIVE SECTION
+        ========================================================== */
+
+        .give {
+
+            min-height:
+                100svh;
+
+            position:
+                relative;
+
+            overflow:
+                hidden;
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            justify-content:
+                center;
+
+            padding:
+                100px
+                24px;
+
+            background:
+                #070707;
+
+            text-align:
+                center;
+
+        }
+
+
+        /*
+         * "EMBER UNDER GLASS"
+         *
+         * This is intentionally subtle.
+         * No literal flame graphics.
+         */
+
+        .give::before {
+
+            content:
+                "";
+
+            position:
+                absolute;
+
+            inset:
+                -30%;
+
+            background:
+
+                radial-gradient(
+                    ellipse at 50% 72%,
+                    rgba(
+                        255,
+                        75,
+                        36,
+                        .20
+                    ) 0%,
+                    rgba(
+                        255,
+                        106,
+                        0,
+                        .08
+                    ) 22%,
+                    transparent 48%
+                ),
+
+                repeating-linear-gradient(
+                    0deg,
+                    transparent 0,
+                    transparent 5px,
+                    rgba(
+                        255,
+                        255,
+                        255,
+                        .016
+                    ) 6px
+                );
+
+            opacity:
+                .9;
+
+            animation:
+                fireTexture
+                9s
+                ease-in-out
+                infinite
+                alternate;
+
+            pointer-events:
+                none;
+
+        }
+
+
+        .give::after {
+
+            content:
+                "";
+
+            position:
+                absolute;
+
+            inset:
+                0;
+
+            background:
+                radial-gradient(
+                    ellipse at center,
+                    transparent 0%,
+                    rgba(
+                        0,
+                        0,
+                        0,
+                        .53
+                    ) 74%,
+                    rgba(
+                        0,
+                        0,
+                        0,
+                        .82
+                    ) 100%
+                );
+
+            pointer-events:
+                none;
+
+        }
+
+
+        .give-inner {
+
+            position:
+                relative;
+
+            z-index:
+                5;
+
+            max-width:
+                1100px;
+
+        }
+
+
+        .give-label {
+
+            margin-bottom:
+                26px;
+
+            color:
+                var(--ember);
+
+            font-size:
+                11px;
+
+            font-weight:
+                950;
+
+            letter-spacing:
+                4px;
+
+        }
+
+
+        .give h2 {
+
+            margin:
+                0;
+
+            font-size:
+                clamp(
+                    62px,
+                    10vw,
+                    155px
+                );
+
+            line-height:
+                .8;
+
+            letter-spacing:
+                -8px;
+
+            font-weight:
+                950;
+
+        }
+
+
+        .give h2 .orange {
+
+            color:
+                var(--flame);
+
+        }
+
+
+        .give p {
+
+            max-width:
+                650px;
+
+            margin:
+                38px
+                auto
+                31px;
+
+            color:
+                #a8a8a8;
+
+            font-size:
+                18px;
+
+            line-height:
+                1.55;
+
+        }
+
+
+        /* =========================================================
+           FOOTER
+        ========================================================== */
+
+        footer {
+
+            min-height:
+                20vh;
+
+
+            padding:
+                45px
+                7vw;
+
+            border-top:
+                1px solid
+                rgba(
+                    255,
+                    255,
+                    255,
+                    .1
+                );
+
+            background:
+                var(--black);
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            justify-content:
+                space-between;
+
+            gap:
+                20px;
+
+            color:
+                #707070;
+
+            font-size:
+                10px;
+
+            letter-spacing:
+                1.4px;
+
+        }
+
+
+        .footer-brand {
+
+            color:
+                var(--warm-white);
+
+            font-weight:
+                950;
+
+        }
+
+
+        /* =========================================================
+           ANIMATIONS
+        ========================================================== */
+
+        @keyframes heroImageReveal {
+
+            from {
+
+                opacity:
+                    0;
+
+                transform:
+                    scale(
+                        1.10
+                    );
+
+            }
+
+            to {
+
+                opacity:
+                    1;
+
+                transform:
+                    scale(
+                        1.03
+                    );
+
+            }
+
+        }
+
+
+        @keyframes titleExplosion {
+
+            0% {
+
+                opacity:
+                    0;
+
+                transform:
+                    scale(
+                        .22
+                    )
+                    translateY(
+                        38px
+                    );
+
+            }
+
+            52% {
+
+                opacity:
+                    1;
+
+            }
+
+            73% {
+
+                transform:
+                    scale(
+                        1.035
+                    )
+                    translateY(
+                        -2px
+                    );
+
+            }
+
+            100% {
+
+                opacity:
+                    1;
+
+                transform:
+                    scale(
+                        1
+                    )
+                    translateY(
+                        0
+                    );
+
+            }
+
+        }
+
+
+        @keyframes navReveal {
+
+            from {
+
+                opacity:
+                    0;
+
+                transform:
+                    translateX(
+                        -50%
+                    )
+                    translateY(
+                        -28px
+                    );
+
+            }
+
+            to {
+
+                opacity:
+                    1;
+
+                transform:
+                    translateX(
+                        -50%
+                    )
+                    translateY(
+                        0
+                    );
+
+            }
+
+        }
+
+
+        @keyframes fadeUp {
+
+            from {
+
+                opacity:
+                    0;
+
+                transform:
+                    translateY(
+                        22px
+                    );
+
+            }
+
+            to {
+
+                opacity:
+                    1;
+
+                transform:
+                    translateY(
+                        0
+                    );
+
+            }
+
+        }
+
+
+        @keyframes buttonReveal {
+
+            0% {
+
+                opacity:
+                    0;
+
+                transform:
+                    translateY(
+                        18px
+                    )
+                    scale(
+                        .86
+                    );
+
+            }
+
+            70% {
+
+                transform:
+                    translateY(
+                        -3px
+                    )
+                    scale(
+                        1.03
+                    );
+
+            }
+
+            100% {
+
+                opacity:
+                    1;
+
+                transform:
+                    translateY(
+                        0
+                    )
+                    scale(
+                        1
+                    );
+
+            }
+
+        }
+
+
+        @keyframes firePulse {
+
+            from {
+
+                transform:
+                    translateX(
+                        -50%
+                    )
+                    scale(
+                        .94
+                    );
+
+                opacity:
+                    .72;
+
+            }
+
+            to {
+
+                transform:
+                    translateX(
+                        -50%
+                    )
+                    scale(
+                        1.06
+                    );
+
+                opacity:
+                    1;
+
+            }
+
+        }
+
+
+        @keyframes fireTexture {
+
+            from {
+
+                transform:
+                    translate3d(
+                        -1%,
+                        1%,
+                        0
+                    )
+                    scale(
+                        1
+                    );
+
+            }
+
+            to {
+
+                transform:
+                    translate3d(
+                        1%,
+                        -1.5%,
+                        0
+                    )
+                    scale(
+                        1.045
+                    );
+
+            }
+
+        }
+
+
+        /* =========================================================
+           MOBILE
+        ========================================================== */
+
+        @media (
+            max-width: 850px
+        ) {
+
+            html {
+
+                scroll-snap-type:
+                    y mandatory;
+
+            }
+
+
+            body {
+
+                cursor:
+                    auto;
+
+            }
+
+
+            .nav {
+
+                width:
+                    calc(
+                        100% - 24px
+                    );
+
+                top:
+                    12px;
+
+                min-height:
+                    56px;
+
+                padding:
+                    10px
+                    11px
+                    10px
+                    16px;
+
+            }
+
+
+            .nav-right {
+
+                margin-left:
+                    auto;
+
+            }
+
+
+            .nav-links {
+
+                display:
+                    none;
+
+            }
+
+
+            .logo {
+
+                font-size:
+                    13px;
+
+            }
+
+
+            .nav-donate {
+
+                padding:
+                    11px
+                    15px;
+
+                font-size:
+                    10px;
+
+            }
+
+
+            .hero {
+
+                min-height:
+                    100svh;
+
+                height:
+                    100svh;
+
+            }
+
+
+            .hero-background {
+
+                background-position:
+                    center center;
+
+            }
+
+
+            .hero-content {
+
+                width:
+                    calc(
+                        100% - 28px
+                    );
+
+                padding-top:
+                    30px;
+
+            }
+
+
+            .hero-eyebrow {
+
+                font-size:
+                    10px;
+
+                letter-spacing:
+                    3px;
+
+            }
+
+
+            .hero-title {
+
+                font-size:
+                    clamp(
+                        56px,
+                        15vw,
+                        104px
+                    );
+
+                letter-spacing:
+                    -4px;
+
+            }
+
+
+            .hero-ministry {
+
+                font-size:
+                    11px;
+
+                letter-spacing:
+                    5px;
+
+            }
+
+
+            .hero-mission {
+
+                font-size:
+                    16px;
+
+            }
+
+
+            .hero-actions {
+
+                width:
+                    100%;
+
+            }
+
+
+            .cta {
+
+                flex:
+                    1;
+
+                min-width:
+                    0;
+
+                padding:
+                    14px
+                    10px;
+
+                font-size:
+                    9px;
+
+            }
+
+
+            .mission {
+
+                min-height:
+                    100svh;
+
+                padding:
+                    90px
+                    21px;
+
+            }
+
+
+            .mission h2 {
+
+                letter-spacing:
+                    -4px;
+
+            }
+
+
+            .mission-copy {
+
+                font-size:
+                    17px;
+
+            }
+
+
+            .stories {
+
+                padding:
+                    90px
+                    20px;
+
+            }
+
+
+            .stories-header {
+
+                flex-direction:
+                    column;
+
+                align-items:
+                    flex-start;
+
+            }
+
+
+            .stories-header h2 {
+
+                letter-spacing:
+                    -4px;
+
+            }
+
+
+            .story-grid {
+
+                grid-template-columns:
+                    1fr;
+
+            }
+
+
+            .story-card {
+
+                min-height:
+                    390px;
+
+            }
+
+
+            .book-section {
+
+                min-height:
+                    100svh;
+
+                padding:
+                    90px
+                    21px;
+
+            }
+
+
+            .book-title {
+
+                letter-spacing:
+                    -4px;
+
+            }
+
+
+            .statement h2,
+            .give h2 {
+
+                letter-spacing:
+                    -5px;
+
+            }
+
+
+            footer {
+
+                flex-direction:
+                    column;
+
+                align-items:
+                    flex-start;
+
+                padding:
+                    35px
+                    20px;
+
+            }
+
+        }
+
+
+        /* =========================================================
+           REDUCED MOTION
+        ========================================================== */
+
+        @media (
+            prefers-reduced-motion: reduce
+        ) {
+
+            *,
+            *::before,
+            *::after {
+
+                animation-duration:
+                    .01ms !important;
+
+                animation-iteration-count:
+                    1 !important;
+
+                transition-duration:
+                    .01ms !important;
+
+                scroll-behavior:
+                    auto !important;
+
+            }
+
+        }
+
+
+/* =========================================================
+   CINEMATIC FIRST TRANSITION + SECOND PAGE UPDATE
+   ========================================================= */
+.hero{position:sticky;top:0;z-index:1}
+.mission{position:relative;z-index:4;border-radius:34px 34px 0 0;box-shadow:0 -30px 70px rgba(0,0,0,.20);overflow:hidden}
+.mission-verse-wrap{position:absolute;top:0;left:0;width:100%;height:72px;overflow:hidden;pointer-events:none;white-space:nowrap}
+.mission-verse{position:absolute;top:13px;left:0;font-size:clamp(30px,4.4vw,70px);line-height:.9;font-weight:950;letter-spacing:-2px;color:rgba(0,0,0,.055);white-space:nowrap;will-change:transform;text-transform:uppercase}
+.mission-inner{width:min(1280px,100%);margin:0 auto}
+.mission-top{display:flex;align-items:flex-end;justify-content:space-between;gap:40px;margin-bottom:42px}
+.mission-person{padding-top:22px}.mission-label{margin-bottom:9px;font-size:12px;font-weight:950;letter-spacing:2px}.mission-role{font-size:14px;color:#707070;font-weight:500}.mission-label.fire-label{color:var(--ember);letter-spacing:4px;margin-bottom:13px}
+.mission-quote{max-width:1080px;margin:0;font-family:Georgia,"Times New Roman",serif;font-size:clamp(31px,4.15vw,62px);line-height:.98;letter-spacing:-2px;font-weight:700}.mission-quote em{font-style:normal;color:var(--ember)}
+.mission-support-row{display:flex;align-items:flex-end;justify-content:space-between;gap:48px;margin:44px 0 40px;padding-left:9%}.mission-copy{max-width:650px;font-size:17px;line-height:1.58;color:#606060}.mission-copy strong{color:#222}.fuel-link{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-width:176px;padding:15px 21px;border-radius:999px;text-decoration:none;background:#111;color:#fff;font-size:11px;font-weight:950;letter-spacing:1.2px;box-shadow:0 10px 24px rgba(0,0,0,.18);transition:transform .25s ease,box-shadow .25s ease}.fuel-link:hover{transform:translateY(-3px);box-shadow:0 16px 30px rgba(255,75,36,.28)}.fuel-dot{width:8px;height:8px;border-radius:50%;background:var(--flame);box-shadow:0 0 12px var(--flame);animation:emberPulse 1.3s infinite alternate}
+.media-grid{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(280px,.72fr);gap:34px;align-items:stretch;margin-top:18px}.video-tile,.meet-tile{position:relative;overflow:hidden;border-radius:26px;min-height:455px}.video-tile{background:#111;isolation:isolate}.video-tile video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.92}.video-fallback{position:absolute;inset:0;background-image:linear-gradient(135deg,rgba(0,0,0,.25),rgba(0,0,0,.72)),url("hero.png"),url("hero.jpg");background-size:cover;background-position:center;z-index:-1}.video-shade{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.82),transparent 62%);pointer-events:none}.video-info{position:absolute;left:28px;bottom:26px;color:#fff;z-index:3}.video-watch{font-size:clamp(32px,4vw,56px);line-height:.85;font-weight:950;letter-spacing:-2.5px;text-transform:uppercase;transition:transform .45s var(--ease)}.video-name{margin-top:11px;font-size:11px;letter-spacing:2.2px;font-weight:900;color:rgba(255,255,255,.78)}.play-orb{position:absolute;left:50%;top:50%;width:96px;height:96px;border:0;border-radius:50%;transform:translate(-50%,-50%) scale(.72);display:flex;align-items:center;justify-content:center;background:rgba(245,242,234,.95);color:#111;font-size:15px;font-weight:950;opacity:0;z-index:5;box-shadow:0 15px 45px rgba(0,0,0,.28);transition:opacity .28s ease,transform .55s var(--ease)}.play-orb span{margin-left:3px}.video-tile:hover .play-orb{opacity:1;transform:translate(-50%,-50%) scale(1)}.video-tile:hover .video-watch{transform:translateY(-5px)}
+.meet-tile{background:#191919;color:#fff;display:flex;flex-direction:column;text-decoration:none}.meet-image{position:absolute;inset:0;background-image:linear-gradient(to top,rgba(0,0,0,.84),transparent 58%),url("jonathan.jpg");background-size:cover;background-position:center;transition:transform .7s var(--ease)}.meet-tile:hover .meet-image{transform:scale(1.04)}.meet-content{position:absolute;left:24px;right:24px;bottom:23px;z-index:3}.meet-title{font-size:clamp(28px,3vw,42px);font-weight:950;letter-spacing:-1.8px}.meet-copy{max-width:290px;margin-top:9px;font-family:Georgia,"Times New Roman",serif;font-size:15px;line-height:1.28;color:rgba(255,255,255,.78)}.meet-arrow{position:absolute;right:22px;top:22px;width:45px;height:45px;border:1px solid rgba(255,255,255,.45);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:18px;transition:background .3s ease,color .3s ease,transform .3s ease}.meet-tile:hover .meet-arrow{background:#fff;color:#111;transform:translate(2px,-2px)}
+.reach{margin-top:18px;text-align:center;position:relative;height:300px;isolation:isolate;overflow:hidden;padding-top:0}.reach-scene{position:absolute;inset:0;perspective:900px;transform-style:preserve-3d;pointer-events:none}.reach-floor{position:absolute;left:50%;bottom:12px;width:76%;height:60%;transform:translateX(-50%) rotateX(64deg) translateZ(-55px);transform-origin:center bottom;background:radial-gradient(ellipse at center,rgba(0,0,0,.06),rgba(0,0,0,0) 68%);border-radius:50%;opacity:.42}.reach-crowd{position:absolute;inset:0;transform-style:preserve-3d}.crowd-person{position:absolute;width:18px;height:31px;transform:translate(-50%,-50%) scale(var(--s));transform-origin:center bottom;opacity:0;will-change:transform,opacity;filter:drop-shadow(0 3px 3px rgba(0,0,0,.10));transition:opacity .16s linear}.crowd-person .person-head{position:absolute;left:50%;top:0;width:9px;height:9px;transform:translateX(-50%);border-radius:50%;background:#242424}.crowd-person .person-body{position:absolute;left:50%;top:8px;width:14px;height:20px;transform:translateX(-50%);border-radius:7px 7px 4px 4px;background:var(--shirt)}.crowd-person .person-body:after{content:"";position:absolute;left:3px;right:3px;bottom:-6px;height:8px;border-radius:0 0 4px 4px;background:#262626}.crowd-person .person-body:before{content:"";position:absolute;left:-4px;top:2px;width:22px;height:4px;border-radius:8px;background:var(--shirt);opacity:.92}.crowd-person.front .person-head{transform:translateX(-50%) rotateY(180deg)}.crowd-person.front .person-body{transform:translateX(-50%) rotateY(180deg)}.reach-confetti{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:8}.confetti-piece{position:absolute;width:4px;height:10px;border-radius:2px;background:var(--c);opacity:0;transform:translate3d(0,0,0) rotate(var(--r));will-change:transform,opacity}.reach-number{position:absolute;z-index:12;left:50%;top:50%;transform:translate(-50%,-58%) translateZ(100px);font-family:Georgia,"Times New Roman",serif;font-size:clamp(48px,7vw,94px);line-height:.85;letter-spacing:-3.5px;color:#303030;font-weight:700;white-space:nowrap;text-shadow:0 7px 0 rgba(0,0,0,.035),0 16px 28px rgba(0,0,0,.10)}.reach-label{position:absolute;z-index:13;left:50%;top:calc(50% + 42px);transform:translateX(-50%);margin:0;font-size:10px;letter-spacing:3.5px;font-weight:950;color:var(--ember);white-space:nowrap}
+@keyframes emberPulse{from{opacity:.55;transform:scale(.8)}to{opacity:1;transform:scale(1.25)}}
+@media(max-width:850px){.mission{border-radius:24px 24px 0 0}.mission-verse-wrap{height:55px}.mission-verse{font-size:30px}.mission-top{display:block;margin-bottom:30px}.mission-person{padding-top:12px}.mission-quote{font-size:clamp(30px,8.8vw,48px);letter-spacing:-1.4px}.mission-support-row{display:block;margin:32px 0 30px;padding-left:0}.fuel-link{margin-top:19px}.media-grid{grid-template-columns:1fr;gap:16px}.video-tile,.meet-tile{min-height:360px;border-radius:20px}.reach{margin-top:18px;height:270px;padding-top:0}.reach-number{font-size:50px;letter-spacing:-2.5px}.reach-label{top:calc(50% + 38px);font-size:9px;letter-spacing:2.8px}}
+
+    
+
+        /* FINAL PARTNER CTA POSITIONING */
+        .mission-support-row{
+            justify-content:flex-start !important;
+            align-items:center !important;
+            gap:34px !important;
+            padding-left:9% !important;
+            padding-right:9% !important;
+        }
+        .mission-copy{
+            flex:0 1 650px !important;
+            max-width:650px !important;
+            margin:0 !important;
+        }
+        .fuel-link{
+            flex:0 0 auto !important;
+            min-width:0 !important;
+            background:#111 !important;
+            color:#ff5a32 !important;
+            text-shadow:0 0 10px rgba(255,90,50,.42),0 0 22px rgba(255,90,50,.18) !important;
+            box-shadow:0 10px 26px rgba(0,0,0,.16),0 0 20px rgba(255,90,50,.08) !important;
+            transition:transform .25s ease,box-shadow .25s ease,color .25s ease !important;
+        }
+        .fuel-link:hover{
+            color:#ff704c !important;
+            box-shadow:0 16px 32px rgba(0,0,0,.22),0 0 28px rgba(255,90,50,.22) !important;
+        }
+        .fuel-dot{
+            background:#ff5a32 !important;
+            box-shadow:0 0 10px #ff5a32,0 0 20px rgba(255,90,50,.5) !important;
+        }
+        @media (max-width:800px){
+            .mission-support-row{
+                flex-direction:column !important;
+                align-items:flex-start !important;
+                gap:22px !important;
+                padding-left:0 !important;
+                padding-right:0 !important;
+            }
+        }
+
+        /* MEDIA FILE SLOTS
+           Add these files beside index.html when ready:
+           - hero.png       = main hero background
+           - mission-video.mp4 = mission video
+           - jonathan.jpg   = Meet Jonathan image
+        */
+
+/* FINAL REFINEMENTS — VERSE / VIDEO / 20 MILLION */
+.mission-verse{
+    left:50%;
+    transform:translate3d(-50%,0,0) !important;
+    width:max-content;
+    max-width:none;
+}
+.video-control{
+    position:absolute;
+    left:50%;
+    bottom:26px;
+    transform:translateX(-50%);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:18px;
+    z-index:6;
+    transition:transform .55s var(--ease),gap .45s var(--ease);
+}
+.video-info{position:relative;left:auto;bottom:auto;transition:opacity .35s ease,transform .55s var(--ease),filter .45s ease}
+.play-orb{position:relative;left:auto;top:auto;flex:0 0 78px;width:78px;height:78px;transform:none !important;opacity:1;background:rgba(245,242,234,.96);transition:width .55s var(--ease),height .55s var(--ease),background .35s ease,box-shadow .45s ease}
+.video-tile::after{content:"";position:absolute;inset:0;background:rgba(255,255,255,0);backdrop-filter:blur(0);-webkit-backdrop-filter:blur(0);pointer-events:none;z-index:4;transition:background .45s ease,backdrop-filter .45s ease,-webkit-backdrop-filter .45s ease}
+.video-tile:hover::after{background:rgba(0,0,0,.08);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px)}
+.video-tile:hover .video-control{left:50%;bottom:50%;transform:translate(-50%,50%);gap:0}
+.video-tile:hover .video-info{opacity:0;transform:translateX(-18px);filter:blur(8px);pointer-events:none}
+.video-tile:hover .play-orb{width:96px;height:96px;box-shadow:0 18px 55px rgba(0,0,0,.35)}
+.video-tile:hover .video-shade{opacity:.92}
+.reach{height:280px !important}
+.reach-number{z-index:20}
+.reach-crowd{z-index:4}
+.reach-confetti{z-index:10}
+@media(max-width:850px){
+    .mission-verse{font-size:28px;top:13px}
+    .video-control{bottom:20px;gap:12px}
+    .play-orb{flex-basis:64px;width:64px;height:64px}
+    .video-watch{font-size:30px}
+    .video-name{font-size:9px}
+    .video-tile:hover .video-control{bottom:50%}
+    .video-tile:hover .play-orb{width:82px;height:82px}
+    .reach{height:250px !important}
+}
+
+/* FINAL REFINEMENTS — VERSE / VIDEO / 20 MILLION */
+.mission-verse{left:50%;width:max-content;max-width:none;transform:translate3d(-50%,0,0) !important}
+.video-control{position:absolute;left:50%;bottom:26px;transform:translateX(-50%);display:flex;align-items:center;justify-content:center;gap:18px;z-index:6;transition:transform .55s var(--ease),gap .45s var(--ease)}
+.video-info{position:relative;left:auto;bottom:auto;transition:opacity .35s ease,transform .55s var(--ease),filter .45s ease}
+.play-orb{position:relative;left:auto;top:auto;flex:0 0 78px;width:78px;height:78px;transform:none !important;opacity:1;background:rgba(245,242,234,.96);transition:width .55s var(--ease),height .55s var(--ease),background .35s ease,box-shadow .45s ease}
+.video-tile::after{content:"";position:absolute;inset:0;background:rgba(255,255,255,0);backdrop-filter:blur(0);-webkit-backdrop-filter:blur(0);pointer-events:none;z-index:4;transition:background .45s ease,backdrop-filter .45s ease,-webkit-backdrop-filter .45s ease}
+.video-tile:hover::after{background:rgba(0,0,0,.08);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px)}
+.video-tile:hover .video-control{left:50%;bottom:50%;transform:translate(-50%,50%);gap:0}
+.video-tile:hover .video-info{opacity:0;transform:translateX(-18px);filter:blur(8px);pointer-events:none}
+.video-tile:hover .play-orb{width:96px;height:96px;box-shadow:0 18px 55px rgba(0,0,0,.35)}
+.reach{height:280px !important}.reach-number{z-index:20}.reach-crowd{z-index:4}.reach-confetti{z-index:10}
+@media(max-width:850px){.mission-verse{font-size:28px;top:13px}.video-control{bottom:20px;gap:12px}.play-orb{flex-basis:64px;width:64px;height:64px}.video-watch{font-size:30px}.video-name{font-size:9px}.video-tile:hover .video-control{bottom:50%}.video-tile:hover .play-orb{width:82px;height:82px}.reach{height:250px !important}}
+
+
+/* =========================================================
+   POLISHED FINAL INTERACTIONS — VIDEO / 20M / CTAS
+========================================================= */
+.mission-verse-wrap{
+    height:92px !important;
+    display:flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+    padding:0 24px !important;
+}
+.mission-verse{
+    position:relative !important;
+    top:auto !important;
+    left:auto !important;
+    width:min(1180px,100%) !important;
+    max-width:1180px !important;
+    white-space:normal !important;
+    text-align:center !important;
+    transform:none !important;
+    font-size:clamp(20px,3.1vw,48px) !important;
+    line-height:1.02 !important;
+    letter-spacing:-1.2px !important;
+}
+
+.fuel-link:hover{
+    color:#ff704c !important;
+    text-shadow:0 0 12px rgba(255,90,50,.65),0 0 30px rgba(255,90,50,.28) !important;
+    box-shadow:0 0 0 1px rgba(255,90,50,.16),0 12px 30px rgba(255,75,36,.18),0 0 34px rgba(255,90,50,.34) !important;
+}
+.nav-donate:hover{
+    box-shadow:0 0 0 1px rgba(255,106,0,.20),0 12px 28px rgba(255,75,36,.30),0 0 34px rgba(255,106,0,.38) !important;
+}
+
+/* VIDEO — centered caption normally; on hover it dissolves while the play orb
+   glides to dead-center, grows, and the image zooms + softens behind it. */
+.video-control{
+    left:50% !important;
+    bottom:50% !important;
+    transform:translate(-50%,50%) !important;
+    gap:18px !important;
+    transition:transform .78s cubic-bezier(.22,1,.36,1),gap .45s ease !important;
+}
+.video-info{
+    transition:opacity .28s ease,transform .78s cubic-bezier(.22,1,.36,1),filter .42s ease !important;
+}
+.video-tile video,.video-fallback{
+    transition:transform .72s cubic-bezier(.16,1,.3,1),filter .48s ease !important;
+}
+.video-tile:hover video,.video-tile:hover .video-fallback{
+    transform:scale(1.065) !important;
+    filter:blur(3px) !important;
+}
+.video-tile:hover .video-control{
+    transform:translate(-50%,50%) !important;
+    gap:0 !important;
+}
+.video-tile:hover .video-info{
+    opacity:0 !important;
+    transform:translateX(-24px) scale(.96) !important;
+    filter:blur(10px) !important;
+    pointer-events:none !important;
+}
+.video-tile:hover .play-orb{
+    width:104px !important;
+    height:104px !important;
+    box-shadow:0 18px 55px rgba(0,0,0,.36),0 0 38px rgba(255,255,255,.14) !important;
+}
+
+/* Meet Jonathan — restrained lift. */
+.meet-tile{transition:transform .45s var(--ease),box-shadow .45s var(--ease)}
+.meet-tile:hover{transform:translateY(-8px) scale(1.012);box-shadow:0 24px 55px rgba(0,0,0,.25)}
+.meet-tile:hover .meet-image{transform:scale(1.045)}
+
+/* 20 MILLION — compact, quick confetti burst, then gravity carries the pieces
+   downward so the moment feels like a transition rather than a giant section. */
+.reach{
+    height:180px !important;
+    margin-top:8px !important;
+    overflow:hidden !important;
+}
+.reach-scene{inset:0 !important}
+.reach-floor{width:62% !important;height:55% !important;bottom:2px !important;opacity:.18 !important}
+.reach-crowd{display:none !important}
+.reach-number{
+    top:50% !important;
+    left:50% !important;
+    transform:translate(-50%,-62%) translateZ(100px) !important;
+    font-size:clamp(52px,7vw,96px) !important;
+    letter-spacing:-3.2px !important;
+}
+.reach-label{top:calc(50% + 30px) !important}
+.reach-confetti{z-index:18 !important}
+.confetti-piece{
+    width:3px !important;
+    height:9px !important;
+    border-radius:2px !important;
+    box-shadow:0 2px 5px rgba(0,0,0,.08);
+}
+@media(max-width:850px){
+    .mission-verse-wrap{height:78px !important;padding:0 16px !important}
+    .mission-verse{font-size:clamp(12px,3.8vw,22px) !important;letter-spacing:-.35px !important}
+    .video-tile:hover .play-orb{width:88px !important;height:88px !important}
+    .reach{height:155px !important}
+    .reach-number{font-size:54px !important}
+    .reach-label{top:calc(50% + 27px) !important}
+}
+
+/* =========================================================
+   FINAL CORRECTIONS — VERSE / VIDEO / 20M / STORIES
+========================================================= */
+.mission-verse-wrap{
+    height:92px !important;
+    display:flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+    overflow:hidden !important;
+    padding:0 18px !important;
+}
+.mission-verse{
+    position:relative !important;
+    inset:auto !important;
+    width:100% !important;
+    max-width:none !important;
+    white-space:nowrap !important;
+    text-align:center !important;
+    transform:translate3d(var(--verse-shift,0px),0,0) !important;
+    font-size:clamp(13px,2.05vw,32px) !important;
+    line-height:1 !important;
+    letter-spacing:-.8px !important;
+    will-change:transform !important;
+}
+
+/* True circle — never becomes an oval. */
+.video-control{
+    left:50% !important;
+    top:50% !important;
+    bottom:auto !important;
+    transform:translate(-50%,-50%) !important;
+    display:flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+    gap:18px !important;
+    width:max-content !important;
+}
+.play-orb{
+    position:relative !important;
+    left:auto !important;
+    top:auto !important;
+    width:82px !important;
+    height:82px !important;
+    min-width:82px !important;
+    max-width:82px !important;
+    min-height:82px !important;
+    max-height:82px !important;
+    flex:0 0 82px !important;
+    aspect-ratio:1 / 1 !important;
+    padding:0 !important;
+    border-radius:50% !important;
+    transform:none !important;
+    opacity:1 !important;
+}
+.video-tile video,.video-fallback{
+    transition:transform .78s cubic-bezier(.16,1,.3,1),filter .5s ease !important;
+}
+.video-tile:hover video,.video-tile:hover .video-fallback{
+    transform:scale(1.075) !important;
+    filter:blur(3px) !important;
+}
+.video-tile:hover .video-control{
+    transform:translate(-50%,-50%) !important;
+    gap:0 !important;
+}
+.video-info{
+    opacity:1 !important;
+    transition:opacity .3s ease,transform .6s cubic-bezier(.16,1,.3,1),filter .4s ease !important;
+}
+.video-tile:hover .video-info{
+    opacity:0 !important;
+    transform:translateX(-28px) scale(.96) !important;
+    filter:blur(9px) !important;
+}
+.video-tile:hover .play-orb{
+    width:108px !important;
+    height:108px !important;
+    min-width:108px !important;
+    max-width:108px !important;
+    min-height:108px !important;
+    max-height:108px !important;
+    flex-basis:108px !important;
+    border-radius:50% !important;
+    transform:none !important;
+    box-shadow:0 20px 60px rgba(0,0,0,.38),0 0 38px rgba(255,255,255,.14) !important;
+}
+
+/* Bigger 20M, positioned a little lower so it visually anchors to the bottom. */
+.reach{height:185px !important;margin-top:6px !important}
+.reach-number{
+    top:57% !important;
+    font-size:clamp(58px,7.6vw,104px) !important;
+}
+.reach-label{top:calc(57% + 34px) !important}
+
+/* Next page: lighter chocolate brown. */
+.stories{background:#68483b !important}
+
+@media(max-width:850px){
+    .mission-verse-wrap{height:70px !important;padding:0 12px !important}
+    .mission-verse{font-size:clamp(11px,3.25vw,20px) !important;letter-spacing:-.35px !important}
+    .video-control{left:50% !important;top:50% !important;bottom:auto !important}
+    .play-orb{width:68px !important;height:68px !important;min-width:68px !important;max-width:68px !important;min-height:68px !important;max-height:68px !important;flex-basis:68px !important}
+    .video-tile:hover .play-orb{width:88px !important;height:88px !important;min-width:88px !important;max-width:88px !important;min-height:88px !important;max-height:88px !important;flex-basis:88px !important}
+    .reach{height:160px !important}
+    .reach-number{top:57% !important;font-size:56px !important}
+    .reach-label{top:calc(57% + 29px) !important}
+}
+
+
+/* =========================================================
+   FINAL PRECISION PASS — VERSE / VIDEO / 20M
+========================================================= */
+.mission-verse-wrap{
+    height:58px !important;
+    align-items:flex-start !important;
+    padding:8px 18px 0 !important;
+    overflow:hidden !important;
+}
+.mission-verse{
+    top:0 !important;
+    width:max-content !important;
+    max-width:none !important;
+    white-space:nowrap !important;
+    font-size:clamp(16px,2.35vw,36px) !important;
+    line-height:1 !important;
+    transform:translate3d(var(--verse-shift,0px),0,0) !important;
+    will-change:transform !important;
+}
+
+/* The caption is centered as a group at rest. On hover the control layer
+   expands to the tile itself, so the orb is mathematically centered on the
+   actual video rectangle — not merely centered inside the caption group. */
+.video-control{
+    left:50% !important;
+    top:50% !important;
+    bottom:auto !important;
+    width:max-content !important;
+    height:auto !important;
+    transform:translate(-50%,-50%) !important;
+    position:absolute !important;
+    display:flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+    gap:18px !important;
+    pointer-events:none !important;
+    transition:left .62s cubic-bezier(.16,1,.3,1),top .62s cubic-bezier(.16,1,.3,1),width .62s cubic-bezier(.16,1,.3,1),height .62s cubic-bezier(.16,1,.3,1),transform .78s cubic-bezier(.22,1,.36,1),gap .45s ease !important;
+}
+.play-orb{
+    position:relative !important;
+    flex:0 0 82px !important;
+    width:82px !important;
+    height:82px !important;
+    min-width:82px !important;
+    max-width:82px !important;
+    min-height:82px !important;
+    max-height:82px !important;
+    aspect-ratio:1 / 1 !important;
+    border-radius:50% !important;
+    pointer-events:auto !important;
+    transform:none !important;
+}
+.video-tile:hover .video-control{
+    left:0 !important;
+    top:0 !important;
+    width:100% !important;
+    height:100% !important;
+    transform:none !important;
+    gap:0 !important;
+}
+.video-tile:hover .play-orb{
+    position:absolute !important;
+    left:50% !important;
+    top:50% !important;
+    width:112px !important;
+    height:112px !important;
+    min-width:112px !important;
+    max-width:112px !important;
+    min-height:112px !important;
+    max-height:112px !important;
+    flex-basis:112px !important;
+    border-radius:50% !important;
+    transform:translate(-50%,-50%) !important;
+}
+
+/* Bigger 20 MILLION, one more measured step downward. */
+.reach-number{
+    top:63% !important;
+}
+.reach-label{
+    top:calc(63% + 34px) !important;
+}
+
+@media(max-width:850px){
+    .mission-verse-wrap{height:50px !important;padding:7px 12px 0 !important}
+    .mission-verse{font-size:clamp(12px,3.55vw,22px) !important}
+    .play-orb{width:70px !important;height:70px !important;min-width:70px !important;max-width:70px !important;min-height:70px !important;max-height:70px !important;flex-basis:70px !important}
+    .video-tile:hover .play-orb{width:92px !important;height:92px !important;min-width:92px !important;max-width:92px !important;min-height:92px !important;max-height:92px !important;flex-basis:92px !important}
+    .reach-number{top:63% !important}
+    .reach-label{top:calc(63% + 29px) !important}
+}
+
+
+
+/* =========================================================
+   FINAL POLISH — SCROLL VERSE / TRUE VIDEO TRANSITION / 20M / SECTIONS
+========================================================= */
+/* Verse: hug the upper border and travel farther as the mission page enters. */
+.mission-verse-wrap{
+    height:58px !important;
+    top:0 !important;
+    padding:2px 0 0 !important;
+    overflow:hidden !important;
+}
+.mission-verse{
+    top:0 !important;
+    left:50% !important;
+    width:max-content !important;
+    max-width:none !important;
+    white-space:nowrap !important;
+    font-size:clamp(17px,2.55vw,40px) !important;
+    line-height:.95 !important;
+    transform:translate3d(calc(-50% + var(--verse-shift,0px)),0,0) !important;
+    will-change:transform !important;
+}
+
+/* Video: the ORIGINAL orb begins beside the caption, then physically travels
+   into the exact center of the video. No second button is created. */
+.video-control{
+    position:absolute !important;
+    left:50% !important;
+    top:auto !important;
+    bottom:26px !important;
+    width:max-content !important;
+    height:auto !important;
+    transform:translateX(-50%) !important;
+    display:flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+    gap:18px !important;
+    z-index:8 !important;
+    pointer-events:none !important;
+    transition:
+        left .72s cubic-bezier(.16,1,.3,1),
+        top .72s cubic-bezier(.16,1,.3,1),
+        bottom .72s cubic-bezier(.16,1,.3,1),
+        width .72s cubic-bezier(.16,1,.3,1),
+        height .72s cubic-bezier(.16,1,.3,1),
+        transform .72s cubic-bezier(.16,1,.3,1),
+        gap .48s cubic-bezier(.16,1,.3,1) !important;
+}
+.play-orb{
+    position:relative !important;
+    flex:0 0 82px !important;
+    width:82px !important;
+    height:82px !important;
+    min-width:82px !important;
+    max-width:82px !important;
+    min-height:82px !important;
+    max-height:82px !important;
+    aspect-ratio:1 / 1 !important;
+    padding:0 !important;
+    border-radius:50% !important;
+    transform:none !important;
+    opacity:1 !important;
+    pointer-events:auto !important;
+    transition:
+        width .72s cubic-bezier(.16,1,.3,1),
+        height .72s cubic-bezier(.16,1,.3,1),
+        flex-basis .72s cubic-bezier(.16,1,.3,1),
+        box-shadow .55s ease,
+        background .35s ease !important;
+}
+.video-info{
+    opacity:1 !important;
+    transform:none !important;
+    filter:none !important;
+    transition:opacity .34s ease,transform .78s cubic-bezier(.22,1,.36,1),filter .42s ease !important;
+}
+.video-tile video,.video-fallback{
+    transform:scale(1) !important;
+    filter:none !important;
+    transition:transform 1.05s cubic-bezier(.22,1,.36,1),filter .72s ease !important;
+}
+.video-tile:hover::after{
+    background:rgba(0,0,0,.10) !important;
+    backdrop-filter:blur(2.5px) !important;
+    -webkit-backdrop-filter:blur(2.5px) !important;
+}
+.video-tile:hover video,.video-tile:hover .video-fallback{
+    transform:scale(1.085) !important;
+    filter:blur(3.5px) !important;
+}
+.video-tile:hover .video-control{
+    left:0 !important;
+    top:0 !important;
+    bottom:auto !important;
+    width:100% !important;
+    height:100% !important;
+    transform:none !important;
+    gap:0 !important;
+}
+.video-tile:hover .video-info{
+    opacity:0 !important;
+    transform:translateX(-34px) scale(.94) !important;
+    filter:blur(10px) !important;
+    pointer-events:none !important;
+}
+.video-tile:hover .play-orb{
+    position:absolute !important;
+    left:50% !important;
+    top:50% !important;
+    width:112px !important;
+    height:112px !important;
+    min-width:112px !important;
+    max-width:112px !important;
+    min-height:112px !important;
+    max-height:112px !important;
+    flex:0 0 112px !important;
+    border-radius:50% !important;
+    transform:translate(-50%,-50%) !important;
+    box-shadow:0 22px 65px rgba(0,0,0,.42),0 0 42px rgba(255,255,255,.16) !important;
+}
+
+/* 20 MILLION: lower in the compact scene, with breathing room above and below. */
+.reach{
+    height:220px !important;
+    margin-top:20px !important;
+    margin-bottom:18px !important;
+}
+.reach-number{
+    top:68% !important;
+}
+.reach-label{
+    top:calc(68% + 34px) !important;
+}
+
+/* Every major page is opaque, so the sticky hero never ghosts through later sections. */
+.stories,.statement,.book-section,.give,footer{
+    position:relative !important;
+    z-index:10 !important;
+}
+.stories{
+    background:#c9a58f !important;
+    color:#171313 !important;
+}
+
+@media(max-width:850px){
+    .mission-verse-wrap{height:50px !important;padding:2px 0 0 !important}
+    .mission-verse{font-size:clamp(12px,3.55vw,22px) !important}
+    .video-control{left:50% !important;top:auto !important;bottom:20px !important}
+    .play-orb{width:70px !important;height:70px !important;min-width:70px !important;max-width:70px !important;min-height:70px !important;max-height:70px !important;flex-basis:70px !important}
+    .video-tile:hover .video-control{left:0 !important;top:0 !important;bottom:auto !important;width:100% !important;height:100% !important}
+    .video-tile:hover .play-orb{width:94px !important;height:94px !important;min-width:94px !important;max-width:94px !important;min-height:94px !important;max-height:94px !important;flex-basis:94px !important}
+    .reach{height:190px !important;margin-top:16px !important;margin-bottom:12px !important}
+    .reach-number{top:68% !important;font-size:56px !important}
+    .reach-label{top:calc(68% + 29px) !important}
+}
+
+
+/* =========================================================
+   FINAL USER PASS — VIDEO CENTER / BROWN PAGE / 20M
+========================================================= */
+/* Bible verse: keep it on one line, close to the top border, with a stronger
+   horizontal scroll/parallax as the mission section moves through view. */
+.mission-verse-wrap{
+    height:58px !important;
+    top:0 !important;
+    padding:1px 0 0 !important;
+    overflow:hidden !important;
+    display:flex !important;
+    align-items:flex-start !important;
+    justify-content:center !important;
+}
+.mission-verse{
+    top:0 !important;
+    left:50% !important;
+    width:max-content !important;
+    max-width:none !important;
+    white-space:nowrap !important;
+    line-height:.95 !important;
+    transform:translate3d(calc(-50% + var(--verse-shift,0px)),0,0) !important;
+    will-change:transform !important;
+}
+
+/* VIDEO — one physical control. It starts vertically centered as a group.
+   On hover the existing orb stays the same element, the text collapses into
+   it, and the orb grows into the exact center of the video. */
+.video-control{
+    position:absolute !important;
+    left:50% !important;
+    top:50% !important;
+    bottom:auto !important;
+    width:max-content !important;
+    height:auto !important;
+    transform:translate(-50%,-50%) !important;
+    display:flex !important;
+    flex-direction:row !important;
+    align-items:center !important;
+    justify-content:center !important;
+    gap:18px !important;
+    z-index:8 !important;
+    pointer-events:none !important;
+    transition:gap .82s cubic-bezier(.22,1,.36,1) !important;
+}
+.play-orb{
+    position:relative !important;
+    flex:0 0 82px !important;
+    width:82px !important;
+    height:82px !important;
+    min-width:82px !important;
+    max-width:82px !important;
+    min-height:82px !important;
+    max-height:82px !important;
+    aspect-ratio:1 / 1 !important;
+    padding:0 !important;
+    border-radius:50% !important;
+    transform:none !important;
+    pointer-events:auto !important;
+    transition:
+        width .82s cubic-bezier(.22,1,.36,1),
+        height .82s cubic-bezier(.22,1,.36,1),
+        flex-basis .82s cubic-bezier(.22,1,.36,1),
+        box-shadow .55s ease,
+        background .35s ease !important;
+}
+.video-info{
+    width:auto !important;
+    max-width:320px !important;
+    overflow:hidden !important;
+    opacity:1 !important;
+    transform:none !important;
+    filter:none !important;
+    white-space:nowrap !important;
+    transition:
+        width .78s cubic-bezier(.22,1,.36,1),
+        max-width .78s cubic-bezier(.22,1,.36,1),
+        opacity .32s ease,
+        transform .78s cubic-bezier(.22,1,.36,1),
+        filter .42s ease !important;
+}
+.video-tile video,
+.video-fallback{
+    transform:scale(1) !important;
+    filter:none !important;
+    transition:transform 1.05s cubic-bezier(.22,1,.36,1),filter .72s ease !important;
+}
+.video-tile:hover::after{
+    background:rgba(0,0,0,.11) !important;
+    backdrop-filter:blur(3.5px) !important;
+    -webkit-backdrop-filter:blur(3.5px) !important;
+}
+.video-tile:hover video,
+.video-tile:hover .video-fallback{
+    transform:scale(1.09) !important;
+    filter:blur(4px) !important;
+}
+/* The text is swallowed toward the orb; the orb itself then occupies the
+   exact center because the flex group collapses to the orb's width. */
+.video-tile:hover .video-info{
+    width:0 !important;
+    max-width:0 !important;
+    opacity:0 !important;
+    transform:translateX(-12px) scale(.94) !important;
+    filter:blur(10px) !important;
+    pointer-events:none !important;
+}
+.video-tile:hover .video-control{
+    gap:0 !important;
+}
+.video-tile:hover .play-orb{
+    width:112px !important;
+    height:112px !important;
+    min-width:112px !important;
+    max-width:112px !important;
+    min-height:112px !important;
+    max-height:112px !important;
+    flex-basis:112px !important;
+    border-radius:50% !important;
+    box-shadow:0 22px 65px rgba(0,0,0,.42),0 0 42px rgba(255,255,255,.16) !important;
+}
+
+/* 20 MILLION — slightly lower, but still with breathing room. */
+.reach-number{top:70% !important}
+.reach-label{
+    top:calc(70% + 38px) !important;
+    font-size:12px !important;
+    letter-spacing:3.6px !important;
+}
+/* No confetti. */
+.reach-confetti{display:none !important}
+
+/* Next page — opaque milk-chocolate brown, with no hero ghosting through it. */
+.stories{
+    background:#6f4939 !important;
+    color:#171313 !important;
+    position:relative !important;
+    z-index:10 !important;
+}
+
+@media(max-width:850px){
+    .mission-verse-wrap{height:50px !important;padding:1px 0 0 !important}
+    .mission-verse{font-size:clamp(12px,3.55vw,22px) !important}
+    .video-control{left:50% !important;top:50% !important;bottom:auto !important}
+    .play-orb{
+        width:70px !important;height:70px !important;
+        min-width:70px !important;max-width:70px !important;
+        min-height:70px !important;max-height:70px !important;
+        flex-basis:70px !important;
+    }
+    .video-tile:hover .play-orb{
+        width:94px !important;height:94px !important;
+        min-width:94px !important;max-width:94px !important;
+        min-height:94px !important;max-height:94px !important;
+        flex-basis:94px !important;
+    }
+    .reach-number{top:70% !important;font-size:56px !important}
+    .reach-label{top:calc(70% + 31px) !important;font-size:9.5px !important}
+}
+
+/* FINAL POLISH — preserve the video animation, fix clipping, and strengthen verse motion */
+.mission-verse-wrap{
+    height:76px !important;
+    padding:8px 42px 0 !important;
+    overflow:hidden !important;
+    display:flex !important;
+    align-items:flex-start !important;
+    justify-content:center !important;
+}
+.mission-verse{
+    top:0 !important;
+    left:50% !important;
+    width:max-content !important;
+    max-width:none !important;
+    white-space:nowrap !important;
+    font-size:clamp(17px,2.72vw,39px) !important;
+    line-height:1 !important;
+    padding:0 42px !important;
+    transform:translate3d(calc(-50% + var(--verse-shift,0px)),0,0) !important;
+    will-change:transform !important;
+}
+
+/* The original video composition stays intact: the existing orb is the only
+   play button. The animation simply lets that same orb grow into the center. */
+.video-control{
+    position:absolute !important;
+    left:50% !important;
+    top:50% !important;
+    bottom:auto !important;
+    width:max-content !important;
+    max-width:calc(100% - 36px) !important;
+    height:auto !important;
+    transform:translate(-50%,-50%) !important;
+    display:flex !important;
+    flex-direction:row !important;
+    align-items:center !important;
+    justify-content:center !important;
+    gap:18px !important;
+    overflow:visible !important;
+    transition:gap .72s cubic-bezier(.16,1,.3,1) !important;
+}
+.play-orb{
+    position:relative !important;
+    flex:0 0 82px !important;
+    width:82px !important;
+    height:82px !important;
+    min-width:82px !important;
+    max-width:82px !important;
+    min-height:82px !important;
+    max-height:82px !important;
+    aspect-ratio:1 / 1 !important;
+    border-radius:50% !important;
+    transition:
+        width .72s cubic-bezier(.16,1,.3,1),
+        height .72s cubic-bezier(.16,1,.3,1),
+        flex-basis .72s cubic-bezier(.16,1,.3,1),
+        box-shadow .55s ease,
+        background .35s ease !important;
+}
+.video-info{
+    width:auto !important;
+    max-width:none !important;
+    flex:0 0 auto !important;
+    overflow:visible !important;
+    white-space:nowrap !important;
+    transform-origin:right center !important;
+    transition:opacity .34s ease,transform .58s cubic-bezier(.22,1,.36,1),filter .45s ease !important;
+}
+.video-watch,.video-name{
+    white-space:nowrap !important;
+    overflow:visible !important;
+}
+.video-tile video,.video-fallback{
+    transition:transform .82s cubic-bezier(.22,1,.36,1),filter .55s ease !important;
+}
+.video-tile:hover::after{
+    background:rgba(0,0,0,.10) !important;
+    backdrop-filter:blur(2.5px) !important;
+    -webkit-backdrop-filter:blur(2.5px) !important;
+}
+.video-tile:hover video,.video-tile:hover .video-fallback{
+    transform:scale(1.055) !important;
+    filter:blur(2px) !important;
+}
+.video-tile:hover .video-info{
+    opacity:0 !important;
+    transform:translateX(-22px) !important;
+    filter:blur(9px) !important;
+    pointer-events:none !important;
+}
+.video-tile:hover .video-control{
+    gap:0 !important;
+}
+.video-tile:hover .play-orb{
+    width:96px !important;
+    height:96px !important;
+    min-width:96px !important;
+    max-width:96px !important;
+    min-height:96px !important;
+    max-height:96px !important;
+    flex-basis:96px !important;
+    border-radius:50% !important;
+    box-shadow:0 18px 55px rgba(0,0,0,.36),0 0 34px rgba(255,255,255,.12) !important;
+}
+
+/* 20 MILLION — a little larger, still compact and visually centered. */
+.reach-number{
+    top:70% !important;
+    font-size:clamp(50px,6.7vw,92px) !important;
+}
+.reach-label{
+    top:calc(70% + 39px) !important;
+    font-size:13px !important;
+    letter-spacing:3.7px !important;
+}
+.reach-confetti{display:none !important}
+
+/* Third page: dark charcoal mixed with brown — warm, but not chocolate-orange. */
+.stories{
+    background:#4b3d38 !important;
+    color:#171313 !important;
+    position:relative !important;
+    z-index:10 !important;
+}
+
+@media(max-width:850px){
+    .mission-verse-wrap{height:58px !important;padding:5px 20px 0 !important}
+    .mission-verse{font-size:clamp(15px,4.15vw,26px) !important;padding:0 18px !important}
+    .video-control{left:50% !important;top:50% !important;bottom:auto !important}
+    .play-orb{width:70px !important;height:70px !important;min-width:70px !important;max-width:70px !important;min-height:70px !important;max-height:70px !important;flex-basis:70px !important}
+    .video-tile:hover .play-orb{width:92px !important;height:92px !important;min-width:92px !important;max-width:92px !important;min-height:92px !important;max-height:92px !important;flex-basis:92px !important}
+    .reach-number{top:70% !important;font-size:62px !important}
+    .reach-label{top:calc(70% + 32px) !important;font-size:10px !important}
+}
+
+\n/* =========================================================\n   OUR DOCTRINE — PHOTO / EDITORIAL GRID\n========================================================= */\n.doctrine-section{\n    position:relative !important;\n    min-height:100svh !important;\n    padding:0 !important;\n    overflow:hidden !important;\n    isolation:isolate !important;\n    background:#3d332f !important;\n    color:#fff !important;\n}\n.doctrine-bg{\n    position:absolute !important;\n    inset:-7% !important;\n    z-index:-3 !important;\n    background-image:url("doctrine-bg.jpg"),url("jonathan.jpg") !important;\n    background-size:cover !important;\n    background-position:center !important;\n    transform:scale(var(--doctrine-zoom,1.09)) !important;\n    will-change:transform !important;\n    filter:saturate(.62) sepia(.16) contrast(.92) brightness(.60) !important;\n}\n.doctrine-overlay{\n    position:absolute !important;\n    inset:0 !important;\n    z-index:-2 !important;\n    background:\n        linear-gradient(90deg,rgba(34,25,21,.72) 0%,rgba(48,35,29,.58) 45%,rgba(37,28,24,.67) 100%),\n        linear-gradient(180deg,rgba(25,20,18,.28),rgba(25,20,18,.52)) !important;\n    pointer-events:none !important;\n}\n.doctrine-frame{\n    position:absolute !important;\n    inset:34px !important;\n    z-index:-1 !important;\n    border:1px solid rgba(255,255,255,.18) !important;\n    pointer-events:none !important;\n}\n.doctrine-layout{\n    position:relative !important;\n    z-index:2 !important;\n    min-height:100svh !important;\n    display:grid !important;\n    grid-template-columns:minmax(330px,.9fr) minmax(0,1.65fr) !important;\n    align-items:stretch !important;\n    width:100% !important;\n    padding:92px 3.4vw 48px !important;\n}\n.doctrine-intro{\n    padding:58px 5vw 40px 0 !important;\n    border-right:1px solid rgba(255,255,255,.15) !important;\n    display:flex !important;\n    flex-direction:column !important;\n    justify-content:flex-start !important;\n}\n.doctrine-label{\n    margin-bottom:22px !important;\n    font-size:10px !important;\n    font-weight:900 !important;\n    letter-spacing:.32em !important;\n    color:rgba(255,255,255,.62) !important;\n}\n.doctrine-intro h2{\n    margin:0 !important;\n    font-size:clamp(62px,7vw,116px) !important;\n    line-height:.82 !important;\n    letter-spacing:-.075em !important;\n    font-weight:900 !important;\n    text-transform:lowercase !important;\n}\n.doctrine-intro p{\n    max-width:430px !important;\n    margin:26px 0 0 !important;\n    color:rgba(255,255,255,.72) !important;\n    font-size:clamp(18px,1.55vw,25px) !important;\n    line-height:1.34 !important;\n}\n.doctrine-grid{\n    display:grid !important;\n    grid-template-columns:1fr 1fr !important;\n    align-content:start !important;\n    margin-left:0 !important;\n}\n.doctrine-item{\n    position:relative !important;\n    min-height:132px !important;\n    padding:30px 26px 28px 34px !important;\n    border-bottom:1px solid rgba(255,255,255,.16) !important;\n    display:grid !important;\n    grid-template-columns:1fr auto !important;\n    gap:18px !important;\n    transition:background .35s ease,transform .35s ease !important;\n}\n.doctrine-item-wide{\n    grid-column:1 / -1 !important;\n    min-height:154px !important;\n}\n.doctrine-item:nth-child(odd){border-right:1px solid rgba(255,255,255,.14) !important}\n.doctrine-item:hover{\n    background:rgba(255,255,255,.055) !important;\n}\n.doctrine-item h3{\n    margin:0 !important;\n    font-size:clamp(19px,1.55vw,29px) !important;\n    line-height:1.05 !important;\n    letter-spacing:-.035em !important;\n    font-weight:800 !important;\n    color:#fff !important;\n}\n.doctrine-item p{\n    max-width:330px !important;\n    margin:10px 0 0 !important;\n    font-size:clamp(13px,1vw,17px) !important;\n    line-height:1.38 !important;\n    color:rgba(255,255,255,.68) !important;\n}\n.doctrine-number{\n    order:2 !important;\n    align-self:start !important;\n    font-size:11px !important;\n    letter-spacing:.08em !important;\n    color:rgba(255,255,255,.55) !important;\n}\n@media(max-width:850px){\n    .doctrine-frame{inset:18px !important}\n    .doctrine-layout{grid-template-columns:1fr !important;padding:82px 24px 34px !important}\n    .doctrine-intro{padding:24px 0 36px !important;border-right:0 !important;border-bottom:1px solid rgba(255,255,255,.15) !important}\n    .doctrine-intro h2{font-size:clamp(55px,15vw,86px) !important}\n    .doctrine-intro p{font-size:17px !important;max-width:560px !important}\n    .doctrine-grid{grid-template-columns:1fr !important}\n    .doctrine-item,.doctrine-item-wide{grid-column:auto !important;min-height:118px !important;padding:25px 4px !important}\n    .doctrine-item:nth-child(odd){border-right:0 !important}\n    .doctrine-bg{filter:saturate(.62) sepia(.16) contrast(.92) brightness(.56) !important}\n}\n
+/* =========================================================
+   FINAL POLISH — BELIEFS GRID / VERSE
+========================================================= */
+.mission-verse-wrap{
+    height:78px !important;
+    padding:8px 28px 0 !important;
+    overflow:hidden !important;
+}
+.mission-verse{
+    font-size:clamp(18px,2.9vw,42px) !important;
+    padding:0 28px !important;
+}
+
+/* Reference-style beliefs grid: every belief gets its own editorial box. */
+.doctrine-section{
+    background:#463a36 !important;
+}
+.doctrine-grid{
+    grid-template-columns:1fr 1fr !important;
+    grid-auto-rows:minmax(132px,auto) !important;
+}
+.doctrine-item,
+.doctrine-item-wide{
+    grid-column:auto !important;
+    min-height:132px !important;
+    box-sizing:border-box !important;
+}
+.doctrine-item:nth-child(odd){
+    border-right:1px solid rgba(255,255,255,.14) !important;
+}
+.doctrine-item:first-child{
+    grid-column:1 !important;
+}
+@media(max-width:850px){
+    .doctrine-grid{grid-template-columns:1fr !important}
+    .doctrine-item:nth-child(odd){border-right:0 !important}
+}
+
+
+
+        /* =========================================================
+           CONNECT / MINISTRY RESOURCES
+        ========================================================== */
+        .connect-links{
+            margin-top:34px;
+            display:grid;
+            grid-template-columns:repeat(3,minmax(0,1fr));
+            border-top:1px solid rgba(255,255,255,.10);
+            border-left:1px solid rgba(255,255,255,.10);
+        }
+        .connect-card{
+            min-height:150px;
+            padding:24px 22px;
+            border-right:1px solid rgba(255,255,255,.10);
+            border-bottom:1px solid rgba(255,255,255,.10);
+            color:inherit;
+            text-decoration:none;
+            transition:background .35s ease,transform .35s ease,border-color .35s ease;
+        }
+        .connect-card:hover{
+            background:rgba(255,255,255,.055);
+            transform:translateY(-3px);
+            border-color:rgba(255,255,255,.20);
+        }
+        .connect-number{
+            display:block;
+            margin-bottom:24px;
+            font-size:10px;
+            font-weight:900;
+            letter-spacing:.25em;
+            opacity:.55;
+        }
+        .connect-title{
+            font-size:clamp(19px,2vw,28px);
+            font-weight:900;
+            letter-spacing:-.025em;
+            text-transform:uppercase;
+        }
+        .connect-copy{
+            margin-top:10px;
+            max-width:320px;
+            font-size:13px;
+            line-height:1.55;
+            color:rgba(255,255,255,.58);
+        }
+        .connect-arrow{
+            float:right;
+            margin-top:-24px;
+            font-size:20px;
+            opacity:.65;
+            transition:transform .35s ease,opacity .35s ease;
+        }
+        .connect-card:hover .connect-arrow{
+            transform:translate(4px,-4px);
+            opacity:1;
+        }
+        @media(max-width:800px){
+            .connect-links{grid-template-columns:repeat(2,minmax(0,1fr))}
+        }
+        @media(max-width:520px){
+            .connect-links{grid-template-columns:1fr}
+            .connect-card{min-height:130px}
+        }
+</style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================================================
+         CUSTOM CURSOR
+    ========================================================== -->
+
+    <div class="custom-cursor"></div>
+
+    <div class="custom-cursor-glow"></div>
+
+
+
+    <!-- =========================================================
+         NAVIGATION
+    ========================================================== -->
+
+    <nav class="nav">
+
+
+        <div class="logo">
+
+            <span>
+                JESUS
+            </span>
+
+            <span>
+                TO THE WORLD
+            </span>
+
+        </div>
+
+
+        <div class="nav-right">
+
+
+            <div class="nav-links">
+
+                <a href="#stories">
+                    STORIES
+                </a>
+
+                <a href="#mission">
+                    MISSION
+                </a>
+
+                <a href="#book">
+                    BOOK JONATHAN
+                </a>
+
+                <a href="#shop">
+                    SHOP
+                </a>
+
+                <a href="#connect">
+                    CONNECT
+                </a>
+
+            </div>
+
+
+            <a
+                href="#give"
+                class="nav-donate"
+            >
+
+                DONATE →
+
+            </a>
+
+
+        </div>
+
+
+    </nav>
+
+
+
+    <!-- =========================================================
+         HERO
+    ========================================================== -->
+
+    <section
+        class="hero snap-section"
+        id="top"
+    >
+
+
+        <div class="hero-background"></div>
+
+
+        <div class="hero-vignette"></div>
+
+
+        <div class="hero-bottom-gradient"></div>
+
+
+        <div class="hero-fire"></div>
+
+
+        <div class="hero-content">
+
+
+            <div class="hero-eyebrow">
+
+                BY THE WILL OF GOD
+
+            </div>
+
+
+            <h1 class="hero-title">
+
+
+                <span class="line">
+                    JESUS
+                </span>
+
+
+                <span class="line">
+                    TO THE
+                </span>
+
+
+                <span class="line accent">
+                    WORLD
+                </span>
+
+
+            </h1>
+
+
+            <div class="hero-ministry">
+
+                MINISTRY
+
+            </div>
+
+
+            <div class="hero-bottom">
+
+
+                <p class="hero-mission">
+
+                    <strong>
+                        SEEKING TO SAVE THE LOST.
+                    </strong>
+
+                </p>
+
+
+                <div class="hero-actions">
+
+
+                    <a
+                        href="#stories"
+                        class="cta cta-primary"
+                    >
+
+                        WATCH THE MISSION
+
+                    </a>
+
+
+                    <a
+                        href="#give"
+                        class="cta cta-secondary"
+                    >
+
+                        DONATE
+
+                    </a>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+        <div class="scroll-indicator">
+
+            SCROLL ↓
+
+        </div>
+
+
+    </section>
+
+
+
+    <div class="fire-line"></div>
+
+
+
+    <!-- =========================================================
+         SECOND PAGE — IMPACT / PARTNERSHIP
+    ========================================================== -->
+
+    <section
+        class="mission"
+        id="mission"
+    >
+
+        <div class="mission-verse-wrap">
+            <div class="mission-verse" id="missionVerse">
+                “I HAVE COME THAT THEY MAY HAVE LIFE, AND LIFE MORE ABUNDANTLY.”
+            </div>
+        </div>
+
+        <div class="mission-inner">
+
+            <div class="mission-top">
+                <div class="mission-person">
+                    <div class="mission-label">JONATHAN PERDE</div>
+                    <div class="mission-role">Evangelist + Son of the Most High</div>
+                </div>
+                <div class="mission-label fire-label">PARTNER WITH THE MISSION</div>
+            </div>
+
+            <blockquote class="mission-quote">
+                “Every dollar sown <em>fuels the fire</em> for the furtherment of God's Kingdom and supports the completion of the Great Commission.”
+            </blockquote>
+
+            <div class="mission-support-row">
+                <p class="mission-copy">
+                    Your generosity transforms lives and helps carry the message of Jesus throughout the nations of the world. Every gift helps create opportunities to preach the Gospel, reach the lost, and keep the fire moving.
+                </p>
+
+                <a href="#give" class="fuel-link">
+                    <span class="fuel-dot"></span>
+                    FUEL THE FLAME →
+                </a>
+            </div>
+
+            <div class="media-grid">
+
+                <article class="video-tile" id="videoTile">
+                    <div class="video-fallback"></div>
+                    <video id="missionVideo" preload="metadata" playsinline muted loop>
+                        <!-- MEDIA SLOT: place mission-video.mp4 beside index.html -->
+          <source src="mission-video.mp4" type="video/mp4">
+                    </video>
+                    <div class="video-shade"></div>
+
+                    <div class="video-control" id="videoControl">
+                        <button class="play-orb" id="playButton" aria-label="Play mission video">
+                            <span>▶</span>
+                        </button>
+                        <div class="video-info">
+                            <div class="video-watch">WATCH NOW</div>
+                            <div class="video-name">JONATHAN PERDE MINISTRIES</div>
+                        </div>
+                    </div>
+                </article>
+
+                <a href="#about" class="meet-tile" aria-label="Meet Jonathan">
+                    <div class="meet-image"></div>
+                    <div class="meet-arrow">↗</div>
+                    <div class="meet-content">
+                        <div class="meet-title">MEET JONATHAN</div>
+                        <p class="meet-copy">
+                            After an encounter with Jesus, Jonathan felt a burning fire inside — a fire that could not stay contained…
+                        </p>
+                    </div>
+                </a>
+
+            </div>
+
+            <div class="reach" id="reachScene">
+                <div class="reach-scene" aria-hidden="true">
+                    <div class="reach-floor"></div>
+                    <div class="reach-confetti" id="reachConfetti"></div>
+                    <div class="reach-crowd" id="reachCrowd"></div>
+                </div>
+                <div class="reach-number">20 MILLION</div>
+                <div class="reach-label">REACHED SINCE 2025</div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================================
+         OUR DOCTRINE
+    ========================================================== -->
+
+    <section class="stories doctrine-section snap-section" id="stories">
+
+        <div class="doctrine-bg" aria-hidden="true"></div>
+        <div class="doctrine-overlay" aria-hidden="true"></div>
+        <div class="doctrine-frame" aria-hidden="true"></div>
+
+        <div class="doctrine-layout">
+
+            <div class="doctrine-intro">
+                <div class="doctrine-label">OUR BELIEFS</div>
+                <h2>our beliefs</h2>
+                <p>These principles guide our lives, our ministry, and all that we do, rooted in the Gospel of Christ.</p>
+            </div>
+
+            <div class="doctrine-grid">
+
+                <article class="doctrine-item">
+                    <span class="doctrine-number">01</span>
+                    <div>
+                        <h3>Scriptures Inspired</h3>
+                        <p>The Bible is God's infallible Word, guiding faith and conduct.</p>
+                    </div>
+                </article>
+
+                <article class="doctrine-item">
+                    <span class="doctrine-number">02</span>
+                    <div>
+                        <h3>The One True God</h3>
+                        <p>God reveals Himself as Father, Son, and Holy Spirit.</p>
+                    </div>
+                </article>
+
+                <article class="doctrine-item">
+                    <span class="doctrine-number">03</span>
+                    <div>
+                        <h3>Man's Fall and Redemption</h3>
+                        <p>Man fell through sin, and redemption is only through Jesus Christ.</p>
+                    </div>
+                </article>
+
+                <article class="doctrine-item">
+                    <span class="doctrine-number">04</span>
+                    <div>
+                        <h3>Salvation</h3>
+                        <p>Salvation is by God's grace, through faith in Jesus Christ.</p>
+                    </div>
+                </article>
+
+                <article class="doctrine-item">
+                    <span class="doctrine-number">05</span>
+                    <div>
+                        <h3>Promise of the Holy Spirit</h3>
+                        <p>Believers should seek the Holy Spirit for power in life and ministry.</p>
+                    </div>
+                </article>
+
+                <article class="doctrine-item">
+                    <span class="doctrine-number">06</span>
+                    <div>
+                        <h3>Sanctification</h3>
+                        <p>God calls believers to holiness, empowered by the Holy Spirit.</p>
+                    </div>
+                </article>
+
+                <article class="doctrine-item">
+                    <span class="doctrine-number">07</span>
+                    <div>
+                        <h3>The Church</h3>
+                        <p>The church is the Body of Christ, fulfilling His commission.</p>
+                    </div>
+                </article>
+
+                <article class="doctrine-item">
+                    <span class="doctrine-number">08</span>
+                    <div>
+                        <h3>Ministry</h3>
+                        <p>God provides ministers for evangelism and building up the church.</p>
+                    </div>
+                </article>
+
+                <article class="doctrine-item">
+                    <span class="doctrine-number">09</span>
+                    <div>
+                        <h3>Marriage</h3>
+                        <p>Marriage is a covenant between a man and a woman.</p>
+                    </div>
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================================
+         THE CALL
+    ========================================================== -->
+
+    <section
+        class="statement snap-section"
+        id="about"
+    >
+
+
+        <div class="statement-inner">
+
+
+            <div class="statement-small">
+
+                THE CALL
+
+            </div>
+
+
+            <h2>
+
+                WE WILL
+                <br>
+
+                <span class="orange">
+                    GO.
+                </span>
+
+            </h2>
+
+
+            <p class="statement-copy">
+
+                We don't want people to simply watch
+                the mission.
+
+                We want people to join it.
+
+                <br><br>
+
+                Pray.
+                Speak.
+                Love.
+                Give.
+                Go.
+
+            </p>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =========================================================
+         BOOK JONATHAN
+    ========================================================== -->
+
+    <section
+        class="book-section snap-section"
+        id="book"
+    >
+
+
+        <div class="book-inner">
+
+
+            <div class="book-label">
+
+                03 — BOOK JONATHAN
+
+            </div>
+
+
+            <h2 class="book-title">
+
+                BRING THE
+                <br>
+
+                MESSAGE TO
+                <br>
+
+                <span class="orange">
+                    YOUR CITY.
+                </span>
+
+            </h2>
+
+
+            <p class="book-copy">
+
+                Bring the Jesus To The World ministry
+                to your city, church, school, campus,
+                event, or community.
+
+                More details about booking and
+                invitations will live here.
+
+            </p>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =========================================================
+         GIVE
+    ========================================================== -->
+
+    <section
+        class="give snap-section"
+        id="give"
+    >
+
+
+        <div class="give-inner">
+
+
+            <div class="give-label">
+
+                04 — PARTNER WITH THE MISSION
+
+            </div>
+
+
+            <h2>
+
+                DON'T JUST
+                <br>
+
+                <span class="orange">
+                    WATCH.
+                </span>
+
+                <br>
+
+                GO.
+
+            </h2>
+
+
+            <p>
+
+                The mission belongs to every believer.
+
+                Your generosity helps us go farther,
+                reach more people, and take the Gospel
+                beyond the walls.
+
+            </p>
+
+
+            <a
+                href="#"
+                class="cta cta-primary"
+            >
+
+                SUPPORT THE MISSION →
+
+            </a>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =========================================================
+         CONNECT / FOOTER
+    ========================================================== -->
+
+    <footer id="connect">
+
+        <div class="footer-brand" id="shop">
+            JESUS TO THE WORLD
+        </div>
+
+        <div class="connect-links" id="contact-links">
+
+            <a class="connect-card" href="#mission">
+                <span class="connect-number">01</span>
+                <span class="connect-title">Ministry Information</span>
+                <span class="connect-arrow">↗</span>
+                <p class="connect-copy">Mission, vision, ministry story, beliefs, outreach, and what Jesus To The World exists to do.</p>
+            </a>
+
+            <a class="connect-card" href="#connect">
+                <span class="connect-number">02</span>
+                <span class="connect-title">Brand Partnerships</span>
+                <span class="connect-arrow">↗</span>
+                <p class="connect-copy">For organizations and brands interested in partnering with the ministry and its mission.</p>
+            </a>
+
+            <a class="connect-card" href="#connect">
+                <span class="connect-number">03</span>
+                <span class="connect-title">Media Kit</span>
+                <span class="connect-arrow">↗</span>
+                <p class="connect-copy">Press photos, biography, ministry information, logos, social resources, and downloadable media assets.</p>
+            </a>
+
+            <a class="connect-card" href="#connect">
+                <span class="connect-number">04</span>
+                <span class="connect-title">Contact</span>
+                <span class="connect-arrow">↗</span>
+                <p class="connect-copy">General inquiries, ministry questions, invitations, partnerships, and other messages.</p>
+            </a>
+
+            <a class="connect-card" href="#give">
+                <span class="connect-number">05</span>
+                <span class="connect-title">Donations</span>
+                <span class="connect-arrow">↗</span>
+                <p class="connect-copy">Support the mission and help carry the Gospel beyond the walls and into the streets, cities, and nations.</p>
+            </a>
+
+            <div class="connect-card">
+                <span class="connect-number">06</span>
+                <span class="connect-title">Social Links</span>
+                <span class="connect-arrow">↗</span>
+                <p class="connect-copy">Instagram · TikTok · YouTube · Facebook · Snapchat</p>
+            </div>
+
+        </div>
+
+        <div style="margin-top:34px;display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;opacity:.62;">
+            <div>SHOP · BOOK JONATHAN · CONNECT</div>
+            <div>© 2026 JESUS TO THE WORLD</div>
+        </div>
+
+    </footer>
+
+
+
+    <!-- =========================================================
+         JAVASCRIPT
+    ========================================================== -->
+
+    <script>
+
+
+        /* =========================================================
+           ALWAYS START AT THE TOP
+        ========================================================== */
+
+        function startAtTop() {
+
+            window.scrollTo({
+                top: 0,
+                left: 0,
+                behavior: "instant"
+            });
+
+        }
+
+
+        startAtTop();
+
+
+        window.addEventListener(
+            "load",
+            startAtTop
+        );
+
+
+        window.addEventListener(
+            "pageshow",
+            startAtTop
+        );
+
+
+
+        /* =========================================================
+           CUSTOM CURSOR
+        ========================================================== */
+
+        const cursor =
+            document.querySelector(
+                ".custom-cursor"
+            );
+
+
+        const cursorGlow =
+            document.querySelector(
+                ".custom-cursor-glow"
+            );
+
+
+        let mouseX =
+            window.innerWidth / 2;
+
+
+        let mouseY =
+            window.innerHeight / 2;
+
+
+        let cursorX =
+            mouseX;
+
+
+        let cursorY =
+            mouseY;
+
+
+        let glowX =
+            mouseX;
+
+
+        let glowY =
+            mouseY;
+
+
+        let lastParticle =
+            0;
+
+
+        document.addEventListener(
+            "mousemove",
+            (event) => {
+
+
+                mouseX =
+                    event.clientX;
+
+
+                mouseY =
+                    event.clientY;
+
+
+                cursor.style.opacity =
+                    "1";
+
+
+                cursorGlow.style.opacity =
+                    ".8";
+
+
+                const now =
+                    performance.now();
+
+
+                /*
+                 * Lightweight ember frequency.
+                 * This is intentionally restrained
+                 * to protect performance.
+                 */
+
+                if (
+                    now -
+                    lastParticle
+                    >
+                    90
+                ) {
+
+                    createEmber(
+                        mouseX,
+                        mouseY
+                    );
+
+
+                    lastParticle =
+                        now;
+
+                }
+
+            }
+        );
+
+
+        function animateCursor() {
+
+
+            /*
+             * Responsive main cursor.
+             */
+
+            cursorX +=
+                (
+                    mouseX -
+                    cursorX
+                ) * .45;
+
+
+            cursorY +=
+                (
+                    mouseY -
+                    cursorY
+                ) * .45;
+
+
+            /*
+             * Softer glow trail.
+             */
+
+            glowX +=
+                (
+                    mouseX -
+                    glowX
+                ) * .17;
+
+
+            glowY +=
+                (
+                    mouseY -
+                    glowY
+                ) * .17;
+
+
+            cursor.style.left =
+                `${cursorX}px`;
+
+
+            cursor.style.top =
+                `${cursorY}px`;
+
+
+            cursorGlow.style.left =
+                `${glowX}px`;
+
+
+            cursorGlow.style.top =
+                `${glowY}px`;
+
+
+            requestAnimationFrame(
+                animateCursor
+            );
+
+        }
+
+
+        animateCursor();
+
+
+
+        /* =========================================================
+           EMBER PARTICLES
+        ========================================================== */
+
+        function createEmber(
+            x,
+            y
+        ) {
+
+
+            const ember =
+                document.createElement(
+                    "div"
+                );
+
+
+            ember.className =
+                "cursor-ember";
+
+
+            document.body.appendChild(
+                ember
+            );
+
+
+            const size =
+                2 +
+                Math.random()
+                * 2.3;
+
+
+            ember.style.width =
+                `${size}px`;
+
+
+            ember.style.height =
+                `${size}px`;
+
+
+            ember.style.left =
+                `${x}px`;
+
+
+            ember.style.top =
+                `${y}px`;
+
+
+            ember.style.opacity =
+                ".68";
+
+
+            const driftX =
+                (
+                    Math.random() -
+                    .5
+                ) * 22;
+
+
+            const driftY =
+                -10 -
+                Math.random()
+                * 28;
+
+
+            const duration =
+                430 +
+                Math.random()
+                * 250;
+
+
+            const start =
+                performance.now();
+
+
+            function animateEmber(
+                now
+            ) {
+
+
+                const progress =
+                    Math.min(
+                        (
+                            now -
+                            start
+                        )
+                        /
+                        duration,
+                        1
+                    );
+
+
+                const ease =
+                    1 -
+                    Math.pow(
+                        1 -
+                        progress,
+                        2
+                    );
+
+
+                ember.style.transform =
+                    `
+                    translate3d(
+                        ${
+                            driftX *
+                            ease
+                        }px,
+
+                        ${
+                            driftY *
+                            ease
+                        }px,
+
+                        0
+                    )
+                    scale(
+                        ${
+                            1 -
+                            ease *
+                            .7
+                        }
+                    )
+                    `;
+
+
+                ember.style.opacity =
+                    (
+                        .68 *
+                        (
+                            1 -
+                            progress
+                        )
+                    ).toFixed(
+                        2
+                    );
+
+
+                if (
+                    progress <
+                    1
+                ) {
+
+                    requestAnimationFrame(
+                        animateEmber
+                    );
+
+                } else {
+
+                    ember.remove();
+
+                }
+
+            }
+
+
+            requestAnimationFrame(
+                animateEmber
+            );
+
+        }
+
+
+
+        /* =========================================================
+           CURSOR HOVER STATES
+        ========================================================== */
+
+        document
+            .querySelectorAll(
+                "a, button, .story-card, .video-tile, .meet-tile"
+            )
+            .forEach(
+                (element) => {
+
+
+                    element.addEventListener(
+                        "mouseenter",
+                        () => {
+
+                            cursor.classList.add(
+                                "hovering"
+                            );
+
+                        }
+                    );
+
+
+                    element.addEventListener(
+                        "mouseleave",
+                        () => {
+
+                            cursor.classList.remove(
+                                "hovering"
+                            );
+
+                        }
+                    );
+
+
+                }
+            );
+
+
+
+        /* =========================================================
+           CLICK EFFECT
+        ========================================================== */
+
+        document.addEventListener(
+            "mousedown",
+            () => {
+
+                cursor.classList.add(
+                    "clicking"
+                );
+
+            }
+        );
+
+
+        document.addEventListener(
+            "mouseup",
+            () => {
+
+                cursor.classList.remove(
+                    "clicking"
+                );
+
+            }
+        );
+
+
+
+        /* =========================================================
+           CINEMATIC FIRST TRANSITION / VERSE MOTION
+        ========================================================== */
+
+        const missionSection = document.querySelector("#mission");
+        const missionVerse = document.querySelector("#missionVerse");
+
+        function updateMissionVerse(){
+            if(!missionSection || !missionVerse) return;
+            const rect = missionSection.getBoundingClientRect();
+            const range = Math.max(1, window.innerHeight + rect.height);
+            const progress = Math.max(0, Math.min(1, (window.innerHeight - rect.top) / range));
+            const shift = (progress - .5) * 190;
+            missionVerse.style.setProperty("--verse-shift", `${shift.toFixed(1)}px`);
+        }
+
+        window.addEventListener("scroll", updateMissionVerse, { passive:true });
+        window.addEventListener("resize", updateMissionVerse);
+        updateMissionVerse();
+
+        /* =========================================================
+           FAST 20 MILLION CONFETTI BURST
+        ========================================================== */
+
+        const reachScene = document.querySelector("#reachScene");
+        const reachConfetti = document.querySelector("#reachConfetti");
+        const reachNumber = document.querySelector(".reach-number");
+
+        function buildReachConfetti(){
+            if(!reachConfetti) return;
+            reachConfetti.innerHTML = "";
+            const count = window.innerWidth < 600 ? 28 : 46;
+            const colors = [
+                "#ff3b30", "#ff9500", "#ffcc00", "#34c759",
+                "#00c7be", "#007aff", "#5856d6", "#af52de",
+                "#ff2d55", "#111111"
+            ];
+
+            for(let i=0;i<count;i++){
+                const piece = document.createElement("span");
+                piece.className = "confetti-piece";
+                piece.style.setProperty("--c", colors[i % colors.length]);
+                piece.dataset.side = i % 2 === 0 ? "left" : "right";
+                piece.dataset.lane = String(i % 9);
+                piece.dataset.offset = String((i * 17 % 100) / 100);
+                reachConfetti.appendChild(piece);
+            }
+        }
+
+        function updateReachScene(){
+            if(!reachScene || !reachConfetti) return;
+
+            const rect = reachScene.getBoundingClientRect();
+            const raw = (window.innerHeight * .88 - rect.top) /
+                (window.innerHeight * .62 + rect.height);
+            const progress = Math.max(0, Math.min(1, raw));
+            const pieces = reachConfetti.querySelectorAll(".confetti-piece");
+
+            /* The number itself barely moves — it rises a touch, then settles,
+               keeping the section feeling like a quick cinematic handoff. */
+            if(reachNumber){
+                const rise = Math.min(progress / .28, 1);
+                const fall = Math.max(0, (progress - .28) / .72);
+                const y = -62 - (rise * 4) + (fall * 8);
+                reachNumber.style.transform =
+                    `translate(-50%,${y}%) translateZ(100px)`;
+            }
+
+            pieces.forEach((piece,i)=>{
+                const lane = parseInt(piece.dataset.lane,10) || 0;
+                const side = piece.dataset.side === "left" ? -1 : 1;
+                const delay = (parseFloat(piece.dataset.offset) || 0) * .06;
+                const p = Math.max(0, Math.min(1, (progress - delay) / .48));
+
+                /* Actual text-edge origin: measure the rendered 20 MILLION width
+                   so the burst always starts at the lettering, not an arbitrary
+                   fixed point. */
+                const numberRect = reachNumber
+                    ? reachNumber.getBoundingClientRect()
+                    : {left:window.innerWidth/2-100,right:window.innerWidth/2+100,top:0};
+                const edgeX = side < 0 ? numberRect.left - 4 : numberRect.right + 4;
+                const centerY = numberRect.top + numberRect.height * .58;
+
+                /* Fast outward boom, then a short gravity drop. */
+                const burst = Math.min(p / .34, 1);
+                const fall = Math.max(0, (p - .34) / .66);
+                const spreadX = (54 + lane * 14) * side * burst;
+                const riseY = -(30 + lane * 7) * burst;
+                const gravityY = Math.pow(fall, 1.55) * (70 + lane * 11);
+                const driftX = side * lane * 3;
+
+                piece.style.left = `${edgeX}px`;
+                piece.style.top = `${centerY}px`;
+                piece.style.opacity = String(
+                    p < .72 ? Math.min(.92, p * 2.3) : Math.max(0, .92 - (p-.72)*2.9)
+                );
+                piece.style.transform =
+                    `translate3d(${spreadX + driftX}px,${riseY + gravityY}px,45px) rotate(${i*61 + p*540}deg)`;
+            });
+        }
+
+        buildReachConfetti();
+        updateReachScene();
+        window.addEventListener("scroll", updateReachScene, {passive:true});
+        window.addEventListener("resize", ()=>{
+            buildReachConfetti();
+            updateReachScene();
+        });
+
+
+        /* =========================================================
+           VIDEO PLAY INTERACTION
+        ========================================================== */
+
+        const missionVideo = document.querySelector("#missionVideo");
+        const playButton = document.querySelector("#playButton");
+        const videoTile = document.querySelector("#videoTile");
+
+        function toggleMissionVideo(){
+            if(!missionVideo || !playButton) return;
+            if(missionVideo.paused){
+                missionVideo.play().catch(() => {});
+                playButton.innerHTML = "<span>Ⅱ</span>";
+            }else{
+                missionVideo.pause();
+                playButton.innerHTML = "<span>▶</span>";
+            }
+        }
+
+        if(playButton){
+            playButton.addEventListener("click", function(event){
+                event.stopPropagation();
+                toggleMissionVideo();
+            });
+        }
+
+        if(videoTile){
+            videoTile.addEventListener("click", function(event){
+                if(event.target !== playButton && !playButton.contains(event.target)){
+                    toggleMissionVideo();
+                }
+            });
+        }
+
+        if(missionVideo){
+            missionVideo.addEventListener("play", () => {
+                if(playButton) playButton.innerHTML = "<span>Ⅱ</span>";
+            });
+            missionVideo.addEventListener("pause", () => {
+                if(playButton) playButton.innerHTML = "<span>▶</span>";
+            });
+        }
+
+    </script>
+
+
+\n<script>\n/* OUR DOCTRINE — background photo slowly zooms outward as the section scrolls */\n(function(){\n    const section=document.querySelector("#stories");\n    if(!section) return;\n    const update=()=>{\n        const rect=section.getBoundingClientRect();\n        const travel=Math.max(1,window.innerHeight+rect.height);\n        const p=Math.max(0,Math.min(1,(window.innerHeight-rect.top)/travel));\n        const zoom=(1.16-(p*.09)).toFixed(4);\n        section.style.setProperty("--doctrine-zoom",zoom);\n    };\n    window.addEventListener("scroll",update,{passive:true});\n    window.addEventListener("resize",update);\n    update();\n})();\n</script>\n</body>
+
+</html>
