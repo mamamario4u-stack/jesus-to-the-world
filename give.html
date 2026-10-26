@@ -1,1651 +1,1436 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Give | Jesus To The World Ministry</title>
+
+  <meta
+    name="description"
+    content="Partner with Jesus To The World Ministry to share the Gospel and reach the lost. Give securely and support the Great Commission."
+  >
+
+  <meta name="theme-color" content="#0b0b0b">
+
+  <style>
+    :root {
+      --background: #090909;
+      --surface: #121212;
+      --surface-light: #191919;
+      --orange: #ff642d;
+      --orange-light: #ff8a48;
+      --text: #ffffff;
+      --muted: #a5a5a5;
+      --border: rgba(255, 255, 255, 0.11);
+      --green: #6ee7a0;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-<title>Jesus To The World Ministry | Seeking to Save the Lost</title>
-
-<meta name="description" content="Jesus To The World Ministry exists to preach the Gospel, reach the lost, and bring the hope of Jesus Christ to the streets, cities, and nations.">
-
-<meta name="theme-color" content="#101010">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-<style>
-:root {
-    --background: #101010;
-    --background-light: #171717;
-    --orange: #ff5722;
-    --orange-light: #ff7948;
-    --white: #ffffff;
-    --muted: #b8b8b8;
-    --border: rgba(255,255,255,0.12);
-    --font-heading: 'Oswald', sans-serif;
-    --font-body: 'DM Sans', sans-serif;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-    background: var(--background);
-}
-
-body {
-    font-family: var(--font-body);
-    background: var(--background);
-    color: var(--white);
-    overflow-x: hidden;
-    line-height: 1.6;
-}
-
-a {
-    color: inherit;
-    text-decoration: none;
-}
-
-button, a {
-    -webkit-tap-highlight-color: transparent;
-}
-
-img {
-    display: block;
-    max-width: 100%;
-}
-
-.container {
-    width: min(1180px, 90%);
-    margin: 0 auto;
-}
-
-.section {
-    padding: 110px 0;
-}
-
-.eyebrow {
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-    color: var(--orange-light);
-    text-transform: uppercase;
-    font-size: 12px;
-    letter-spacing: 3px;
-    font-weight: 800;
-    margin-bottom: 22px;
-}
-
-.eyebrow::before {
-    content: "";
-    height: 2px;
-    width: 30px;
-    background: var(--orange);
-}
-
-h1, h2, h3 {
-    font-family: var(--font-heading);
-    text-transform: uppercase;
-    line-height: 1.05;
-    font-weight: 600;
-}
-
-h2 {
-    font-size: clamp(38px, 5vw, 64px);
-    letter-spacing: -1px;
-}
-
-.section-description {
-    color: var(--muted);
-    max-width: 650px;
-    font-size: 16px;
-    line-height: 1.9;
-    margin-top: 22px;
-}
-
-.accent {
-    color: var(--orange);
-}
-
-.button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    padding: 16px 25px;
-    min-height: 54px;
-    background: var(--orange);
-    border: 1px solid var(--orange);
-    color: white;
-    font-size: 12px;
-    font-weight: 800;
-    letter-spacing: 1.4px;
-    text-transform: uppercase;
-    transition: transform .25s ease, background .25s ease,
-                box-shadow .25s ease;
-}
-
-.button:hover {
-    background: var(--orange-light);
-    transform: translateY(-3px);
-    box-shadow: 0 12px 35px rgba(255,87,34,.24);
-}
-
-.button-outline {
-    background: transparent;
-    border-color: rgba(255,255,255,.35);
-}
-
-.button-outline:hover {
-    background: white;
-    color: #111;
-    border-color: white;
-}
-
-.button-arrow {
-    font-size: 18px;
-    transition: transform .25s ease;
-}
-
-.button:hover .button-arrow {
-    transform: translateX(4px);
-}
-
-/* NAVIGATION */
-
-.site-header {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 100;
-    border-bottom: 1px solid rgba(255,255,255,.12);
-    background: rgba(12,12,12,.42);
-    backdrop-filter: blur(12px);
-}
-
-.navbar {
-    min-height: 88px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 25px;
-}
-
-.brand {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    flex-shrink: 0;
-}
-
-.brand-symbol {
-    width: 43px;
-    height: 43px;
-    display: grid;
-    place-items: center;
-    background: var(--orange);
-    font-family: var(--font-heading);
-    font-size: 25px;
-    font-weight: 700;
-    clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
-    padding-top: 9px;
-}
-
-.brand-text {
-    font-family: var(--font-heading);
-    font-size: 17px;
-    line-height: 1.15;
-    letter-spacing: .5px;
-    text-transform: uppercase;
-}
-
-.brand-text small {
-    display: block;
-    color: #ccc;
-    font-family: var(--font-body);
-    font-size: 9px;
-    font-weight: 700;
-    letter-spacing: 2px;
-    margin-top: 5px;
-}
-
-.nav-links {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    gap: 28px;
-    margin-left: auto;
-}
-
-.nav-links > a:not(.nav-donate) {
-    color: #f0f0f0;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    transition: color .2s ease;
-}
-
-.nav-links > a:not(.nav-donate):hover {
-    color: var(--orange-light);
-}
-
-.nav-donate {
-    padding: 13px 17px;
-    background: var(--orange);
-    font-size: 10px;
-    font-weight: 800;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    box-shadow: 0 0 0 rgba(255,87,34,0);
-    transition: box-shadow .25s ease, transform .25s ease;
-}
-
-.nav-donate:hover {
-    box-shadow: 0 0 28px rgba(255,87,34,.4);
-    transform: translateY(-2px);
-}
-
-.menu-toggle {
-    display: none;
-    color: white;
-    background: transparent;
-    border: 1px solid var(--border);
-    font-size: 24px;
-    width: 44px;
-    height: 44px;
-    cursor: pointer;
-}
-
-/* HERO */
-
-.hero {
-    position: relative;
-    min-height: 790px;
-    min-height: 100svh;
-    display: flex;
-    align-items: center;
-    isolation: isolate;
-    overflow: hidden;
-    background: #111;
-}
-
-.hero::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    z-index: -2;
-    background-image:
-        linear-gradient(90deg,
-            rgba(8,8,8,.96) 0%,
-            rgba(8,8,8,.82) 42%,
-            rgba(8,8,8,.34) 100%),
-        linear-gradient(0deg,
-            rgba(16,16,16,.95) 0%,
-            transparent 38%),
-        url("hero.jpg");
-    background-position: center, center, center 35%;
-    background-size: cover;
-    background-repeat: no-repeat;
-    transform: scale(1.02);
-    animation: heroReveal 1.4s ease both;
-}
-
-.hero::after {
-    content: "";
-    position: absolute;
-    z-index: -1;
-    width: 650px;
-    height: 650px;
-    border-radius: 50%;
-    right: -300px;
-    top: 10%;
-    background: rgba(255,76,25,.12);
-    filter: blur(100px);
-    pointer-events: none;
-}
-
-@keyframes heroReveal {
-    from { opacity: .4; transform: scale(1.08); }
-    to { opacity: 1; transform: scale(1.02); }
-}
-
-.hero-content {
-    width: min(820px, 100%);
-    padding-top: 100px;
-    padding-bottom: 100px;
-}
-
-.hero-label {
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-    font-size: 11px;
-    letter-spacing: 3px;
-    font-weight: 800;
-    text-transform: uppercase;
-    color: #eee;
-    margin-bottom: 28px;
-}
-
-.hero-label span {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: var(--orange);
-    box-shadow: 0 0 18px var(--orange);
-}
-
-.hero h1 {
-    font-size: clamp(55px, 8.4vw, 112px);
-    letter-spacing: -2px;
-    line-height: .98;
-    max-width: 900px;
-    text-shadow: 0 4px 30px rgba(0,0,0,.35);
-}
-
-.hero h1 .line-orange {
-    color: var(--orange);
-}
-
-.hero-description {
-    margin-top: 30px;
-    max-width: 560px;
-    color: #e0e0e0;
-    font-size: 16px;
-    line-height: 1.9;
-}
-
-.hero-buttons {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 14px;
-    margin-top: 35px;
-}
-
-.hero-footnote {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-top: 55px;
-    color: #ccc;
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-}
-
-.hero-footnote::before {
-    content: "";
-    height: 1px;
-    width: 38px;
-    background: var(--orange);
-}
-
-/* SCRIPTURE STRIP */
-
-.scripture-strip {
-    overflow: hidden;
-    background: var(--orange);
-    color: #fff;
-    padding: 17px 0;
-}
-
-.scripture-track {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 14px 30px;
-    width: 90%;
-    margin: 0 auto;
-    font-family: var(--font-heading);
-    font-size: 15px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-}
-
-.scripture-track span {
-    opacity: .95;
-}
-
-.scripture-track .separator {
-    font-size: 10px;
-    opacity: .6;
-}
-
-/* MISSION */
-
-.mission {
-    position: relative;
-    background: var(--background);
-    overflow: hidden;
-}
-
-.mission::before {
-    content: "LIFE";
-    position: absolute;
-    top: 0;
-    right: -25px;
-    font-family: var(--font-heading);
-    font-size: clamp(180px, 30vw, 420px);
-    line-height: 1;
-    font-weight: 700;
-    color: rgba(255,255,255,.018);
-    pointer-events: none;
-}
-
-.mission-grid {
-    position: relative;
-    display: grid;
-    grid-template-columns: 1.05fr .95fr;
-    gap: 90px;
-    align-items: center;
-}
-
-.mission-copy h2 {
-    max-width: 620px;
-}
-
-.mission-copy p {
-    margin-top: 25px;
-    max-width: 600px;
-    color: var(--muted);
-    font-size: 15px;
-    line-height: 2;
-}
-
-.mission-verse {
-    margin-top: 30px;
-    padding-left: 20px;
-    border-left: 2px solid var(--orange);
-}
-
-.mission-verse p {
-    margin: 0;
-    color: #eee;
-    font-family: var(--font-heading);
-    font-size: 22px;
-    line-height: 1.5;
-    text-transform: uppercase;
-}
-
-.mission-verse small {
-    display: block;
-    margin-top: 10px;
-    color: var(--orange-light);
-    font-size: 10px;
-    letter-spacing: 2px;
-    font-weight: 800;
-}
-
-.mission-visual {
-    position: relative;
-    min-height: 490px;
-    background:
-        linear-gradient(0deg, rgba(0,0,0,.65), transparent 70%),
-        url("jonathan.jpg") center 25% / cover no-repeat,
-        #222;
-    border: 1px solid var(--border);
-}
-
-.mission-visual::before {
-    content: "";
-    position: absolute;
-    inset: 16px -16px -16px 16px;
-    border: 1px solid rgba(255,87,34,.6);
-    z-index: -1;
-}
-
-.visual-caption {
-    position: absolute;
-    bottom: 25px;
-    left: 25px;
-    right: 25px;
-}
-
-.visual-caption span {
-    color: var(--orange-light);
-    font-size: 10px;
-    letter-spacing: 2px;
-    font-weight: 800;
-    text-transform: uppercase;
-}
-
-.visual-caption h3 {
-    font-size: 30px;
-    margin-top: 8px;
-}
-
-/* IMPACT */
-
-.impact {
-    position: relative;
-    padding: 100px 0;
-    overflow: hidden;
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
-    background:
-        radial-gradient(ellipse at center, rgba(255,87,34,.12), transparent 65%),
-        #141414;
-}
-
-.impact-inner {
-    text-align: center;
-}
-
-.impact h2 {
-    font-size: clamp(70px, 13vw, 155px);
-    color: var(--orange);
-    line-height: .95;
-    letter-spacing: -3px;
-}
-
-.impact h3 {
-    font-size: clamp(22px, 3vw, 36px);
-    margin-top: 25px;
-    letter-spacing: 2px;
-}
-
-.impact p {
-    max-width: 650px;
-    margin: 22px auto 0;
-    color: var(--muted);
-    line-height: 1.9;
-    font-size: 14px;
-}
-
-.impact-note {
-    margin-top: 32px;
-    display: inline-block;
-    padding: 10px 15px;
-    border: 1px solid var(--border);
-    color: #ddd;
-    font-size: 10px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-}
-
-/* VIDEO */
-
-.watch {
-    background: #0d0d0d;
-}
-
-.watch-header {
-    display: flex;
-    align-items: end;
-    justify-content: space-between;
-    gap: 35px;
-    margin-bottom: 45px;
-}
-
-.watch-header .section-description {
-    max-width: 420px;
-    margin-bottom: 4px;
-}
-
-.video-card {
-    position: relative;
-    min-height: 470px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    overflow: hidden;
-    border: 1px solid rgba(255,255,255,.15);
-    background:
-        linear-gradient(0deg, rgba(0,0,0,.86), rgba(0,0,0,.18)),
-        url("hero.jpg") center 40% / cover no-repeat,
-        #222;
-}
-
-.video-card::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(135deg,
-        rgba(255,87,34,.15), transparent 60%);
-    transition: background .4s ease;
-}
-
-.video-card:hover::before {
-    background: linear-gradient(135deg,
-        rgba(255,87,34,.3), rgba(0,0,0,.1));
-}
-
-.video-content {
-    position: relative;
-    z-index: 1;
-    padding: 35px;
-    transition: transform .35s ease;
-}
-
-.video-card:hover .video-content {
-    transform: translateY(-5px);
-}
-
-.play-button {
-    width: 88px;
-    height: 88px;
-    margin: 0 auto 28px;
-    display: grid;
-    place-items: center;
-    border-radius: 50%;
-    background: var(--orange);
-    color: white;
-    font-size: 27px;
-    padding-left: 5px;
-    box-shadow: 0 0 0 12px rgba(255,87,34,.13);
-    transition: transform .35s ease, box-shadow .35s ease;
-}
-
-.video-card:hover .play-button {
-    transform: scale(1.1);
-    box-shadow: 0 0 0 20px rgba(255,87,34,.12),
-                0 0 45px rgba(255,87,34,.3);
-}
-
-.video-content .eyebrow {
-    margin-bottom: 14px;
-}
-
-.video-content h3 {
-    font-size: clamp(34px, 6vw, 66px);
-}
-
-.video-content p {
-    margin-top: 15px;
-    color: #ddd;
-    font-size: 13px;
-}
-
-/* MINISTRY */
-
-.ministry {
-    background: var(--background-light);
-}
-
-.ministry-heading {
-    text-align: center;
-    max-width: 750px;
-    margin: 0 auto 55px;
-}
-
-.ministry-heading .section-description {
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.ministry-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 18px;
-}
-
-.ministry-card {
-    min-height: 280px;
-    padding: 32px;
-    background: #111;
-    border: 1px solid var(--border);
-    transition: transform .3s ease, border-color .3s ease;
-}
-
-.ministry-card:hover {
-    transform: translateY(-6px);
-    border-color: rgba(255,87,34,.6);
-}
-
-.card-number {
-    display: block;
-    color: var(--orange);
-    font-family: var(--font-heading);
-    font-size: 42px;
-    margin-bottom: 28px;
-}
-
-.ministry-card h3 {
-    font-size: 25px;
-    margin-bottom: 14px;
-}
-
-.ministry-card p {
-    color: var(--muted);
-    font-size: 13px;
-    line-height: 1.9;
-}
-
-/* JOHN 10:10 */
-
-.scripture-feature {
-    position: relative;
-    overflow: hidden;
-    text-align: center;
-    padding: 120px 20px;
-    background:
-        radial-gradient(ellipse at center, rgba(255,87,34,.12), transparent 65%),
-        #111;
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
-}
-
-.scripture-watermark {
-    position: absolute;
-    inset: 50% auto auto 50%;
-    transform: translate(-50%, -50%);
-    width: 100%;
-    color: rgba(255,255,255,.025);
-    font-family: var(--font-heading);
-    font-size: clamp(75px, 15vw, 190px);
-    line-height: 1;
-    text-transform: uppercase;
-    white-space: nowrap;
-    pointer-events: none;
-}
-
-.scripture-feature blockquote {
-    position: relative;
-    max-width: 900px;
-    margin: 0 auto;
-    font-family: var(--font-heading);
-    text-transform: uppercase;
-    font-size: clamp(30px, 5vw, 58px);
-    line-height: 1.35;
-}
-
-.scripture-feature blockquote span {
-    color: var(--orange);
-}
-
-.scripture-feature cite {
-    display: block;
-    margin-top: 28px;
-    color: var(--orange-light);
-    font-size: 11px;
-    font-style: normal;
-    font-weight: 800;
-    letter-spacing: 3px;
-}
-
-/* GIVING */
-
-.giving {
-    position: relative;
-    overflow: hidden;
-    background:
-        radial-gradient(ellipse at 85% 45%, rgba(255,87,34,.17), transparent 45%),
-        #151515;
-}
-
-.giving-grid {
-    display: grid;
-    grid-template-columns: 1.1fr .9fr;
-    gap: 80px;
-    align-items: center;
-}
-
-.giving-copy h2 {
-    max-width: 650px;
-}
-
-.giving-copy p {
-    margin-top: 25px;
-    max-width: 600px;
-    color: var(--muted);
-    font-size: 15px;
-    line-height: 2;
-}
-
-.giving-quote {
-    margin-top: 25px;
-    padding-left: 18px;
-    border-left: 2px solid var(--orange);
-    color: #eee;
-    font-size: 14px;
-    font-style: italic;
-    line-height: 1.9;
-}
-
-.giving-actions {
-    margin-top: 32px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 14px;
-}
-
-.giving-panel {
-    padding: 38px;
-    background: rgba(15,15,15,.75);
-    border: 1px solid rgba(255,255,255,.14);
-    box-shadow: 0 25px 80px rgba(0,0,0,.2);
-}
-
-.giving-panel-label {
-    color: var(--orange-light);
-    font-size: 10px;
-    font-weight: 800;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-}
-
-.giving-panel h3 {
-    font-size: 34px;
-    margin-top: 17px;
-}
-
-.giving-panel p {
-    color: var(--muted);
-    margin-top: 15px;
-    font-size: 13px;
-    line-height: 1.9;
-}
-
-.giving-panel .button {
-    margin-top: 25px;
-    width: 100%;
-}
-
-/* BOOK JONATHAN */
-
-.booking {
-    padding: 95px 0;
-    text-align: center;
-    background: #101010;
-}
-
-.booking-inner {
-    max-width: 760px;
-    margin: 0 auto;
-}
-
-.booking h2 {
-    font-size: clamp(40px, 6vw, 70px);
-}
-
-.booking p {
-    color: var(--muted);
-    margin: 22px auto 30px;
-    max-width: 620px;
-    line-height: 1.9;
-    font-size: 15px;
-}
-
-/* FOOTER */
-
-.footer {
-    background: #090909;
-    border-top: 1px solid var(--border);
-    padding: 55px 0 25px;
-}
-
-.footer-top {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 35px;
-    padding-bottom: 40px;
-}
-
-.footer-mission {
-    max-width: 420px;
-    margin-top: 20px;
-    color: #999;
-    font-size: 12px;
-    line-height: 1.9;
-}
-
-.footer-links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 24px;
-}
-
-.footer-links a {
-    color: #ccc;
-    font-size: 11px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: color .2s ease;
-}
-
-.footer-links a:hover {
-    color: var(--orange);
-}
-
-.footer-bottom {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 12px;
-    border-top: 1px solid var(--border);
-    padding-top: 22px;
-    color: #777;
-    font-size: 10px;
-    letter-spacing: .5px;
-}
-
-/* SCROLL ANIMATIONS */
-
-.reveal {
-    opacity: 0;
-    transform: translateY(25px);
-    transition: opacity .75s ease, transform .75s ease;
-}
-
-.reveal.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-@media (prefers-reduced-motion: reduce) {
     html {
-        scroll-behavior: auto;
+      scroll-behavior: smooth;
     }
 
-    *, *::before, *::after {
-        animation-duration: .01ms !important;
-        transition-duration: .01ms !important;
+    body {
+      min-height: 100vh;
+      background:
+        radial-gradient(
+          ellipse at 50% 0%,
+          rgba(255, 83, 34, 0.13),
+          transparent 45%
+        ),
+        var(--background);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.6;
     }
 
-    .reveal {
-        opacity: 1;
-        transform: none;
-    }
-}
-
-/* TABLET */
-
-@media (max-width: 1000px) {
-    .nav-links {
-        gap: 17px;
+    button,
+    input {
+      font: inherit;
     }
 
-    .nav-links > a:not(.nav-donate) {
-        font-size: 10px;
+    button,
+    a {
+      -webkit-tap-highlight-color: transparent;
     }
 
-    .mission-grid,
-    .giving-grid {
-        gap: 45px;
+    a {
+      color: inherit;
     }
 
-    .mission-visual {
-        min-height: 420px;
+    .announcement {
+      padding: 10px 20px;
+      text-align: center;
+      background: rgba(255, 100, 45, 0.09);
+      border-bottom: 1px solid rgba(255, 100, 45, 0.17);
+      color: #ffd0bd;
+      font-size: 12px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
     }
 
-    .ministry-card {
-        padding: 25px;
-    }
-}
-
-/* MOBILE */
-
-@media (max-width: 760px) {
-    .section {
-        padding: 78px 0;
+    .container {
+      width: min(100% - 40px, 850px);
+      margin: 0 auto;
     }
 
-    .navbar {
-        min-height: 75px;
+    header {
+      padding: 24px 0;
+      border-bottom: 1px solid var(--border);
     }
 
-    .brand-symbol {
-        width: 38px;
-        height: 38px;
-        font-size: 22px;
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
     }
 
-    .brand-text {
-        font-size: 14px;
+    .brand {
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
     }
 
-    .brand-text small {
-        font-size: 8px;
+    .brand-icon {
+      width: 43px;
+      height: 43px;
+      flex-shrink: 0;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(255, 100, 45, 0.45);
+      border-radius: 12px;
+      background: rgba(255, 100, 45, 0.1);
+      color: var(--orange-light);
+      font-size: 23px;
     }
 
-    .menu-toggle {
-        display: block;
-        margin-left: auto;
+    .brand-name {
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: 0.8px;
+      line-height: 1.3;
     }
 
-    .nav-links {
-        display: none;
-        position: absolute;
-        top: 75px;
-        left: 0;
-        width: 100%;
-        padding: 25px 5% 30px;
-        background: rgba(12,12,12,.98);
-        border-bottom: 1px solid var(--border);
-        flex-direction: column;
-        align-items: stretch;
-        gap: 0;
+    .brand-subtitle {
+      color: var(--muted);
+      font-size: 10px;
+      letter-spacing: 2px;
+      margin-top: 3px;
+      text-transform: uppercase;
     }
 
-    .nav-links.open {
-        display: flex;
+    .back-link {
+      color: #d1d1d1;
+      text-decoration: none;
+      font-size: 13px;
+      white-space: nowrap;
+      transition: color 0.2s ease;
     }
 
-    .nav-links > a:not(.nav-donate) {
-        padding: 15px 0;
-        border-bottom: 1px solid rgba(255,255,255,.08);
-        font-size: 12px;
+    .back-link:hover {
+      color: var(--orange-light);
     }
 
-    .nav-donate {
-        text-align: center;
-        margin-top: 18px;
-        padding: 16px;
+    main {
+      padding: 58px 0 80px;
     }
 
     .hero {
-        min-height: 780px;
-        min-height: 100svh;
+      text-align: center;
+      margin-bottom: 38px;
     }
 
-    .hero::before {
-        background-image:
-            linear-gradient(90deg,
-                rgba(8,8,8,.83),
-                rgba(8,8,8,.45)),
-            linear-gradient(0deg,
-                rgba(16,16,16,.98) 0%,
-                transparent 70%),
-            url("hero.jpg");
-        background-position: center, center, 57% center;
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--orange-light);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
     }
 
-    .hero-content {
-        padding-top: 125px;
-        padding-bottom: 65px;
+    .eyebrow::before,
+    .eyebrow::after {
+      content: "";
+      width: 22px;
+      height: 1px;
+      background: var(--orange);
     }
 
-    .hero h1 {
-        font-size: clamp(54px, 14vw, 86px);
-        letter-spacing: -1px;
+    h1 {
+      font-size: clamp(36px, 6vw, 57px);
+      line-height: 1.08;
+      letter-spacing: -2px;
+      font-weight: 850;
+      margin-bottom: 18px;
+    }
+
+    h1 span {
+      color: var(--orange);
+      text-shadow: 0 0 32px rgba(255, 100, 45, 0.2);
     }
 
     .hero-description {
-        font-size: 14px;
+      max-width: 560px;
+      margin: 0 auto;
+      color: #b9b9b9;
+      font-size: 15px;
+      line-height: 1.8;
     }
 
-    .hero-buttons {
-        align-items: stretch;
-        flex-direction: column;
-        max-width: 330px;
+    .scripture {
+      margin: 28px auto 0;
+      max-width: 600px;
+      color: #e1e1e1;
+      font-size: 14px;
+      font-style: italic;
     }
 
-    .hero-buttons .button {
-        width: 100%;
+    .scripture strong {
+      display: block;
+      color: var(--orange-light);
+      font-style: normal;
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      margin-top: 8px;
     }
 
-    .hero-footnote {
-        margin-top: 38px;
-        font-size: 9px;
-        letter-spacing: 1.5px;
+    .giving-card {
+      background: linear-gradient(
+        155deg,
+        rgba(255, 255, 255, 0.045),
+        rgba(255, 255, 255, 0.012)
+      );
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: clamp(22px, 5vw, 38px);
+      box-shadow: 0 25px 90px rgba(0, 0, 0, 0.3);
     }
 
-    .scripture-track {
-        justify-content: center;
-        font-size: 12px;
-        gap: 10px 15px;
+    .section-heading {
+      font-size: 20px;
+      font-weight: 750;
+      margin-bottom: 6px;
     }
 
-    .mission-grid,
-    .giving-grid {
-        grid-template-columns: 1fr;
-        gap: 50px;
+    .section-description {
+      color: var(--muted);
+      font-size: 13px;
+      margin-bottom: 24px;
     }
 
-    .mission-visual {
-        min-height: 430px;
-        margin-right: 12px;
+    .amount-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 11px;
+      margin-bottom: 24px;
     }
 
-    .mission::before {
-        font-size: 180px;
+    .amount-button {
+      min-height: 60px;
+      background: #171717;
+      color: #ededed;
+      border: 1px solid #343434;
+      border-radius: 11px;
+      cursor: pointer;
+      font-size: 17px;
+      font-weight: 750;
+      transition:
+        border-color 0.2s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease,
+        transform 0.2s ease;
     }
 
-    .impact {
-        padding: 80px 0;
+    .amount-button:hover {
+      border-color: var(--orange);
+      transform: translateY(-2px);
     }
 
-    .impact h2 {
-        font-size: clamp(62px, 15vw, 100px);
-        letter-spacing: -2px;
+    .amount-button.active {
+      color: white;
+      background: rgba(255, 100, 45, 0.12);
+      border-color: var(--orange);
+      box-shadow:
+        0 0 0 1px rgba(255, 100, 45, 0.2),
+        0 0 24px rgba(255, 100, 45, 0.12);
     }
 
-    .watch-header {
-        align-items: flex-start;
-        flex-direction: column;
+    .custom-label {
+      display: block;
+      color: #dedede;
+      font-size: 13px;
+      font-weight: 650;
+      margin-bottom: 9px;
     }
 
-    .video-card {
-        min-height: 380px;
+    .input-wrap {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border: 1px solid #393939;
+      background: #101010;
+      border-radius: 11px;
+      padding: 0 16px;
+      transition: border-color 0.2s ease;
     }
 
-    .play-button {
-        width: 72px;
-        height: 72px;
+    .input-wrap:focus-within {
+      border-color: var(--orange);
     }
 
-    .ministry-grid {
-        grid-template-columns: 1fr;
+    .currency-symbol {
+      color: var(--orange-light);
+      font-size: 22px;
+      font-weight: 750;
     }
 
-    .ministry-card {
-        min-height: auto;
+    #customAmount {
+      min-width: 0;
+      width: 100%;
+      height: 54px;
+      background: transparent;
+      border: none;
+      outline: none;
+      color: white;
+      font-size: 18px;
     }
 
-    .card-number {
-        margin-bottom: 18px;
+    #customAmount::placeholder {
+      color: #686868;
     }
 
-    .scripture-feature {
-        padding: 90px 20px;
+    .giving-frequency {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+      margin: 27px 0;
+      padding: 18px;
+      background: rgba(255, 255, 255, 0.025);
+      border: 1px solid var(--border);
+      border-radius: 13px;
     }
 
-    .scripture-watermark {
-        font-size: 80px;
+    .frequency-title {
+      font-size: 14px;
+      font-weight: 750;
     }
 
-    .giving-panel {
-        padding: 28px;
+    .frequency-description {
+      color: var(--muted);
+      font-size: 12px;
+      margin-top: 3px;
     }
 
-    .giving-actions {
-        flex-direction: column;
+    .toggle {
+      position: relative;
+      display: inline-block;
+      width: 49px;
+      height: 28px;
+      flex-shrink: 0;
     }
 
-    .giving-actions .button {
-        width: 100%;
+    .toggle input {
+      opacity: 0;
+      width: 0;
+      height: 0;
     }
 
-    .footer-top {
-        align-items: flex-start;
-        flex-direction: column;
+    .toggle-slider {
+      position: absolute;
+      inset: 0;
+      border-radius: 40px;
+      background: #393939;
+      cursor: pointer;
+      transition: background 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .toggle-slider::before {
+      content: "";
+      position: absolute;
+      height: 20px;
+      width: 20px;
+      left: 4px;
+      top: 4px;
+      border-radius: 50%;
+      background: white;
+      transition: transform 0.2s ease;
+    }
+
+    .toggle input:checked + .toggle-slider {
+      background: var(--orange);
+      box-shadow: 0 0 18px rgba(255, 100, 45, 0.35);
+    }
+
+    .toggle input:checked + .toggle-slider::before {
+      transform: translateX(21px);
+    }
+
+    .monthly-notice {
+      display: none;
+      padding: 13px 15px;
+      border-radius: 10px;
+      margin: -10px 0 24px;
+      background: rgba(255, 170, 40, 0.08);
+      border: 1px solid rgba(255, 170, 40, 0.22);
+      color: #ffd7a0;
+      font-size: 12px;
+      line-height: 1.7;
+    }
+
+    .monthly-notice.visible {
+      display: block;
+    }
+
+    .divider {
+      height: 1px;
+      background: var(--border);
+      margin: 28px 0;
+    }
+
+    .payment-methods {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .payment-method {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      min-width: 0;
+      min-height: 76px;
+      padding: 15px;
+      border: 1px solid #333333;
+      border-radius: 13px;
+      background: #151515;
+      cursor: pointer;
+      text-align: left;
+      color: white;
+      transition:
+        border-color 0.2s ease,
+        background 0.2s ease,
+        transform 0.2s ease;
+    }
+
+    .payment-method:hover {
+      border-color: var(--orange);
+      background: #1c1715;
+      transform: translateY(-2px);
+    }
+
+    .payment-icon {
+      width: 40px;
+      height: 40px;
+      flex-shrink: 0;
+      display: grid;
+      place-items: center;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.07);
+      font-size: 20px;
+      font-weight: 800;
+    }
+
+    .payment-method[data-method="stripe"] .payment-icon {
+      color: var(--orange-light);
+      background: rgba(255, 100, 45, 0.13);
+    }
+
+    .payment-name {
+      font-size: 14px;
+      font-weight: 750;
+      overflow-wrap: anywhere;
+    }
+
+    .payment-subtitle {
+      color: #999999;
+      font-size: 11px;
+      margin-top: 3px;
+    }
+
+    .payment-details {
+      display: none;
+      margin-top: 20px;
+      padding: 22px;
+      border-radius: 14px;
+      background: #0d0d0d;
+      border: 1px solid rgba(255, 100, 45, 0.28);
+      animation: appear 0.22s ease;
+    }
+
+    .payment-details.visible {
+      display: block;
+    }
+
+    @keyframes appear {
+      from {
+        opacity: 0;
+        transform: translateY(5px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .details-title {
+      font-size: 17px;
+      font-weight: 800;
+      margin-bottom: 6px;
+    }
+
+    .details-description {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.7;
+      margin-bottom: 17px;
+    }
+
+    .recipient-label {
+      color: #888888;
+      text-transform: uppercase;
+      font-size: 10px;
+      font-weight: 750;
+      letter-spacing: 1.5px;
+      margin-bottom: 7px;
+    }
+
+    .recipient-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      border: 1px solid #303030;
+      border-radius: 9px;
+      padding: 12px;
+      margin-bottom: 14px;
+      background: #151515;
+    }
+
+    .recipient-value {
+      overflow-wrap: anywhere;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .copy-button {
+      border: 1px solid #414141;
+      color: white;
+      background: #242424;
+      border-radius: 7px;
+      padding: 7px 10px;
+      cursor: pointer;
+      font-size: 11px;
+      font-weight: 750;
+      flex-shrink: 0;
+    }
+
+    .copy-button:hover {
+      border-color: var(--orange);
+    }
+
+    .primary-button {
+      width: 100%;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 54px;
+      padding: 14px 20px;
+      background: var(--orange);
+      border: 1px solid var(--orange);
+      border-radius: 10px;
+      color: white;
+      text-decoration: none;
+      text-align: center;
+      font-size: 14px;
+      font-weight: 850;
+      cursor: pointer;
+      box-shadow: 0 0 25px rgba(255, 100, 45, 0.13);
+      transition:
+        background 0.2s ease,
+        box-shadow 0.2s ease,
+        transform 0.2s ease;
+    }
+
+    .primary-button:hover {
+      background: #ff7a43;
+      box-shadow: 0 0 30px rgba(255, 100, 45, 0.28);
+      transform: translateY(-1px);
+    }
+
+    .secondary-button {
+      width: 100%;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 48px;
+      padding: 12px 18px;
+      border: 1px solid #414141;
+      border-radius: 10px;
+      color: white;
+      background: #191919;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 750;
+      cursor: pointer;
+      transition: border-color 0.2s ease;
+    }
+
+    .secondary-button:hover {
+      border-color: var(--orange);
+    }
+
+    .button-stack {
+      display: grid;
+      gap: 10px;
+    }
+
+    .secure-note {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 7px;
+      color: #969696;
+      text-align: center;
+      font-size: 11px;
+      margin-top: 16px;
+    }
+
+    .secure-note span {
+      color: var(--green);
+    }
+
+    .thank-you {
+      padding: 23px;
+      margin-top: 32px;
+      border: 1px solid var(--border);
+      border-radius: 13px;
+      text-align: center;
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .thank-you p {
+      color: #c1c1c1;
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    .thank-you strong {
+      display: block;
+      color: white;
+      font-size: 14px;
+      margin-bottom: 5px;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 27px 0;
+      text-align: center;
+    }
+
+    .footer-brand {
+      color: #bdbdbd;
+      font-size: 12px;
+      font-weight: 750;
+      letter-spacing: 1px;
+    }
+
+    .footer-tagline {
+      color: #777777;
+      font-size: 11px;
+      margin-top: 5px;
     }
 
     .footer-links {
-        gap: 18px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 15px;
     }
 
-    .footer-bottom {
-        flex-direction: column;
+    .footer-links a {
+      color: #999999;
+      text-decoration: none;
+      font-size: 11px;
     }
-}
-</style>
+
+    .footer-links a:hover {
+      color: var(--orange-light);
+    }
+
+    .status-message {
+      min-height: 18px;
+      color: var(--green);
+      font-size: 12px;
+      margin-top: 8px;
+    }
+
+    @media (max-width: 560px) {
+      .container {
+        width: min(100% - 26px, 850px);
+      }
+
+      header {
+        padding: 18px 0;
+      }
+
+      .brand-name {
+        font-size: 12px;
+      }
+
+      .brand-subtitle {
+        font-size: 9px;
+        letter-spacing: 1.2px;
+      }
+
+      .brand-icon {
+        width: 37px;
+        height: 37px;
+      }
+
+      .back-link {
+        font-size: 12px;
+      }
+
+      main {
+        padding: 40px 0 55px;
+      }
+
+      h1 {
+        letter-spacing: -1.4px;
+      }
+
+      .hero-description {
+        font-size: 14px;
+      }
+
+      .giving-card {
+        padding: 20px 16px;
+        border-radius: 17px;
+      }
+
+      .amount-grid {
+        gap: 7px;
+      }
+
+      .amount-button {
+        min-height: 53px;
+        font-size: 15px;
+      }
+
+      .payment-methods {
+        grid-template-columns: 1fr;
+        gap: 9px;
+      }
+
+      .payment-method {
+        min-height: 67px;
+      }
+
+      .giving-frequency {
+        padding: 14px;
+        gap: 12px;
+      }
+
+      .payment-details {
+        padding: 17px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<!-- NAVIGATION -->
+  <div class="announcement">
+    Partner with us · Help reach the lost
+  </div>
 
-<header class="site-header">
-    <div class="container navbar">
+  <header>
+    <div class="container nav">
 
-        <a class="brand" href="#home" aria-label="Jesus To The World Ministry home">
-            <div class="brand-symbol">J</div>
-            <div class="brand-text">
-                Jesus To The World
-                <small>Ministry</small>
-            </div>
-        </a>
+      <a class="brand" href="index.html" aria-label="Jesus To The World Ministry homepage">
+        <div class="brand-icon" aria-hidden="true">✝</div>
 
-        <button class="menu-toggle"
-                id="menuToggle"
-                aria-label="Open navigation menu"
-                aria-expanded="false">
-            ☰
+        <div>
+          <div class="brand-name">JESUS TO THE WORLD</div>
+          <div class="brand-subtitle">Ministry</div>
+        </div>
+      </a>
+
+      <a class="back-link" href="index.html">
+        ← Back to Home
+      </a>
+
+    </div>
+  </header>
+
+  <main class="container">
+
+    <section class="hero">
+
+      <div class="eyebrow">Fuel the Mission</div>
+
+      <h1>
+        Fuel the <span>Flame.</span>
+      </h1>
+
+      <p class="hero-description">
+        Your generosity helps us share the Gospel, reach the lost,
+        and bring the message of Jesus Christ to the world.
+        Partner with us in furthering the Great Commission.
+      </p>
+
+      <p class="scripture">
+        “Go into all the world and preach the gospel to all creation.”
+        <strong>MARK 16:15</strong>
+      </p>
+
+    </section>
+
+    <section class="giving-card" aria-labelledby="donationHeading">
+
+      <h2 class="section-heading" id="donationHeading">
+        Make a Difference
+      </h2>
+
+      <p class="section-description">
+        Choose your gift amount and select your preferred payment method.
+      </p>
+
+      <div class="amount-grid" aria-label="Suggested donation amounts">
+
+        <button class="amount-button" type="button" data-amount="50">
+          $50
         </button>
 
-        <nav class="nav-links" id="navLinks">
-            <a href="#home">Home</a>
-            <a href="#mission">Our Mission</a>
-            <a href="#watch">Watch</a>
-            <a href="#impact">Our Impact</a>
-            <a href="#booking">Book Jonathan</a>
-            <a class="nav-donate" href="give.html">Fuel the Flame ↗</a>
-        </nav>
+        <button class="amount-button active" type="button" data-amount="100">
+          $100
+        </button>
 
-    </div>
-</header>
+        <button class="amount-button" type="button" data-amount="250">
+          $250
+        </button>
 
-<main>
+        <button class="amount-button" type="button" data-amount="500">
+          $500
+        </button>
 
-<!-- HERO -->
+      </div>
 
-<section class="hero" id="home">
-    <div class="container">
-        <div class="hero-content">
+      <label class="custom-label" for="customAmount">
+        Or enter your own amount (USD)
+      </label>
 
-            <div class="hero-label">
-                <span></span>
-                The Gospel Without Compromise
-            </div>
+      <div class="input-wrap">
+        <span class="currency-symbol">$</span>
 
-            <h1>
-                Seeking<br>
-                To Save<br>
-                <span class="line-orange">The Lost.</span>
-            </h1>
+        <input
+          id="customAmount"
+          type="number"
+          min="1"
+          max="999999"
+          step="0.01"
+          inputmode="decimal"
+          placeholder="Enter donation amount"
+          aria-describedby="amountHelp"
+        >
+      </div>
 
-            <p class="hero-description">
-                We exist to proclaim the life-changing Gospel of Jesus Christ
-                to the streets, cities, and nations. One message. One mission.
-                One Savior.
-            </p>
+      <p id="amountHelp" class="section-description" style="margin: 8px 0 0;">
+        Your selected amount will be used to prepare your donation.
+      </p>
 
-            <div class="hero-buttons">
-                <a class="button" href="#watch">
-                    Watch the Mission
-                    <span class="button-arrow">→</span>
-                </a>
+      <div class="giving-frequency">
 
-                <a class="button button-outline" href="give.html">
-                    Fuel the Flame
-                    <span class="button-arrow">↗</span>
-                </a>
-            </div>
+        <div>
+          <div class="frequency-title">Give Monthly</div>
 
-            <div class="hero-footnote">
-                Jesus Christ is the hope of the world
-            </div>
-
-        </div>
-    </div>
-</section>
-
-<!-- SCRIPTURE STRIP -->
-
-<div class="scripture-strip">
-    <div class="scripture-track">
-        <span>Preach the Gospel</span>
-        <span class="separator">✦</span>
-        <span>Reach the Lost</span>
-        <span class="separator">✦</span>
-        <span>Make Disciples</span>
-        <span class="separator">✦</span>
-        <span>Glorify Jesus</span>
-    </div>
-</div>
-
-<!-- MISSION -->
-
-<section class="section mission" id="mission">
-    <div class="container mission-grid">
-
-        <div class="mission-copy reveal">
-            <div class="eyebrow">Why We Exist</div>
-
-            <h2>
-                The World Needs<br>
-                <span class="accent">Jesus.</span>
-            </h2>
-
-            <p>
-                Jesus To The World Ministry is committed to bringing the
-                message of salvation beyond the four walls of a church.
-                Through evangelism, preaching, digital media, and personal
-                outreach, we seek to point people toward repentance, faith,
-                and a transformed life in Jesus Christ.
-            </p>
-
-            <p>
-                Our heart is for those who feel forgotten, those searching
-                for purpose, and those who have never truly heard the Gospel.
-                We believe the message of Jesus is not meant to be hidden.
-                It is meant to be proclaimed.
-            </p>
-
-            <div class="mission-verse">
-                <p>
-                    “For the Son of man is come to seek and to save that
-                    which was lost.”
-                </p>
-                <small>LUKE 19:10 · KJV</small>
-            </div>
-
-            <div style="margin-top: 32px;">
-                <a class="button button-outline" href="#booking">
-                    Join the Mission <span class="button-arrow">→</span>
-                </a>
-            </div>
+          <div class="frequency-description">
+            Become a recurring ministry partner.
+          </div>
         </div>
 
-        <div class="mission-visual reveal" role="img"
-             aria-label="Ministry and Gospel outreach">
-            <div class="visual-caption">
-                <span>Our Calling</span>
-                <h3>Take the Gospel<br>to the World.</h3>
-            </div>
-        </div>
+        <label class="toggle" aria-label="Toggle monthly giving">
+          <input id="monthlyToggle" type="checkbox">
 
-    </div>
-</section>
+          <span class="toggle-slider"></span>
+        </label>
 
-<!-- IMPACT -->
+      </div>
 
-<section class="impact" id="impact">
-    <div class="container impact-inner reveal">
+      <div class="monthly-notice" id="monthlyNotice" role="status">
+        Monthly giving requires a separate recurring Stripe payment link.
+        Your current Stripe link processes one-time donations only.
+        Turn monthly giving off to continue with the current checkout.
+      </div>
 
-        <div class="eyebrow">The Message Is Moving</div>
+      <div class="divider"></div>
 
-        <h2>20 Million+</h2>
+      <h2 class="section-heading">
+        Choose Your Payment Method
+      </h2>
 
-        <h3>Reached in 2025</h3>
+      <p class="section-description">
+        Select a payment method to see how to complete your gift.
+      </p>
+
+      <div class="payment-methods">
+
+        <button
+          class="payment-method"
+          type="button"
+          data-method="stripe"
+        >
+          <span class="payment-icon" aria-hidden="true">💳</span>
+
+          <span>
+            <span class="payment-name">Credit or Debit Card</span>
+            <span class="payment-subtitle">Secure Stripe checkout</span>
+          </span>
+        </button>
+
+        <button
+          class="payment-method"
+          type="button"
+          data-method="zelle"
+        >
+          <span class="payment-icon" aria-hidden="true">Z</span>
+
+          <span>
+            <span class="payment-name">Zelle</span>
+            <span class="payment-subtitle">Send through your bank</span>
+          </span>
+        </button>
+
+        <button
+          class="payment-method"
+          type="button"
+          data-method="paypal"
+        >
+          <span class="payment-icon" aria-hidden="true">P</span>
+
+          <span>
+            <span class="payment-name">PayPal</span>
+            <span class="payment-subtitle">Pay through PayPal</span>
+          </span>
+        </button>
+
+        <button
+          class="payment-method"
+          type="button"
+          data-method="venmo"
+        >
+          <span class="payment-icon" aria-hidden="true">V</span>
+
+          <span>
+            <span class="payment-name">Venmo</span>
+            <span class="payment-subtitle">Give using Venmo</span>
+          </span>
+        </button>
+
+        <button
+          class="payment-method"
+          type="button"
+          data-method="cashapp"
+        >
+          <span class="payment-icon" aria-hidden="true">$</span>
+
+          <span>
+            <span class="payment-name">Cash App</span>
+            <span class="payment-subtitle">Send a Cash App payment</span>
+          </span>
+        </button>
+
+        <button
+          class="payment-method"
+          type="button"
+          data-method="wise"
+        >
+          <span class="payment-icon" aria-hidden="true">W</span>
+
+          <span>
+            <span class="payment-name">Wise</span>
+            <span class="payment-subtitle">Send through Wise</span>
+          </span>
+        </button>
+
+      </div>
+
+      <div
+        class="payment-details"
+        id="paymentDetails"
+        aria-live="polite"
+      ></div>
+
+      <div class="thank-you">
+
+        <strong>Every Gift Makes a Difference</strong>
 
         <p>
-            Digital platforms have opened doors to share the Gospel far
-            beyond our immediate communities. Every view represents an
-            opportunity for someone to encounter the message of Jesus.
-            Our prayer is that the reach becomes real transformation.
+          Every dollar sown helps fuel the mission of sharing the Gospel
+          and reaching those who have not yet heard the message of Jesus.
+          Thank you for partnering with us.
         </p>
 
-        <div class="impact-note">
-            All Glory Belongs to Jesus Christ
-        </div>
+      </div>
 
-    </div>
-</section>
+    </section>
 
-<!-- WATCH -->
+  </main>
 
-<section class="section watch" id="watch">
+  <footer>
     <div class="container">
 
-        <div class="watch-header reveal">
-            <div>
-                <div class="eyebrow">Watch the Mission</div>
-                <h2>Faith in <span class="accent">Action.</span></h2>
-            </div>
+      <div class="footer-brand">
+        JESUS TO THE WORLD MINISTRY
+      </div>
 
-            <p class="section-description">
-                Real conversations. Street evangelism. The Gospel
-                proclaimed boldly. See what happens when faith moves
-                beyond the building.
-            </p>
-        </div>
+      <div class="footer-tagline">
+        Seeking to save the lost.
+      </div>
 
-        <!-- Replace the # below with your actual YouTube video or channel URL. -->
-        <a class="video-card reveal"
-           href="https://www.youtube.com/"
-           target="_blank"
-           rel="noopener noreferrer"
-           aria-label="Watch Jonathan Perde Ministries on YouTube">
-
-            <div class="video-content">
-
-                <div class="play-button" aria-hidden="true">▶</div>
-
-                <div class="eyebrow">Jonathan Perde Ministries</div>
-
-                <h3>Watch the <span class="accent">Mission.</span></h3>
-
-                <p>Gospel preaching · Evangelism · Testimonies</p>
-
-            </div>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="https://www.youtube.com/@jonathanperde" target="_blank" rel="noopener noreferrer">
+          Watch the Mission
         </a>
-
-    </div>
-</section>
-
-<!-- MINISTRY PILLARS -->
-
-<section class="section ministry">
-    <div class="container">
-
-        <div class="ministry-heading reveal">
-            <div class="eyebrow">What We Stand For</div>
-
-            <h2>One Gospel.<br><span class="accent">One Mission.</span></h2>
-
-            <p class="section-description">
-                Our mission is centered on proclaiming Christ, serving
-                people, and equipping believers to live out the Great
-                Commission.
-            </p>
-        </div>
-
-        <div class="ministry-grid">
-
-            <article class="ministry-card reveal">
-                <span class="card-number">01</span>
-                <h3>Street Evangelism</h3>
-                <p>
-                    Taking the Gospel into public spaces and engaging
-                    people with the truth, grace, and hope of Jesus Christ.
-                </p>
-            </article>
-
-            <article class="ministry-card reveal">
-                <span class="card-number">02</span>
-                <h3>Digital Outreach</h3>
-                <p>
-                    Using online video and social platforms to share
-                    biblical truth and reach people wherever they are.
-                </p>
-            </article>
-
-            <article class="ministry-card reveal">
-                <span class="card-number">03</span>
-                <h3>Discipleship</h3>
-                <p>
-                    Encouraging believers to grow in Scripture, deepen
-                    their relationship with Jesus, and share their faith.
-                </p>
-            </article>
-
-        </div>
-    </div>
-</section>
-
-<!-- SCRIPTURE FEATURE -->
-
-<section class="scripture-feature">
-    <div class="scripture-watermark" aria-hidden="true">
-        Abundant Life
-    </div>
-
-    <div class="container reveal">
-        <div class="eyebrow">The Promise of Jesus</div>
-
-        <blockquote>
-            “I am come that they might have life, and that they might
-            have it <span>more abundantly.</span>”
-        </blockquote>
-
-        <cite>JOHN 10:10 · KJV</cite>
-    </div>
-</section>
-
-<!-- GIVING -->
-
-<section class="section giving" id="give">
-    <div class="container giving-grid">
-
-        <div class="giving-copy reveal">
-            <div class="eyebrow">Partner With the Mission</div>
-
-            <h2>
-                Fuel the<br>
-                <span class="accent">Flame.</span>
-            </h2>
-
-            <p>
-                Your generosity helps support the work of sharing the
-                Gospel through evangelism, ministry outreach, and digital
-                content. Together, we can continue carrying the message
-                of Jesus to people who need to hear it.
-            </p>
-
-            <div class="giving-quote">
-                “Every dollar sown fuels the fire for the furtherment
-                of God's kingdom and supports the completion of the
-                Great Commission.”
-            </div>
-
-            <div class="giving-actions">
-                <a class="button" href="give.html">
-                    Fuel the Flame <span class="button-arrow">↗</span>
-                </a>
-            </div>
-        </div>
-
-        <div class="giving-panel reveal">
-            <div class="giving-panel-label">Stand With Us</div>
-
-            <h3>Help Carry the Gospel.</h3>
-
-            <p>
-                Become a ministry partner and help make future outreach,
-                Gospel-centered content, and evangelism possible.
-            </p>
-
-            <p>
-                Click below to visit the secure giving information page
-                and choose your preferred method of giving.
-            </p>
-
-            <a class="button" href="give.html">
-                Give Now <span class="button-arrow">→</span>
-            </a>
-        </div>
-
-    </div>
-</section>
-
-<!-- BOOK JONATHAN -->
-
-<section class="booking" id="booking">
-    <div class="container booking-inner reveal">
-
-        <div class="eyebrow">Invite the Ministry</div>
-
-        <h2>
-            Let's Reach<br>
-            <span class="accent">The Lost.</span>
-        </h2>
-
-        <p>
-            Interested in inviting Jonathan to speak, preach, participate
-            in an outreach, or collaborate on a ministry initiative?
-            Get in touch to discuss the opportunity.
-        </p>
-
-        <a class="button"
-           href="mailto:jonathanperdeyt@gmail.com?subject=Book%20Jonathan%20Perde">
-            Book Jonathan <span class="button-arrow">↗</span>
+        <a href="mailto:jonathanperdeyt@gmail.com">
+          Contact
         </a>
+      </div>
+
+      <p style="margin-top: 20px; color: #666; font-size: 10px;">
+        © <span id="currentYear"></span> Jesus To The World Ministry.
+        All rights reserved.
+      </p>
 
     </div>
-</section>
+  </footer>
 
-</main>
+  <script>
+    /*
+      JESUS TO THE WORLD MINISTRY — DONATION PAGE
 
-<!-- FOOTER -->
+      Stripe link:
+      https://buy.stripe.com/fZu14odp563JdUF34K83C00
 
-<footer class="footer">
-    <div class="container">
+      This link accepts one-time donations with donor-selected amounts.
+      Monthly recurring donations require a separate recurring Stripe link.
 
-        <div class="footer-top">
+      Never place a Stripe secret API key in this file.
+    */
 
-            <div>
-                <a class="brand" href="#home">
-                    <div class="brand-symbol">J</div>
-                    <div class="brand-text">
-                        Jesus To The World
-                        <small>Ministry</small>
-                    </div>
-                </a>
+    const STRIPE_PAYMENT_LINK =
+      "https://buy.stripe.com/fZu14odp563JdUF34K83C00";
 
-                <p class="footer-mission">
-                    Seeking to save the lost. Proclaiming the Gospel of
-                    Jesus Christ to the streets, cities, and nations.
-                    All glory belongs to Him.
-                </p>
-            </div>
+    const PAYMENT_DETAILS = {
+      zelle: {
+        title: "Give with Zelle",
+        description:
+          "Open your bank's Zelle feature and send your gift to the email address below. Confirm the recipient inside your banking app before sending.",
+        recipientLabel: "Zelle email",
+        recipient: "jonathanperde@yahoo.com",
+        button: "Copy Zelle Email",
+        note:
+          "Zelle transfers are completed through your participating bank. This website does not process the Zelle transfer."
+      },
 
-            <nav class="footer-links" aria-label="Footer navigation">
-                <a href="#home">Home</a>
-                <a href="#mission">Mission</a>
-                <a href="#watch">Watch</a>
-                <a href="#impact">Impact</a>
-                <a href="#booking">Book Jonathan</a>
-                <a href="give.html">Give</a>
-            </nav>
+      paypal: {
+        title: "Give with PayPal",
+        description:
+          "Continue to PayPal to complete your gift. Verify the recipient before confirming your payment.",
+        recipientLabel: "PayPal username",
+        recipient: "@jonathanperde",
+        url: "https://paypal.me/jonathanperde",
+        button: "Continue to PayPal",
+        note:
+          "Check that the PayPal profile belongs to your intended recipient before sending."
+      },
 
-        </div>
+      venmo: {
+        title: "Give with Venmo",
+        description:
+          "Use the recipient information below to find the correct account in Venmo.",
+        recipientLabel: "Venmo username",
+        recipient: "@joanthanperde",
+        button: "Copy Venmo Username",
+        note:
+          "Confirm the exact username and profile before sending. The Venmo username has not been independently verified."
+      },
 
-        <div class="footer-bottom">
-            <span>
-                © <span id="currentYear"></span> Jesus To The World Ministry
-            </span>
+      cashapp: {
+        title: "Give with Cash App",
+        description:
+          "Continue to Cash App to send your gift. Confirm the recipient details before completing the transaction.",
+        recipientLabel: "Cash App tag",
+        recipient: "$Jmanftw20",
+        url: "https://cash.app/$Jmanftw20",
+        button: "Continue to Cash App",
+        note:
+          "Verify the account details in Cash App before sending."
+      },
 
-            <span>JESUS CHRIST IS LORD.</span>
-        </div>
+      wise: {
+        title: "Give with Wise",
+        description:
+          "Open Wise and use the recipient information below to find the correct account or arrange your transfer.",
+        recipientLabel: "Wise username",
+        recipient: "@jonathancornelp",
+        button: "Copy Wise Username",
+        note:
+          "A Wise username is not necessarily a direct payment link. Complete the transfer inside Wise."
+      }
+    };
 
-    </div>
-</footer>
+    const amountButtons = document.querySelectorAll(".amount-button");
+    const customAmountInput = document.getElementById("customAmount");
+    const monthlyToggle = document.getElementById("monthlyToggle");
+    const monthlyNotice = document.getElementById("monthlyNotice");
+    const paymentDetails = document.getElementById("paymentDetails");
 
-<script>
-/* MOBILE NAVIGATION */
+    let selectedAmount = 100;
+    let selectedMethod = null;
 
-const menuToggle = document.getElementById("menuToggle");
-const navLinks = document.getElementById("navLinks");
+    document.getElementById("currentYear").textContent =
+      new Date().getFullYear();
 
-menuToggle.addEventListener("click", function () {
-    const isOpen = navLinks.classList.toggle("open");
+    function getValidAmount() {
+      const inputValue = customAmountInput.value.trim();
 
-    menuToggle.setAttribute("aria-expanded", String(isOpen));
-    menuToggle.innerHTML = isOpen ? "&times;" : "☰";
-});
+      let amount;
 
-navLinks.querySelectorAll("a").forEach(function (link) {
-    link.addEventListener("click", function () {
-        navLinks.classList.remove("open");
-        menuToggle.setAttribute("aria-expanded", "false");
-        menuToggle.innerHTML = "☰";
+      if (inputValue !== "") {
+        amount = Number(inputValue);
+      } else {
+        amount = selectedAmount;
+      }
+
+      if (
+        !Number.isFinite(amount) ||
+        amount < 1 ||
+        amount > 999999
+      ) {
+        return null;
+      }
+
+      return amount;
+    }
+
+    function updateAmountButtons(activeButton) {
+      amountButtons.forEach(button => {
+        button.classList.toggle("active", button === activeButton);
+      });
+    }
+
+    amountButtons.forEach(button => {
+      button.addEventListener("click", () => {
+        selectedAmount = Number(button.dataset.amount);
+
+        customAmountInput.value = "";
+
+        updateAmountButtons(button);
+      });
     });
-});
 
-/* SCROLL REVEAL */
+    customAmountInput.addEventListener("input", () => {
+      amountButtons.forEach(button => {
+        button.classList.remove("active");
+      });
+    });
 
-const revealElements = document.querySelectorAll(".reveal");
+    monthlyToggle.addEventListener("change", () => {
+      monthlyNotice.classList.toggle(
+        "visible",
+        monthlyToggle.checked
+      );
 
-if ("IntersectionObserver" in window) {
-    const observer = new IntersectionObserver(function (entries) {
-        entries.forEach(function (entry) {
-            if (entry.isIntersecting) {
-                entry.target.classList.add("visible");
-                observer.unobserve(entry.target);
-            }
+      if (monthlyToggle.checked) {
+        showMessage(
+          "Monthly donations require a recurring Stripe payment link."
+        );
+      } else if (selectedMethod) {
+        renderPaymentDetails(selectedMethod);
+      }
+    });
+
+    function showMessage(message) {
+      let status = document.getElementById("statusMessage");
+
+      if (!status) {
+        status = document.createElement("div");
+        status.id = "statusMessage";
+        status.className = "status-message";
+        paymentDetails.appendChild(status);
+      }
+
+      status.textContent = message;
+    }
+
+    function money(amount) {
+      return amount.toLocaleString("en-US", {
+        style: "currency",
+        currency: "USD"
+      });
+    }
+
+    function openStripeCheckout() {
+      if (monthlyToggle.checked) {
+        paymentDetails.innerHTML = `
+          <h3 class="details-title">Monthly Giving</h3>
+          <p class="details-description">
+            Monthly donations need a recurring Stripe payment link.
+            Your current link is configured for one-time donations.
+            Turn off monthly giving to continue.
+          </p>
+          <button class="secondary-button" id="turnOffMonthly" type="button">
+            Return to One-Time Giving
+          </button>
+        `;
+
+        document
+          .getElementById("turnOffMonthly")
+          .addEventListener("click", () => {
+            monthlyToggle.checked = false;
+            monthlyNotice.classList.remove("visible");
+            renderPaymentDetails("stripe");
+          });
+
+        return;
+      }
+
+      const amount = getValidAmount();
+
+      if (amount === null) {
+        paymentDetails.innerHTML = `
+          <h3 class="details-title">Check Your Donation Amount</h3>
+          <p class="details-description">
+            Please enter a valid donation amount of at least $1
+            and no more than $999,999.
+          </p>
+        `;
+
+        paymentDetails.scrollIntoView({
+          behavior: "smooth",
+          block: "nearest"
         });
-    }, {
-        threshold: 0.12
-    });
 
-    revealElements.forEach(function (element) {
-        observer.observe(element);
-    });
-} else {
-    revealElements.forEach(function (element) {
-        element.classList.add("visible");
-    });
-}
+        return;
+      }
 
-/* CURRENT YEAR */
+      paymentDetails.innerHTML = `
+        <h3 class="details-title">Secure Card Donation</h3>
 
-document.getElementById("currentYear").textContent =
-    new Date().getFullYear();
-</script>
+        <p class="details-description">
+          Your selected amount is <strong>${money(amount)}</strong>.
+          Continue to Stripe's secure checkout to complete your gift.
+        </p>
+
+        <div class="button-stack">
+          <a
+            class="primary-button"
+            href="${STRIPE_PAYMENT_LINK}"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Continue to Stripe Checkout →
+          </a>
+
+          <p class="details-description" style="margin: 0;">
+            Important: Your Stripe link allows donors to choose an amount.
+            Confirm the amount again on the Stripe checkout page before
+            completing your payment.
+          </p>
+        </div>
+
+        <p class="secure-note">
+          <span>●</span>
+          Secure payment handled by Stripe
+        </p>
+      `;
+
+      paymentDetails.classList.add("visible");
+
+      paymentDetails.scrollIntoView({
+        behavior: "smooth",
+        block: "nearest"
+      });
+    }
+
+    function renderPaymentDetails(method) {
+      selectedMethod = method;
+
+      paymentDetails.classList.add("visible");
+
+      if (method === "stripe") {
+        openStripeCheckout();
+        return;
+      }
+
+      const data = PAYMENT_DETAILS[method];
+
+      if (!data) {
+        return;
+      }
+
+      if (monthlyToggle.checked) {
+        paymentDetails.innerHTML = `
+          <h3 class="details-title">Monthly Giving</h3>
+          <p class="details-description">
+            The monthly option is not connected to automatic recurring
+            payments yet. Turn off monthly giving to continue with
+            your selected payment method.
+          </p>
+        `;
+
+        return;
+      }
+
+      const amount = getValidAmount();
+
+      const amountText = amount === null
+        ? "Choose a valid donation amount above."
+        : "Your selected amount is " + money(amount) + ".";
+
+      let actionButton = "";
+
+      if (data.url) {
+        actionButton = `
+          <a
+            class="primary-button"
+            href="${data.url}"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            ${data.button} →
+          </a>
+        `;
+      } else {
+        actionButton = `
+          <button
+            class="primary-button"
+            id="copyRecipient"
+            type="button"
+          >
+            ${data.button}
+          </button>
+        `;
+      }
+
+      paymentDetails.innerHTML = `
+        <h3 class="details-title">${data.title}</h3>
+
+        <p class="details-description">
+          ${data.description}
+          ${amountText}
+        </p>
+
+        <div class="recipient-label">${data.recipientLabel}</div>
+
+        <div class="recipient-row">
+          <span class="recipient-value" id="recipientValue"></span>
+
+          <button
+            class="copy-button"
+            id="copySmall"
+            type="button"
+          >
+            Copy
+          </button>
+        </div>
+
+        <div class="button-stack">
+          ${actionButton}
+        </div>
+
+        <p class="details-description" style="margin: 13px 0 0;">
+          ${data.note}
+        </p>
+
+        <div id="statusMessage" class="status-message" aria-live="polite"></div>
+      `;
+
+      document.getElementById("recipientValue").textContent =
+        data.recipient;
+
+      const copySmall = document.getElementById("copySmall");
+
+      copySmall.addEventListener("click", () => {
+        copyText(data.recipient);
+      });
+
+      const copyRecipient = document.getElementById("copyRecipient");
+
+      if (copyRecipient) {
+        copyRecipient.addEventListener("click", () => {
+          copyText(data.recipient);
+        });
+      }
+
+      paymentDetails.scrollIntoView({
+        behavior: "smooth",
+        block: "nearest"
+      });
+    }
+
+    async function copyText(text) {
+      try {
+        await navigator.clipboard.writeText(text);
+        showMessage("Copied successfully.");
+      } catch (error) {
+        const temporaryInput = document.createElement("textarea");
+
+        temporaryInput.value = text;
+        temporaryInput.style.position = "fixed";
+        temporaryInput.style.opacity = "0";
+
+        document.body.appendChild(temporaryInput);
+
+        temporaryInput.select();
+
+        const success = document.execCommand("copy");
+
+        temporaryInput.remove();
+
+        showMessage(
+          success
+            ? "Copied successfully."
+            : "Copy unavailable. Please select and copy the recipient manually."
+        );
+      }
+    }
+
+    document.querySelectorAll(".payment-method").forEach(button => {
+      button.addEventListener("click", () => {
+        renderPaymentDetails(button.dataset.method);
+      });
+    });
+  </script>
 
 </body>
 </html>
