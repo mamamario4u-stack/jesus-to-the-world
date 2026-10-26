@@ -439,6 +439,23 @@
     @media(max-width:640px){.reach-line{font-size:clamp(29px,7.9vw,52px)!important;gap:.08em!important;padding:0 5px!important}.all-things-title h2{font-size:clamp(62px,15vw,76px)!important}.reach-line .char{letter-spacing:-.06em!important}}
     @media(prefers-reduced-motion:reduce){.reach-line .char,.all-things-title h2 .letter-char{transition:none!important}}
   </style>
+<style>
+a.pill.light {
+  background: #111111 !important;
+  color: #ffffff !important;
+  border: 1px solid #111111 !important;
+  transition: all 0.3s ease !important;
+}
+
+a.pill.light:hover {
+  background: #111111 !important;
+  color: #ff683d !important;
+  border-color: #ff683d !important;
+  box-shadow: 0 0 12px rgba(255, 104, 61, 0.65),
+              0 0 28px rgba(255, 104, 61, 0.3) !important;
+  transform: translateY(-2px);
+}
+</style>
 </head>
 <body>
   <div class="cursor-dot" aria-hidden="true"></div>
