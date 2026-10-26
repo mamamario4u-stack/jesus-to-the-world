@@ -5,25 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Give | Jesus To The World Ministry</title>
-
   <meta
     name="description"
-    content="Partner with Jesus To The World Ministry to share the Gospel and reach the lost. Give securely and support the Great Commission."
+    content="Partner with Jesus To The World Ministry to share the Gospel and reach the lost."
   >
-
-  <meta name="theme-color" content="#0b0b0b">
 
   <style>
     :root {
-      --background: #090909;
-      --surface: #121212;
-      --surface-light: #191919;
-      --orange: #ff642d;
-      --orange-light: #ff8a48;
-      --text: #ffffff;
-      --muted: #a5a5a5;
-      --border: rgba(255, 255, 255, 0.11);
-      --green: #6ee7a0;
+      --background: #080808;
+      --surface: #111111;
+      --surface-light: #181818;
+      --border: #292929;
+      --orange: #ff642e;
+      --orange-light: #ff854f;
+      --white: #ffffff;
+      --muted: #a4a4a4;
     }
 
     * {
@@ -40,15 +36,20 @@
       min-height: 100vh;
       background:
         radial-gradient(
-          ellipse at 50% 0%,
-          rgba(255, 83, 34, 0.13),
-          transparent 45%
+          ellipse at 50% 28%,
+          rgba(117, 40, 14, 0.18),
+          transparent 48%
         ),
         var(--background);
-      color: var(--text);
+      color: var(--white);
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
         Roboto, Helvetica, Arial, sans-serif;
       line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
     }
 
     button,
@@ -56,110 +57,96 @@
       font: inherit;
     }
 
-    button,
-    a {
-      -webkit-tap-highlight-color: transparent;
-    }
-
-    a {
-      color: inherit;
+    button {
+      cursor: pointer;
     }
 
     .announcement {
-      padding: 10px 20px;
+      padding: 11px 16px;
       text-align: center;
-      background: rgba(255, 100, 45, 0.09);
-      border-bottom: 1px solid rgba(255, 100, 45, 0.17);
-      color: #ffd0bd;
-      font-size: 12px;
-      letter-spacing: 1.5px;
+      background: rgba(91, 31, 13, 0.32);
+      border-bottom: 1px solid rgba(255, 100, 46, 0.18);
+      color: #e8b8a6;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 2px;
       text-transform: uppercase;
     }
 
-    .container {
-      width: min(100% - 40px, 850px);
+    .navbar {
+      border-bottom: 1px solid #242424;
+    }
+
+    .nav-inner {
+      width: min(100% - 40px, 1050px);
+      min-height: 92px;
       margin: 0 auto;
-    }
-
-    header {
-      padding: 24px 0;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .nav {
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
       gap: 20px;
     }
 
     .brand {
-      text-decoration: none;
       display: flex;
       align-items: center;
       gap: 12px;
-      min-width: 0;
     }
 
     .brand-icon {
-      width: 43px;
-      height: 43px;
-      flex-shrink: 0;
+      width: 44px;
+      height: 44px;
       display: grid;
       place-items: center;
-      border: 1px solid rgba(255, 100, 45, 0.45);
-      border-radius: 12px;
-      background: rgba(255, 100, 45, 0.1);
-      color: var(--orange-light);
-      font-size: 23px;
+      border: 1px solid rgba(255, 100, 46, 0.45);
+      border-radius: 13px;
+      background: rgba(255, 100, 46, 0.08);
+      color: var(--orange);
+      font-size: 25px;
+      box-shadow: inset 0 0 16px rgba(255, 100, 46, 0.04);
     }
 
     .brand-name {
       font-size: 14px;
-      font-weight: 800;
-      letter-spacing: 0.8px;
-      line-height: 1.3;
+      font-weight: 850;
+      letter-spacing: 0.5px;
+      line-height: 1.4;
     }
 
     .brand-subtitle {
-      color: var(--muted);
+      display: block;
+      color: #898989;
       font-size: 10px;
+      font-weight: 800;
       letter-spacing: 2px;
-      margin-top: 3px;
-      text-transform: uppercase;
     }
 
     .back-link {
-      color: #d1d1d1;
-      text-decoration: none;
+      color: #b8b8b8;
       font-size: 13px;
-      white-space: nowrap;
+      font-weight: 650;
       transition: color 0.2s ease;
     }
 
     .back-link:hover {
-      color: var(--orange-light);
-    }
-
-    main {
-      padding: 58px 0 80px;
+      color: var(--orange);
     }
 
     .hero {
+      padding: 66px 20px 34px;
       text-align: center;
-      margin-bottom: 38px;
     }
 
     .eyebrow {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
+      gap: 11px;
+      margin-bottom: 15px;
       color: var(--orange-light);
       font-size: 11px;
-      font-weight: 800;
+      font-weight: 900;
       letter-spacing: 3px;
       text-transform: uppercase;
-      margin-bottom: 16px;
     }
 
     .eyebrow::before,
@@ -171,65 +158,68 @@
     }
 
     h1 {
-      font-size: clamp(36px, 6vw, 57px);
-      line-height: 1.08;
-      letter-spacing: -2px;
-      font-weight: 850;
-      margin-bottom: 18px;
+      font-size: clamp(38px, 6vw, 56px);
+      font-weight: 900;
+      letter-spacing: -2.5px;
+      line-height: 1.12;
     }
 
     h1 span {
       color: var(--orange);
-      text-shadow: 0 0 32px rgba(255, 100, 45, 0.2);
     }
 
     .hero-description {
-      max-width: 560px;
-      margin: 0 auto;
-      color: #b9b9b9;
+      max-width: 590px;
+      margin: 20px auto 0;
+      color: #b0b0b0;
       font-size: 15px;
-      line-height: 1.8;
+      line-height: 1.9;
     }
 
     .scripture {
-      margin: 28px auto 0;
-      max-width: 600px;
-      color: #e1e1e1;
-      font-size: 14px;
+      margin-top: 25px;
+      color: #d0d0d0;
+      font-size: 13px;
       font-style: italic;
     }
 
-    .scripture strong {
+    .scripture-reference {
       display: block;
+      margin-top: 7px;
       color: var(--orange-light);
-      font-style: normal;
       font-size: 11px;
-      letter-spacing: 1.5px;
-      margin-top: 8px;
+      font-style: normal;
+      font-weight: 850;
+      letter-spacing: 2px;
     }
 
     .giving-card {
-      background: linear-gradient(
-        155deg,
-        rgba(255, 255, 255, 0.045),
-        rgba(255, 255, 255, 0.012)
-      );
-      border: 1px solid var(--border);
-      border-radius: 22px;
-      padding: clamp(22px, 5vw, 38px);
-      box-shadow: 0 25px 90px rgba(0, 0, 0, 0.3);
+      width: min(100% - 36px, 860px);
+      margin: 0 auto 70px;
+      padding: 36px 38px;
+      border: 1px solid #292929;
+      border-radius: 23px;
+      background:
+        radial-gradient(
+          ellipse at top,
+          rgba(255, 100, 46, 0.055),
+          transparent 65%
+        ),
+        linear-gradient(145deg, #151515, #101010);
+      box-shadow: 0 20px 70px rgba(0, 0, 0, 0.24);
     }
 
-    .section-heading {
-      font-size: 20px;
-      font-weight: 750;
-      margin-bottom: 6px;
+    .card-heading {
+      margin-bottom: 4px;
+      font-size: 21px;
+      font-weight: 850;
+      letter-spacing: -0.5px;
     }
 
-    .section-description {
-      color: var(--muted);
-      font-size: 13px;
+    .card-description {
       margin-bottom: 24px;
+      color: #a6a6a6;
+      font-size: 13px;
     }
 
     .amount-grid {
@@ -240,14 +230,13 @@
     }
 
     .amount-button {
-      min-height: 60px;
-      background: #171717;
-      color: #ededed;
-      border: 1px solid #343434;
-      border-radius: 11px;
-      cursor: pointer;
-      font-size: 17px;
-      font-weight: 750;
+      min-height: 61px;
+      border: 1px solid #303030;
+      border-radius: 12px;
+      background: #181818;
+      color: #f6f6f6;
+      font-size: 16px;
+      font-weight: 850;
       transition:
         border-color 0.2s ease,
         background 0.2s ease,
@@ -257,226 +246,356 @@
 
     .amount-button:hover {
       border-color: var(--orange);
-      transform: translateY(-2px);
+      transform: translateY(-1px);
     }
 
     .amount-button.active {
-      color: white;
-      background: rgba(255, 100, 45, 0.12);
-      border-color: var(--orange);
-      box-shadow:
-        0 0 0 1px rgba(255, 100, 45, 0.2),
-        0 0 24px rgba(255, 100, 45, 0.12);
+      border: 1px solid var(--orange);
+      background: rgba(255, 100, 46, 0.15);
+      box-shadow: 0 0 18px rgba(255, 100, 46, 0.11);
     }
 
-    .custom-label {
+    .field-label {
       display: block;
+      margin-bottom: 9px;
       color: #dedede;
       font-size: 13px;
-      font-weight: 650;
-      margin-bottom: 9px;
+      font-weight: 750;
     }
 
-    .input-wrap {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      border: 1px solid #393939;
-      background: #101010;
-      border-radius: 11px;
-      padding: 0 16px;
-      transition: border-color 0.2s ease;
-    }
-
-    .input-wrap:focus-within {
-      border-color: var(--orange);
+    .amount-input-wrap {
+      position: relative;
     }
 
     .currency-symbol {
-      color: var(--orange-light);
-      font-size: 22px;
-      font-weight: 750;
+      position: absolute;
+      top: 50%;
+      left: 17px;
+      color: var(--orange);
+      font-size: 21px;
+      font-weight: 850;
+      transform: translateY(-50%);
+      pointer-events: none;
     }
 
-    #customAmount {
-      min-width: 0;
+    .amount-input {
       width: 100%;
-      height: 54px;
-      background: transparent;
-      border: none;
+      min-height: 57px;
+      padding: 14px 18px 14px 41px;
+      border: 1px solid #303030;
+      border-radius: 12px;
       outline: none;
-      color: white;
-      font-size: 18px;
+      background: #101010;
+      color: var(--white);
+      font-size: 16px;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
     }
 
-    #customAmount::placeholder {
-      color: #686868;
+    .amount-input:focus {
+      border-color: var(--orange);
+      box-shadow: 0 0 0 3px rgba(255, 100, 46, 0.09);
     }
 
-    .giving-frequency {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 18px;
-      margin: 27px 0;
-      padding: 18px;
-      background: rgba(255, 255, 255, 0.025);
-      border: 1px solid var(--border);
-      border-radius: 13px;
-    }
-
-    .frequency-title {
-      font-size: 14px;
-      font-weight: 750;
-    }
-
-    .frequency-description {
-      color: var(--muted);
+    .helper-text {
+      margin-top: 9px;
+      color: #777;
       font-size: 12px;
+    }
+
+    .monthly-option {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+      margin-top: 24px;
+      padding: 17px;
+      border: 1px solid #303030;
+      border-radius: 13px;
+      background: rgba(255, 255, 255, 0.015);
+    }
+
+    .monthly-title {
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .monthly-description {
       margin-top: 3px;
+      color: #929292;
+      font-size: 12px;
     }
 
-    .toggle {
+    .switch {
       position: relative;
-      display: inline-block;
-      width: 49px;
-      height: 28px;
-      flex-shrink: 0;
+      flex: 0 0 auto;
+      width: 48px;
+      height: 27px;
     }
 
-    .toggle input {
-      opacity: 0;
+    .switch input {
       width: 0;
       height: 0;
+      opacity: 0;
     }
 
-    .toggle-slider {
+    .switch-track {
       position: absolute;
       inset: 0;
-      border-radius: 40px;
-      background: #393939;
+      border: 1px solid #414141;
+      border-radius: 30px;
+      background: #292929;
+      transition: 0.2s ease;
       cursor: pointer;
-      transition: background 0.2s ease, box-shadow 0.2s ease;
     }
 
-    .toggle-slider::before {
-      content: "";
+    .switch-track::before {
       position: absolute;
-      height: 20px;
-      width: 20px;
-      left: 4px;
-      top: 4px;
+      top: 3px;
+      left: 3px;
+      width: 19px;
+      height: 19px;
       border-radius: 50%;
       background: white;
-      transition: transform 0.2s ease;
+      content: "";
+      transition: 0.2s ease;
     }
 
-    .toggle input:checked + .toggle-slider {
+    .switch input:checked + .switch-track {
+      border-color: var(--orange);
+      background: rgba(255, 100, 46, 0.35);
+      box-shadow: 0 0 14px rgba(255, 100, 46, 0.2);
+    }
+
+    .switch input:checked + .switch-track::before {
       background: var(--orange);
-      box-shadow: 0 0 18px rgba(255, 100, 45, 0.35);
-    }
-
-    .toggle input:checked + .toggle-slider::before {
       transform: translateX(21px);
     }
 
-    .monthly-notice {
-      display: none;
-      padding: 13px 15px;
-      border-radius: 10px;
-      margin: -10px 0 24px;
-      background: rgba(255, 170, 40, 0.08);
-      border: 1px solid rgba(255, 170, 40, 0.22);
-      color: #ffd7a0;
-      font-size: 12px;
-      line-height: 1.7;
+    .payment-section {
+      margin-top: 31px;
     }
 
-    .monthly-notice.visible {
-      display: block;
+    .payment-heading {
+      margin-bottom: 6px;
+      font-size: 17px;
+      font-weight: 850;
+    }
+
+    .payment-subheading {
+      margin-bottom: 17px;
+      color: #999;
+      font-size: 13px;
+    }
+
+    .stripe-button {
+      width: 100%;
+      min-height: 59px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      padding: 14px 20px;
+      border: 1px solid var(--orange);
+      border-radius: 12px;
+      background: linear-gradient(135deg, #ff6c35, #e84d1b);
+      color: #fff;
+      font-size: 15px;
+      font-weight: 900;
+      box-shadow: 0 0 22px rgba(255, 100, 46, 0.14);
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        filter 0.2s ease;
+    }
+
+    .stripe-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 30px rgba(255, 100, 46, 0.25);
+      filter: brightness(1.07);
+    }
+
+    .stripe-icon {
+      display: grid;
+      place-items: center;
+      width: 29px;
+      height: 29px;
+      border-radius: 7px;
+      background: white;
+      color: #635bff;
+      font-size: 17px;
+      font-weight: 950;
+    }
+
+    .secure-note {
+      margin-top: 11px;
+      text-align: center;
+      color: #858585;
+      font-size: 11px;
+    }
+
+    .secure-note strong {
+      color: #bdbdbd;
     }
 
     .divider {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      margin: 26px 0;
+      color: #777;
+      font-size: 11px;
+      font-weight: 750;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .divider::before,
+    .divider::after {
       height: 1px;
-      background: var(--border);
-      margin: 28px 0;
+      flex: 1;
+      background: #303030;
+      content: "";
+    }
+
+    .other-methods-heading {
+      margin-bottom: 14px;
+      font-size: 14px;
+      font-weight: 800;
     }
 
     .payment-methods {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 12px;
+      gap: 10px;
     }
 
-    .payment-method {
-      display: flex;
-      align-items: center;
-      gap: 13px;
-      min-width: 0;
-      min-height: 76px;
-      padding: 15px;
-      border: 1px solid #333333;
-      border-radius: 13px;
-      background: #151515;
-      cursor: pointer;
-      text-align: left;
-      color: white;
-      transition:
-        border-color 0.2s ease,
-        background 0.2s ease,
-        transform 0.2s ease;
-    }
-
-    .payment-method:hover {
-      border-color: var(--orange);
-      background: #1c1715;
-      transform: translateY(-2px);
-    }
-
-    .payment-icon {
-      width: 40px;
-      height: 40px;
-      flex-shrink: 0;
-      display: grid;
-      place-items: center;
-      border-radius: 10px;
-      background: rgba(255, 255, 255, 0.07);
-      font-size: 20px;
+    .method-button {
+      min-height: 53px;
+      padding: 12px 14px;
+      border: 1px solid #303030;
+      border-radius: 11px;
+      background: #181818;
+      color: #f2f2f2;
+      font-size: 13px;
       font-weight: 800;
+      text-align: left;
+      transition: border-color 0.2s ease, background 0.2s ease;
     }
 
-    .payment-method[data-method="stripe"] .payment-icon {
-      color: var(--orange-light);
-      background: rgba(255, 100, 45, 0.13);
+    .method-button:hover {
+      border-color: rgba(255, 100, 46, 0.75);
+      background: #201915;
     }
 
-    .payment-name {
-      font-size: 14px;
-      font-weight: 750;
-      overflow-wrap: anywhere;
-    }
-
-    .payment-subtitle {
-      color: #999999;
+    .method-button span {
+      display: block;
+      margin-top: 2px;
+      color: #929292;
       font-size: 11px;
-      margin-top: 3px;
+      font-weight: 500;
     }
 
     .payment-details {
       display: none;
-      margin-top: 20px;
-      padding: 22px;
-      border-radius: 14px;
-      background: #0d0d0d;
-      border: 1px solid rgba(255, 100, 45, 0.28);
-      animation: appear 0.22s ease;
+      margin-top: 15px;
+      padding: 20px;
+      border: 1px solid rgba(255, 100, 46, 0.35);
+      border-radius: 13px;
+      background: rgba(255, 100, 46, 0.045);
     }
 
-    .payment-details.visible {
+    .payment-details.show {
       display: block;
+      animation: fadeIn 0.25s ease;
     }
 
-    @keyframes appear {
+    .payment-details h3 {
+      margin-bottom: 7px;
+      font-size: 15px;
+    }
+
+    .payment-details p {
+      margin-bottom: 12px;
+      color: #b0b0b0;
+      font-size: 13px;
+      overflow-wrap: anywhere;
+    }
+
+    .recipient {
+      color: var(--orange-light);
+      font-weight: 850;
+      user-select: all;
+    }
+
+    .detail-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-top: 12px;
+    }
+
+    .small-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 39px;
+      padding: 9px 13px;
+      border: 1px solid #414141;
+      border-radius: 8px;
+      background: #1b1b1b;
+      color: white;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .small-button:hover {
+      border-color: var(--orange);
+    }
+
+    .small-button.primary {
+      border-color: var(--orange);
+      background: rgba(255, 100, 46, 0.13);
+    }
+
+    .footer {
+      padding: 26px 20px 34px;
+      border-top: 1px solid #222;
+      color: #777;
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .footer-brand {
+      margin-bottom: 5px;
+      color: #aaa;
+      font-weight: 850;
+      letter-spacing: 1px;
+    }
+
+    .toast {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      z-index: 10;
+      padding: 12px 17px;
+      border: 1px solid rgba(255, 100, 46, 0.5);
+      border-radius: 10px;
+      background: #19110e;
+      color: white;
+      font-size: 13px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(10px);
+      transition: 0.2s ease;
+    }
+
+    .toast.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @keyframes fadeIn {
       from {
         opacity: 0;
         transform: translateY(5px);
@@ -488,232 +607,30 @@
       }
     }
 
-    .details-title {
-      font-size: 17px;
-      font-weight: 800;
-      margin-bottom: 6px;
-    }
-
-    .details-description {
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.7;
-      margin-bottom: 17px;
-    }
-
-    .recipient-label {
-      color: #888888;
-      text-transform: uppercase;
-      font-size: 10px;
-      font-weight: 750;
-      letter-spacing: 1.5px;
-      margin-bottom: 7px;
-    }
-
-    .recipient-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 10px;
-      border: 1px solid #303030;
-      border-radius: 9px;
-      padding: 12px;
-      margin-bottom: 14px;
-      background: #151515;
-    }
-
-    .recipient-value {
-      overflow-wrap: anywhere;
-      font-size: 14px;
-      font-weight: 700;
-    }
-
-    .copy-button {
-      border: 1px solid #414141;
-      color: white;
-      background: #242424;
-      border-radius: 7px;
-      padding: 7px 10px;
-      cursor: pointer;
-      font-size: 11px;
-      font-weight: 750;
-      flex-shrink: 0;
-    }
-
-    .copy-button:hover {
-      border-color: var(--orange);
-    }
-
-    .primary-button {
-      width: 100%;
-      display: inline-flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 54px;
-      padding: 14px 20px;
-      background: var(--orange);
-      border: 1px solid var(--orange);
-      border-radius: 10px;
-      color: white;
-      text-decoration: none;
-      text-align: center;
-      font-size: 14px;
-      font-weight: 850;
-      cursor: pointer;
-      box-shadow: 0 0 25px rgba(255, 100, 45, 0.13);
-      transition:
-        background 0.2s ease,
-        box-shadow 0.2s ease,
-        transform 0.2s ease;
-    }
-
-    .primary-button:hover {
-      background: #ff7a43;
-      box-shadow: 0 0 30px rgba(255, 100, 45, 0.28);
-      transform: translateY(-1px);
-    }
-
-    .secondary-button {
-      width: 100%;
-      display: inline-flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 48px;
-      padding: 12px 18px;
-      border: 1px solid #414141;
-      border-radius: 10px;
-      color: white;
-      background: #191919;
-      text-decoration: none;
-      font-size: 13px;
-      font-weight: 750;
-      cursor: pointer;
-      transition: border-color 0.2s ease;
-    }
-
-    .secondary-button:hover {
-      border-color: var(--orange);
-    }
-
-    .button-stack {
-      display: grid;
-      gap: 10px;
-    }
-
-    .secure-note {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 7px;
-      color: #969696;
-      text-align: center;
-      font-size: 11px;
-      margin-top: 16px;
-    }
-
-    .secure-note span {
-      color: var(--green);
-    }
-
-    .thank-you {
-      padding: 23px;
-      margin-top: 32px;
-      border: 1px solid var(--border);
-      border-radius: 13px;
-      text-align: center;
-      background: rgba(255, 255, 255, 0.02);
-    }
-
-    .thank-you p {
-      color: #c1c1c1;
-      font-size: 13px;
-      line-height: 1.8;
-    }
-
-    .thank-you strong {
-      display: block;
-      color: white;
-      font-size: 14px;
-      margin-bottom: 5px;
-    }
-
-    footer {
-      border-top: 1px solid var(--border);
-      padding: 27px 0;
-      text-align: center;
-    }
-
-    .footer-brand {
-      color: #bdbdbd;
-      font-size: 12px;
-      font-weight: 750;
-      letter-spacing: 1px;
-    }
-
-    .footer-tagline {
-      color: #777777;
-      font-size: 11px;
-      margin-top: 5px;
-    }
-
-    .footer-links {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
-      margin-top: 15px;
-    }
-
-    .footer-links a {
-      color: #999999;
-      text-decoration: none;
-      font-size: 11px;
-    }
-
-    .footer-links a:hover {
-      color: var(--orange-light);
-    }
-
-    .status-message {
-      min-height: 18px;
-      color: var(--green);
-      font-size: 12px;
-      margin-top: 8px;
-    }
-
-    @media (max-width: 560px) {
-      .container {
-        width: min(100% - 26px, 850px);
-      }
-
-      header {
-        padding: 18px 0;
+    @media (max-width: 620px) {
+      .nav-inner {
+        min-height: 78px;
       }
 
       .brand-name {
         font-size: 12px;
       }
 
-      .brand-subtitle {
-        font-size: 9px;
-        letter-spacing: 1.2px;
-      }
-
       .brand-icon {
-        width: 37px;
-        height: 37px;
+        width: 39px;
+        height: 39px;
       }
 
       .back-link {
         font-size: 12px;
       }
 
-      main {
-        padding: 40px 0 55px;
+      .hero {
+        padding-top: 48px;
       }
 
       h1 {
-        letter-spacing: -1.4px;
+        letter-spacing: -1.5px;
       }
 
       .hero-description {
@@ -721,45 +638,16 @@
       }
 
       .giving-card {
-        padding: 20px 16px;
-        border-radius: 17px;
+        padding: 25px 19px;
+        border-radius: 18px;
       }
 
       .amount-grid {
-        gap: 7px;
-      }
-
-      .amount-button {
-        min-height: 53px;
-        font-size: 15px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
       .payment-methods {
         grid-template-columns: 1fr;
-        gap: 9px;
-      }
-
-      .payment-method {
-        min-height: 67px;
-      }
-
-      .giving-frequency {
-        padding: 14px;
-        gap: 12px;
-      }
-
-      .payment-details {
-        padding: 17px;
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      *,
-      *::before,
-      *::after {
-        scroll-behavior: auto !important;
-        animation-duration: 0.01ms !important;
-        transition-duration: 0.01ms !important;
       }
     }
   </style>
@@ -768,62 +656,54 @@
 <body>
 
   <div class="announcement">
-    Partner with us · Help reach the lost
+    Partner With Us · Help Reach The Lost
   </div>
 
-  <header>
-    <div class="container nav">
+  <header class="navbar">
+    <div class="nav-inner">
 
-      <a class="brand" href="index.html" aria-label="Jesus To The World Ministry homepage">
+      <a class="brand" href="index.html" aria-label="Jesus To The World Ministry home">
         <div class="brand-icon" aria-hidden="true">✝</div>
 
-        <div>
-          <div class="brand-name">JESUS TO THE WORLD</div>
-          <div class="brand-subtitle">Ministry</div>
+        <div class="brand-name">
+          JESUS TO THE WORLD
+          <span class="brand-subtitle">MINISTRY</span>
         </div>
       </a>
 
-      <a class="back-link" href="index.html">
-        ← Back to Home
-      </a>
+      <a class="back-link" href="index.html">← Back to Home</a>
 
     </div>
   </header>
 
-  <main class="container">
+  <main>
 
     <section class="hero">
-
       <div class="eyebrow">Fuel the Mission</div>
 
-      <h1>
-        Fuel the <span>Flame.</span>
-      </h1>
+      <h1>Fuel the <span>Flame.</span></h1>
 
       <p class="hero-description">
-        Your generosity helps us share the Gospel, reach the lost,
-        and bring the message of Jesus Christ to the world.
-        Partner with us in furthering the Great Commission.
+        Your generosity helps us share the Gospel, reach the lost, and bring
+        the message of Jesus Christ to the world. Partner with us in
+        furthering the Great Commission.
       </p>
 
       <p class="scripture">
         “Go into all the world and preach the gospel to all creation.”
-        <strong>MARK 16:15</strong>
+        <span class="scripture-reference">MARK 16:15</span>
       </p>
-
     </section>
 
-    <section class="giving-card" aria-labelledby="donationHeading">
+    <section class="giving-card" aria-labelledby="giving-heading">
 
-      <h2 class="section-heading" id="donationHeading">
-        Make a Difference
-      </h2>
+      <h2 class="card-heading" id="giving-heading">Make a Difference</h2>
 
-      <p class="section-description">
+      <p class="card-description">
         Choose your gift amount and select your preferred payment method.
       </p>
 
-      <div class="amount-grid" aria-label="Suggested donation amounts">
+      <div class="amount-grid" aria-label="Choose a donation amount">
 
         <button class="amount-button" type="button" data-amount="50">
           $50
@@ -843,593 +723,343 @@
 
       </div>
 
-      <label class="custom-label" for="customAmount">
+      <label class="field-label" for="donationAmount">
         Or enter your own amount (USD)
       </label>
 
-      <div class="input-wrap">
-        <span class="currency-symbol">$</span>
+      <div class="amount-input-wrap">
+        <span class="currency-symbol" aria-hidden="true">$</span>
 
         <input
-          id="customAmount"
+          class="amount-input"
           type="number"
+          id="donationAmount"
           min="1"
           max="999999"
           step="0.01"
-          inputmode="decimal"
           placeholder="Enter donation amount"
+          inputmode="decimal"
           aria-describedby="amountHelp"
         >
       </div>
 
-      <p id="amountHelp" class="section-description" style="margin: 8px 0 0;">
+      <p class="helper-text" id="amountHelp">
         Your selected amount will be used to prepare your donation.
       </p>
 
-      <div class="giving-frequency">
+      <div class="monthly-option">
 
         <div>
-          <div class="frequency-title">Give Monthly</div>
-
-          <div class="frequency-description">
-            Become a recurring ministry partner.
+          <div class="monthly-title">Make this a monthly gift</div>
+          <div class="monthly-description">
+            Partner with us through recurring generosity.
           </div>
         </div>
 
-        <label class="toggle" aria-label="Toggle monthly giving">
-          <input id="monthlyToggle" type="checkbox">
-
-          <span class="toggle-slider"></span>
+        <label class="switch" aria-label="Monthly giving selection">
+          <input type="checkbox" id="monthlyGift">
+          <span class="switch-track"></span>
         </label>
 
       </div>
 
-      <div class="monthly-notice" id="monthlyNotice" role="status">
-        Monthly giving requires a separate recurring Stripe payment link.
-        Your current Stripe link processes one-time donations only.
-        Turn monthly giving off to continue with the current checkout.
-      </div>
+      <section class="payment-section">
 
-      <div class="divider"></div>
+        <h2 class="payment-heading">Choose Your Payment Method</h2>
 
-      <h2 class="section-heading">
-        Choose Your Payment Method
-      </h2>
-
-      <p class="section-description">
-        Select a payment method to see how to complete your gift.
-      </p>
-
-      <div class="payment-methods">
-
-        <button
-          class="payment-method"
-          type="button"
-          data-method="stripe"
-        >
-          <span class="payment-icon" aria-hidden="true">💳</span>
-
-          <span>
-            <span class="payment-name">Credit or Debit Card</span>
-            <span class="payment-subtitle">Secure Stripe checkout</span>
-          </span>
-        </button>
-
-        <button
-          class="payment-method"
-          type="button"
-          data-method="zelle"
-        >
-          <span class="payment-icon" aria-hidden="true">Z</span>
-
-          <span>
-            <span class="payment-name">Zelle</span>
-            <span class="payment-subtitle">Send through your bank</span>
-          </span>
-        </button>
-
-        <button
-          class="payment-method"
-          type="button"
-          data-method="paypal"
-        >
-          <span class="payment-icon" aria-hidden="true">P</span>
-
-          <span>
-            <span class="payment-name">PayPal</span>
-            <span class="payment-subtitle">Pay through PayPal</span>
-          </span>
-        </button>
-
-        <button
-          class="payment-method"
-          type="button"
-          data-method="venmo"
-        >
-          <span class="payment-icon" aria-hidden="true">V</span>
-
-          <span>
-            <span class="payment-name">Venmo</span>
-            <span class="payment-subtitle">Give using Venmo</span>
-          </span>
-        </button>
-
-        <button
-          class="payment-method"
-          type="button"
-          data-method="cashapp"
-        >
-          <span class="payment-icon" aria-hidden="true">$</span>
-
-          <span>
-            <span class="payment-name">Cash App</span>
-            <span class="payment-subtitle">Send a Cash App payment</span>
-          </span>
-        </button>
-
-        <button
-          class="payment-method"
-          type="button"
-          data-method="wise"
-        >
-          <span class="payment-icon" aria-hidden="true">W</span>
-
-          <span>
-            <span class="payment-name">Wise</span>
-            <span class="payment-subtitle">Send through Wise</span>
-          </span>
-        </button>
-
-      </div>
-
-      <div
-        class="payment-details"
-        id="paymentDetails"
-        aria-live="polite"
-      ></div>
-
-      <div class="thank-you">
-
-        <strong>Every Gift Makes a Difference</strong>
-
-        <p>
-          Every dollar sown helps fuel the mission of sharing the Gospel
-          and reaching those who have not yet heard the message of Jesus.
-          Thank you for partnering with us.
+        <p class="payment-subheading">
+          Give securely using Stripe or one of our other supported methods.
         </p>
 
-      </div>
+        <!-- STRIPE CHECKOUT -->
+        <a
+          class="stripe-button"
+          id="stripeCheckout"
+          href="https://buy.stripe.com/fZu14odp563JdUF34K83C00"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <span class="stripe-icon" aria-hidden="true">S</span>
+          <span>Give Securely with Stripe</span>
+          <span aria-hidden="true">→</span>
+        </a>
+
+        <p class="secure-note">
+          Secure checkout powered by <strong>Stripe</strong>.
+          Card details are entered on Stripe, not on this website.
+        </p>
+
+        <div class="divider">Or give another way</div>
+
+        <h3 class="other-methods-heading">Other Payment Methods</h3>
+
+        <div class="payment-methods">
+
+          <button class="method-button" type="button" data-method="zelle">
+            Zelle
+            <span>Give through your banking app</span>
+          </button>
+
+          <button class="method-button" type="button" data-method="paypal">
+            PayPal
+            <span>Give through PayPal</span>
+          </button>
+
+          <button class="method-button" type="button" data-method="venmo">
+            Venmo
+            <span>Give through Venmo</span>
+          </button>
+
+          <button class="method-button" type="button" data-method="cashapp">
+            Cash App
+            <span>Give through Cash App</span>
+          </button>
+
+          <button class="method-button" type="button" data-method="wise">
+            Wise
+            <span>Give through Wise</span>
+          </button>
+
+        </div>
+
+        <div
+          class="payment-details"
+          id="paymentDetails"
+          aria-live="polite"
+        >
+          <h3 id="detailsTitle"></h3>
+          <p id="detailsDescription"></p>
+          <div id="detailsRecipient" class="recipient"></div>
+
+          <div class="detail-actions">
+            <button
+              class="small-button"
+              id="copyRecipient"
+              type="button"
+              hidden
+            >
+              Copy Details
+            </button>
+
+            <a
+              class="small-button primary"
+              id="openPayment"
+              href="#"
+              target="_blank"
+              rel="noopener noreferrer"
+              hidden
+            >
+              Open Payment App →
+            </a>
+          </div>
+        </div>
+
+      </section>
 
     </section>
 
   </main>
 
-  <footer>
-    <div class="container">
-
-      <div class="footer-brand">
-        JESUS TO THE WORLD MINISTRY
-      </div>
-
-      <div class="footer-tagline">
-        Seeking to save the lost.
-      </div>
-
-      <div class="footer-links">
-        <a href="index.html">Home</a>
-        <a href="https://www.youtube.com/@jonathanperde" target="_blank" rel="noopener noreferrer">
-          Watch the Mission
-        </a>
-        <a href="mailto:jonathanperdeyt@gmail.com">
-          Contact
-        </a>
-      </div>
-
-      <p style="margin-top: 20px; color: #666; font-size: 10px;">
-        © <span id="currentYear"></span> Jesus To The World Ministry.
-        All rights reserved.
-      </p>
-
-    </div>
+  <footer class="footer">
+    <div class="footer-brand">JESUS TO THE WORLD MINISTRY</div>
+    <p>Seeking to save the lost.</p>
+    <p style="margin-top: 8px;">
+      Thank you for partnering with us to further the Great Commission.
+    </p>
   </footer>
+
+  <div class="toast" id="toast" role="status"></div>
 
   <script>
     /*
-      JESUS TO THE WORLD MINISTRY — DONATION PAGE
-
-      Stripe link:
-      https://buy.stripe.com/fZu14odp563JdUF34K83C00
-
-      This link accepts one-time donations with donor-selected amounts.
-      Monthly recurring donations require a separate recurring Stripe link.
-
-      Never place a Stripe secret API key in this file.
+      STRIPE CHECKOUT
+      This is your official Stripe Payment Link.
+      Never place your Stripe secret API key in this file.
     */
 
     const STRIPE_PAYMENT_LINK =
       "https://buy.stripe.com/fZu14odp563JdUF34K83C00";
 
-    const PAYMENT_DETAILS = {
+    const amountInput = document.getElementById("donationAmount");
+    const amountButtons = document.querySelectorAll(".amount-button");
+    const stripeCheckout = document.getElementById("stripeCheckout");
+    const monthlyGift = document.getElementById("monthlyGift");
+
+    const paymentDetails = document.getElementById("paymentDetails");
+    const detailsTitle = document.getElementById("detailsTitle");
+    const detailsDescription = document.getElementById("detailsDescription");
+    const detailsRecipient = document.getElementById("detailsRecipient");
+    const copyRecipient = document.getElementById("copyRecipient");
+    const openPayment = document.getElementById("openPayment");
+    const toast = document.getElementById("toast");
+
+    let selectedAmount = 100;
+    let currentRecipient = "";
+
+    const paymentMethods = {
       zelle: {
         title: "Give with Zelle",
         description:
-          "Open your bank's Zelle feature and send your gift to the email address below. Confirm the recipient inside your banking app before sending.",
-        recipientLabel: "Zelle email",
+          "Open your banking app, choose Zelle, and send your gift to this enrolled recipient.",
         recipient: "jonathanperde@yahoo.com",
-        button: "Copy Zelle Email",
-        note:
-          "Zelle transfers are completed through your participating bank. This website does not process the Zelle transfer."
+        copyable: true,
+        url: ""
       },
 
       paypal: {
         title: "Give with PayPal",
         description:
-          "Continue to PayPal to complete your gift. Verify the recipient before confirming your payment.",
-        recipientLabel: "PayPal username",
+          "Continue to PayPal to send your donation.",
         recipient: "@jonathanperde",
-        url: "https://paypal.me/jonathanperde",
-        button: "Continue to PayPal",
-        note:
-          "Check that the PayPal profile belongs to your intended recipient before sending."
+        copyable: true,
+        url: "https://paypal.me/jonathanperde"
       },
 
       venmo: {
         title: "Give with Venmo",
         description:
-          "Use the recipient information below to find the correct account in Venmo.",
-        recipientLabel: "Venmo username",
+          "Continue to Venmo to send your donation. Please verify that this profile belongs to your ministry before publishing.",
         recipient: "@joanthanperde",
-        button: "Copy Venmo Username",
-        note:
-          "Confirm the exact username and profile before sending. The Venmo username has not been independently verified."
+        copyable: true,
+        url: "https://venmo.com/u/joanthanperde"
       },
 
       cashapp: {
         title: "Give with Cash App",
         description:
-          "Continue to Cash App to send your gift. Confirm the recipient details before completing the transaction.",
-        recipientLabel: "Cash App tag",
+          "Continue to Cash App to send your donation.",
         recipient: "$Jmanftw20",
-        url: "https://cash.app/$Jmanftw20",
-        button: "Continue to Cash App",
-        note:
-          "Verify the account details in Cash App before sending."
+        copyable: true,
+        url: "https://cash.app/$Jmanftw20"
       },
 
       wise: {
         title: "Give with Wise",
         description:
-          "Open Wise and use the recipient information below to find the correct account or arrange your transfer.",
-        recipientLabel: "Wise username",
+          "Open Wise and use the recipient details below. Confirm that your Wise account accepts payments using this handle.",
         recipient: "@jonathancornelp",
-        button: "Copy Wise Username",
-        note:
-          "A Wise username is not necessarily a direct payment link. Complete the transfer inside Wise."
+        copyable: true,
+        url: ""
       }
     };
 
-    const amountButtons = document.querySelectorAll(".amount-button");
-    const customAmountInput = document.getElementById("customAmount");
-    const monthlyToggle = document.getElementById("monthlyToggle");
-    const monthlyNotice = document.getElementById("monthlyNotice");
-    const paymentDetails = document.getElementById("paymentDetails");
+    function showToast(message) {
+      toast.textContent = message;
+      toast.classList.add("show");
 
-    let selectedAmount = 100;
-    let selectedMethod = null;
-
-    document.getElementById("currentYear").textContent =
-      new Date().getFullYear();
-
-    function getValidAmount() {
-      const inputValue = customAmountInput.value.trim();
-
-      let amount;
-
-      if (inputValue !== "") {
-        amount = Number(inputValue);
-      } else {
-        amount = selectedAmount;
-      }
-
-      if (
-        !Number.isFinite(amount) ||
-        amount < 1 ||
-        amount > 999999
-      ) {
-        return null;
-      }
-
-      return amount;
+      window.setTimeout(() => {
+        toast.classList.remove("show");
+      }, 2500);
     }
 
-    function updateAmountButtons(activeButton) {
-      amountButtons.forEach(button => {
-        button.classList.toggle("active", button === activeButton);
+    function setAmount(amount) {
+      selectedAmount = Number(amount);
+      amountInput.value = selectedAmount;
+
+      amountButtons.forEach((button) => {
+        const isActive =
+          Number(button.dataset.amount) === selectedAmount;
+
+        button.classList.toggle("active", isActive);
       });
     }
 
-    amountButtons.forEach(button => {
+    amountButtons.forEach((button) => {
       button.addEventListener("click", () => {
-        selectedAmount = Number(button.dataset.amount);
-
-        customAmountInput.value = "";
-
-        updateAmountButtons(button);
+        setAmount(button.dataset.amount);
       });
     });
 
-    customAmountInput.addEventListener("input", () => {
-      amountButtons.forEach(button => {
-        button.classList.remove("active");
-      });
-    });
+    amountInput.addEventListener("input", () => {
+      selectedAmount = Number(amountInput.value);
 
-    monthlyToggle.addEventListener("change", () => {
-      monthlyNotice.classList.toggle(
-        "visible",
-        monthlyToggle.checked
-      );
-
-      if (monthlyToggle.checked) {
-        showMessage(
-          "Monthly donations require a recurring Stripe payment link."
+      amountButtons.forEach((button) => {
+        button.classList.toggle(
+          "active",
+          Number(button.dataset.amount) === selectedAmount
         );
-      } else if (selectedMethod) {
-        renderPaymentDetails(selectedMethod);
-      }
+      });
     });
 
-    function showMessage(message) {
-      let status = document.getElementById("statusMessage");
+    stripeCheckout.addEventListener("click", (event) => {
+      const amount = Number(amountInput.value);
 
-      if (!status) {
-        status = document.createElement("div");
-        status.id = "statusMessage";
-        status.className = "status-message";
-        paymentDetails.appendChild(status);
-      }
-
-      status.textContent = message;
-    }
-
-    function money(amount) {
-      return amount.toLocaleString("en-US", {
-        style: "currency",
-        currency: "USD"
-      });
-    }
-
-    function openStripeCheckout() {
-      if (monthlyToggle.checked) {
-        paymentDetails.innerHTML = `
-          <h3 class="details-title">Monthly Giving</h3>
-          <p class="details-description">
-            Monthly donations need a recurring Stripe payment link.
-            Your current link is configured for one-time donations.
-            Turn off monthly giving to continue.
-          </p>
-          <button class="secondary-button" id="turnOffMonthly" type="button">
-            Return to One-Time Giving
-          </button>
-        `;
-
-        document
-          .getElementById("turnOffMonthly")
-          .addEventListener("click", () => {
-            monthlyToggle.checked = false;
-            monthlyNotice.classList.remove("visible");
-            renderPaymentDetails("stripe");
-          });
-
+      if (!Number.isFinite(amount) || amount < 1) {
+        event.preventDefault();
+        amountInput.focus();
+        showToast("Please enter a donation amount of at least $1.");
         return;
       }
 
-      const amount = getValidAmount();
+      /*
+        Your Stripe Payment Link lets donors choose their amount
+        on Stripe's checkout page.
 
-      if (amount === null) {
-        paymentDetails.innerHTML = `
-          <h3 class="details-title">Check Your Donation Amount</h3>
-          <p class="details-description">
-            Please enter a valid donation amount of at least $1
-            and no more than $999,999.
-          </p>
-        `;
+        Important: this static link does not automatically carry
+        the amount selected on this page into Stripe. The donor
+        must enter their amount again on the Stripe checkout page.
+
+        The monthly toggle is also not connected to recurring
+        billing by this link. See the note below the code.
+      */
+    });
+
+    document.querySelectorAll("[data-method]").forEach((button) => {
+      button.addEventListener("click", () => {
+        const method = paymentMethods[button.dataset.method];
+
+        if (!method) return;
+
+        currentRecipient = method.recipient;
+
+        detailsTitle.textContent = method.title;
+        detailsDescription.textContent = method.description;
+        detailsRecipient.textContent = method.recipient;
+
+        copyRecipient.hidden = !method.copyable;
+        openPayment.hidden = !method.url;
+
+        if (method.url) {
+          openPayment.href = method.url;
+        } else {
+          openPayment.removeAttribute("href");
+        }
+
+        paymentDetails.classList.add("show");
 
         paymentDetails.scrollIntoView({
           behavior: "smooth",
           block: "nearest"
         });
-
-        return;
-      }
-
-      paymentDetails.innerHTML = `
-        <h3 class="details-title">Secure Card Donation</h3>
-
-        <p class="details-description">
-          Your selected amount is <strong>${money(amount)}</strong>.
-          Continue to Stripe's secure checkout to complete your gift.
-        </p>
-
-        <div class="button-stack">
-          <a
-            class="primary-button"
-            href="${STRIPE_PAYMENT_LINK}"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Continue to Stripe Checkout →
-          </a>
-
-          <p class="details-description" style="margin: 0;">
-            Important: Your Stripe link allows donors to choose an amount.
-            Confirm the amount again on the Stripe checkout page before
-            completing your payment.
-          </p>
-        </div>
-
-        <p class="secure-note">
-          <span>●</span>
-          Secure payment handled by Stripe
-        </p>
-      `;
-
-      paymentDetails.classList.add("visible");
-
-      paymentDetails.scrollIntoView({
-        behavior: "smooth",
-        block: "nearest"
       });
-    }
+    });
 
-    function renderPaymentDetails(method) {
-      selectedMethod = method;
-
-      paymentDetails.classList.add("visible");
-
-      if (method === "stripe") {
-        openStripeCheckout();
-        return;
-      }
-
-      const data = PAYMENT_DETAILS[method];
-
-      if (!data) {
-        return;
-      }
-
-      if (monthlyToggle.checked) {
-        paymentDetails.innerHTML = `
-          <h3 class="details-title">Monthly Giving</h3>
-          <p class="details-description">
-            The monthly option is not connected to automatic recurring
-            payments yet. Turn off monthly giving to continue with
-            your selected payment method.
-          </p>
-        `;
-
-        return;
-      }
-
-      const amount = getValidAmount();
-
-      const amountText = amount === null
-        ? "Choose a valid donation amount above."
-        : "Your selected amount is " + money(amount) + ".";
-
-      let actionButton = "";
-
-      if (data.url) {
-        actionButton = `
-          <a
-            class="primary-button"
-            href="${data.url}"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            ${data.button} →
-          </a>
-        `;
-      } else {
-        actionButton = `
-          <button
-            class="primary-button"
-            id="copyRecipient"
-            type="button"
-          >
-            ${data.button}
-          </button>
-        `;
-      }
-
-      paymentDetails.innerHTML = `
-        <h3 class="details-title">${data.title}</h3>
-
-        <p class="details-description">
-          ${data.description}
-          ${amountText}
-        </p>
-
-        <div class="recipient-label">${data.recipientLabel}</div>
-
-        <div class="recipient-row">
-          <span class="recipient-value" id="recipientValue"></span>
-
-          <button
-            class="copy-button"
-            id="copySmall"
-            type="button"
-          >
-            Copy
-          </button>
-        </div>
-
-        <div class="button-stack">
-          ${actionButton}
-        </div>
-
-        <p class="details-description" style="margin: 13px 0 0;">
-          ${data.note}
-        </p>
-
-        <div id="statusMessage" class="status-message" aria-live="polite"></div>
-      `;
-
-      document.getElementById("recipientValue").textContent =
-        data.recipient;
-
-      const copySmall = document.getElementById("copySmall");
-
-      copySmall.addEventListener("click", () => {
-        copyText(data.recipient);
-      });
-
-      const copyRecipient = document.getElementById("copyRecipient");
-
-      if (copyRecipient) {
-        copyRecipient.addEventListener("click", () => {
-          copyText(data.recipient);
-        });
-      }
-
-      paymentDetails.scrollIntoView({
-        behavior: "smooth",
-        block: "nearest"
-      });
-    }
-
-    async function copyText(text) {
+    copyRecipient.addEventListener("click", async () => {
       try {
-        await navigator.clipboard.writeText(text);
-        showMessage("Copied successfully.");
+        await navigator.clipboard.writeText(currentRecipient);
+        showToast("Recipient details copied.");
       } catch (error) {
         const temporaryInput = document.createElement("textarea");
-
-        temporaryInput.value = text;
+        temporaryInput.value = currentRecipient;
         temporaryInput.style.position = "fixed";
         temporaryInput.style.opacity = "0";
 
         document.body.appendChild(temporaryInput);
-
         temporaryInput.select();
 
-        const success = document.execCommand("copy");
-
+        const successful = document.execCommand("copy");
         temporaryInput.remove();
 
-        showMessage(
-          success
-            ? "Copied successfully."
-            : "Copy unavailable. Please select and copy the recipient manually."
+        showToast(
+          successful
+            ? "Recipient details copied."
+            : "Please select and copy the recipient details."
         );
       }
-    }
-
-    document.querySelectorAll(".payment-method").forEach(button => {
-      button.addEventListener("click", () => {
-        renderPaymentDetails(button.dataset.method);
-      });
     });
+
+    // Initialize the page with $100 selected.
+    setAmount(100);
   </script>
 
 </body>
