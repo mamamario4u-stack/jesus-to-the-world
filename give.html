@@ -1,1676 +1,1651 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#151412">
-  <meta name="description" content="Partner with Jesus To The World Ministry and help carry the Gospel to the streets, cities, and nations.">
-  <link rel="canonical" href="https://jesustotheworld.company/give.html">
-  <title>Give — Jesus To The World Ministry</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
+<title>Jesus To The World Ministry | Seeking to Save the Lost</title>
 
-  <style>
-    :root {
-      --ink: #151412;
-      --paper: #f2efe7;
-      --white: #fffdf8;
-      --orange: #e9683b;
-      --orange-light: #ff9a63;
-      --muted: #817a70;
-      --line: rgba(25,22,19,.17);
-      --sans: 'DM Sans', sans-serif;
-      --serif: 'Playfair Display', Georgia, serif;
-      --mono: 'DM Mono', monospace;
-    }
+<meta name="description" content="Jesus To The World Ministry exists to preach the Gospel, reach the lost, and bring the hope of Jesus Christ to the streets, cities, and nations.">
 
-    * {
-      box-sizing: border-box;
-    }
+<meta name="theme-color" content="#101010">
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --background: #101010;
+    --background-light: #171717;
+    --orange: #ff5722;
+    --orange-light: #ff7948;
+    --white: #ffffff;
+    --muted: #b8b8b8;
+    --border: rgba(255,255,255,0.12);
+    --font-heading: 'Oswald', sans-serif;
+    --font-body: 'DM Sans', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    background: var(--background);
+}
+
+body {
+    font-family: var(--font-body);
+    background: var(--background);
+    color: var(--white);
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button, a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+.container {
+    width: min(1180px, 90%);
+    margin: 0 auto;
+}
+
+.section {
+    padding: 110px 0;
+}
+
+.eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--orange-light);
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 3px;
+    font-weight: 800;
+    margin-bottom: 22px;
+}
+
+.eyebrow::before {
+    content: "";
+    height: 2px;
+    width: 30px;
+    background: var(--orange);
+}
+
+h1, h2, h3 {
+    font-family: var(--font-heading);
+    text-transform: uppercase;
+    line-height: 1.05;
+    font-weight: 600;
+}
+
+h2 {
+    font-size: clamp(38px, 5vw, 64px);
+    letter-spacing: -1px;
+}
+
+.section-description {
+    color: var(--muted);
+    max-width: 650px;
+    font-size: 16px;
+    line-height: 1.9;
+    margin-top: 22px;
+}
+
+.accent {
+    color: var(--orange);
+}
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 16px 25px;
+    min-height: 54px;
+    background: var(--orange);
+    border: 1px solid var(--orange);
+    color: white;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+    transition: transform .25s ease, background .25s ease,
+                box-shadow .25s ease;
+}
+
+.button:hover {
+    background: var(--orange-light);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(255,87,34,.24);
+}
+
+.button-outline {
+    background: transparent;
+    border-color: rgba(255,255,255,.35);
+}
+
+.button-outline:hover {
+    background: white;
+    color: #111;
+    border-color: white;
+}
+
+.button-arrow {
+    font-size: 18px;
+    transition: transform .25s ease;
+}
+
+.button:hover .button-arrow {
+    transform: translateX(4px);
+}
+
+/* NAVIGATION */
+
+.site-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    border-bottom: 1px solid rgba(255,255,255,.12);
+    background: rgba(12,12,12,.42);
+    backdrop-filter: blur(12px);
+}
+
+.navbar {
+    min-height: 88px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+}
+
+.brand-symbol {
+    width: 43px;
+    height: 43px;
+    display: grid;
+    place-items: center;
+    background: var(--orange);
+    font-family: var(--font-heading);
+    font-size: 25px;
+    font-weight: 700;
+    clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+    padding-top: 9px;
+}
+
+.brand-text {
+    font-family: var(--font-heading);
+    font-size: 17px;
+    line-height: 1.15;
+    letter-spacing: .5px;
+    text-transform: uppercase;
+}
+
+.brand-text small {
+    display: block;
+    color: #ccc;
+    font-family: var(--font-body);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-top: 5px;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 28px;
+    margin-left: auto;
+}
+
+.nav-links > a:not(.nav-donate) {
+    color: #f0f0f0;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: color .2s ease;
+}
+
+.nav-links > a:not(.nav-donate):hover {
+    color: var(--orange-light);
+}
+
+.nav-donate {
+    padding: 13px 17px;
+    background: var(--orange);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    box-shadow: 0 0 0 rgba(255,87,34,0);
+    transition: box-shadow .25s ease, transform .25s ease;
+}
+
+.nav-donate:hover {
+    box-shadow: 0 0 28px rgba(255,87,34,.4);
+    transform: translateY(-2px);
+}
+
+.menu-toggle {
+    display: none;
+    color: white;
+    background: transparent;
+    border: 1px solid var(--border);
+    font-size: 24px;
+    width: 44px;
+    height: 44px;
+    cursor: pointer;
+}
+
+/* HERO */
+
+.hero {
+    position: relative;
+    min-height: 790px;
+    min-height: 100svh;
+    display: flex;
+    align-items: center;
+    isolation: isolate;
+    overflow: hidden;
+    background: #111;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    background-image:
+        linear-gradient(90deg,
+            rgba(8,8,8,.96) 0%,
+            rgba(8,8,8,.82) 42%,
+            rgba(8,8,8,.34) 100%),
+        linear-gradient(0deg,
+            rgba(16,16,16,.95) 0%,
+            transparent 38%),
+        url("hero.jpg");
+    background-position: center, center, center 35%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transform: scale(1.02);
+    animation: heroReveal 1.4s ease both;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: 650px;
+    height: 650px;
+    border-radius: 50%;
+    right: -300px;
+    top: 10%;
+    background: rgba(255,76,25,.12);
+    filter: blur(100px);
+    pointer-events: none;
+}
+
+@keyframes heroReveal {
+    from { opacity: .4; transform: scale(1.08); }
+    to { opacity: 1; transform: scale(1.02); }
+}
+
+.hero-content {
+    width: min(820px, 100%);
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.hero-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 11px;
+    letter-spacing: 3px;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: #eee;
+    margin-bottom: 28px;
+}
+
+.hero-label span {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--orange);
+    box-shadow: 0 0 18px var(--orange);
+}
+
+.hero h1 {
+    font-size: clamp(55px, 8.4vw, 112px);
+    letter-spacing: -2px;
+    line-height: .98;
+    max-width: 900px;
+    text-shadow: 0 4px 30px rgba(0,0,0,.35);
+}
+
+.hero h1 .line-orange {
+    color: var(--orange);
+}
+
+.hero-description {
+    margin-top: 30px;
+    max-width: 560px;
+    color: #e0e0e0;
+    font-size: 16px;
+    line-height: 1.9;
+}
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 35px;
+}
+
+.hero-footnote {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 55px;
+    color: #ccc;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.hero-footnote::before {
+    content: "";
+    height: 1px;
+    width: 38px;
+    background: var(--orange);
+}
+
+/* SCRIPTURE STRIP */
+
+.scripture-strip {
+    overflow: hidden;
+    background: var(--orange);
+    color: #fff;
+    padding: 17px 0;
+}
+
+.scripture-track {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 14px 30px;
+    width: 90%;
+    margin: 0 auto;
+    font-family: var(--font-heading);
+    font-size: 15px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.scripture-track span {
+    opacity: .95;
+}
+
+.scripture-track .separator {
+    font-size: 10px;
+    opacity: .6;
+}
+
+/* MISSION */
+
+.mission {
+    position: relative;
+    background: var(--background);
+    overflow: hidden;
+}
+
+.mission::before {
+    content: "LIFE";
+    position: absolute;
+    top: 0;
+    right: -25px;
+    font-family: var(--font-heading);
+    font-size: clamp(180px, 30vw, 420px);
+    line-height: 1;
+    font-weight: 700;
+    color: rgba(255,255,255,.018);
+    pointer-events: none;
+}
+
+.mission-grid {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1.05fr .95fr;
+    gap: 90px;
+    align-items: center;
+}
+
+.mission-copy h2 {
+    max-width: 620px;
+}
+
+.mission-copy p {
+    margin-top: 25px;
+    max-width: 600px;
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 2;
+}
+
+.mission-verse {
+    margin-top: 30px;
+    padding-left: 20px;
+    border-left: 2px solid var(--orange);
+}
+
+.mission-verse p {
+    margin: 0;
+    color: #eee;
+    font-family: var(--font-heading);
+    font-size: 22px;
+    line-height: 1.5;
+    text-transform: uppercase;
+}
+
+.mission-verse small {
+    display: block;
+    margin-top: 10px;
+    color: var(--orange-light);
+    font-size: 10px;
+    letter-spacing: 2px;
+    font-weight: 800;
+}
+
+.mission-visual {
+    position: relative;
+    min-height: 490px;
+    background:
+        linear-gradient(0deg, rgba(0,0,0,.65), transparent 70%),
+        url("jonathan.jpg") center 25% / cover no-repeat,
+        #222;
+    border: 1px solid var(--border);
+}
+
+.mission-visual::before {
+    content: "";
+    position: absolute;
+    inset: 16px -16px -16px 16px;
+    border: 1px solid rgba(255,87,34,.6);
+    z-index: -1;
+}
+
+.visual-caption {
+    position: absolute;
+    bottom: 25px;
+    left: 25px;
+    right: 25px;
+}
+
+.visual-caption span {
+    color: var(--orange-light);
+    font-size: 10px;
+    letter-spacing: 2px;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.visual-caption h3 {
+    font-size: 30px;
+    margin-top: 8px;
+}
+
+/* IMPACT */
+
+.impact {
+    position: relative;
+    padding: 100px 0;
+    overflow: hidden;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    background:
+        radial-gradient(ellipse at center, rgba(255,87,34,.12), transparent 65%),
+        #141414;
+}
+
+.impact-inner {
+    text-align: center;
+}
+
+.impact h2 {
+    font-size: clamp(70px, 13vw, 155px);
+    color: var(--orange);
+    line-height: .95;
+    letter-spacing: -3px;
+}
+
+.impact h3 {
+    font-size: clamp(22px, 3vw, 36px);
+    margin-top: 25px;
+    letter-spacing: 2px;
+}
+
+.impact p {
+    max-width: 650px;
+    margin: 22px auto 0;
+    color: var(--muted);
+    line-height: 1.9;
+    font-size: 14px;
+}
+
+.impact-note {
+    margin-top: 32px;
+    display: inline-block;
+    padding: 10px 15px;
+    border: 1px solid var(--border);
+    color: #ddd;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* VIDEO */
+
+.watch {
+    background: #0d0d0d;
+}
+
+.watch-header {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 35px;
+    margin-bottom: 45px;
+}
+
+.watch-header .section-description {
+    max-width: 420px;
+    margin-bottom: 4px;
+}
+
+.video-card {
+    position: relative;
+    min-height: 470px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,.15);
+    background:
+        linear-gradient(0deg, rgba(0,0,0,.86), rgba(0,0,0,.18)),
+        url("hero.jpg") center 40% / cover no-repeat,
+        #222;
+}
+
+.video-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg,
+        rgba(255,87,34,.15), transparent 60%);
+    transition: background .4s ease;
+}
+
+.video-card:hover::before {
+    background: linear-gradient(135deg,
+        rgba(255,87,34,.3), rgba(0,0,0,.1));
+}
+
+.video-content {
+    position: relative;
+    z-index: 1;
+    padding: 35px;
+    transition: transform .35s ease;
+}
+
+.video-card:hover .video-content {
+    transform: translateY(-5px);
+}
+
+.play-button {
+    width: 88px;
+    height: 88px;
+    margin: 0 auto 28px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: var(--orange);
+    color: white;
+    font-size: 27px;
+    padding-left: 5px;
+    box-shadow: 0 0 0 12px rgba(255,87,34,.13);
+    transition: transform .35s ease, box-shadow .35s ease;
+}
+
+.video-card:hover .play-button {
+    transform: scale(1.1);
+    box-shadow: 0 0 0 20px rgba(255,87,34,.12),
+                0 0 45px rgba(255,87,34,.3);
+}
+
+.video-content .eyebrow {
+    margin-bottom: 14px;
+}
+
+.video-content h3 {
+    font-size: clamp(34px, 6vw, 66px);
+}
+
+.video-content p {
+    margin-top: 15px;
+    color: #ddd;
+    font-size: 13px;
+}
+
+/* MINISTRY */
+
+.ministry {
+    background: var(--background-light);
+}
+
+.ministry-heading {
+    text-align: center;
+    max-width: 750px;
+    margin: 0 auto 55px;
+}
+
+.ministry-heading .section-description {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.ministry-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.ministry-card {
+    min-height: 280px;
+    padding: 32px;
+    background: #111;
+    border: 1px solid var(--border);
+    transition: transform .3s ease, border-color .3s ease;
+}
+
+.ministry-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(255,87,34,.6);
+}
+
+.card-number {
+    display: block;
+    color: var(--orange);
+    font-family: var(--font-heading);
+    font-size: 42px;
+    margin-bottom: 28px;
+}
+
+.ministry-card h3 {
+    font-size: 25px;
+    margin-bottom: 14px;
+}
+
+.ministry-card p {
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+/* JOHN 10:10 */
+
+.scripture-feature {
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    padding: 120px 20px;
+    background:
+        radial-gradient(ellipse at center, rgba(255,87,34,.12), transparent 65%),
+        #111;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+.scripture-watermark {
+    position: absolute;
+    inset: 50% auto auto 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    color: rgba(255,255,255,.025);
+    font-family: var(--font-heading);
+    font-size: clamp(75px, 15vw, 190px);
+    line-height: 1;
+    text-transform: uppercase;
+    white-space: nowrap;
+    pointer-events: none;
+}
+
+.scripture-feature blockquote {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    font-family: var(--font-heading);
+    text-transform: uppercase;
+    font-size: clamp(30px, 5vw, 58px);
+    line-height: 1.35;
+}
+
+.scripture-feature blockquote span {
+    color: var(--orange);
+}
+
+.scripture-feature cite {
+    display: block;
+    margin-top: 28px;
+    color: var(--orange-light);
+    font-size: 11px;
+    font-style: normal;
+    font-weight: 800;
+    letter-spacing: 3px;
+}
+
+/* GIVING */
+
+.giving {
+    position: relative;
+    overflow: hidden;
+    background:
+        radial-gradient(ellipse at 85% 45%, rgba(255,87,34,.17), transparent 45%),
+        #151515;
+}
+
+.giving-grid {
+    display: grid;
+    grid-template-columns: 1.1fr .9fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.giving-copy h2 {
+    max-width: 650px;
+}
+
+.giving-copy p {
+    margin-top: 25px;
+    max-width: 600px;
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 2;
+}
+
+.giving-quote {
+    margin-top: 25px;
+    padding-left: 18px;
+    border-left: 2px solid var(--orange);
+    color: #eee;
+    font-size: 14px;
+    font-style: italic;
+    line-height: 1.9;
+}
+
+.giving-actions {
+    margin-top: 32px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+.giving-panel {
+    padding: 38px;
+    background: rgba(15,15,15,.75);
+    border: 1px solid rgba(255,255,255,.14);
+    box-shadow: 0 25px 80px rgba(0,0,0,.2);
+}
+
+.giving-panel-label {
+    color: var(--orange-light);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.giving-panel h3 {
+    font-size: 34px;
+    margin-top: 17px;
+}
+
+.giving-panel p {
+    color: var(--muted);
+    margin-top: 15px;
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+.giving-panel .button {
+    margin-top: 25px;
+    width: 100%;
+}
+
+/* BOOK JONATHAN */
+
+.booking {
+    padding: 95px 0;
+    text-align: center;
+    background: #101010;
+}
+
+.booking-inner {
+    max-width: 760px;
+    margin: 0 auto;
+}
+
+.booking h2 {
+    font-size: clamp(40px, 6vw, 70px);
+}
+
+.booking p {
+    color: var(--muted);
+    margin: 22px auto 30px;
+    max-width: 620px;
+    line-height: 1.9;
+    font-size: 15px;
+}
+
+/* FOOTER */
+
+.footer {
+    background: #090909;
+    border-top: 1px solid var(--border);
+    padding: 55px 0 25px;
+}
+
+.footer-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 35px;
+    padding-bottom: 40px;
+}
+
+.footer-mission {
+    max-width: 420px;
+    margin-top: 20px;
+    color: #999;
+    font-size: 12px;
+    line-height: 1.9;
+}
+
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+}
+
+.footer-links a {
+    color: #ccc;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color .2s ease;
+}
+
+.footer-links a:hover {
+    color: var(--orange);
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    border-top: 1px solid var(--border);
+    padding-top: 22px;
+    color: #777;
+    font-size: 10px;
+    letter-spacing: .5px;
+}
+
+/* SCROLL ANIMATIONS */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(25px);
+    transition: opacity .75s ease, transform .75s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
     html {
-      scroll-behavior: smooth;
-      scroll-padding-top: 85px;
+        scroll-behavior: auto;
     }
 
-    body {
-      margin: 0;
-      background: var(--paper);
-      color: var(--ink);
-      font-family: var(--sans);
-      overflow-x: hidden;
+    *, *::before, *::after {
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
+    .reveal {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+/* TABLET */
+
+@media (max-width: 1000px) {
+    .nav-links {
+        gap: 17px;
     }
 
-    button,
-    input,
-    textarea {
-      font: inherit;
+    .nav-links > a:not(.nav-donate) {
+        font-size: 10px;
     }
 
-    button {
-      cursor: pointer;
+    .mission-grid,
+    .giving-grid {
+        gap: 45px;
     }
 
-    button:focus-visible,
-    a:focus-visible,
-    input:focus-visible,
-    textarea:focus-visible {
-      outline: 2px solid var(--orange);
-      outline-offset: 4px;
+    .mission-visual {
+        min-height: 420px;
     }
 
-    /* NAVIGATION */
+    .ministry-card {
+        padding: 25px;
+    }
+}
 
-    .topbar {
-      height: 76px;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 clamp(18px, 5vw, 76px);
-      background: rgba(242,239,231,.94);
-      backdrop-filter: blur(18px);
-      border-bottom: 1px solid rgba(25,22,19,.08);
+/* MOBILE */
+
+@media (max-width: 760px) {
+    .section {
+        padding: 78px 0;
     }
 
-    .brand {
-      display: flex;
-      flex-direction: column;
-      font: 500 16px/1.05 var(--mono);
-      letter-spacing: -.055em;
-      text-transform: uppercase;
+    .navbar {
+        min-height: 75px;
     }
 
-    .navlinks {
-      display: flex;
-      align-items: center;
-      gap: clamp(14px, 2vw, 30px);
-      font-size: 12px;
-      font-weight: 700;
+    .brand-symbol {
+        width: 38px;
+        height: 38px;
+        font-size: 22px;
     }
 
-    .navlinks a:not(.nav-donate) {
-      position: relative;
+    .brand-text {
+        font-size: 14px;
     }
 
-    .navlinks a:not(.nav-donate)::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: -7px;
-      width: 100%;
-      height: 1px;
-      background: var(--orange);
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform .25s;
-    }
-
-    .navlinks a:not(.nav-donate):hover::after {
-      transform: scaleX(1);
-    }
-
-    .nav-donate {
-      background: var(--orange);
-      color: white;
-      padding: 13px 17px;
-      text-transform: uppercase;
-      font: 500 11px var(--mono);
-      transition: box-shadow .25s;
-    }
-
-    .nav-donate:hover {
-      box-shadow: 0 0 22px rgba(233,104,59,.55);
+    .brand-text small {
+        font-size: 8px;
     }
 
     .menu-toggle {
-      display: none;
-      border: 0;
-      background: transparent;
-      font-size: 25px;
-    }
-
-    /* HERO */
-
-    .give-hero {
-      position: relative;
-      overflow: hidden;
-      background: var(--ink);
-      color: var(--paper);
-      min-height: 410px;
-      padding: clamp(64px, 9vw, 120px) clamp(22px, 9vw, 140px) 70px;
-    }
-
-    .give-hero::before {
-      content: "";
-      position: absolute;
-      width: 600px;
-      height: 600px;
-      border-radius: 50%;
-      right: -180px;
-      top: -280px;
-      background: radial-gradient(
-        circle,
-        rgba(233,104,59,.28),
-        transparent 68%
-      );
-      pointer-events: none;
-    }
-
-    .eyebrow {
-      position: relative;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      color: var(--orange);
-      font: 500 10px/1.4 var(--mono);
-      letter-spacing: .16em;
-      text-transform: uppercase;
-    }
-
-    .eyebrow::before {
-      content: "";
-      width: 28px;
-      height: 1px;
-      background: var(--orange);
-    }
-
-    h1 {
-      position: relative;
-      max-width: 1000px;
-      margin: 26px 0 28px;
-      font: 600 clamp(54px, 9.5vw, 126px)/.91 var(--serif);
-      letter-spacing: -.065em;
-      text-transform: uppercase;
-    }
-
-    h1 em {
-      color: var(--orange);
-      font-weight: 500;
-    }
-
-    .hero-bottom {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      gap: 32px;
-      max-width: 1000px;
-    }
-
-    .hero-bottom p {
-      max-width: 540px;
-      margin: 0;
-      color: #b8b2a8;
-      font-size: 14px;
-      line-height: 1.8;
-    }
-
-    .hero-tag {
-      color: #aaa397;
-      font: 500 10px/1.7 var(--mono);
-      letter-spacing: .1em;
-      text-transform: uppercase;
-    }
-
-    .mission-strip {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 20px;
-      padding: 23px clamp(22px, 9vw, 140px);
-      background: var(--orange);
-      color: #17120f;
-      font: 500 10px/1.5 var(--mono);
-      letter-spacing: .09em;
-      text-transform: uppercase;
-    }
-
-    .mission-strip strong {
-      font: 600 clamp(15px, 2vw, 21px)/1.2 var(--serif);
-      letter-spacing: -.02em;
-      text-transform: none;
-    }
-
-    /* MAIN GIVING LAYOUT */
-
-    .giving-wrap {
-      display: grid;
-      grid-template-columns: minmax(0, .82fr) minmax(0, 1.18fr);
-      gap: clamp(36px, 7vw, 100px);
-      align-items: start;
-      padding: clamp(46px, 7vw, 90px) clamp(18px, 7vw, 105px) 100px;
-    }
-
-    .side-copy {
-      position: sticky;
-      top: 120px;
-    }
-
-    .section-label {
-      margin: 0 0 20px;
-      color: var(--orange);
-      font: 500 10px/1.4 var(--mono);
-      letter-spacing: .13em;
-      text-transform: uppercase;
-    }
-
-    .side-copy h2 {
-      margin: 0 0 23px;
-      font: 600 clamp(34px, 4.6vw, 60px)/1.02 var(--serif);
-      letter-spacing: -.05em;
-    }
-
-    .side-copy h2 span {
-      color: var(--orange);
-      font-style: italic;
-    }
-
-    .side-copy p:not(.section-label) {
-      max-width: 450px;
-      color: #625c53;
-      font-size: 14px;
-      line-height: 1.8;
-    }
-
-    .scripture {
-      max-width: 390px;
-      margin-top: 34px;
-      padding-top: 18px;
-      border-top: 1px solid var(--line);
-      font: italic 500 17px/1.5 var(--serif);
-    }
-
-    .scripture small {
-      display: block;
-      margin-top: 12px;
-      color: var(--muted);
-      font: 500 9px/1.5 var(--mono);
-      letter-spacing: .1em;
-      text-transform: uppercase;
-    }
-
-    /* GIVING CARD */
-
-    .giving-card {
-      padding: clamp(22px, 4vw, 44px);
-      background: var(--white);
-      border: 1px solid rgba(25,22,19,.13);
-      box-shadow: 0 22px 65px rgba(30,22,15,.08);
-    }
-
-    .card-kicker {
-      margin: 0 0 13px;
-      color: #6d675f;
-      font: 500 10px/1.4 var(--mono);
-      letter-spacing: .12em;
-      text-transform: uppercase;
-    }
-
-    .giving-card h3 {
-      margin: 0 0 25px;
-      font: 600 clamp(25px, 3vw, 34px)/1.15 var(--serif);
-      letter-spacing: -.035em;
-    }
-
-    /* AMOUNT BUTTONS */
-
-    .amount-grid {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 9px;
-      margin-bottom: 19px;
-    }
-
-    .amount {
-      padding: 15px 5px;
-      border: 1px solid rgba(25,22,19,.25);
-      background: transparent;
-      color: var(--ink);
-      font: 600 14px var(--sans);
-      transition:
-        color .22s,
-        background .22s,
-        border-color .22s,
-        box-shadow .22s,
-        transform .22s;
-    }
-
-    .amount:hover {
-      border-color: var(--orange);
-      box-shadow: 0 0 15px rgba(233,104,59,.3);
-      transform: translateY(-1px);
-    }
-
-    .amount.active {
-      border-color: var(--orange);
-      background: var(--ink);
-      color: white;
-      box-shadow:
-        0 0 0 1px var(--orange),
-        0 0 20px rgba(233,104,59,.42);
-    }
-
-    .custom-label {
-      display: block;
-      margin: 0 0 7px;
-      color: #625c53;
-      font-size: 11px;
-    }
-
-    .money-field {
-      display: flex;
-      align-items: center;
-      border: 1px solid rgba(25,22,19,.25);
-      background: white;
-      transition: border-color .2s, box-shadow .2s;
-    }
-
-    .money-field:focus-within {
-      border-color: var(--orange);
-      box-shadow: 0 0 14px rgba(233,104,59,.18);
-    }
-
-    .money-field > span {
-      padding: 0 13px;
-      color: #777;
-    }
-
-    .money-field input {
-      width: 100%;
-      min-width: 0;
-      padding: 14px 12px;
-      border: 0;
-      outline: none;
-      background: transparent;
-      color: var(--ink);
-    }
-
-    /* MONTHLY GIFT SWITCH */
-
-    .frequency {
-      margin: 20px 0 29px;
-      padding: 16px;
-      border: 1px solid rgba(25,22,19,.13);
-      background: #faf7f0;
-      transition: border-color .25s, box-shadow .25s, background .25s;
-    }
-
-    .frequency.enabled {
-      border-color: var(--orange);
-      background: #fff7f1;
-      box-shadow: 0 0 20px rgba(233,104,59,.25);
-    }
-
-    .recurring-label {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 14px;
-      cursor: pointer;
-    }
-
-    .recurring-copy strong {
-      display: block;
-      font-size: 13px;
-    }
-
-    .recurring-copy small {
-      display: block;
-      margin-top: 4px;
-      color: #777067;
-      font-size: 11px;
-      line-height: 1.5;
-    }
-
-    .switch {
-      position: relative;
-      width: 48px;
-      height: 27px;
-      flex-shrink: 0;
-    }
-
-    .switch input {
-      position: absolute;
-      width: 1px;
-      height: 1px;
-      opacity: 0;
-    }
-
-    .switch-track {
-      position: absolute;
-      inset: 0;
-      border: 1px solid #b9b1a6;
-      border-radius: 30px;
-      background: #d9d3ca;
-      transition: background .25s, box-shadow .25s, border-color .25s;
-    }
-
-    .switch-track::before {
-      content: "";
-      position: absolute;
-      top: 3px;
-      left: 3px;
-      width: 19px;
-      height: 19px;
-      border-radius: 50%;
-      background: white;
-      box-shadow: 0 1px 4px rgba(0,0,0,.2);
-      transition: transform .25s;
-    }
-
-    .switch input:checked + .switch-track {
-      border-color: var(--orange);
-      background: var(--orange);
-      box-shadow: 0 0 17px rgba(233,104,59,.65);
-    }
-
-    .switch input:checked + .switch-track::before {
-      transform: translateX(21px);
-    }
-
-    .switch input:focus-visible + .switch-track {
-      outline: 2px solid var(--orange);
-      outline-offset: 4px;
-    }
-
-    .frequency-note {
-      display: none;
-      margin: 12px 0 0;
-      color: #8c482e;
-      font-size: 11px;
-      line-height: 1.6;
-    }
-
-    .frequency.enabled .frequency-note {
-      display: block;
-    }
-
-    /* OPTIONAL NOTE */
-
-    .field {
-      margin: 0 0 17px;
-    }
-
-    .field label {
-      display: block;
-      margin-bottom: 7px;
-      color: #625c53;
-      font: 500 9px/1.4 var(--mono);
-      letter-spacing: .08em;
-      text-transform: uppercase;
-    }
-
-    .field textarea {
-      width: 100%;
-      min-height: 82px;
-      padding: 13px 14px;
-      border: 1px solid rgba(25,22,19,.22);
-      border-radius: 0;
-      outline: none;
-      background: white;
-      resize: vertical;
-    }
-
-    .field textarea:focus {
-      border-color: var(--orange);
-      box-shadow: 0 0 12px rgba(233,104,59,.15);
-    }
-
-    .payment-heading {
-      margin-top: 25px;
-      padding-top: 25px;
-      border-top: 1px solid var(--line);
-    }
-
-    /* PAYMENT METHOD BUTTONS */
-
-    .payment-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 10px;
-    }
-
-    .payment-option {
-      display: flex;
-      align-items: center;
-      gap: 11px;
-      min-height: 70px;
-      padding: 14px 13px;
-      border: 1px solid rgba(25,22,19,.2);
-      background: transparent;
-      text-align: left;
-      transition:
-        border-color .22s,
-        background .22s,
-        box-shadow .22s,
-        transform .22s;
-    }
-
-    .payment-option:hover {
-      border-color: var(--orange);
-      box-shadow: 0 0 14px rgba(233,104,59,.22);
-      transform: translateY(-1px);
-    }
-
-    .payment-option.active {
-      border-color: var(--orange);
-      background: rgba(233,104,59,.075);
-      box-shadow:
-        0 0 0 1px var(--orange),
-        0 0 19px rgba(233,104,59,.27);
-    }
-
-    .payment-icon {
-      display: grid;
-      place-items: center;
-      width: 35px;
-      height: 35px;
-      flex-shrink: 0;
-      border-radius: 50%;
-      background: var(--ink);
-      color: var(--paper);
-      font: 500 12px var(--mono);
-      transition: background .2s, box-shadow .2s;
-    }
-
-    .payment-option.active .payment-icon {
-      background: var(--orange);
-      color: white;
-      box-shadow: 0 0 12px rgba(233,104,59,.4);
-    }
-
-    .payment-option strong {
-      display: block;
-      font-size: 12px;
-    }
-
-    .payment-option small {
-      display: block;
-      margin-top: 4px;
-      color: var(--muted);
-      font-size: 10px;
-      line-height: 1.4;
-    }
-
-    /* PAYMENT DETAILS PANEL */
-
-    .payment-details {
-      display: none;
-      margin-top: 18px;
-      padding: 22px;
-      border: 1px solid rgba(233,104,59,.6);
-      background: #fff8f2;
-      animation: reveal .25s ease both;
-    }
-
-    .payment-details.show {
-      display: block;
-    }
-
-    @keyframes reveal {
-      from {
-        opacity: 0;
-        transform: translateY(8px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .details-eyebrow {
-      margin: 0 0 8px;
-      color: var(--orange);
-      font: 500 9px var(--mono);
-      letter-spacing: .12em;
-      text-transform: uppercase;
-    }
-
-    .payment-details h4 {
-      margin: 0 0 10px;
-      font: 600 25px/1.2 var(--serif);
-    }
-
-    .details-description {
-      margin: 0 0 17px;
-      color: #625c53;
-      font-size: 12px;
-      line-height: 1.7;
-    }
-
-    .recipient-box {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 10px;
-      padding: 13px;
-      border: 1px solid rgba(25,22,19,.15);
-      background: white;
-    }
-
-    .recipient-info {
-      min-width: 0;
-    }
-
-    .recipient-info small {
-      display: block;
-      margin-bottom: 5px;
-      color: #817a70;
-      font: 500 9px var(--mono);
-      letter-spacing: .06em;
-      text-transform: uppercase;
-    }
-
-    .recipient-info strong {
-      display: block;
-      overflow-wrap: anywhere;
-      font-size: 13px;
-    }
-
-    .copy-button {
-      flex-shrink: 0;
-      padding: 9px 12px;
-      border: 1px solid var(--ink);
-      background: var(--ink);
-      color: white;
-      font: 500 9px var(--mono);
-      text-transform: uppercase;
-      transition: background .2s, box-shadow .2s;
-    }
-
-    .copy-button:hover {
-      background: var(--orange);
-      border-color: var(--orange);
-      box-shadow: 0 0 12px rgba(233,104,59,.3);
-    }
-
-    .gift-summary {
-      margin-top: 14px;
-      padding-top: 13px;
-      border-top: 1px solid rgba(25,22,19,.13);
-      font-size: 11px;
-      line-height: 1.7;
-      color: #625c53;
-    }
-
-    .payment-action {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 12px;
-      width: 100%;
-      margin-top: 16px;
-      padding: 15px 18px;
-      border: 1px solid var(--orange);
-      background: var(--orange);
-      color: white;
-      font: 500 10px var(--mono);
-      letter-spacing: .06em;
-      text-transform: uppercase;
-      text-align: center;
-      transition: box-shadow .2s, background .2s;
-    }
-
-    .payment-action:hover {
-      background: var(--ink);
-      border-color: var(--ink);
-      box-shadow: 0 0 22px rgba(233,104,59,.32);
-    }
-
-    .payment-action.disabled {
-      background: #817a70;
-      border-color: #817a70;
-    }
-
-    .payment-action.disabled:hover {
-      background: #625c53;
-      box-shadow: none;
-    }
-
-    .details-warning {
-      margin: 13px 0 0;
-      color: #817a70;
-      font-size: 10px;
-      line-height: 1.7;
-    }
-
-    /* CONTINUE BUTTON */
-
-    .submit-gift {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      width: 100%;
-      margin-top: 22px;
-      padding: 18px 20px;
-      border: 1px solid var(--orange);
-      background: var(--orange);
-      color: white;
-      text-align: left;
-      text-transform: uppercase;
-      letter-spacing: .08em;
-      font: 600 10px var(--mono);
-      transition: background .25s, box-shadow .25s;
-    }
-
-    .submit-gift:hover {
-      background: var(--ink);
-      border-color: var(--ink);
-      box-shadow: 0 0 30px rgba(233,104,59,.3);
-    }
-
-    .submit-gift span {
-      font-size: 20px;
-    }
-
-    .status {
-      display: none;
-      margin-top: 14px;
-      padding: 13px;
-      border-left: 3px solid var(--orange);
-      background: #f3e8dc;
-      font-size: 12px;
-      line-height: 1.7;
-    }
-
-    .status.show {
-      display: block;
-    }
-
-    .fine-print {
-      margin: 14px 0 0;
-      color: #817a70;
-      font-size: 10px;
-      line-height: 1.7;
-    }
-
-    /* IMPACT SECTION */
-
-    .impact {
-      padding: 70px clamp(22px, 7vw, 105px);
-      background: #e8e2d7;
-    }
-
-    .impact-head {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      gap: 30px;
-      margin-bottom: 35px;
-    }
-
-    .impact h2 {
-      max-width: 650px;
-      margin: 0;
-      font: 600 clamp(34px, 5vw, 58px)/1 var(--serif);
-      letter-spacing: -.05em;
-    }
-
-    .impact-head > p {
-      max-width: 300px;
-      margin: 0;
-      color: #625c53;
-      font-size: 12px;
-      line-height: 1.8;
-    }
-
-    .impact-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      border-top: 1px solid rgba(25,22,19,.2);
-    }
-
-    .impact-item {
-      margin-right: 22px;
-      padding: 24px 22px 0 0;
-      border-right: 1px solid rgba(25,22,19,.2);
-    }
-
-    .impact-item:last-child {
-      margin-right: 0;
-      border-right: 0;
-    }
-
-    .impact-item b {
-      color: var(--orange);
-      font: 600 27px var(--serif);
-    }
-
-    .impact-item p {
-      max-width: 260px;
-      color: #625c53;
-      font-size: 12px;
-      line-height: 1.8;
-    }
-
-    /* FOOTER */
-
-    footer {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 25px;
-      padding: 36px clamp(22px, 7vw, 105px);
-      background: var(--ink);
-      color: var(--paper);
-    }
-
-    .footer-brand {
-      font: 500 13px/1.4 var(--mono);
-      letter-spacing: -.04em;
-      text-transform: uppercase;
-    }
-
-    .footer-brand span {
-      display: block;
-    }
-
-    .footer-links {
-      display: flex;
-      gap: 18px;
-      flex-wrap: wrap;
-      color: #b8b2a8;
-      font-size: 11px;
-    }
-
-    .footer-links a:hover {
-      color: var(--orange);
-    }
-
-    /* RESPONSIVE */
-
-    @media (max-width: 850px) {
-      .navlinks {
-        gap: 12px;
-        font-size: 11px;
-      }
-
-      .giving-wrap {
-        grid-template-columns: 1fr;
-        gap: 38px;
-      }
-
-      .side-copy {
-        position: static;
-      }
-
-      .hero-bottom {
-        align-items: flex-start;
-        flex-direction: column;
-      }
-
-      .impact-head {
-        align-items: flex-start;
-        flex-direction: column;
-      }
-    }
-
-    @media (max-width: 640px) {
-      .topbar {
-        height: 66px;
-        padding: 0 18px;
-      }
-
-      .menu-toggle {
         display: block;
-      }
+        margin-left: auto;
+    }
 
-      .navlinks {
+    .nav-links {
         display: none;
         position: absolute;
-        top: 66px;
+        top: 75px;
         left: 0;
-        right: 0;
+        width: 100%;
+        padding: 25px 5% 30px;
+        background: rgba(12,12,12,.98);
+        border-bottom: 1px solid var(--border);
         flex-direction: column;
         align-items: stretch;
         gap: 0;
-        padding: 18px;
-        border-bottom: 1px solid var(--line);
-        background: var(--paper);
-      }
+    }
 
-      .navlinks.open {
+    .nav-links.open {
         display: flex;
-      }
-
-      .navlinks a {
-        padding: 13px 0;
-      }
-
-      .navlinks .nav-donate {
-        margin-top: 8px;
-        padding: 14px 16px;
-      }
-
-      .give-hero {
-        min-height: 0;
-        padding: 70px 22px 55px;
-      }
-
-      h1 {
-        font-size: clamp(49px, 15vw, 82px);
-      }
-
-      .mission-strip {
-        align-items: flex-start;
-        flex-direction: column;
-        padding: 20px 22px;
-      }
-
-      .giving-wrap {
-        padding: 48px 16px 65px;
-      }
-
-      .giving-card {
-        padding: 23px 17px;
-      }
-
-      .amount-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .payment-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .payment-details {
-        padding: 17px;
-      }
-
-      .recipient-box {
-        align-items: flex-start;
-        flex-direction: column;
-      }
-
-      .impact {
-        padding: 55px 22px;
-      }
-
-      .impact-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .impact-item {
-        margin: 0;
-        padding: 18px 0;
-        border-right: 0;
-        border-bottom: 1px solid rgba(25,22,19,.2);
-      }
-
-      .impact-item:last-child {
-        border-bottom: 0;
-      }
-
-      .impact-item p {
-        max-width: 100%;
-      }
-
-      footer {
-        align-items: flex-start;
-        flex-direction: column;
-      }
-
-      .footer-links {
-        gap: 14px;
-      }
     }
 
-    @media (prefers-reduced-motion: reduce) {
-      *,
-      *::before,
-      *::after {
-        scroll-behavior: auto !important;
-        animation: none !important;
-        transition: none !important;
-      }
+    .nav-links > a:not(.nav-donate) {
+        padding: 15px 0;
+        border-bottom: 1px solid rgba(255,255,255,.08);
+        font-size: 12px;
     }
-  </style>
+
+    .nav-donate {
+        text-align: center;
+        margin-top: 18px;
+        padding: 16px;
+    }
+
+    .hero {
+        min-height: 780px;
+        min-height: 100svh;
+    }
+
+    .hero::before {
+        background-image:
+            linear-gradient(90deg,
+                rgba(8,8,8,.83),
+                rgba(8,8,8,.45)),
+            linear-gradient(0deg,
+                rgba(16,16,16,.98) 0%,
+                transparent 70%),
+            url("hero.jpg");
+        background-position: center, center, 57% center;
+    }
+
+    .hero-content {
+        padding-top: 125px;
+        padding-bottom: 65px;
+    }
+
+    .hero h1 {
+        font-size: clamp(54px, 14vw, 86px);
+        letter-spacing: -1px;
+    }
+
+    .hero-description {
+        font-size: 14px;
+    }
+
+    .hero-buttons {
+        align-items: stretch;
+        flex-direction: column;
+        max-width: 330px;
+    }
+
+    .hero-buttons .button {
+        width: 100%;
+    }
+
+    .hero-footnote {
+        margin-top: 38px;
+        font-size: 9px;
+        letter-spacing: 1.5px;
+    }
+
+    .scripture-track {
+        justify-content: center;
+        font-size: 12px;
+        gap: 10px 15px;
+    }
+
+    .mission-grid,
+    .giving-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .mission-visual {
+        min-height: 430px;
+        margin-right: 12px;
+    }
+
+    .mission::before {
+        font-size: 180px;
+    }
+
+    .impact {
+        padding: 80px 0;
+    }
+
+    .impact h2 {
+        font-size: clamp(62px, 15vw, 100px);
+        letter-spacing: -2px;
+    }
+
+    .watch-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .video-card {
+        min-height: 380px;
+    }
+
+    .play-button {
+        width: 72px;
+        height: 72px;
+    }
+
+    .ministry-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .ministry-card {
+        min-height: auto;
+    }
+
+    .card-number {
+        margin-bottom: 18px;
+    }
+
+    .scripture-feature {
+        padding: 90px 20px;
+    }
+
+    .scripture-watermark {
+        font-size: 80px;
+    }
+
+    .giving-panel {
+        padding: 28px;
+    }
+
+    .giving-actions {
+        flex-direction: column;
+    }
+
+    .giving-actions .button {
+        width: 100%;
+    }
+
+    .footer-top {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .footer-links {
+        gap: 18px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+    }
+}
+</style>
 </head>
 
 <body>
 
-  <header class="topbar">
-    <a class="brand" href="index.html" aria-label="Jesus To The World home">
-      <span>JESUS TO</span>
-      <span>THE WORLD</span>
-    </a>
+<!-- NAVIGATION -->
 
-    <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+<header class="site-header">
+    <div class="container navbar">
 
-    <nav class="navlinks" aria-label="Main navigation">
-      <a href="index.html#about">About</a>
-      <a href="index.html#all-things">All Things</a>
-      <a href="index.html#contact">Contact</a>
-      <a href="index.html#podcast">Podcast</a>
-      <a class="nav-donate" href="give.html" aria-current="page">Give →</a>
-    </nav>
-  </header>
+        <a class="brand" href="#home" aria-label="Jesus To The World Ministry home">
+            <div class="brand-symbol">J</div>
+            <div class="brand-text">
+                Jesus To The World
+                <small>Ministry</small>
+            </div>
+        </a>
 
-  <main>
-
-    <section class="give-hero">
-      <div class="eyebrow">Jesus To The World Ministry · Generosity</div>
-
-      <h1>Fuel the <em>flame.</em><br>Reach the lost.</h1>
-
-      <div class="hero-bottom">
-        <p>
-          Every dollar sown fuels the fire for the furtherment of God's
-          Kingdom and supports the completion of the Great Commission.
-          Your generosity helps carry the message of Jesus to the streets,
-          cities, and nations.
-        </p>
-
-        <div class="hero-tag">
-          Seeking to save the lost<br>
-          Matthew 28:19–20
-        </div>
-      </div>
-    </section>
-
-    <div class="mission-strip">
-      <span>Partner with the mission</span>
-      <strong>Your generosity helps keep the Gospel moving.</strong>
-    </div>
-
-    <section class="giving-wrap" id="give">
-
-      <aside class="side-copy">
-        <p class="section-label">Sowing into the mission</p>
-
-        <h2>Put faith into <span>action.</span></h2>
-
-        <p>
-          When you sow into this ministry, you help create opportunities
-          to preach the Gospel, reach people where they are, and share the
-          hope of Jesus beyond the walls of the church.
-        </p>
-
-        <p>
-          Choose an amount that works for you. You can make a one-time gift
-          or select recurring giving to express your ongoing support.
-        </p>
-
-        <div class="scripture">
-          “The one who sows generously will also reap generously.”
-          <small>2 Corinthians 9:6</small>
-        </div>
-      </aside>
-
-      <div class="giving-card">
-
-        <p class="card-kicker">01 / Choose your gift</p>
-        <h3>How much would you like to sow?</h3>
-
-        <div class="amount-grid" role="group" aria-label="Suggested gift amounts">
-          <button class="amount" type="button" data-amount="50">$50</button>
-          <button class="amount active" type="button" data-amount="100">$100</button>
-          <button class="amount" type="button" data-amount="250">$250</button>
-          <button class="amount" type="button" data-amount="500">$500</button>
-        </div>
-
-        <label class="custom-label" for="custom-amount">Or enter a custom amount</label>
-
-        <div class="money-field">
-          <span>$</span>
-          <input
-            id="custom-amount"
-            name="amount"
-            type="number"
-            min="0.01"
-            step="any"
-            value="100"
-            inputmode="decimal"
-            aria-label="Gift amount in dollars"
-          >
-        </div>
-
-        <div class="frequency" id="frequency-box">
-          <label class="recurring-label" for="recurring">
-            <span class="recurring-copy">
-              <strong>Make this a monthly gift</strong>
-              <small>Choose this if you intend to support the ministry each month.</small>
-            </span>
-
-            <span class="switch">
-              <input id="recurring" type="checkbox" aria-label="Make this a monthly gift">
-              <span class="switch-track"></span>
-            </span>
-          </label>
-
-          <p class="frequency-note" id="frequency-note">
-            Monthly giving is selected. The payment service must separately
-            support recurring payments; switching this on does not schedule
-            automatic withdrawals.
-          </p>
-        </div>
-
-        <p class="card-kicker">02 / Add a note (optional)</p>
-
-        <div class="field">
-          <label for="gift-note">Prayer request or note</label>
-          <textarea
-            id="gift-note"
-            placeholder="Share a note for the ministry (optional)"
-          ></textarea>
-        </div>
-
-        <div class="payment-heading">
-          <p class="card-kicker">03 / Choose your payment method</p>
-          <h3>Select how you'd like to give.</h3>
-        </div>
-
-        <div class="payment-grid" role="group" aria-label="Payment methods">
-
-          <button type="button" class="payment-option" data-method="Zelle">
-            <span class="payment-icon">Z</span>
-            <span>
-              <strong>Zelle</strong>
-              <small>Give through your banking app</small>
-            </span>
-          </button>
-
-          <button type="button" class="payment-option" data-method="PayPal">
-            <span class="payment-icon">P</span>
-            <span>
-              <strong>PayPal</strong>
-              <small>PayPal online checkout</small>
-            </span>
-          </button>
-
-          <button type="button" class="payment-option" data-method="Venmo">
-            <span class="payment-icon">V</span>
-            <span>
-              <strong>Venmo</strong>
-              <small>Give through your profile</small>
-            </span>
-          </button>
-
-          <button type="button" class="payment-option" data-method="Cash App">
-            <span class="payment-icon">$</span>
-            <span>
-              <strong>Cash App</strong>
-              <small>Give using your $Cashtag</small>
-            </span>
-          </button>
-
-          <button type="button" class="payment-option" data-method="Wise">
-            <span class="payment-icon">W</span>
-            <span>
-              <strong>Wise</strong>
-              <small>International payments</small>
-            </span>
-          </button>
-
-          <button type="button" class="payment-option" data-method="Apple Pay">
-            <span class="payment-icon">Pay</span>
-            <span>
-              <strong>Apple Pay</strong>
-              <small>Secure checkout setup required</small>
-            </span>
-          </button>
-
-        </div>
-
-        <button type="button" class="submit-gift" id="continue-gift">
-          Choose Payment Method
-          <span aria-hidden="true">→</span>
+        <button class="menu-toggle"
+                id="menuToggle"
+                aria-label="Open navigation menu"
+                aria-expanded="false">
+            ☰
         </button>
 
-        <div class="status" id="gift-status" role="status" aria-live="polite"></div>
+        <nav class="nav-links" id="navLinks">
+            <a href="#home">Home</a>
+            <a href="#mission">Our Mission</a>
+            <a href="#watch">Watch</a>
+            <a href="#impact">Our Impact</a>
+            <a href="#booking">Book Jonathan</a>
+            <a class="nav-donate" href="give.html">Fuel the Flame ↗</a>
+        </nav>
 
-        <div class="payment-details" id="payment-details" aria-live="polite">
-          <p class="details-eyebrow">Your selected payment method</p>
-          <h4 id="details-title">Payment details</h4>
-          <p class="details-description" id="details-description"></p>
+    </div>
+</header>
 
-          <div class="recipient-box" id="recipient-box">
-            <div class="recipient-info">
-              <small id="recipient-label">Recipient</small>
-              <strong id="recipient-value"></strong>
+<main>
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+    <div class="container">
+        <div class="hero-content">
+
+            <div class="hero-label">
+                <span></span>
+                The Gospel Without Compromise
             </div>
-            <button type="button" class="copy-button" id="copy-recipient">
-              Copy
-            </button>
-          </div>
 
-          <div class="gift-summary" id="gift-summary"></div>
+            <h1>
+                Seeking<br>
+                To Save<br>
+                <span class="line-orange">The Lost.</span>
+            </h1>
 
-          <a
-            class="payment-action"
-            id="payment-action"
-            href="#"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Open Payment Service →
-          </a>
+            <p class="hero-description">
+                We exist to proclaim the life-changing Gospel of Jesus Christ
+                to the streets, cities, and nations. One message. One mission.
+                One Savior.
+            </p>
 
-          <p class="details-warning" id="details-warning">
-            Verify the recipient and amount in your payment app before sending.
-          </p>
+            <div class="hero-buttons">
+                <a class="button" href="#watch">
+                    Watch the Mission
+                    <span class="button-arrow">→</span>
+                </a>
+
+                <a class="button button-outline" href="give.html">
+                    Fuel the Flame
+                    <span class="button-arrow">↗</span>
+                </a>
+            </div>
+
+            <div class="hero-footnote">
+                Jesus Christ is the hope of the world
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- SCRIPTURE STRIP -->
+
+<div class="scripture-strip">
+    <div class="scripture-track">
+        <span>Preach the Gospel</span>
+        <span class="separator">✦</span>
+        <span>Reach the Lost</span>
+        <span class="separator">✦</span>
+        <span>Make Disciples</span>
+        <span class="separator">✦</span>
+        <span>Glorify Jesus</span>
+    </div>
+</div>
+
+<!-- MISSION -->
+
+<section class="section mission" id="mission">
+    <div class="container mission-grid">
+
+        <div class="mission-copy reveal">
+            <div class="eyebrow">Why We Exist</div>
+
+            <h2>
+                The World Needs<br>
+                <span class="accent">Jesus.</span>
+            </h2>
+
+            <p>
+                Jesus To The World Ministry is committed to bringing the
+                message of salvation beyond the four walls of a church.
+                Through evangelism, preaching, digital media, and personal
+                outreach, we seek to point people toward repentance, faith,
+                and a transformed life in Jesus Christ.
+            </p>
+
+            <p>
+                Our heart is for those who feel forgotten, those searching
+                for purpose, and those who have never truly heard the Gospel.
+                We believe the message of Jesus is not meant to be hidden.
+                It is meant to be proclaimed.
+            </p>
+
+            <div class="mission-verse">
+                <p>
+                    “For the Son of man is come to seek and to save that
+                    which was lost.”
+                </p>
+                <small>LUKE 19:10 · KJV</small>
+            </div>
+
+            <div style="margin-top: 32px;">
+                <a class="button button-outline" href="#booking">
+                    Join the Mission <span class="button-arrow">→</span>
+                </a>
+            </div>
         </div>
 
-        <p class="fine-print">
-          Please verify the recipient before sending. The selected amount
-          may need to be entered again in your payment app. Monthly selection
-          is a preference only unless a recurring payment arrangement is
-          separately established with the provider. Apple Pay requires a
-          configured payment processor. Do not enter banking passwords or
-          sensitive payment credentials on this page.
-        </p>
-
-      </div>
-    </section>
-
-    <section class="impact">
-      <div class="impact-head">
-        <div>
-          <p class="section-label">Why we give</p>
-          <h2>Every gift helps carry the message forward.</h2>
+        <div class="mission-visual reveal" role="img"
+             aria-label="Ministry and Gospel outreach">
+            <div class="visual-caption">
+                <span>Our Calling</span>
+                <h3>Take the Gospel<br>to the World.</h3>
+            </div>
         </div>
+
+    </div>
+</section>
+
+<!-- IMPACT -->
+
+<section class="impact" id="impact">
+    <div class="container impact-inner reveal">
+
+        <div class="eyebrow">The Message Is Moving</div>
+
+        <h2>20 Million+</h2>
+
+        <h3>Reached in 2025</h3>
 
         <p>
-          Thank you for considering a partnership with Jesus To The World
-          Ministry. Your support helps create more opportunities to share
-          the Gospel and serve people with the love of Christ.
+            Digital platforms have opened doors to share the Gospel far
+            beyond our immediate communities. Every view represents an
+            opportunity for someone to encounter the message of Jesus.
+            Our prayer is that the reach becomes real transformation.
         </p>
-      </div>
 
-      <div class="impact-grid">
-        <div class="impact-item">
-          <b>01 / Go</b>
-          <p>Help create opportunities to take the Gospel into streets, cities, and communities.</p>
+        <div class="impact-note">
+            All Glory Belongs to Jesus Christ
         </div>
 
-        <div class="impact-item">
-          <b>02 / Reach</b>
-          <p>Help share the message of Jesus with people who may never walk into a church.</p>
+    </div>
+</section>
+
+<!-- WATCH -->
+
+<section class="section watch" id="watch">
+    <div class="container">
+
+        <div class="watch-header reveal">
+            <div>
+                <div class="eyebrow">Watch the Mission</div>
+                <h2>Faith in <span class="accent">Action.</span></h2>
+            </div>
+
+            <p class="section-description">
+                Real conversations. Street evangelism. The Gospel
+                proclaimed boldly. See what happens when faith moves
+                beyond the building.
+            </p>
         </div>
 
-        <div class="impact-item">
-          <b>03 / Continue</b>
-          <p>Help sustain the practical work, content, travel, and outreach connected to the mission.</p>
+        <!-- Replace the # below with your actual YouTube video or channel URL. -->
+        <a class="video-card reveal"
+           href="https://www.youtube.com/"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="Watch Jonathan Perde Ministries on YouTube">
+
+            <div class="video-content">
+
+                <div class="play-button" aria-hidden="true">▶</div>
+
+                <div class="eyebrow">Jonathan Perde Ministries</div>
+
+                <h3>Watch the <span class="accent">Mission.</span></h3>
+
+                <p>Gospel preaching · Evangelism · Testimonies</p>
+
+            </div>
+        </a>
+
+    </div>
+</section>
+
+<!-- MINISTRY PILLARS -->
+
+<section class="section ministry">
+    <div class="container">
+
+        <div class="ministry-heading reveal">
+            <div class="eyebrow">What We Stand For</div>
+
+            <h2>One Gospel.<br><span class="accent">One Mission.</span></h2>
+
+            <p class="section-description">
+                Our mission is centered on proclaiming Christ, serving
+                people, and equipping believers to live out the Great
+                Commission.
+            </p>
         </div>
-      </div>
-    </section>
 
-  </main>
+        <div class="ministry-grid">
 
-  <footer>
-    <a class="footer-brand" href="index.html">
-      <span>JESUS TO THE WORLD</span>
-      <span style="color:var(--orange)">SEEKING TO SAVE THE LOST</span>
-    </a>
+            <article class="ministry-card reveal">
+                <span class="card-number">01</span>
+                <h3>Street Evangelism</h3>
+                <p>
+                    Taking the Gospel into public spaces and engaging
+                    people with the truth, grace, and hope of Jesus Christ.
+                </p>
+            </article>
 
-    <nav class="footer-links" aria-label="Footer navigation">
-      <a href="index.html">Home</a>
-      <a href="index.html#about">About</a>
-      <a href="index.html#contact">Contact</a>
-      <a href="give.html">Give</a>
-    </nav>
-  </footer>
+            <article class="ministry-card reveal">
+                <span class="card-number">02</span>
+                <h3>Digital Outreach</h3>
+                <p>
+                    Using online video and social platforms to share
+                    biblical truth and reach people wherever they are.
+                </p>
+            </article>
 
-  <script>
-    /* PAYMENT DESTINATIONS
-       These are the ministry payment details previously supplied.
-       Check the links and recipient names before publicly accepting gifts.
-    */
+            <article class="ministry-card reveal">
+                <span class="card-number">03</span>
+                <h3>Discipleship</h3>
+                <p>
+                    Encouraging believers to grow in Scripture, deepen
+                    their relationship with Jesus, and share their faith.
+                </p>
+            </article>
 
-    const PAYMENT_METHODS = {
-      "Zelle": {
-        recipientLabel: "Zelle recipient email",
-        recipient: "jonathanperde@yahoo.com",
-        description:
-          "Open your banking app, select Zelle, and send your gift to the email below. Confirm the recipient name shown by your bank before sending.",
-        url: "",
-        buttonText: "Open Zelle Instructions →",
-        warning:
-          "Zelle does not use a universal payment link here. Open your banking app manually, choose Zelle, and confirm the recipient before sending."
-      },
+        </div>
+    </div>
+</section>
 
-      "PayPal": {
-        recipientLabel: "PayPal recipient",
-        recipient: "@jonathanperde",
-        description:
-          "Continue to PayPal to review the recipient and enter your intended gift amount.",
-        url: "https://paypal.me/jonathanperde",
-        buttonText: "Continue to PayPal →",
-        warning:
-          "Confirm that the PayPal page displays the intended recipient. You may need to enter the gift amount on PayPal."
-      },
+<!-- SCRIPTURE FEATURE -->
 
-      "Venmo": {
-        recipientLabel: "Venmo recipient",
-        recipient: "@joanthanperde",
-        description:
-          "Continue to the Venmo profile. Check the profile carefully before sending your gift.",
-        url: "https://venmo.com/u/joanthanperde",
-        buttonText: "Continue to Venmo →",
-        warning:
-          "Please verify that the Venmo profile is yours and displays the correct recipient before sharing this page publicly."
-      },
+<section class="scripture-feature">
+    <div class="scripture-watermark" aria-hidden="true">
+        Abundant Life
+    </div>
 
-      "Cash App": {
-        recipientLabel: "Cash App $Cashtag",
-        recipient: "$Jmanftw20",
-        description:
-          "Continue to Cash App and verify the recipient before completing your gift.",
-        url: "https://cash.app/$Jmanftw20",
-        buttonText: "Continue to Cash App →",
-        warning:
-          "Verify the Cashtag and recipient name in Cash App. Enter the gift amount there before sending."
-      },
+    <div class="container reveal">
+        <div class="eyebrow">The Promise of Jesus</div>
 
-      "Wise": {
-        recipientLabel: "Wise username",
-        recipient: "@jonathancornelp",
-        description:
-          "Use this Wise username to locate the recipient in Wise. A verified direct payment URL has not been supplied.",
-        url: "",
-        buttonText: "View Wise Instructions →",
-        warning:
-          "Open Wise separately and confirm the account details. Do not send funds until you have verified the intended recipient."
-      },
+        <blockquote>
+            “I am come that they might have life, and that they might
+            have it <span>more abundantly.</span>”
+        </blockquote>
 
-      "Apple Pay": {
-        recipientLabel: "Checkout status",
-        recipient: "Payment processor not connected",
-        description:
-          "Apple Pay requires a compatible payment processor and configured checkout. It is not yet enabled on this static page.",
-        url: "",
-        buttonText: "Apple Pay Not Yet Available",
-        warning:
-          "To accept Apple Pay online, configure a supported payment processor, enable Apple Pay, verify the domain if required, and test checkout before launch.",
-        disabled: true
-      }
-    };
+        <cite>JOHN 10:10 · KJV</cite>
+    </div>
+</section>
 
-    const amountInput = document.getElementById("custom-amount");
-    const amountButtons = [...document.querySelectorAll(".amount")];
-    const paymentButtons = [...document.querySelectorAll(".payment-option")];
-    const recurringInput = document.getElementById("recurring");
-    const frequencyBox = document.getElementById("frequency-box");
-    const statusBox = document.getElementById("gift-status");
-    const detailsPanel = document.getElementById("payment-details");
-    const continueButton = document.getElementById("continue-gift");
+<!-- GIVING -->
 
-    let selectedMethod = "";
+<section class="section giving" id="give">
+    <div class="container giving-grid">
 
-    /*
-      AMOUNT BUTTONS
-      Selecting a preset updates the custom amount and adds the orange glow.
-    */
+        <div class="giving-copy reveal">
+            <div class="eyebrow">Partner With the Mission</div>
 
-    amountButtons.forEach(button => {
-      button.addEventListener("click", () => {
-        amountInput.value = button.dataset.amount;
+            <h2>
+                Fuel the<br>
+                <span class="accent">Flame.</span>
+            </h2>
 
-        amountButtons.forEach(item => {
-          item.classList.toggle("active", item === button);
+            <p>
+                Your generosity helps support the work of sharing the
+                Gospel through evangelism, ministry outreach, and digital
+                content. Together, we can continue carrying the message
+                of Jesus to people who need to hear it.
+            </p>
+
+            <div class="giving-quote">
+                “Every dollar sown fuels the fire for the furtherment
+                of God's kingdom and supports the completion of the
+                Great Commission.”
+            </div>
+
+            <div class="giving-actions">
+                <a class="button" href="give.html">
+                    Fuel the Flame <span class="button-arrow">↗</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="giving-panel reveal">
+            <div class="giving-panel-label">Stand With Us</div>
+
+            <h3>Help Carry the Gospel.</h3>
+
+            <p>
+                Become a ministry partner and help make future outreach,
+                Gospel-centered content, and evangelism possible.
+            </p>
+
+            <p>
+                Click below to visit the secure giving information page
+                and choose your preferred method of giving.
+            </p>
+
+            <a class="button" href="give.html">
+                Give Now <span class="button-arrow">→</span>
+            </a>
+        </div>
+
+    </div>
+</section>
+
+<!-- BOOK JONATHAN -->
+
+<section class="booking" id="booking">
+    <div class="container booking-inner reveal">
+
+        <div class="eyebrow">Invite the Ministry</div>
+
+        <h2>
+            Let's Reach<br>
+            <span class="accent">The Lost.</span>
+        </h2>
+
+        <p>
+            Interested in inviting Jonathan to speak, preach, participate
+            in an outreach, or collaborate on a ministry initiative?
+            Get in touch to discuss the opportunity.
+        </p>
+
+        <a class="button"
+           href="mailto:jonathanperdeyt@gmail.com?subject=Book%20Jonathan%20Perde">
+            Book Jonathan <span class="button-arrow">↗</span>
+        </a>
+
+    </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+
+<footer class="footer">
+    <div class="container">
+
+        <div class="footer-top">
+
+            <div>
+                <a class="brand" href="#home">
+                    <div class="brand-symbol">J</div>
+                    <div class="brand-text">
+                        Jesus To The World
+                        <small>Ministry</small>
+                    </div>
+                </a>
+
+                <p class="footer-mission">
+                    Seeking to save the lost. Proclaiming the Gospel of
+                    Jesus Christ to the streets, cities, and nations.
+                    All glory belongs to Him.
+                </p>
+            </div>
+
+            <nav class="footer-links" aria-label="Footer navigation">
+                <a href="#home">Home</a>
+                <a href="#mission">Mission</a>
+                <a href="#watch">Watch</a>
+                <a href="#impact">Impact</a>
+                <a href="#booking">Book Jonathan</a>
+                <a href="give.html">Give</a>
+            </nav>
+
+        </div>
+
+        <div class="footer-bottom">
+            <span>
+                © <span id="currentYear"></span> Jesus To The World Ministry
+            </span>
+
+            <span>JESUS CHRIST IS LORD.</span>
+        </div>
+
+    </div>
+</footer>
+
+<script>
+/* MOBILE NAVIGATION */
+
+const menuToggle = document.getElementById("menuToggle");
+const navLinks = document.getElementById("navLinks");
+
+menuToggle.addEventListener("click", function () {
+    const isOpen = navLinks.classList.toggle("open");
+
+    menuToggle.setAttribute("aria-expanded", String(isOpen));
+    menuToggle.innerHTML = isOpen ? "&times;" : "☰";
+});
+
+navLinks.querySelectorAll("a").forEach(function (link) {
+    link.addEventListener("click", function () {
+        navLinks.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.innerHTML = "☰";
+    });
+});
+
+/* SCROLL REVEAL */
+
+const revealElements = document.querySelectorAll(".reveal");
+
+if ("IntersectionObserver" in window) {
+    const observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+                observer.unobserve(entry.target);
+            }
         });
-
-        updateGiftSummary();
-        hideStatus();
-      });
+    }, {
+        threshold: 0.12
     });
 
-    /*
-      CUSTOM AMOUNT
-      Entering a custom amount removes the preset selection unless it
-      exactly matches one of the four preset amounts.
-    */
-
-    amountInput.addEventListener("input", () => {
-      const value = amountInput.value.trim();
-
-      amountButtons.forEach(button => {
-        button.classList.toggle(
-          "active",
-          value !== "" && Number(value) === Number(button.dataset.amount)
-        );
-      });
-
-      updateGiftSummary();
-      hideStatus();
+    revealElements.forEach(function (element) {
+        observer.observe(element);
     });
-
-    /*
-      MONTHLY GIFT SWITCH
-      The switch glows orange when enabled.
-      This records a preference; it does not schedule automatic payments.
-    */
-
-    recurringInput.addEventListener("change", () => {
-      frequencyBox.classList.toggle("enabled", recurringInput.checked);
-      updateGiftSummary();
-      hideStatus();
+} else {
+    revealElements.forEach(function (element) {
+        element.classList.add("visible");
     });
+}
 
-    /*
-      PAYMENT METHOD SELECTION
-      Clicking a method highlights it.
-    */
+/* CURRENT YEAR */
 
-    paymentButtons.forEach(button => {
-      button.addEventListener("click", () => {
-        selectedMethod = button.dataset.method;
-
-        paymentButtons.forEach(item => {
-          item.classList.toggle("active", item === button);
-        });
-
-        hideStatus();
-        updateGiftSummary();
-
-        // Show the payment details panel immediately after selection.
-        showPaymentDetails();
-      });
-    });
-
-    /*
-      CHOOSE PAYMENT METHOD
-      Validates the amount and displays the selected method's details.
-    */
-
-    continueButton.addEventListener("click", () => {
-      const amount = Number(amountInput.value);
-
-      if (
-        amountInput.value.trim() === "" ||
-        !Number.isFinite(amount) ||
-        amount <= 0
-      ) {
-        showStatus("Please enter a gift amount greater than $0.");
-        amountInput.focus();
-        return;
-      }
-
-      if (!selectedMethod) {
-        showStatus("Please select a payment method above to continue.");
-        document.querySelector(".payment-heading").scrollIntoView({
-          behavior: "smooth",
-          block: "center"
-        });
-        return;
-      }
-
-      showPaymentDetails();
-
-      detailsPanel.scrollIntoView({
-        behavior: "smooth",
-        block: "nearest"
-      });
-    });
-
-    /*
-      DISPLAY THE SELECTED PAYMENT DETAILS
-    */
-
-    function showPaymentDetails() {
-      if (!selectedMethod) return;
-
-      const method = PAYMENT_METHODS[selectedMethod];
-
-      if (!method) return;
-
-      const amount = Number(amountInput.value);
-      const recurring = recurringInput.checked;
-
-      document.getElementById("details-title").textContent = selectedMethod;
-      document.getElementById("details-description").textContent =
-        method.description;
-
-      document.getElementById("recipient-label").textContent =
-        method.recipientLabel;
-
-      document.getElementById("recipient-value").textContent =
-        method.recipient;
-
-      document.getElementById("details-warning").textContent =
-        method.warning;
-
-      const summary = document.getElementById("gift-summary");
-
-      const validAmount =
-        amountInput.value.trim() !== "" &&
-        Number.isFinite(amount) &&
-        amount > 0;
-
-      if (validAmount) {
-        summary.textContent =
-          "Selected gift: $" + amount.toLocaleString("en-US", {
-            minimumFractionDigits: 2,
-            maximumFractionDigits: 2
-          }) +
-          (recurring
-            ? " · Monthly giving preference selected."
-            : " · One-time gift.");
-      } else {
-        summary.textContent =
-          "Enter a valid amount above to update your gift summary.";
-      }
-
-      const action = document.getElementById("payment-action");
-
-      action.textContent = method.buttonText;
-      action.href = method.url || "#";
-      action.classList.toggle("disabled", Boolean(method.disabled));
-
-      if (method.disabled || !method.url) {
-        action.removeAttribute("target");
-      } else {
-        action.target = "_blank";
-        action.rel = "noopener noreferrer";
-      }
-
-      if (method.disabled) {
-        action.onclick = event => {
-          event.preventDefault();
-          showStatus(
-            "Apple Pay is not connected yet. It requires a configured payment processor and tested checkout."
-          );
-        };
-      } else if (!method.url) {
-        action.onclick = event => {
-          event.preventDefault();
-
-          showStatus(
-            selectedMethod +
-            " instructions are displayed above. Open the payment app separately and verify the recipient before sending."
-          );
-        };
-      } else {
-        action.onclick = null;
-      }
-
-      document.getElementById("copy-recipient").textContent = "Copy";
-      detailsPanel.classList.add("show");
-    }
-
-    /*
-      COPY THE RECIPIENT DETAILS
-    */
-
-    document.getElementById("copy-recipient").addEventListener("click", async () => {
-      const value = document.getElementById("recipient-value").textContent;
-      const copyButton = document.getElementById("copy-recipient");
-
-      try {
-        await navigator.clipboard.writeText(value);
-        copyButton.textContent = "Copied!";
-      } catch (error) {
-        // Fallback for browsers that block clipboard access.
-        const temp = document.createElement("textarea");
-        temp.value = value;
-        temp.style.position = "fixed";
-        temp.style.opacity = "0";
-        document.body.appendChild(temp);
-        temp.select();
-
-        try {
-          document.execCommand("copy");
-          copyButton.textContent = "Copied!";
-        } catch (fallbackError) {
-          showStatus("Please manually select and copy the recipient details.");
-        }
-
-        temp.remove();
-      }
-
-      setTimeout(() => {
-        copyButton.textContent = "Copy";
-      }, 1800);
-    });
-
-    /*
-      KEEP THE SUMMARY UPDATED AS AMOUNT OR FREQUENCY CHANGES
-    */
-
-    function updateGiftSummary() {
-      if (detailsPanel.classList.contains("show") && selectedMethod) {
-        showPaymentDetails();
-      }
-    }
-
-    function showStatus(message) {
-      statusBox.textContent = message;
-      statusBox.classList.add("show");
-    }
-
-    function hideStatus() {
-      statusBox.textContent = "";
-      statusBox.classList.remove("show");
-    }
-
-    /*
-      MOBILE NAVIGATION
-    */
-
-    const menuButton = document.querySelector(".menu-toggle");
-    const nav = document.querySelector(".navlinks");
-
-    menuButton.addEventListener("click", () => {
-      const isOpen = nav.classList.toggle("open");
-      menuButton.setAttribute("aria-expanded", String(isOpen));
-    });
-
-    nav.querySelectorAll("a").forEach(link => {
-      link.addEventListener("click", () => {
-        nav.classList.remove("open");
-        menuButton.setAttribute("aria-expanded", "false");
-      });
-    });
-  </script>
+document.getElementById("currentYear").textContent =
+    new Date().getFullYear();
+</script>
 
 </body>
 </html>
