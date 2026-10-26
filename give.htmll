@@ -1,0 +1,1334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f1eee5">
+  <meta name="description" content="Support Jesus To The World Ministry in sharing the Gospel and reaching the lost.">
+  <title>Give | Jesus To The World Ministry</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --cream: #f1eee5;
+      --paper: #fffdf8;
+      --ink: #171614;
+      --muted: #77736b;
+      --orange: #ef693b;
+      --line: #ded9cf;
+      --serif: "Playfair Display", Georgia, serif;
+      --sans: "DM Sans", Arial, sans-serif;
+      --mono: "DM Mono", monospace;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--cream);
+      color: var(--ink);
+      font-family: var(--sans);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    input,
+    textarea {
+      font: inherit;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    button:focus-visible,
+    a:focus-visible,
+    input:focus-visible,
+    textarea:focus-visible {
+      outline: 3px solid var(--orange);
+      outline-offset: 3px;
+    }
+
+    /* NAVIGATION */
+
+    .topbar {
+      min-height: 76px;
+      padding: 0 5.3%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      background: var(--cream);
+      border-bottom: 1px solid #17161417;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .brand {
+      flex-shrink: 0;
+      font-size: 14px;
+      line-height: 1.05;
+      font-weight: 800;
+      letter-spacing: -0.7px;
+    }
+
+    .brand span {
+      display: block;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: clamp(12px, 2vw, 30px);
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .nav a:not(.give-nav):hover {
+      color: var(--orange);
+    }
+
+    .give-nav {
+      padding: 14px 19px;
+      color: white;
+      background: var(--orange);
+      white-space: nowrap;
+      transition: background 0.2s ease;
+    }
+
+    .give-nav:hover {
+      background: var(--ink);
+    }
+
+    /* MAIN LAYOUT */
+
+    .page {
+      max-width: 1500px;
+      margin: 0 auto;
+      padding: 45px 5.3% 90px;
+      display: grid;
+      grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.12fr);
+      align-items: start;
+      gap: clamp(42px, 7vw, 110px);
+    }
+
+    .intro {
+      padding-top: 25px;
+      position: sticky;
+      top: 110px;
+    }
+
+    .eyebrow,
+    .step-label {
+      font-family: var(--mono);
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .eyebrow {
+      color: var(--orange);
+      margin: 0 0 27px;
+    }
+
+    .intro h1 {
+      margin: 0 0 23px;
+      font-family: var(--serif);
+      font-size: clamp(43px, 4.1vw, 68px);
+      line-height: 1.03;
+      letter-spacing: -2.6px;
+      font-weight: 700;
+    }
+
+    .intro h1 em {
+      color: var(--orange);
+      font-weight: 600;
+    }
+
+    .intro-copy {
+      max-width: 470px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.9;
+    }
+
+    .intro-copy p {
+      margin: 0 0 15px;
+    }
+
+    .verse {
+      max-width: 440px;
+      margin-top: 35px;
+      padding-top: 22px;
+      border-top: 1px solid #d2ccc0;
+    }
+
+    .verse blockquote {
+      margin: 0 0 12px;
+      font-family: var(--serif);
+      font-size: 18px;
+      line-height: 1.5;
+      font-weight: 600;
+      font-style: italic;
+    }
+
+    .verse cite {
+      font-family: var(--mono);
+      color: var(--muted);
+      font-size: 9px;
+      letter-spacing: 1.2px;
+      font-style: normal;
+      text-transform: uppercase;
+    }
+
+    /* DONATION CARD */
+
+    .donation-card {
+      padding: clamp(26px, 3vw, 44px);
+      background: var(--paper);
+      border: 1px solid #17161417;
+      box-shadow: 0 18px 55px #2a22120e;
+      min-width: 0;
+    }
+
+    .step-label {
+      margin: 0 0 16px;
+      color: #8a847a;
+    }
+
+    .section-heading {
+      margin: 0 0 24px;
+      font-family: var(--serif);
+      font-size: clamp(25px, 2.4vw, 36px);
+      line-height: 1.15;
+      letter-spacing: -0.8px;
+    }
+
+    .amount-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 9px;
+      margin-bottom: 20px;
+    }
+
+    .amount-button {
+      min-height: 52px;
+      border: 1px solid #d8d3ca;
+      background: transparent;
+      color: var(--ink);
+      font-size: 14px;
+      font-weight: 800;
+      transition: 0.18s ease;
+    }
+
+    .amount-button:hover {
+      border-color: var(--orange);
+    }
+
+    .amount-button[aria-pressed="true"] {
+      background: var(--ink);
+      color: white;
+      border-color: var(--orange);
+      box-shadow: 0 0 0 1px var(--orange);
+    }
+
+    .field-label {
+      display: block;
+      margin: 0 0 9px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .amount-field {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-height: 52px;
+      padding: 0 14px;
+      border: 1px solid #d8d3ca;
+      background: white;
+      margin-bottom: 20px;
+    }
+
+    .currency {
+      color: var(--orange);
+      font-weight: 800;
+      font-size: 18px;
+    }
+
+    .amount-field input {
+      width: 100%;
+      min-width: 0;
+      border: 0;
+      outline: 0;
+      color: var(--ink);
+      background: transparent;
+      font-size: 16px;
+    }
+
+    .amount-field:focus-within {
+      border-color: var(--orange);
+    }
+
+    /* MONTHLY GIVING */
+
+    .monthly-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+      padding: 17px 16px;
+      border: 1px solid #e4ded4;
+      background: #faf7f0;
+      margin-bottom: 32px;
+    }
+
+    .monthly-copy strong {
+      display: block;
+      font-size: 13px;
+      margin-bottom: 5px;
+    }
+
+    .monthly-copy span {
+      display: block;
+      font-size: 11px;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .switch {
+      flex: 0 0 auto;
+      width: 48px;
+      height: 27px;
+      border: 1px solid #c9c2b7;
+      border-radius: 30px;
+      background: #ded9d0;
+      padding: 3px;
+      transition: background 0.2s ease;
+    }
+
+    .switch::before {
+      content: "";
+      display: block;
+      width: 19px;
+      height: 19px;
+      border-radius: 50%;
+      background: white;
+      box-shadow: 0 1px 3px #0003;
+      transition: transform 0.2s ease;
+    }
+
+    .switch[aria-checked="true"] {
+      background: var(--orange);
+      border-color: var(--orange);
+    }
+
+    .switch[aria-checked="true"]::before {
+      transform: translateX(20px);
+    }
+
+    /* OPTIONAL NOTE */
+
+    .note-section {
+      padding-bottom: 28px;
+      border-bottom: 1px solid var(--line);
+      margin-bottom: 28px;
+    }
+
+    .note-field {
+      width: 100%;
+      min-height: 82px;
+      resize: vertical;
+      padding: 14px;
+      border: 1px solid #d8d3ca;
+      background: white;
+      color: var(--ink);
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .note-field::placeholder {
+      color: #a29d94;
+    }
+
+    .note-field:focus {
+      border-color: var(--orange);
+      outline: 1px solid var(--orange);
+    }
+
+    /* PAYMENT METHODS */
+
+    .payment-heading {
+      margin-bottom: 20px;
+    }
+
+    .payment-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .payment-option {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-height: 70px;
+      padding: 13px;
+      border: 1px solid #d8d3ca;
+      background: transparent;
+      color: var(--ink);
+      text-align: left;
+      transition: border-color 0.18s ease, background 0.18s ease;
+    }
+
+    .payment-option:hover {
+      border-color: var(--orange);
+    }
+
+    .payment-option[aria-pressed="true"] {
+      border-color: var(--orange);
+      background: #fff7f1;
+      box-shadow: inset 0 0 0 1px var(--orange);
+    }
+
+    .payment-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex: 0 0 36px;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--ink);
+      color: white;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .payment-option[aria-pressed="true"] .payment-icon {
+      background: var(--orange);
+    }
+
+    .payment-text strong {
+      display: block;
+      font-size: 12px;
+      margin-bottom: 4px;
+    }
+
+    .payment-text small {
+      display: block;
+      color: var(--muted);
+      font-size: 10px;
+      line-height: 1.4;
+    }
+
+    /* BUTTONS AND PAYMENT DETAILS */
+
+    .primary-button {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      width: 100%;
+      min-height: 64px;
+      padding: 0 21px;
+      border: 1px solid var(--ink);
+      background: var(--ink);
+      color: white;
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 1px;
+      text-align: left;
+      text-transform: uppercase;
+      transition: background 0.2s ease, border-color 0.2s ease;
+    }
+
+    .primary-button:hover {
+      background: var(--orange);
+      border-color: var(--orange);
+    }
+
+    .primary-button .arrow {
+      font-size: 19px;
+    }
+
+    .fine-print {
+      margin: 15px 0 0;
+      color: #8b857b;
+      font-size: 10px;
+      line-height: 1.7;
+    }
+
+    .payment-details {
+      display: none;
+      margin-top: 16px;
+      padding: 18px;
+      border: 1px solid var(--line);
+      background: #faf7f0;
+    }
+
+    .payment-details.visible {
+      display: block;
+    }
+
+    .payment-details h3 {
+      margin: 0 0 8px;
+      font-size: 14px;
+    }
+
+    .payment-details p {
+      margin: 0 0 12px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.65;
+    }
+
+    .recipient {
+      overflow-wrap: anywhere;
+      padding: 12px;
+      background: white;
+      border: 1px solid var(--line);
+      font-weight: 700;
+      font-size: 13px;
+      margin: 10px 0 12px;
+    }
+
+    .detail-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .secondary-button,
+    .copy-button {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 42px;
+      padding: 0 14px;
+      border: 1px solid var(--ink);
+      background: transparent;
+      color: var(--ink);
+      font-size: 11px;
+      font-weight: 800;
+    }
+
+    .secondary-button:hover,
+    .copy-button:hover {
+      background: var(--ink);
+      color: white;
+    }
+
+    .status-message {
+      min-height: 18px;
+      margin: 10px 0 0 !important;
+      font-size: 11px !important;
+      color: #5c574f !important;
+    }
+
+    /* FOOTER */
+
+    .footer {
+      padding: 35px 5.3% 26px;
+      background: #11100f;
+      color: #f1eee5;
+    }
+
+    .footer-inner {
+      max-width: 1500px;
+      margin: 0 auto;
+    }
+
+    .footer-main {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr 1fr;
+      gap: 40px;
+      padding: 28px 0 42px;
+    }
+
+    .footer-kicker {
+      margin: 0 0 16px;
+      color: #a9a196;
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .footer-slogan {
+      margin: 0;
+      font-family: var(--serif);
+      font-size: clamp(31px, 3.5vw, 48px);
+      line-height: 1.05;
+    }
+
+    .footer-slogan em {
+      color: #e78a62;
+    }
+
+    .footer-email {
+      display: inline-block;
+      overflow-wrap: anywhere;
+      margin: 0 0 12px;
+      font-family: var(--serif);
+      font-size: clamp(18px, 2vw, 26px);
+    }
+
+    .footer-note {
+      color: #aaa399;
+      font-size: 12px;
+      line-height: 1.7;
+    }
+
+    .footer-links {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px 20px;
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .footer-links a:hover,
+    .footer-email:hover {
+      color: var(--orange);
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 18px 0;
+      border-top: 1px solid #3a3834;
+      border-bottom: 1px solid #3a3834;
+      color: #aaa399;
+      font-family: var(--mono);
+      font-size: 9px;
+    }
+
+    .footer-wordmark {
+      padding-top: 48px;
+      color: #ffffff14;
+      font-size: clamp(35px, 8vw, 100px);
+      font-weight: 800;
+      letter-spacing: -5px;
+      line-height: 1;
+      overflow-wrap: anywhere;
+    }
+
+    /* RESPONSIVE DESIGN */
+
+    @media (max-width: 900px) {
+      .page {
+        grid-template-columns: 1fr;
+        gap: 35px;
+      }
+
+      .intro {
+        position: static;
+        padding-top: 15px;
+      }
+
+      .intro-copy,
+      .verse {
+        max-width: 680px;
+      }
+
+      .footer-main {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .footer-main > :last-child {
+        grid-column: 1 / -1;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .topbar {
+        padding: 0 5%;
+        min-height: 68px;
+      }
+
+      .nav {
+        gap: 12px;
+        font-size: 10px;
+      }
+
+      .nav a:not(.give-nav) {
+        display: none;
+      }
+
+      .give-nav {
+        padding: 12px 15px;
+      }
+
+      .page {
+        padding: 25px 5% 55px;
+      }
+
+      .intro {
+        padding-top: 10px;
+      }
+
+      .intro h1 {
+        font-size: clamp(43px, 12vw, 62px);
+        letter-spacing: -1.8px;
+      }
+
+      .donation-card {
+        padding: 23px 18px;
+      }
+
+      .amount-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .payment-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .payment-option {
+        min-height: 64px;
+      }
+
+      .footer {
+        padding-left: 5%;
+        padding-right: 5%;
+      }
+
+      .footer-main {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+
+      .footer-main > :last-child {
+        grid-column: auto;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+      }
+
+      .footer-wordmark {
+        letter-spacing: -2px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="topbar">
+    <a class="brand" href="index.html" aria-label="Jesus To The World home">
+      <span>JESUS TO</span>
+      <span>THE WORLD</span>
+    </a>
+
+    <nav class="nav" aria-label="Main navigation">
+      <a href="index.html#about">ABOUT</a>
+      <a href="index.html#shop">SHOP</a>
+      <a href="index.html#book-jonathan">BOOK JONATHAN</a>
+      <a href="index.html#contact">CONTACT</a>
+      <a href="index.html#podcast">PODCAST</a>
+      <a class="give-nav" href="give.html">DONATE NOW</a>
+    </nav>
+  </header>
+
+  <main class="page">
+
+    <section class="intro" aria-labelledby="page-title">
+      <p class="eyebrow">Sowing into the mission</p>
+
+      <h1 id="page-title">
+        Put faith into <em>action.</em>
+      </h1>
+
+      <div class="intro-copy">
+        <p>
+          When you sow into this ministry, you help create opportunities
+          to preach the Gospel, reach people where they are, and share
+          the hope of Jesus beyond the walls of the church.
+        </p>
+
+        <p>
+          Every gift helps support the work of sharing the Gospel and
+          reaching the lost. Thank you for prayerfully considering
+          partnering with this mission.
+        </p>
+      </div>
+
+      <div class="verse">
+        <blockquote>
+          “The one who sows generously will also reap generously.”
+        </blockquote>
+        <cite>2 Corinthians 9:6</cite>
+      </div>
+    </section>
+
+    <section class="donation-card" aria-label="Donation form">
+
+      <div class="step-label">01 / Choose your gift</div>
+
+      <h2 class="section-heading">
+        How much would you like to sow?
+      </h2>
+
+      <div class="amount-grid" role="group" aria-label="Suggested donation amounts">
+        <button class="amount-button" type="button" data-amount="50" aria-pressed="false">$50</button>
+        <button class="amount-button" type="button" data-amount="100" aria-pressed="true">$100</button>
+        <button class="amount-button" type="button" data-amount="250" aria-pressed="false">$250</button>
+        <button class="amount-button" type="button" data-amount="500" aria-pressed="false">$500</button>
+      </div>
+
+      <label class="field-label" for="donation-amount">
+        Or enter a custom amount (USD)
+      </label>
+
+      <div class="amount-field">
+        <span class="currency" aria-hidden="true">$</span>
+        <input
+          id="donation-amount"
+          type="number"
+          min="1"
+          max="999999"
+          step="0.01"
+          value="100"
+          inputmode="decimal"
+          placeholder="Enter donation amount"
+        >
+      </div>
+
+      <div class="monthly-row">
+        <div class="monthly-copy">
+          <strong>Make this a monthly gift</strong>
+          <span id="monthly-description">
+            Monthly donations require recurring payments to be configured
+            with the payment provider.
+          </span>
+        </div>
+
+        <button
+          class="switch"
+          id="monthly-toggle"
+          type="button"
+          role="switch"
+          aria-checked="false"
+          aria-label="Select monthly giving"
+        ></button>
+      </div>
+
+      <div class="note-section">
+        <div class="step-label">02 / Add a note (optional)</div>
+
+        <label class="field-label" for="donor-note">
+          Prayer request or note
+        </label>
+
+        <textarea
+          class="note-field"
+          id="donor-note"
+          placeholder="Share a note for the ministry (optional)"
+        ></textarea>
+      </div>
+
+      <div class="step-label">03 / Choose your payment method</div>
+
+      <h2 class="section-heading payment-heading">
+        Select how you'd like to give.
+      </h2>
+
+      <div class="payment-grid" role="group" aria-label="Payment methods">
+
+        <button class="payment-option" type="button" data-method="zelle" aria-pressed="false">
+          <span class="payment-icon" aria-hidden="true">Z</span>
+          <span class="payment-text">
+            <strong>Zelle</strong>
+            <small>Give through your banking app</small>
+          </span>
+        </button>
+
+        <button class="payment-option" type="button" data-method="paypal" aria-pressed="false">
+          <span class="payment-icon" aria-hidden="true">P</span>
+          <span class="payment-text">
+            <strong>PayPal</strong>
+            <small>PayPal online checkout</small>
+          </span>
+        </button>
+
+        <button class="payment-option" type="button" data-method="venmo" aria-pressed="false">
+          <span class="payment-icon" aria-hidden="true">V</span>
+          <span class="payment-text">
+            <strong>Venmo</strong>
+            <small>Give through your profile</small>
+          </span>
+        </button>
+
+        <button class="payment-option" type="button" data-method="cashapp" aria-pressed="false">
+          <span class="payment-icon" aria-hidden="true">$</span>
+          <span class="payment-text">
+            <strong>Cash App</strong>
+            <small>Give using your Cashtag</small>
+          </span>
+        </button>
+
+        <button class="payment-option" type="button" data-method="wise" aria-pressed="false">
+          <span class="payment-icon" aria-hidden="true">W</span>
+          <span class="payment-text">
+            <strong>Wise</strong>
+            <small>International payments</small>
+          </span>
+        </button>
+
+        <button class="payment-option" type="button" data-method="stripe" aria-pressed="false">
+          <span class="payment-icon" aria-hidden="true">↗</span>
+          <span class="payment-text">
+            <strong>Credit / Debit Card</strong>
+            <small>Secure checkout powered by Stripe</small>
+          </span>
+        </button>
+
+      </div>
+
+      <button class="primary-button" id="continue-button" type="button">
+        <span id="continue-label">Choose payment method</span>
+        <span class="arrow" aria-hidden="true">→</span>
+      </button>
+
+      <div class="payment-details" id="payment-details" aria-live="polite">
+        <h3 id="details-title">Payment details</h3>
+        <p id="details-description"></p>
+
+        <div class="recipient" id="recipient-details" hidden></div>
+
+        <div class="detail-actions" id="detail-actions"></div>
+
+        <p class="status-message" id="status-message" role="status"></p>
+      </div>
+
+      <p class="fine-print">
+        Please verify the recipient before sending. Alternative payment
+        apps may require you to enter your gift amount again. Your note
+        and monthly selection are not automatically sent to those
+        services. Card payments are handled by Stripe. This website does
+        not collect or store card numbers or bank account credentials.
+      </p>
+
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+      <div class="footer-main">
+
+        <div>
+          <p class="footer-kicker">The mission continues</p>
+          <p class="footer-slogan">
+            Give now.<br>
+            <em>Go further.</em>
+          </p>
+        </div>
+
+        <div>
+          <p class="footer-kicker">Contact Jonathan Perde</p>
+
+          <a class="footer-email" href="mailto:jonathanperde@yahoo.com">
+            jonathanperde@yahoo.com
+          </a>
+
+          <div class="footer-note">
+            For ministry, speaking, media, and partnership inquiries.
+          </div>
+        </div>
+
+        <div>
+          <p class="footer-kicker">Explore</p>
+
+          <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="index.html#beliefs">Our beliefs</a>
+            <a href="index.html#all-things">All things</a>
+            <a href="index.html#shop">Shop</a>
+            <a href="index.html#book-jonathan">Book Jonathan</a>
+            <a href="index.html#podcast">Podcast</a>
+            <a href="give.html">Give now</a>
+            <a href="index.html#contact">Contact</a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <span>© <span id="current-year"></span> Jesus To The World Ministry</span>
+        <span>SEEKING TO SAVE THE LOST</span>
+      </div>
+
+      <div class="footer-wordmark" aria-hidden="true">
+        JESUS TO THE WORLD
+      </div>
+
+    </div>
+  </footer>
+
+  <script>
+    (() => {
+      "use strict";
+
+      const STRIPE_PAYMENT_LINK =
+        "https://buy.stripe.com/fZu14odp563JdUF34K83C00";
+
+      const methods = {
+        zelle: {
+          title: "Give with Zelle",
+          description:
+            "Open your banking app, choose Zelle, and send your gift to this email address. Confirm the recipient shown by your bank before sending.",
+          recipient: "jonathanperde@yahoo.com",
+          copyLabel: "Copy Zelle email",
+          copyValue: "jonathanperde@yahoo.com"
+        },
+
+        paypal: {
+          title: "Give with PayPal",
+          description:
+            "Continue to PayPal. Verify the recipient and enter your intended gift amount before confirming.",
+          recipient: "@jonathanperde",
+          link: "https://paypal.me/jonathanperde",
+          linkLabel: "Open PayPal",
+          copyLabel: "Copy PayPal handle",
+          copyValue: "@jonathanperde"
+        },
+
+        venmo: {
+          title: "Give with Venmo",
+          description:
+            "Open the Venmo profile and verify the recipient before sending. Double-check the username spelling.",
+          recipient: "@joanthanperde",
+          link: "https://venmo.com/u/joanthanperde",
+          linkLabel: "Open Venmo",
+          copyLabel: "Copy Venmo handle",
+          copyValue: "@joanthanperde"
+        },
+
+        cashapp: {
+          title: "Give with Cash App",
+          description:
+            "Open Cash App and verify the recipient before sending your gift.",
+          recipient: "$Jmanftw20",
+          link: "https://cash.app/$Jmanftw20",
+          linkLabel: "Open Cash App",
+          copyLabel: "Copy Cashtag",
+          copyValue: "$Jmanftw20"
+        },
+
+        wise: {
+          title: "Give with Wise",
+          description:
+            "Use this username to locate the intended recipient. Confirm the recipient details in Wise before transferring funds.",
+          recipient: "@jonathancornelp",
+          copyLabel: "Copy Wise username",
+          copyValue: "@jonathancornelp"
+        },
+
+        stripe: {
+          title: "Give by credit or debit card",
+          description:
+            "Continue to Stripe's secure checkout. The amount selected on this page is not automatically passed to the Stripe page, so review or enter your intended amount there.",
+          link: STRIPE_PAYMENT_LINK,
+          linkLabel: "Continue to secure Stripe checkout"
+        }
+      };
+
+      const amountInput =
+        document.getElementById("donation-amount");
+
+      const amountButtons = [
+        ...document.querySelectorAll(".amount-button")
+      ];
+
+      const paymentButtons = [
+        ...document.querySelectorAll(".payment-option")
+      ];
+
+      const monthlyToggle =
+        document.getElementById("monthly-toggle");
+
+      const monthlyDescription =
+        document.getElementById("monthly-description");
+
+      const continueButton =
+        document.getElementById("continue-button");
+
+      const continueLabel =
+        document.getElementById("continue-label");
+
+      const panel =
+        document.getElementById("payment-details");
+
+      const title =
+        document.getElementById("details-title");
+
+      const description =
+        document.getElementById("details-description");
+
+      const recipient =
+        document.getElementById("recipient-details");
+
+      const actions =
+        document.getElementById("detail-actions");
+
+      const status =
+        document.getElementById("status-message");
+
+      let selectedMethod = null;
+      let monthlySelected = false;
+
+      document.getElementById("current-year").textContent =
+        new Date().getFullYear();
+
+      function selectAmount(value) {
+        amountInput.value = String(value);
+
+        amountButtons.forEach(button => {
+          button.setAttribute(
+            "aria-pressed",
+            String(Number(button.dataset.amount) === Number(value))
+          );
+        });
+      }
+
+      amountButtons.forEach(button => {
+        button.addEventListener("click", () => {
+          selectAmount(button.dataset.amount);
+        });
+      });
+
+      amountInput.addEventListener("input", () => {
+        amountButtons.forEach(button => {
+          button.setAttribute(
+            "aria-pressed",
+            String(
+              amountInput.value !== "" &&
+              Number(button.dataset.amount) ===
+                Number(amountInput.value)
+            )
+          );
+        });
+      });
+
+      monthlyToggle.addEventListener("click", () => {
+        monthlySelected = !monthlySelected;
+
+        monthlyToggle.setAttribute(
+          "aria-checked",
+          String(monthlySelected)
+        );
+
+        monthlyDescription.textContent = monthlySelected
+          ? "Monthly giving is not enabled by the current payment links. This selection will not create recurring charges."
+          : "Monthly donations require recurring payments to be configured with the payment provider.";
+      });
+
+      paymentButtons.forEach(button => {
+        button.addEventListener("click", () => {
+          selectedMethod = button.dataset.method;
+
+          paymentButtons.forEach(option => {
+            option.setAttribute(
+              "aria-pressed",
+              String(option === button)
+            );
+          });
+
+          continueLabel.textContent =
+            selectedMethod === "stripe"
+              ? "Continue to Stripe checkout"
+              : "Show payment details";
+
+          panel.classList.remove("visible");
+          status.textContent = "";
+        });
+      });
+
+      function createAction(label, callback, className = "copy-button") {
+        const button = document.createElement("button");
+
+        button.type = "button";
+        button.className = className;
+        button.textContent = label;
+
+        button.addEventListener("click", callback);
+
+        return button;
+      }
+
+      async function copyText(value) {
+        try {
+          if (navigator.clipboard && window.isSecureContext) {
+            await navigator.clipboard.writeText(value);
+          } else {
+            const temporary = document.createElement("textarea");
+
+            temporary.value = value;
+            temporary.setAttribute("readonly", "");
+            temporary.style.position = "fixed";
+            temporary.style.opacity = "0";
+
+            document.body.appendChild(temporary);
+            temporary.select();
+
+            const copied = document.execCommand("copy");
+            temporary.remove();
+
+            if (!copied) {
+              throw new Error("Copy failed");
+            }
+          }
+
+          status.textContent = "Copied to clipboard.";
+        } catch (error) {
+          status.textContent =
+            "Copy unavailable. Please select and copy the recipient manually.";
+        }
+      }
+
+      continueButton.addEventListener("click", () => {
+        status.textContent = "";
+        actions.replaceChildren();
+
+        recipient.hidden = true;
+        recipient.textContent = "";
+
+        if (!selectedMethod || !methods[selectedMethod]) {
+          title.textContent = "Choose a payment method";
+
+          description.textContent =
+            "Select one of the payment options above to continue.";
+
+          panel.classList.add("visible");
+
+          panel.scrollIntoView({
+            behavior: "smooth",
+            block: "nearest"
+          });
+
+          return;
+        }
+
+        const amount = Number(amountInput.value);
+
+        if (
+          !Number.isFinite(amount) ||
+          amount < 1 ||
+          amount > 999999
+        ) {
+          amountInput.focus();
+
+          title.textContent = "Enter a valid gift amount";
+
+          description.textContent =
+            "Please enter an amount of at least $1 and no more than $999,999.";
+
+          panel.classList.add("visible");
+
+          panel.scrollIntoView({
+            behavior: "smooth",
+            block: "nearest"
+          });
+
+          return;
+        }
+
+        if (monthlySelected) {
+          title.textContent = "Monthly giving needs setup";
+
+          description.textContent =
+            "The current payment links do not automatically create recurring donations. No recurring charge will be started by this page. Configure a recurring donation link with your payment provider before advertising monthly giving.";
+
+          if (selectedMethod === "stripe") {
+            actions.appendChild(
+              createAction(
+                "Continue with one-time Stripe gift",
+                () => {
+                  window.location.href = STRIPE_PAYMENT_LINK;
+                },
+                "secondary-button"
+              )
+            );
+          }
+
+          panel.classList.add("visible");
+
+          panel.scrollIntoView({
+            behavior: "smooth",
+            block: "nearest"
+          });
+
+          return;
+        }
+
+        const method = methods[selectedMethod];
+
+        title.textContent = method.title;
+        description.textContent = method.description;
+
+        panel.classList.add("visible");
+
+        if (method.recipient) {
+          recipient.textContent = method.recipient;
+          recipient.hidden = false;
+        }
+
+        if (method.copyValue) {
+          actions.appendChild(
+            createAction(
+              method.copyLabel,
+              () => copyText(method.copyValue)
+            )
+          );
+        }
+
+        if (method.link) {
+          actions.appendChild(
+            createAction(
+              method.linkLabel,
+              () => {
+                window.open(
+                  method.link,
+                  "_blank",
+                  "noopener,noreferrer"
+                );
+              },
+              "secondary-button"
+            )
+          );
+        }
+
+        panel.scrollIntoView({
+          behavior: "smooth",
+          block: "nearest"
+        });
+      });
+    })();
+  </script>
+
+</body>
+</html>
