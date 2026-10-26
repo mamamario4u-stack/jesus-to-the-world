@@ -1,1074 +1,1651 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#11100f">
-  <meta name="description" content="Partner with Jesus To The World Ministry and help carry the Gospel to the streets, cities, and nations.">
-  <meta name="theme-color" content="#151412">
-  <meta name="description" content="Partner with Jesus To The World Ministry. Help carry the Gospel to the streets, cities, and nations.">
-  <title>Give — Jesus To The World Ministry</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
+<title>Jesus To The World Ministry | Seeking to Save the Lost</title>
 
-  <style>
-    :root {
-      --ink: #151412;
-      --paper: #f2efe7;
-      --paper2: #e8e2d7;
-      --muted: #8b867d;
-      --paper-light: #fbf9f4;
-      --orange: #e9683b;
-      --line: rgba(25,22,19,.16);
-      --orange-dark: #bf4b26;
-      --muted: #777066;
-      --line: rgba(25, 22, 19, 0.15);
-      --mono: 'DM Mono', monospace;
-      --sans: 'DM Sans', sans-serif;
-      --serif: 'Playfair Display', Georgia, serif;
-    }
+<meta name="description" content="Jesus To The World Ministry exists to preach the Gospel, reach the lost, and bring the hope of Jesus Christ to the streets, cities, and nations.">
 
-    * { box-sizing: border-box; }
-    * {
-      box-sizing: border-box;
-    }
+<meta name="theme-color" content="#101010">
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --background: #101010;
+    --background-light: #171717;
+    --orange: #ff5722;
+    --orange-light: #ff7948;
+    --white: #ffffff;
+    --muted: #b8b8b8;
+    --border: rgba(255,255,255,0.12);
+    --font-heading: 'Oswald', sans-serif;
+    --font-body: 'DM Sans', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    background: var(--background);
+}
+
+body {
+    font-family: var(--font-body);
+    background: var(--background);
+    color: var(--white);
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button, a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+.container {
+    width: min(1180px, 90%);
+    margin: 0 auto;
+}
+
+.section {
+    padding: 110px 0;
+}
+
+.eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--orange-light);
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 3px;
+    font-weight: 800;
+    margin-bottom: 22px;
+}
+
+.eyebrow::before {
+    content: "";
+    height: 2px;
+    width: 30px;
+    background: var(--orange);
+}
+
+h1, h2, h3 {
+    font-family: var(--font-heading);
+    text-transform: uppercase;
+    line-height: 1.05;
+    font-weight: 600;
+}
+
+h2 {
+    font-size: clamp(38px, 5vw, 64px);
+    letter-spacing: -1px;
+}
+
+.section-description {
+    color: var(--muted);
+    max-width: 650px;
+    font-size: 16px;
+    line-height: 1.9;
+    margin-top: 22px;
+}
+
+.accent {
+    color: var(--orange);
+}
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 16px 25px;
+    min-height: 54px;
+    background: var(--orange);
+    border: 1px solid var(--orange);
+    color: white;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+    transition: transform .25s ease, background .25s ease,
+                box-shadow .25s ease;
+}
+
+.button:hover {
+    background: var(--orange-light);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(255,87,34,.24);
+}
+
+.button-outline {
+    background: transparent;
+    border-color: rgba(255,255,255,.35);
+}
+
+.button-outline:hover {
+    background: white;
+    color: #111;
+    border-color: white;
+}
+
+.button-arrow {
+    font-size: 18px;
+    transition: transform .25s ease;
+}
+
+.button:hover .button-arrow {
+    transform: translateX(4px);
+}
+
+/* NAVIGATION */
+
+.site-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    border-bottom: 1px solid rgba(255,255,255,.12);
+    background: rgba(12,12,12,.42);
+    backdrop-filter: blur(12px);
+}
+
+.navbar {
+    min-height: 88px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+}
+
+.brand-symbol {
+    width: 43px;
+    height: 43px;
+    display: grid;
+    place-items: center;
+    background: var(--orange);
+    font-family: var(--font-heading);
+    font-size: 25px;
+    font-weight: 700;
+    clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+    padding-top: 9px;
+}
+
+.brand-text {
+    font-family: var(--font-heading);
+    font-size: 17px;
+    line-height: 1.15;
+    letter-spacing: .5px;
+    text-transform: uppercase;
+}
+
+.brand-text small {
+    display: block;
+    color: #ccc;
+    font-family: var(--font-body);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-top: 5px;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 28px;
+    margin-left: auto;
+}
+
+.nav-links > a:not(.nav-donate) {
+    color: #f0f0f0;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: color .2s ease;
+}
+
+.nav-links > a:not(.nav-donate):hover {
+    color: var(--orange-light);
+}
+
+.nav-donate {
+    padding: 13px 17px;
+    background: var(--orange);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    box-shadow: 0 0 0 rgba(255,87,34,0);
+    transition: box-shadow .25s ease, transform .25s ease;
+}
+
+.nav-donate:hover {
+    box-shadow: 0 0 28px rgba(255,87,34,.4);
+    transform: translateY(-2px);
+}
+
+.menu-toggle {
+    display: none;
+    color: white;
+    background: transparent;
+    border: 1px solid var(--border);
+    font-size: 24px;
+    width: 44px;
+    height: 44px;
+    cursor: pointer;
+}
+
+/* HERO */
+
+.hero {
+    position: relative;
+    min-height: 790px;
+    min-height: 100svh;
+    display: flex;
+    align-items: center;
+    isolation: isolate;
+    overflow: hidden;
+    background: #111;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    background-image:
+        linear-gradient(90deg,
+            rgba(8,8,8,.96) 0%,
+            rgba(8,8,8,.82) 42%,
+            rgba(8,8,8,.34) 100%),
+        linear-gradient(0deg,
+            rgba(16,16,16,.95) 0%,
+            transparent 38%),
+        url("hero.jpg");
+    background-position: center, center, center 35%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transform: scale(1.02);
+    animation: heroReveal 1.4s ease both;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: 650px;
+    height: 650px;
+    border-radius: 50%;
+    right: -300px;
+    top: 10%;
+    background: rgba(255,76,25,.12);
+    filter: blur(100px);
+    pointer-events: none;
+}
+
+@keyframes heroReveal {
+    from { opacity: .4; transform: scale(1.08); }
+    to { opacity: 1; transform: scale(1.02); }
+}
+
+.hero-content {
+    width: min(820px, 100%);
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.hero-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 11px;
+    letter-spacing: 3px;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: #eee;
+    margin-bottom: 28px;
+}
+
+.hero-label span {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--orange);
+    box-shadow: 0 0 18px var(--orange);
+}
+
+.hero h1 {
+    font-size: clamp(55px, 8.4vw, 112px);
+    letter-spacing: -2px;
+    line-height: .98;
+    max-width: 900px;
+    text-shadow: 0 4px 30px rgba(0,0,0,.35);
+}
+
+.hero h1 .line-orange {
+    color: var(--orange);
+}
+
+.hero-description {
+    margin-top: 30px;
+    max-width: 560px;
+    color: #e0e0e0;
+    font-size: 16px;
+    line-height: 1.9;
+}
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 35px;
+}
+
+.hero-footnote {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 55px;
+    color: #ccc;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.hero-footnote::before {
+    content: "";
+    height: 1px;
+    width: 38px;
+    background: var(--orange);
+}
+
+/* SCRIPTURE STRIP */
+
+.scripture-strip {
+    overflow: hidden;
+    background: var(--orange);
+    color: #fff;
+    padding: 17px 0;
+}
+
+.scripture-track {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 14px 30px;
+    width: 90%;
+    margin: 0 auto;
+    font-family: var(--font-heading);
+    font-size: 15px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.scripture-track span {
+    opacity: .95;
+}
+
+.scripture-track .separator {
+    font-size: 10px;
+    opacity: .6;
+}
+
+/* MISSION */
+
+.mission {
+    position: relative;
+    background: var(--background);
+    overflow: hidden;
+}
+
+.mission::before {
+    content: "LIFE";
+    position: absolute;
+    top: 0;
+    right: -25px;
+    font-family: var(--font-heading);
+    font-size: clamp(180px, 30vw, 420px);
+    line-height: 1;
+    font-weight: 700;
+    color: rgba(255,255,255,.018);
+    pointer-events: none;
+}
+
+.mission-grid {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1.05fr .95fr;
+    gap: 90px;
+    align-items: center;
+}
+
+.mission-copy h2 {
+    max-width: 620px;
+}
+
+.mission-copy p {
+    margin-top: 25px;
+    max-width: 600px;
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 2;
+}
+
+.mission-verse {
+    margin-top: 30px;
+    padding-left: 20px;
+    border-left: 2px solid var(--orange);
+}
+
+.mission-verse p {
+    margin: 0;
+    color: #eee;
+    font-family: var(--font-heading);
+    font-size: 22px;
+    line-height: 1.5;
+    text-transform: uppercase;
+}
+
+.mission-verse small {
+    display: block;
+    margin-top: 10px;
+    color: var(--orange-light);
+    font-size: 10px;
+    letter-spacing: 2px;
+    font-weight: 800;
+}
+
+.mission-visual {
+    position: relative;
+    min-height: 490px;
+    background:
+        linear-gradient(0deg, rgba(0,0,0,.65), transparent 70%),
+        url("jonathan.jpg") center 25% / cover no-repeat,
+        #222;
+    border: 1px solid var(--border);
+}
+
+.mission-visual::before {
+    content: "";
+    position: absolute;
+    inset: 16px -16px -16px 16px;
+    border: 1px solid rgba(255,87,34,.6);
+    z-index: -1;
+}
+
+.visual-caption {
+    position: absolute;
+    bottom: 25px;
+    left: 25px;
+    right: 25px;
+}
+
+.visual-caption span {
+    color: var(--orange-light);
+    font-size: 10px;
+    letter-spacing: 2px;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.visual-caption h3 {
+    font-size: 30px;
+    margin-top: 8px;
+}
+
+/* IMPACT */
+
+.impact {
+    position: relative;
+    padding: 100px 0;
+    overflow: hidden;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    background:
+        radial-gradient(ellipse at center, rgba(255,87,34,.12), transparent 65%),
+        #141414;
+}
+
+.impact-inner {
+    text-align: center;
+}
+
+.impact h2 {
+    font-size: clamp(70px, 13vw, 155px);
+    color: var(--orange);
+    line-height: .95;
+    letter-spacing: -3px;
+}
+
+.impact h3 {
+    font-size: clamp(22px, 3vw, 36px);
+    margin-top: 25px;
+    letter-spacing: 2px;
+}
+
+.impact p {
+    max-width: 650px;
+    margin: 22px auto 0;
+    color: var(--muted);
+    line-height: 1.9;
+    font-size: 14px;
+}
+
+.impact-note {
+    margin-top: 32px;
+    display: inline-block;
+    padding: 10px 15px;
+    border: 1px solid var(--border);
+    color: #ddd;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* VIDEO */
+
+.watch {
+    background: #0d0d0d;
+}
+
+.watch-header {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 35px;
+    margin-bottom: 45px;
+}
+
+.watch-header .section-description {
+    max-width: 420px;
+    margin-bottom: 4px;
+}
+
+.video-card {
+    position: relative;
+    min-height: 470px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,.15);
+    background:
+        linear-gradient(0deg, rgba(0,0,0,.86), rgba(0,0,0,.18)),
+        url("hero.jpg") center 40% / cover no-repeat,
+        #222;
+}
+
+.video-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg,
+        rgba(255,87,34,.15), transparent 60%);
+    transition: background .4s ease;
+}
+
+.video-card:hover::before {
+    background: linear-gradient(135deg,
+        rgba(255,87,34,.3), rgba(0,0,0,.1));
+}
+
+.video-content {
+    position: relative;
+    z-index: 1;
+    padding: 35px;
+    transition: transform .35s ease;
+}
+
+.video-card:hover .video-content {
+    transform: translateY(-5px);
+}
+
+.play-button {
+    width: 88px;
+    height: 88px;
+    margin: 0 auto 28px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: var(--orange);
+    color: white;
+    font-size: 27px;
+    padding-left: 5px;
+    box-shadow: 0 0 0 12px rgba(255,87,34,.13);
+    transition: transform .35s ease, box-shadow .35s ease;
+}
+
+.video-card:hover .play-button {
+    transform: scale(1.1);
+    box-shadow: 0 0 0 20px rgba(255,87,34,.12),
+                0 0 45px rgba(255,87,34,.3);
+}
+
+.video-content .eyebrow {
+    margin-bottom: 14px;
+}
+
+.video-content h3 {
+    font-size: clamp(34px, 6vw, 66px);
+}
+
+.video-content p {
+    margin-top: 15px;
+    color: #ddd;
+    font-size: 13px;
+}
+
+/* MINISTRY */
+
+.ministry {
+    background: var(--background-light);
+}
+
+.ministry-heading {
+    text-align: center;
+    max-width: 750px;
+    margin: 0 auto 55px;
+}
+
+.ministry-heading .section-description {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.ministry-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.ministry-card {
+    min-height: 280px;
+    padding: 32px;
+    background: #111;
+    border: 1px solid var(--border);
+    transition: transform .3s ease, border-color .3s ease;
+}
+
+.ministry-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(255,87,34,.6);
+}
+
+.card-number {
+    display: block;
+    color: var(--orange);
+    font-family: var(--font-heading);
+    font-size: 42px;
+    margin-bottom: 28px;
+}
+
+.ministry-card h3 {
+    font-size: 25px;
+    margin-bottom: 14px;
+}
+
+.ministry-card p {
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+/* JOHN 10:10 */
+
+.scripture-feature {
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    padding: 120px 20px;
+    background:
+        radial-gradient(ellipse at center, rgba(255,87,34,.12), transparent 65%),
+        #111;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+.scripture-watermark {
+    position: absolute;
+    inset: 50% auto auto 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    color: rgba(255,255,255,.025);
+    font-family: var(--font-heading);
+    font-size: clamp(75px, 15vw, 190px);
+    line-height: 1;
+    text-transform: uppercase;
+    white-space: nowrap;
+    pointer-events: none;
+}
+
+.scripture-feature blockquote {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    font-family: var(--font-heading);
+    text-transform: uppercase;
+    font-size: clamp(30px, 5vw, 58px);
+    line-height: 1.35;
+}
+
+.scripture-feature blockquote span {
+    color: var(--orange);
+}
+
+.scripture-feature cite {
+    display: block;
+    margin-top: 28px;
+    color: var(--orange-light);
+    font-size: 11px;
+    font-style: normal;
+    font-weight: 800;
+    letter-spacing: 3px;
+}
+
+/* GIVING */
+
+.giving {
+    position: relative;
+    overflow: hidden;
+    background:
+        radial-gradient(ellipse at 85% 45%, rgba(255,87,34,.17), transparent 45%),
+        #151515;
+}
+
+.giving-grid {
+    display: grid;
+    grid-template-columns: 1.1fr .9fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.giving-copy h2 {
+    max-width: 650px;
+}
+
+.giving-copy p {
+    margin-top: 25px;
+    max-width: 600px;
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 2;
+}
+
+.giving-quote {
+    margin-top: 25px;
+    padding-left: 18px;
+    border-left: 2px solid var(--orange);
+    color: #eee;
+    font-size: 14px;
+    font-style: italic;
+    line-height: 1.9;
+}
+
+.giving-actions {
+    margin-top: 32px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+.giving-panel {
+    padding: 38px;
+    background: rgba(15,15,15,.75);
+    border: 1px solid rgba(255,255,255,.14);
+    box-shadow: 0 25px 80px rgba(0,0,0,.2);
+}
+
+.giving-panel-label {
+    color: var(--orange-light);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.giving-panel h3 {
+    font-size: 34px;
+    margin-top: 17px;
+}
+
+.giving-panel p {
+    color: var(--muted);
+    margin-top: 15px;
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+.giving-panel .button {
+    margin-top: 25px;
+    width: 100%;
+}
+
+/* BOOK JONATHAN */
+
+.booking {
+    padding: 95px 0;
+    text-align: center;
+    background: #101010;
+}
+
+.booking-inner {
+    max-width: 760px;
+    margin: 0 auto;
+}
+
+.booking h2 {
+    font-size: clamp(40px, 6vw, 70px);
+}
+
+.booking p {
+    color: var(--muted);
+    margin: 22px auto 30px;
+    max-width: 620px;
+    line-height: 1.9;
+    font-size: 15px;
+}
+
+/* FOOTER */
+
+.footer {
+    background: #090909;
+    border-top: 1px solid var(--border);
+    padding: 55px 0 25px;
+}
+
+.footer-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 35px;
+    padding-bottom: 40px;
+}
+
+.footer-mission {
+    max-width: 420px;
+    margin-top: 20px;
+    color: #999;
+    font-size: 12px;
+    line-height: 1.9;
+}
+
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+}
+
+.footer-links a {
+    color: #ccc;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color .2s ease;
+}
+
+.footer-links a:hover {
+    color: var(--orange);
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    border-top: 1px solid var(--border);
+    padding-top: 22px;
+    color: #777;
+    font-size: 10px;
+    letter-spacing: .5px;
+}
+
+/* SCROLL ANIMATIONS */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(25px);
+    transition: opacity .75s ease, transform .75s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
     html {
-      scroll-behavior: smooth;
-      scroll-padding-top: 90px;
-      scroll-padding-top: 100px;
+        scroll-behavior: auto;
     }
 
-    body {
-@@ -39,6 +43,1027 @@
-      overflow-x: hidden;
+    *, *::before, *::after {
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
+    .reveal {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+/* TABLET */
+
+@media (max-width: 1000px) {
+    .nav-links {
+        gap: 17px;
     }
 
-    button,
-    input,
-    textarea {
-      font: inherit;
+    .nav-links > a:not(.nav-donate) {
+        font-size: 10px;
     }
 
-    button,
-    a {
-      -webkit-tap-highlight-color: transparent;
+    .mission-grid,
+    .giving-grid {
+        gap: 45px;
     }
 
-    button {
-      cursor: pointer;
+    .mission-visual {
+        min-height: 420px;
     }
 
-    .topbar {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      min-height: 76px;
-      padding: 15px clamp(18px, 5vw, 70px);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-      background: rgba(242, 239, 231, 0.94);
-      backdrop-filter: blur(15px);
-      border-bottom: 1px solid var(--line);
+    .ministry-card {
+        padding: 25px;
+    }
+}
+
+/* MOBILE */
+
+@media (max-width: 760px) {
+    .section {
+        padding: 78px 0;
     }
 
-    .brand {
-      font: 500 13px var(--mono);
-      letter-spacing: -0.04em;
-      text-transform: uppercase;
-      line-height: 1.6;
+    .navbar {
+        min-height: 75px;
     }
 
-    .brand small {
-      display: block;
-      color: var(--muted);
-      font-size: 9px;
-      letter-spacing: 0.13em;
+    .brand-symbol {
+        width: 38px;
+        height: 38px;
+        font-size: 22px;
     }
 
-    .nav-actions {
-      display: flex;
-      align-items: center;
-      gap: 22px;
+    .brand-text {
+        font-size: 14px;
     }
 
-    .back-link {
-      font: 10px var(--mono);
-      letter-spacing: 0.07em;
-      text-transform: uppercase;
-      border-bottom: 1px solid transparent;
-      padding: 8px 0;
+    .brand-text small {
+        font-size: 8px;
     }
 
-    .back-link:hover {
-      border-bottom-color: var(--ink);
+    .menu-toggle {
+        display: block;
+        margin-left: auto;
     }
 
-    .nav-give {
-      background: var(--ink);
-      color: white;
-      border: 1px solid var(--ink);
-      border-radius: 3px;
-      padding: 12px 17px;
-      font: 10px var(--mono);
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      transition: background 0.2s, border-color 0.2s;
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 75px;
+        left: 0;
+        width: 100%;
+        padding: 25px 5% 30px;
+        background: rgba(12,12,12,.98);
+        border-bottom: 1px solid var(--border);
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
     }
 
-    .nav-give:hover {
-      background: var(--orange);
-      border-color: var(--orange);
+    .nav-links.open {
+        display: flex;
+    }
+
+    .nav-links > a:not(.nav-donate) {
+        padding: 15px 0;
+        border-bottom: 1px solid rgba(255,255,255,.08);
+        font-size: 12px;
+    }
+
+    .nav-donate {
+        text-align: center;
+        margin-top: 18px;
+        padding: 16px;
     }
 
     .hero {
-      min-height: 510px;
-      position: relative;
-      isolation: isolate;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      padding: 85px clamp(22px, 9vw, 135px);
-      background: #171512;
-      color: #f8f4ec;
+        min-height: 780px;
+        min-height: 100svh;
     }
 
     .hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      z-index: -2;
-      background:
-        radial-gradient(ellipse at 78% 38%, rgba(233, 104, 59, 0.24), transparent 36%),
-        radial-gradient(ellipse at 70% 95%, rgba(233, 104, 59, 0.12), transparent 40%),
-        linear-gradient(110deg, #151412 25%, #29211b 100%);
-    }
-
-    .hero::after {
-      content: "";
-      position: absolute;
-      z-index: -1;
-      inset: 0;
-      opacity: 0.12;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.35'/%3E%3C/svg%3E");
-      pointer-events: none;
+        background-image:
+            linear-gradient(90deg,
+                rgba(8,8,8,.83),
+                rgba(8,8,8,.45)),
+            linear-gradient(0deg,
+                rgba(16,16,16,.98) 0%,
+                transparent 70%),
+            url("hero.jpg");
+        background-position: center, center, 57% center;
     }
 
     .hero-content {
-      max-width: 800px;
-    }
-
-    .eyebrow {
-      font: 10px var(--mono);
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: #e9a17e;
+        padding-top: 125px;
+        padding-bottom: 65px;
     }
 
     .hero h1 {
-      margin: 28px 0 20px;
-      font: 600 clamp(60px, 10vw, 125px)/0.86 var(--sans);
-      letter-spacing: -0.095em;
-      text-transform: uppercase;
+        font-size: clamp(54px, 14vw, 86px);
+        letter-spacing: -1px;
     }
 
-    .hero h1 span {
-      display: block;
+    .hero-description {
+        font-size: 14px;
     }
 
-    .hero h1 .accent {
-      color: var(--orange);
+    .hero-buttons {
+        align-items: stretch;
+        flex-direction: column;
+        max-width: 330px;
     }
 
-    .hero-subtitle {
-      max-width: 500px;
-      color: rgba(248, 244, 236, 0.78);
-      font-size: 14px;
-      line-height: 1.9;
-      margin: 28px 0 0;
+    .hero-buttons .button {
+        width: 100%;
     }
 
-    .hero-note {
-      margin-top: 32px;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      color: rgba(248, 244, 236, 0.63);
-      font: 9px var(--mono);
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
+    .hero-footnote {
+        margin-top: 38px;
+        font-size: 9px;
+        letter-spacing: 1.5px;
     }
 
-    .hero-note::before {
-      content: "";
-      width: 32px;
-      height: 1px;
-      background: var(--orange);
+    .scripture-track {
+        justify-content: center;
+        font-size: 12px;
+        gap: 10px 15px;
     }
 
-    .verse-strip {
-      background: #fffdf8;
-      border-bottom: 1px solid var(--line);
-      padding: 28px clamp(22px, 8vw, 100px);
-      text-align: center;
+    .mission-grid,
+    .giving-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
     }
 
-    .verse-strip blockquote {
-      margin: 0 auto;
-      max-width: 950px;
-      font: italic 500 clamp(22px, 3.2vw, 38px)/1.35 var(--serif);
-      letter-spacing: -0.025em;
+    .mission-visual {
+        min-height: 430px;
+        margin-right: 12px;
     }
 
-    .verse-strip cite {
-      display: block;
-      margin-top: 15px;
-      font: 9px var(--mono);
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: var(--orange-dark);
-      font-style: normal;
+    .mission::before {
+        font-size: 180px;
     }
 
-    .section {
-      padding: clamp(60px, 8vw, 110px) clamp(20px, 7vw, 100px);
+    .impact {
+        padding: 80px 0;
     }
 
-    .section-heading {
-      max-width: 750px;
-      margin: 0 auto 48px;
-      text-align: center;
+    .impact h2 {
+        font-size: clamp(62px, 15vw, 100px);
+        letter-spacing: -2px;
     }
 
-    .section-heading .eyebrow {
-      color: var(--orange-dark);
+    .watch-header {
+        align-items: flex-start;
+        flex-direction: column;
     }
 
-    .section-heading h2 {
-      margin: 19px 0;
-      font: 500 clamp(38px, 6vw, 72px)/0.98 var(--serif);
-      letter-spacing: -0.065em;
+    .video-card {
+        min-height: 380px;
     }
 
-    .section-heading p {
-      max-width: 560px;
-      margin: 0 auto;
-      color: #686158;
-      font-size: 13px;
-      line-height: 1.85;
+    .play-button {
+        width: 72px;
+        height: 72px;
     }
 
-    .giving-layout {
-      max-width: 1150px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(300px, 0.85fr);
-      gap: clamp(30px, 6vw, 80px);
-      align-items: start;
+    .ministry-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .ministry-card {
+        min-height: auto;
+    }
+
+    .card-number {
+        margin-bottom: 18px;
+    }
+
+    .scripture-feature {
+        padding: 90px 20px;
+    }
+
+    .scripture-watermark {
+        font-size: 80px;
     }
 
     .giving-panel {
-      padding: clamp(22px, 4vw, 40px);
-      background: var(--paper-light);
-      border: 1px solid var(--line);
+        padding: 28px;
     }
 
-    .panel-label {
-      color: var(--muted);
-      font: 9px var(--mono);
-      text-transform: uppercase;
-      letter-spacing: 0.15em;
+    .giving-actions {
+        flex-direction: column;
     }
 
-    .giving-panel h3 {
-      margin: 12px 0 25px;
-      font: 500 clamp(28px, 3vw, 38px)/1.05 var(--serif);
-      letter-spacing: -0.045em;
-    }
-
-    .amount-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 10px;
-    }
-
-    .amount-button {
-      min-height: 82px;
-      padding: 15px;
-      text-align: left;
-      border: 1px solid var(--line);
-      background: #fffdf8;
-      color: var(--ink);
-      transition: border-color 0.2s, background 0.2s, color 0.2s;
-    }
-
-    .amount-button strong {
-      display: block;
-      font: 500 25px var(--sans);
-      letter-spacing: -0.06em;
-    }
-
-    .amount-button span {
-      display: block;
-      margin-top: 6px;
-      color: var(--muted);
-      font: 9px var(--mono);
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-    }
-
-    .amount-button:hover,
-    .amount-button.selected {
-      background: var(--ink);
-      border-color: var(--ink);
-      color: white;
-    }
-
-    .amount-button:hover span,
-    .amount-button.selected span {
-      color: rgba(255, 255, 255, 0.65);
-    }
-
-    .field-label {
-      display: block;
-      margin: 23px 0 9px;
-      font: 10px var(--mono);
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-    }
-
-    .amount-input,
-    .prayer-input {
-      width: 100%;
-      border: 1px solid var(--line);
-      background: #fffdf8;
-      border-radius: 0;
-      padding: 15px;
-      color: var(--ink);
-      outline: none;
-      transition: border-color 0.2s;
-    }
-
-    .amount-input:focus,
-    .prayer-input:focus {
-      border-color: var(--orange);
-    }
-
-    .amount-input {
-      font: 500 22px var(--sans);
-    }
-
-    .prayer-input {
-      min-height: 100px;
-      resize: vertical;
-      font-size: 13px;
-      line-height: 1.7;
-    }
-
-    .frequency-row {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 15px;
-      margin-top: 23px;
-      padding: 16px 0;
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-    }
-
-    .frequency-row strong {
-      display: block;
-      font-size: 12px;
-      font-weight: 600;
-    }
-
-    .frequency-row small {
-      display: block;
-      color: var(--muted);
-      margin-top: 5px;
-      font-size: 10px;
-      line-height: 1.5;
-    }
-
-    .switch {
-      width: 45px;
-      height: 25px;
-      flex: 0 0 auto;
-      border: 0;
-      border-radius: 20px;
-      background: #d5cfc3;
-      padding: 3px;
-      transition: background 0.2s;
-    }
-
-    .switch::after {
-      content: "";
-      display: block;
-      width: 19px;
-      height: 19px;
-      border-radius: 50%;
-      background: white;
-      transition: transform 0.2s;
-    }
-
-    .switch[aria-checked="true"] {
-      background: var(--orange);
-    }
-
-    .switch[aria-checked="true"]::after {
-      transform: translateX(20px);
-    }
-
-    .primary-button {
-      display: flex;
-      width: 100%;
-      min-height: 55px;
-      align-items: center;
-      justify-content: space-between;
-      gap: 15px;
-      margin-top: 23px;
-      padding: 16px 19px;
-      border: 1px solid var(--orange);
-      background: var(--orange);
-      color: white;
-      font: 10px var(--mono);
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      transition: background 0.2s, border-color 0.2s;
-    }
-
-    .primary-button:hover {
-      background: var(--orange-dark);
-      border-color: var(--orange-dark);
-    }
-
-    .primary-button span:last-child {
-      font-size: 19px;
-    }
-
-    .disclaimer {
-      margin: 15px 0 0;
-      color: var(--muted);
-      font-size: 10px;
-      line-height: 1.7;
-    }
-
-    .payment-side {
-      padding-top: 5px;
-    }
-
-    .payment-side h3 {
-      margin: 12px 0;
-      font: 500 clamp(31px, 4vw, 46px)/1 var(--serif);
-      letter-spacing: -0.055em;
-    }
-
-    .payment-side > p {
-      margin: 0 0 25px;
-      max-width: 460px;
-      color: #686158;
-      font-size: 12px;
-      line-height: 1.8;
-    }
-
-    .payment-list {
-      display: grid;
-      gap: 10px;
-    }
-
-    .payment-option {
-      width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 15px;
-      padding: 17px 18px;
-      border: 1px solid var(--line);
-      background: rgba(255, 253, 248, 0.8);
-      color: var(--ink);
-      text-align: left;
-      transition: background 0.2s, border-color 0.2s, transform 0.2s;
-    }
-
-    .payment-option:hover {
-      background: #fffdf8;
-      border-color: var(--orange);
-      transform: translateX(3px);
-    }
-
-    .payment-option strong {
-      display: block;
-      font-size: 13px;
-      font-weight: 600;
-    }
-
-    .payment-option small {
-      display: block;
-      margin-top: 5px;
-      color: var(--muted);
-      font-size: 10px;
-      line-height: 1.5;
-    }
-
-    .payment-option .payment-arrow {
-      flex: 0 0 auto;
-      font-size: 20px;
-      color: var(--orange-dark);
-    }
-
-    .payment-detail {
-      display: none;
-      margin-top: 10px;
-      padding: 20px;
-      background: #e8e2d7;
-      border-left: 3px solid var(--orange);
-    }
-
-    .payment-detail.active {
-      display: block;
-      animation: fadeIn 0.2s ease-out;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(5px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    .payment-detail h4 {
-      margin: 0 0 8px;
-      font: 500 23px var(--serif);
-    }
-
-    .payment-detail p {
-      margin: 7px 0;
-      font-size: 12px;
-      line-height: 1.7;
-      overflow-wrap: anywhere;
-    }
-
-    .payment-detail .recipient {
-      font: 500 15px var(--mono);
-      overflow-wrap: anywhere;
-    }
-
-    .detail-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 15px;
-    }
-
-    .detail-button {
-      padding: 10px 13px;
-      border: 1px solid var(--ink);
-      background: transparent;
-      color: var(--ink);
-      font: 9px var(--mono);
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      cursor: pointer;
-    }
-
-    .detail-button:hover {
-      background: var(--ink);
-      color: white;
-    }
-
-    .detail-button:disabled {
-      cursor: not-allowed;
-      opacity: 0.45;
-    }
-
-    .payment-status {
-      display: none;
-      padding: 12px;
-      margin-top: 12px;
-      background: #fffdf8;
-      border: 1px solid var(--line);
-      font-size: 11px;
-      line-height: 1.7;
-    }
-
-    .payment-status.visible {
-      display: block;
-    }
-
-    .impact-section {
-      background: #e7e0d4;
-      padding: clamp(60px, 8vw, 100px) clamp(20px, 7vw, 100px);
-    }
-
-    .impact-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-
-    .impact-heading {
-      max-width: 700px;
-      margin-bottom: 35px;
-    }
-
-    .impact-heading h2 {
-      margin: 18px 0;
-      font: 500 clamp(39px, 6vw, 67px)/0.98 var(--serif);
-      letter-spacing: -0.06em;
-    }
-
-    .impact-heading p {
-      max-width: 570px;
-      color: #686158;
-      font-size: 12px;
-      line-height: 1.9;
-    }
-
-    .impact-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      border-top: 1px solid var(--line);
-      border-left: 1px solid var(--line);
-    }
-
-    .impact-card {
-      min-height: 180px;
-      padding: 24px;
-      border-right: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-    }
-
-    .impact-card .number {
-      color: var(--orange-dark);
-      font: 10px var(--mono);
-    }
-
-    .impact-card h3 {
-      margin: 28px 0 10px;
-      font: 500 24px/1.1 var(--serif);
-    }
-
-    .impact-card p {
-      margin: 0;
-      color: #686158;
-      font-size: 11px;
-      line-height: 1.8;
-    }
-
-    .prayer-section {
-      background: #fffdf8;
-    }
-
-    .prayer-layout {
-      max-width: 1000px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 0.9fr 1.1fr;
-      gap: clamp(30px, 7vw, 90px);
-      align-items: start;
-    }
-
-    .prayer-layout h2 {
-      margin: 15px 0;
-      font: 500 clamp(37px, 5vw, 60px)/0.98 var(--serif);
-      letter-spacing: -0.06em;
-    }
-
-    .prayer-layout p {
-      color: #686158;
-      font-size: 12px;
-      line-height: 1.9;
-    }
-
-    .prayer-form {
-      padding: 25px;
-      border: 1px solid var(--line);
-      background: var(--paper);
-    }
-
-    .prayer-form .primary-button {
-      margin-top: 15px;
-    }
-
-    .prayer-message {
-      display: none;
-      margin-top: 14px;
-      padding: 12px;
-      background: #e8e2d7;
-      font-size: 11px;
-      line-height: 1.7;
-    }
-
-    .prayer-message.visible {
-      display: block;
-    }
-
-    .closing {
-      padding: clamp(75px, 11vw, 130px) 20px;
-      text-align: center;
-      color: #f8f4ec;
-      background: #171512;
-    }
-
-    .closing .eyebrow {
-      color: #e9a17e;
-    }
-
-    .closing h2 {
-      max-width: 900px;
-      margin: 25px auto;
-      font: 500 clamp(45px, 8vw, 96px)/0.9 var(--serif);
-      letter-spacing: -0.07em;
-    }
-
-    .closing h2 em {
-      color: var(--orange);
-      font-weight: 500;
-    }
-
-    .closing p {
-      max-width: 530px;
-      margin: 0 auto 25px;
-      color: rgba(248, 244, 236, 0.7);
-      font-size: 12px;
-      line-height: 1.9;
-    }
-
-    .closing .primary-button {
-      max-width: 320px;
-      margin: 25px auto 0;
-      text-align: left;
-    }
-
-    .footer {
-      background: #11100f;
-      color: #f8f4ec;
-      padding: 30px clamp(20px, 5vw, 70px);
-      border-top: 1px solid rgba(255, 255, 255, 0.12);
+    .giving-actions .button {
+        width: 100%;
     }
 
     .footer-top {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    .footer-brand {
-      font: 500 12px var(--mono);
-      letter-spacing: -0.04em;
-      text-transform: uppercase;
+        align-items: flex-start;
+        flex-direction: column;
     }
 
     .footer-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      font: 9px var(--mono);
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-    }
-
-    .footer-links a {
-      color: rgba(255, 255, 255, 0.7);
-    }
-
-    .footer-links a:hover {
-      color: var(--orange);
+        gap: 18px;
     }
 
     .footer-bottom {
-      display: flex;
-      justify-content: space-between;
-      gap: 15px;
-      flex-wrap: wrap;
-      margin-top: 25px;
-      padding-top: 18px;
-      border-top: 1px solid rgba(255, 255, 255, 0.12);
-      color: rgba(255, 255, 255, 0.5);
-      font: 8px var(--mono);
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-    }
-
-    .toast {
-      position: fixed;
-      left: 50%;
-      bottom: 25px;
-      z-index: 500;
-      width: max-content;
-      max-width: calc(100vw - 35px);
-      padding: 14px 18px;
-      transform: translate(-50%, 20px);
-      opacity: 0;
-      pointer-events: none;
-      background: var(--ink);
-      color: white;
-      border-left: 3px solid var(--orange);
-      font-size: 12px;
-      line-height: 1.6;
-      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
-      transition: opacity 0.2s, transform 0.2s;
-    }
-
-    .toast.visible {
-      opacity: 1;
-      transform: translate(-50%, 0);
-    }
-
-    @media (max-width: 800px) {
-      .giving-layout,
-      .prayer-layout {
-        grid-template-columns: 1fr;
-      }
-
-      .payment-side {
-        padding-top: 15px;
-      }
-
-      .impact-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .hero {
-        min-height: 450px;
-      }
-    }
-
-    @media (max-width: 520px) {
-      .topbar {
-        min-height: 68px;
-        padding: 12px 16px;
-      }
-
-      .brand {
-        font-size: 11px;
-      }
-
-      .nav-actions {
-        gap: 12px;
-      }
-
-      .back-link {
-        font-size: 8px;
-      }
-
-      .nav-give {
-        padding: 10px 12px;
-        font-size: 9px;
-      }
-
-      .hero {
-        min-height: 425px;
-        padding: 70px 22px;
-      }
-
-      .hero h1 {
-        font-size: clamp(58px, 16vw, 82px);
-      }
-
-      .hero-subtitle {
-        font-size: 12px;
-      }
-
-      .section {
-        padding: 60px 16px;
-      }
-
-      .giving-panel {
-        padding: 20px 16px;
-      }
-
-      .amount-button {
-        min-height: 74px;
-      }
-
-      .amount-button strong {
-        font-size: 23px;
-      }
-
-      .impact-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .impact-card {
-        min-height: 145px;
-      }
-
-      .prayer-form {
-        padding: 18px;
-      }
-
-      .footer-top {
-        align-items: flex-start;
         flex-direction: column;
-      }
-
-      .footer-links {
-        gap: 14px;
-      }
     }
-
-    @media (prefers-reduced-motion: reduce) {
-      *,
-      *::before,
-      *::after {
-        scroll-behavior: auto !important;
-        animation-duration: 0.01ms !important;
-        transition-duration: 0.01ms !important;
-      }
-    }
-  </style>
+}
+</style>
 </head>
 
 <body>
-  <header class="topbar">
-    <a class="brand" href="index.html" aria-label="Return to Jesus To The World homepage">
-      Jesus To The World
-      <small>Mobilizing Christians to Walk in Love</small>
-    </a>
 
-    <nav class="nav-actions" aria-label="Main navigation">
-      <a class="back-link" href="index.html">← Back to home</a>
-      <a class="nav-give" href="#donation-options">Give Now ↗</a>
-    </nav>
-  </header>
+<!-- NAVIGATION -->
 
-  <main>
-    <section class="hero">
-      <div class="hero-content">
-        <div class="eyebrow">Jesus To The World Ministry · Partner with the mission</div>
+<header class="site-header">
+    <div class="container navbar">
 
-        <h1>
-          <span>Fuel</span>
-          <span class="accent">the Flame.</span>
-        </h1>
-
-        <p class="hero-subtitle">
-          Every act of generosity helps us carry the Gospel beyond the walls
-          of the church and into the streets, cities, and nations. Partner
-          with the mission of sharing the love of Jesus Christ with the world.
-        </p>
-
-        <div class="hero-note">
-          Seeking to save the lost
-        </div>
-      </div>
-    </section>
-
-    <section class="verse-strip" aria-label="Scripture">
-      <blockquote>
-        “If we have sown spiritual things among you, is it too much if we reap material things from you?”
-      </blockquote>
-      <cite>1 Corinthians 9:11</cite>
-    </section>
-
-    <section class="section" id="donation-options">
-      <div class="section-heading">
-        <div class="eyebrow">Your generosity makes a difference</div>
-        <h2>Be part of the mission.</h2>
-        <p>
-          Choose an amount and select a payment method below. Your generosity
-          supports the work of sharing the Gospel and reaching people with the
-          hope of Jesus.
-        </p>
-      </div>
-
-      <div class="giving-layout">
-        <div class="giving-panel">
-          <div class="panel-label">01 / Choose your gift</div>
-          <h3>How much would you like to give?</h3>
-
-          <div class="amount-grid" role="group" aria-label="Choose donation amount">
-            <button class="amount-button selected" type="button" data-amount="50" aria-pressed="true">
-              <strong>$50</strong>
-              <span>Make an impact</span>
-            </button>
-
-            <button class="amount-button" type="button" data-amount="100" aria-pressed="false">
-              <strong>$100</strong>
-              <span>Fuel the mission</span>
-            </button>
-
-            <button class="amount-button" type="button" data-amount="250" aria-pressed="false">
-              <strong>$250</strong>
-              <span>Reach more people</span>
-            </button>
-
-            <button class="amount-button" type="button" data-amount="500" aria-pressed="false">
-              <strong>$500</strong>
-              <span>Expand the work</span>
-            </button>
-          </div>
-
-          <label class="field-label" for="customAmount">Or enter a custom amount (USD)</label>
-          <input
-            class="amount-input"
-            id="customAmount"
-            type="number"
-            min="1"
-            max="1000000"
-            step="0.01"
-            inputmode="decimal"
-            placeholder="Enter amount"
-            aria-describedby="amountHelp"
-          >
-
-          <p class="disclaimer" id="amountHelp">
-            Select an amount before choosing your payment method. The amount
-            is for your reference; the payment method may require you to enter
-            it again in its own app.
-          </p>
-
-          <div class="frequency-row">
-            <div>
-              <strong>Make this a monthly gift</strong>
-              <small>Turn on if you intend to give monthly. Recurring payments are not automatically charged by this page.</small>
+        <a class="brand" href="#home" aria-label="Jesus To The World Ministry home">
+            <div class="brand-symbol">J</div>
+            <div class="brand-text">
+                Jesus To The World
+                <small>Ministry</small>
             </div>
-            <button
-              class="switch"
-              id="monthlySwitch"
-              type="button"
-              role="switch"
-              aria-checked="false"
-              aria-label="Select monthly giving"
-            ></button>
-          </div>
+        </a>
 
-          <label class="field-label" for="prayerRequest">Prayer request (optional)</label>
-          <textarea
-            class="prayer-input"
-            id="prayerRequest"
-            placeholder="Share a prayer request, if you would like..."
-          ></textarea>
+        <button class="menu-toggle"
+                id="menuToggle"
+                aria-label="Open navigation menu"
+                aria-expanded="false">
+            ☰
+        </button>
 
-          <button class="primary-button" id="continueGiving" type="button">
-            <span>Choose a payment method</span>
-            <span>↓</span>
-          </button>
+        <nav class="nav-links" id="navLinks">
+            <a href="#home">Home</a>
+            <a href="#mission">Our Mission</a>
+            <a href="#watch">Watch</a>
+            <a href="#impact">Our Impact</a>
+            <a href="#booking">Book Jonathan</a>
+            <a class="nav-donate" href="give.html">Fuel the Flame ↗</a>
+        </nav>
 
-          <p class="disclaimer">
-            This page does not collect card details or process payments itself.
-            Choose a payment provider below to continue.
-          </p>
+    </div>
+</header>
+
+<main>
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+    <div class="container">
+        <div class="hero-content">
+
+            <div class="hero-label">
+                <span></span>
+                The Gospel Without Compromise
+            </div>
+
+            <h1>
+                Seeking<br>
+                To Save<br>
+                <span class="line-orange">The Lost.</span>
+            </h1>
+
+            <p class="hero-description">
+                We exist to proclaim the life-changing Gospel of Jesus Christ
+                to the streets, cities, and nations. One message. One mission.
+                One Savior.
+            </p>
+
+            <div class="hero-buttons">
+                <a class="button" href="#watch">
+                    Watch the Mission
+                    <span class="button-arrow">→</span>
+                </a>
+
+                <a class="button button-outline" href="give.html">
+                    Fuel the Flame
+                    <span class="button-arrow">↗</span>
+                </a>
+            </div>
+
+            <div class="hero-footnote">
+                Jesus Christ is the hope of the world
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- SCRIPTURE STRIP -->
+
+<div class="scripture-strip">
+    <div class="scripture-track">
+        <span>Preach the Gospel</span>
+        <span class="separator">✦</span>
+        <span>Reach the Lost</span>
+        <span class="separator">✦</span>
+        <span>Make Disciples</span>
+        <span class="separator">✦</span>
+        <span>Glorify Jesus</span>
+    </div>
+</div>
+
+<!-- MISSION -->
+
+<section class="section mission" id="mission">
+    <div class="container mission-grid">
+
+        <div class="mission-copy reveal">
+            <div class="eyebrow">Why We Exist</div>
+
+            <h2>
+                The World Needs<br>
+                <span class="accent">Jesus.</span>
+            </h2>
+
+            <p>
+                Jesus To The World Ministry is committed to bringing the
+                message of salvation beyond the four walls of a church.
+                Through evangelism, preaching, digital media, and personal
+                outreach, we seek to point people toward repentance, faith,
+                and a transformed life in Jesus Christ.
+            </p>
+
+            <p>
+                Our heart is for those who feel forgotten, those searching
+                for purpose, and those who have never truly heard the Gospel.
+                We believe the message of Jesus is not meant to be hidden.
+                It is meant to be proclaimed.
+            </p>
+
+            <div class="mission-verse">
+                <p>
+                    “For the Son of man is come to seek and to save that
+                    which was lost.”
+                </p>
+                <small>LUKE 19:10 · KJV</small>
+            </div>
+
+            <div style="margin-top: 32px;">
+                <a class="button button-outline" href="#booking">
+                    Join the Mission <span class="button-arrow">→</span>
+                </a>
+            </div>
         </div>
 
-        <div class="payment-side" id="payment-methods">
-          <div class="panel-label">02 / Select a payment method</div>
-          <h3      color: var(--ink);
-      font-family: var(--sans);
-      overflow-x: hidden;
-    }
+        <div class="mission-visual reveal" role="img"
+             aria-label="Ministry and Gospel outreach">
+            <div class="visual-caption">
+                <span>Our Calling</span>
+                <h3>Take the Gospel<br>to the World.</h3>
+            </div>
+        </div>
 
-    a { color: inherit; text-decoration: none; }
-    button, input, textarea { font: inherit; }
-    button { cursor: pointer; }
+    </div>
+</section>
+
+<!-- IMPACT -->
+
+<section class="impact" id="impact">
+    <div class="container impact-inner reveal">
+
+        <div class="eyebrow">The Message Is Moving</div>
+
+        <h2>20 Million+</h2>
+
+        <h3>Reached in 2025</h3>
+
+        <p>
+            Digital platforms have opened doors to share the Gospel far
+            beyond our immediate communities. Every view represents an
+            opportunity for someone to encounter the message of Jesus.
+            Our prayer is that the reach becomes real transformation.
+        </p>
+
+        <div class="impact-note">
+            All Glory Belongs to Jesus Christ
+        </div>
+
+    </div>
+</section>
+
+<!-- WATCH -->
+
+<section class="section watch" id="watch">
+    <div class="container">
+
+        <div class="watch-header reveal">
+            <div>
+                <div class="eyebrow">Watch the Mission</div>
+                <h2>Faith in <span class="accent">Action.</span></h2>
+            </div>
+
+            <p class="section-description">
+                Real conversations. Street evangelism. The Gospel
+                proclaimed boldly. See what happens when faith moves
+                beyond the building.
+            </p>
+        </div>
+
+        <!-- Replace the # below with your actual YouTube video or channel URL. -->
+        <a class="video-card reveal"
+           href="https://www.youtube.com/"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="Watch Jonathan Perde Ministries on YouTube">
+
+            <div class="video-content">
+
+                <div class="play-button" aria-hidden="true">▶</div>
+
+                <div class="eyebrow">Jonathan Perde Ministries</div>
+
+                <h3>Watch the <span class="accent">Mission.</span></h3>
+
+                <p>Gospel preaching · Evangelism · Testimonies</p>
+
+            </div>
+        </a>
+
+    </div>
+</section>
+
+<!-- MINISTRY PILLARS -->
+
+<section class="section ministry">
+    <div class="container">
+
+        <div class="ministry-heading reveal">
+            <div class="eyebrow">What We Stand For</div>
+
+            <h2>One Gospel.<br><span class="accent">One Mission.</span></h2>
+
+            <p class="section-description">
+                Our mission is centered on proclaiming Christ, serving
+                people, and equipping believers to live out the Great
+                Commission.
+            </p>
+        </div>
+
+        <div class="ministry-grid">
+
+            <article class="ministry-card reveal">
+                <span class="card-number">01</span>
+                <h3>Street Evangelism</h3>
+                <p>
+                    Taking the Gospel into public spaces and engaging
+                    people with the truth, grace, and hope of Jesus Christ.
+                </p>
+            </article>
+
+            <article class="ministry-card reveal">
+                <span class="card-number">02</span>
+                <h3>Digital Outreach</h3>
+                <p>
+                    Using online video and social platforms to share
+                    biblical truth and reach people wherever they are.
+                </p>
+            </article>
+
+            <article class="ministry-card reveal">
+                <span class="card-number">03</span>
+                <h3>Discipleship</h3>
+                <p>
+                    Encouraging believers to grow in Scripture, deepen
+                    their relationship with Jesus, and share their faith.
+                </p>
+            </article>
+
+        </div>
+    </div>
+</section>
+
+<!-- SCRIPTURE FEATURE -->
+
+<section class="scripture-feature">
+    <div class="scripture-watermark" aria-hidden="true">
+        Abundant Life
+    </div>
+
+    <div class="container reveal">
+        <div class="eyebrow">The Promise of Jesus</div>
+
+        <blockquote>
+            “I am come that they might have life, and that they might
+            have it <span>more abundantly.</span>”
+        </blockquote>
+
+        <cite>JOHN 10:10 · KJV</cite>
+    </div>
+</section>
+
+<!-- GIVING -->
+
+<section class="section giving" id="give">
+    <div class="container giving-grid">
+
+        <div class="giving-copy reveal">
+            <div class="eyebrow">Partner With the Mission</div>
+
+            <h2>
+                Fuel the<br>
+                <span class="accent">Flame.</span>
+            </h2>
+
+            <p>
+                Your generosity helps support the work of sharing the
+                Gospel through evangelism, ministry outreach, and digital
+                content. Together, we can continue carrying the message
+                of Jesus to people who need to hear it.
+            </p>
+
+            <div class="giving-quote">
+                “Every dollar sown fuels the fire for the furtherment
+                of God's kingdom and supports the completion of the
+                Great Commission.”
+            </div>
+
+            <div class="giving-actions">
+                <a class="button" href="give.html">
+                    Fuel the Flame <span class="button-arrow">↗</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="giving-panel reveal">
+            <div class="giving-panel-label">Stand With Us</div>
+
+            <h3>Help Carry the Gospel.</h3>
+
+            <p>
+                Become a ministry partner and help make future outreach,
+                Gospel-centered content, and evangelism possible.
+            </p>
+
+            <p>
+                Click below to visit the secure giving information page
+                and choose your preferred method of giving.
+            </p>
+
+            <a class="button" href="give.html">
+                Give Now <span class="button-arrow">→</span>
+            </a>
+        </div>
+
+    </div>
+</section>
+
+<!-- BOOK JONATHAN -->
+
+<section class="booking" id="booking">
+    <div class="container booking-inner reveal">
+
+        <div class="eyebrow">Invite the Ministry</div>
+
+        <h2>
+            Let's Reach<br>
+            <span class="accent">The Lost.</span>
+        </h2>
+
+        <p>
+            Interested in inviting Jonathan to speak, preach, participate
+            in an outreach, or collaborate on a ministry initiative?
+            Get in touch to discuss the opportunity.
+        </p>
+
+        <a class="button"
+           href="mailto:jonathanperdeyt@gmail.com?subject=Book%20Jonathan%20Perde">
+            Book Jonathan <span class="button-arrow">↗</span>
+        </a>
+
+    </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+
+<footer class="footer">
+    <div class="container">
+
+        <div class="footer-top">
+
+            <div>
+                <a class="brand" href="#home">
+                    <div class="brand-symbol">J</div>
+                    <div class="brand-text">
+                        Jesus To The World
+                        <small>Ministry</small>
+                    </div>
+                </a>
+
+                <p class="footer-mission">
+                    Seeking to save the lost. Proclaiming the Gospel of
+                    Jesus Christ to the streets, cities, and nations.
+                    All glory belongs to Him.
+                </p>
+            </div>
+
+            <nav class="footer-links" aria-label="Footer navigation">
+                <a href="#home">Home</a>
+                <a href="#mission">Mission</a>
+                <a href="#watch">Watch</a>
+                <a href="#impact">Impact</a>
+                <a href="#booking">Book Jonathan</a>
+                <a href="give.html">Give</a>
+            </nav>
+
+        </div>
+
+        <div class="footer-bottom">
+            <span>
+                © <span id="currentYear"></span> Jesus To The World Ministry
+            </span>
+
+            <span>JESUS CHRIST IS LORD.</span>
+        </div>
+
+    </div>
+</footer>
+
+<script>
+/* MOBILE NAVIGATION */
+
+const menuToggle = document.getElementById("menuToggle");
+const navLinks = document.getElementById("navLinks");
+
+menuToggle.addEventListener("click", function () {
+    const isOpen = navLinks.classList.toggle("open");
+
+    menuToggle.setAttribute("aria-expanded", String(isOpen));
+    menuToggle.innerHTML = isOpen ? "&times;" : "☰";
+});
+
+navLinks.querySelectorAll("a").forEach(function (link) {
+    link.addEventListener("click", function () {
+        navLinks.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.innerHTML = "☰";
+    });
+});
+
+/* SCROLL REVEAL */
+
+const revealElements = document.querySelectorAll(".reveal");
+
+if ("IntersectionObserver" in window) {
+    const observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.12
+    });
+
+    revealElements.forEach(function (element) {
+        observer.observe(element);
+    });
+} else {
+    revealElements.forEach(function (element) {
+        element.classList.add("visible");
+    });
+}
+
+/* CURRENT YEAR */
+
+document.getElementById("currentYear").textContent =
+    new Date().getFullYear();
+</script>
+
+</body>
+</html>
