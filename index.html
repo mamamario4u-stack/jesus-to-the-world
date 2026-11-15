@@ -495,11 +495,11 @@ a.pill.light:hover {
 </style>
 
   <style id="three-card-row-layout-fix">
-    /* Keep Podcast, Merch and Book Jonathan together as one balanced desktop row. */
+    /* Podcast, merch preview and Book Jonathan: one balanced desktop row. */
     .podcast-tile, .merch-teaser, .book-tile {
       grid-column: span 4 !important;
-      height: 470px !important;
-      min-height: 470px !important;
+      height: 500px !important;
+      min-height: 500px !important;
       align-self: stretch !important;
       border-radius: 13px !important;
     }
@@ -507,37 +507,67 @@ a.pill.light:hover {
     .podcast-tile > .tile-content { inset: 27px !important; }
     .podcast-tile .slant { font-size: clamp(31px, 3.1vw, 43px) !important; }
     .podcast-tile p { max-width: 270px; }
+
+    /* The top image is the actual merchandise artwork, not a decorative black block. */
     .merch-teaser {
       display: grid !important;
       grid-template-columns: minmax(0, 1fr) !important;
-      grid-template-rows: 170px minmax(0, 1fr) !important;
+      grid-template-rows: 145px minmax(0, 1fr) !important;
       overflow: hidden !important;
       padding: 0 !important;
     }
     .merch-image-wrap {
-      width: 100% !important; height: 170px !important; min-height: 0 !important;
-      background: #171615 !important;
+      width: 100% !important;
+      height: 145px !important;
+      min-height: 0 !important;
+      background: #e9e2d7 !important;
+      overflow: hidden !important;
     }
     .merch-image-wrap img {
-      width: 100% !important; height: 100% !important; min-height: 0 !important;
-      object-fit: cover !important; object-position: center 43% !important;
+      display: block !important;
+      width: 100% !important;
+      height: 100% !important;
+      min-height: 0 !important;
+      object-fit: cover !important;
+      object-position: center 48% !important;
     }
-    .merch-copy { min-width: 0; padding: 17px 19px 15px !important; justify-content: flex-start !important; overflow: hidden; }
-    .merch-copy h3 { font-size: clamp(27px, 2.5vw, 36px) !important; margin: 9px 0 8px !important; }
-    .merch-copy > p { font-size: 10px !important; line-height: 1.45 !important; margin-bottom: 10px !important; }
-    .merch-vote { gap: 6px !important; }
-    .merch-choice { padding: 10px 8px !important; font-size: 8px !important; }
-    .merch-poll-results { margin-top: 10px !important; padding-top: 9px !important; }
-    .merch-result-row { margin: 7px 0 8px !important; }
-    .merch-feedback { margin-top: 7px !important; min-height: 0 !important; font-size: 8px !important; }
-    .book-tile > img { object-position: center 36% !important; }
+    .merch-copy {
+      min-width: 0;
+      padding: 16px 19px 15px !important;
+      justify-content: flex-start !important;
+      overflow: auto !important;
+    }
+    .merch-copy h3 { font-size: clamp(27px, 2.5vw, 36px) !important; margin: 7px 0 7px !important; }
+    .merch-copy > p { font-size: 10px !important; line-height: 1.4 !important; margin: 7px 0 !important; }
+    .merch-vote { display: grid !important; grid-template-columns: 1fr 1fr !important; gap: 6px !important; }
+    .merch-choice { min-width: 0 !important; padding: 9px 7px !important; font-size: 8px !important; }
+    .merch-poll-results { margin-top: 8px !important; padding-top: 8px !important; }
+    .merch-result-row { margin: 6px 0 !important; }
+    .merch-feedback { margin-top: 6px !important; min-height: 0 !important; font-size: 8px !important; }
+
+    /* Reuse the existing hero photograph as requested; no separate missing image file. */
+    .book-tile { position: relative !important; isolation: isolate !important; background: #121212 !important; }
+    .book-tile > img {
+      position: absolute !important; inset: 0 !important;
+      width: 100% !important; height: 100% !important;
+      object-fit: cover !important; object-position: center 42% !important;
+      z-index: -2 !important;
+    }
+    .book-tile:after {
+      content: ""; position: absolute; inset: 0;
+      background: linear-gradient(0deg,rgba(0,0,0,.78),rgba(0,0,0,.08) 75%);
+      z-index: -1; pointer-events: none;
+    }
     .book-tile .tile-content { inset: auto 23px 24px !important; }
+
     @media (max-width: 900px) {
-      .podcast-tile, .merch-teaser, .book-tile { grid-column: span 12 !important; height: auto !important; min-height: 0 !important; }
+      .podcast-tile, .merch-teaser, .book-tile {
+        grid-column: span 12 !important; height: auto !important; min-height: 0 !important;
+      }
       .podcast-tile { min-height: 330px !important; }
-      .merch-teaser { grid-template-columns: minmax(0, 1fr) !important; grid-template-rows: 220px auto !important; }
+      .merch-teaser { grid-template-rows: 220px auto !important; }
       .merch-image-wrap { height: 220px !important; }
-      .merch-copy { padding: 24px !important; }
+      .merch-copy { padding: 24px !important; overflow: visible !important; }
       .merch-copy h3 { font-size: 42px !important; }
       .book-tile { min-height: 330px !important; }
     }
@@ -667,7 +697,7 @@ a.pill.light:hover {
           </div>
         </section>
         <a class="tile dark book-tile reveal delay-1" id="book" href="mailto:jonathanperde@yahoo.com?subject=Booking%20Jonathan" aria-label="Book Jonathan for an event or outreach">
-          <img src="book-preaching.jpg" alt="Jonathan speaking into a microphone at a preaching event" loading="lazy"/>
+          <img src="hero.jpg" alt="Jonathan speaking into a microphone at a preaching event" loading="lazy"/>
           <div class="tile-content"><div><span class="tile-label">Events · Churches · Outreach</span><h3>Book<br/>Jonathan</h3></div><span class="tile-arrow" aria-hidden="true">↗</span></div>
         </a>
 
