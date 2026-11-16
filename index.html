@@ -423,32 +423,12 @@
     .merch-copy h3{font:800 clamp(30px,3.5vw,48px)/.9 var(--sans);letter-spacing:-.08em;text-transform:uppercase;margin:18px 0 13px}
     .merch-copy h3 em{font-family:var(--serif);font-weight:500;text-transform:none;letter-spacing:-.06em}
     .merch-copy>p{font-size:12px;line-height:1.65;color:#625b52;margin:0 0 18px;max-width:330px}
-    .merch-vote{display:flex;flex-wrap:wrap;gap:8px;width:100%}
-    .merch-choice{appearance:none;border:1px solid #28231e;background:transparent;color:#28231e;padding:12px 14px;font:700 9px var(--sans);letter-spacing:.09em;cursor:pointer;transition:background .2s,color .2s,transform .2s}
-    .merch-choice:hover{transform:translateY(-2px);background:#28231e;color:#f4f0e8}
-    .merch-choice-primary{background:#28231e;color:#f4f0e8}
-    .merch-choice-primary:hover{background:#44372d}
-    .merch-choice:focus-visible{outline:2px solid var(--orange);outline-offset:3px}
-    .merch-feedback{font:10px/1.5 var(--mono)!important;color:#6c6258!important;margin:13px 0 0!important;min-height:30px}
-    .merch-poll-results{width:100%;margin-top:17px;padding-top:14px;border-top:1px solid rgba(40,35,30,.18)}
-    .merch-poll-heading,.merch-result-label{display:flex;align-items:center;justify-content:space-between;gap:12px}
-    .merch-poll-heading{font:700 9px var(--sans);letter-spacing:.1em;color:#74695e;margin-bottom:12px}
-    .merch-poll-heading span:last-child,.merch-result-row small{font-weight:500;letter-spacing:0;color:#81766b}
-    .merch-result-row{margin:10px 0 12px}
-    .merch-result-label{font:700 9px var(--sans);letter-spacing:.06em;color:#28231e;margin-bottom:6px}
-    .merch-result-label strong{font-size:10px}
-    .merch-result-track{height:7px;border-radius:99px;background:rgba(40,35,30,.12);overflow:hidden}
-    .merch-result-track span{display:block;width:0;height:100%;border-radius:99px;background:#bd613b;transition:width .45s ease}
-    .merch-result-row:nth-of-type(3) .merch-result-track span{background:#6e7560}
-    .merch-result-row small{display:block;font:9px var(--mono);margin-top:5px}
-    .merch-choice.is-selected{outline:2px solid var(--orange);outline-offset:2px}
-    .merch-choice:disabled{opacity:.55;cursor:wait;transform:none}
     .book-tile{position:relative;isolation:isolate;background:#121212}
     .book-tile>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 38%;z-index:-2;transition:transform .7s ease}
     .book-tile:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.78),rgba(0,0,0,.08) 75%);z-index:-1}
     .book-tile:hover>img{transform:scale(1.035)}
     @media(max-width:900px){.merch-teaser{grid-column:span 6;grid-template-columns:1fr;}.merch-image-wrap,.merch-image-wrap img{min-height:260px;height:260px}.merch-copy{padding:23px}}
-    @media(max-width:640px){.merch-teaser{grid-column:span 12;grid-template-columns:1fr}.merch-image-wrap,.merch-image-wrap img{height:auto;min-height:0;aspect-ratio:1.22/1}.merch-copy{padding:24px}.merch-copy h3{font-size:42px}.merch-vote{display:grid;grid-template-columns:1fr 1fr}.merch-choice{min-height:46px;padding:10px 8px;font-size:8px}.book-tile{grid-column:span 6;min-height:270px}}
+    @media(max-width:640px){.merch-teaser{grid-column:span 12;grid-template-columns:1fr}.merch-image-wrap,.merch-image-wrap img{height:auto;min-height:0;aspect-ratio:1.22/1}.merch-copy{padding:24px}.merch-copy h3{font-size:42px}book-tile{grid-column:span 6;min-height:270px}}
 
   </style>
 
@@ -496,8 +476,8 @@ a.pill.light:hover {
 
   <style id="three-card-row-layout-fix">
     /* Podcast, merch preview and Book Jonathan: one balanced desktop row. */
-    .podcast-tile, .merch-teaser, .book-tile {
-      grid-column: span 4 !important;
+    .podcast-tile, .book-tile {
+      grid-column: span 6 !important;
       height: 500px !important;
       min-height: 500px !important;
       align-self: stretch !important;
@@ -552,12 +532,9 @@ a.pill.light:hover {
       background: #e9e2d7 !important;
     }
     .merch-copy h3 { font-size: clamp(27px, 2.5vw, 36px) !important; margin: 7px 0 7px !important; }
-    .merch-copy > p { font-size: 10px !important; line-height: 1.4 !important; margin: 7px 0 !important; }
-    .merch-vote { display: grid !important; grid-template-columns: 1fr 1fr !important; gap: 6px !important; }
-    .merch-choice { min-width: 0 !important; padding: 9px 7px !important; font-size: 8px !important; }
-    .merch-poll-results { margin-top: 8px !important; padding-top: 8px !important; }
-    .merch-result-row { margin: 6px 0 !important; }
-    .merch-feedback { margin-top: 6px !important; min-height: 0 !important; font-size: 8px !important; }
+    .merch-coming-soon { display:inline-flex; align-items:center; gap:18px; margin-top:5px; padding:11px 15px; border:1px solid rgba(40,35,30,.42); color:#28231e; font:700 9px var(--sans); letter-spacing:.13em; }
+    .merch-coming-soon span { font-size:14px; line-height:1; }
+    .merch-copy > p { font-size: 11px !important; line-height: 1.55 !important; margin: 9px 0 18px !important; max-width: 320px; }
 
     /* Reuse the existing hero photograph as requested; no separate missing image file. */
     .book-tile { position: relative !important; isolation: isolate !important; background: #121212 !important; }
@@ -575,23 +552,14 @@ a.pill.light:hover {
     .book-tile .tile-content { inset: auto 23px 24px !important; }
 
     @media (max-width: 900px) {
-      .podcast-tile, .merch-teaser, .book-tile {
+      .podcast-tile, .book-tile {
         grid-column: span 12 !important; height: auto !important; min-height: 0 !important;
       }
       .podcast-tile { min-height: 330px !important; }
-      .merch-teaser { grid-template-rows: 220px auto !important; }
-      .merch-image-wrap { height: 220px !important; }
-      .merch-image-wrap img { position: absolute !important; inset: 0 !important; height: 100% !important; }
-      .merch-copy { padding: 24px !important; overflow: visible !important; }
-      .merch-copy h3 { font-size: 42px !important; }
       .book-tile { min-height: 330px !important; }
     }
     @media (max-width: 640px) {
       .podcast-tile { min-height: 300px !important; }
-      .merch-teaser { grid-template-rows: auto auto !important; }
-      .merch-image-wrap { height: auto !important; min-height: 0 !important; aspect-ratio: 1.35 / 1; }
-      .merch-image-wrap img { position: absolute !important; inset: 0 !important; height: 100% !important; min-height: 0 !important; }
-      .merch-copy { padding: 22px !important; }
       .book-tile { min-height: 300px !important; }
     }
   </style>
@@ -603,7 +571,7 @@ a.pill.light:hover {
     <a class="brand" href="#home" aria-label="Jesus To The World home"><span>JESUS TO</span><span>THE WORLD</span></a>
     <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false">☰</button>
     <nav class="navlinks" aria-label="Main navigation">
-      <a href="#about">About</a><a href="#shop">Shop</a><a href="#book">Book Jonathan</a><a href="#contact">Contact</a><a href="#podcast">Podcast</a><a class="nav-donate" href="give.html">Donate Now <span class="arrow">→</span></a>
+      <a href="#about">About</a><a href="#book">Book Jonathan</a><a href="#contact">Contact</a><a href="#podcast">Podcast</a><a class="nav-donate" href="give.html">Donate Now <span class="arrow">→</span></a>
     </nav>
   </header>
 
@@ -693,24 +661,6 @@ a.pill.light:hover {
         <a class="tile globe-tile reveal" href="#give"><img src="globe.jpg" alt="Earth from space" onerror="this.style.display='none'" loading="lazy"/><div class="globe-copy"><span>If you live here,</span><strong>Jesus died<br/>to save you.</strong></div></a>
         <div class="tile giving-methods reveal"><div><span class="tile-label">How do I sow into the ministry?</span><h3>There are two main ways<br/>you can help.</h3></div><div class="bubble-list"><div class="bubble">Pray for the people we reach and the work ahead.</div><div class="bubble">Give to help carry the Gospel into more places.</div><div class="bubble">Share the message and invite someone to hear about Jesus.</div></div></div>
         <div class="tile podcast-tile reveal" id="podcast"><div class="tile-content" style="display:block;inset:28px"><span class="tile-label">The podcast</span><div class="slant">Jonathan Perde<br/>Podcast</div><p>Christ-centered conversations for your walk with Jesus.</p><div class="podcast-links"><a href="https://open.spotify.com/" target="_blank" rel="noopener">Listen · Spotify ↗</a><a href="https://www.youtube.com/@jonathanperde" target="_blank" rel="noopener">Watch · YouTube ↗</a></div></div></div>
-        <section class="merch-teaser tile reveal" id="shop" aria-labelledby="merch-title">
-          <div class="merch-image-wrap"><img src="merch-collection.png" alt="Preview of Trinity cross T-shirts and hoodies in several colors" loading="lazy"/></div>
-          <div class="merch-copy">
-            <span class="tile-label">A first look · Ministry merch</span>
-            <h3 id="merch-title">Wear the<br/><em>message.</em></h3>
-            <p>We're exploring a small collection of faith-inspired pieces. Which direction do you like?</p>
-            <div class="merch-vote" role="group" aria-label="Vote on the merchandise preview">
-              <button class="merch-choice merch-choice-primary" type="button" data-merch-choice="yes" aria-pressed="false">I WANT THIS <span aria-hidden="true">↗</span></button>
-              <button class="merch-choice" type="button" data-merch-choice="no" aria-pressed="false">NO, NOT REALLY</button>
-            </div>
-            <div class="merch-poll-results" id="merch-poll-results" aria-live="polite">
-              <div class="merch-poll-heading"><span>COMMUNITY POLL</span><span id="merch-total-votes">— votes</span></div>
-              <div class="merch-result-row"><div class="merch-result-label"><span>I WANT THIS</span><strong id="merch-yes-percent">—%</strong></div><div class="merch-result-track"><span id="merch-yes-bar"></span></div><small id="merch-yes-count">— votes</small></div>
-              <div class="merch-result-row"><div class="merch-result-label"><span>NO, NOT REALLY</span><strong id="merch-no-percent">—%</strong></div><div class="merch-result-track"><span id="merch-no-bar"></span></div><small id="merch-no-count">— votes</small></div>
-            </div>
-            <p class="merch-feedback" id="merch-feedback" aria-live="polite">Vote for the designs and see what the community thinks.</p>
-          </div>
-        </section>
         <a class="tile dark book-tile reveal delay-1" id="book" href="mailto:jonathanperde@yahoo.com?subject=Booking%20Jonathan" aria-label="Book Jonathan for an event or outreach">
           <img src="hero.jpg" alt="Jonathan speaking into a microphone at a preaching event" loading="lazy"/>
           <div class="tile-content"><div><span class="tile-label">Events · Churches · Outreach</span><h3>Book<br/>Jonathan</h3></div><span class="tile-arrow" aria-hidden="true">↗</span></div>
@@ -728,7 +678,7 @@ a.pill.light:hover {
 
   <footer class="footer" id="contact">
     <div class="footer-bg" aria-hidden="true"></div>
-    <div class="footer-top"><div><div class="footer-label">The mission continues</div><h2>Give now.<span>Go further.</span></h2></div><div><div class="footer-label">Contact Jonathan Perde</div><a class="footer-email" href="mailto:jonathanperde@yahoo.com">jonathanperde@yahoo.com</a><p style="font-size:11px;line-height:1.7;color:#aaa197;max-width:320px">For ministry, speaking, media, and partnership inquiries.</p></div><div class="footer-nav-wrap"><div class="footer-label">Explore</div><nav class="footer-nav"><a href="#home">Home</a><a href="#beliefs">Our Beliefs</a><a href="#all-things">All Things</a><a href="#shop">Shop</a><a href="#book">Book Jonathan</a><a href="#podcast">Podcast</a><a href="give.html">Give Now</a><a href="mailto:jonathanperde@yahoo.com">Contact</a></nav></div></div>
+    <div class="footer-top"><div><div class="footer-label">The mission continues</div><h2>Give now.<span>Go further.</span></h2></div><div><div class="footer-label">Contact Jonathan Perde</div><a class="footer-email" href="mailto:jonathanperde@yahoo.com">jonathanperde@yahoo.com</a><p style="font-size:11px;line-height:1.7;color:#aaa197;max-width:320px">For ministry, speaking, media, and partnership inquiries.</p></div><div class="footer-nav-wrap"><div class="footer-label">Explore</div><nav class="footer-nav"><a href="#home">Home</a><a href="#beliefs">Our Beliefs</a><a href="#all-things">All Things</a><a href="#book">Book Jonathan</a><a href="#podcast">Podcast</a><a href="give.html">Give Now</a><a href="mailto:jonathanperde@yahoo.com">Contact</a></nav></div></div>
     <div class="footer-bottom"><span>© <span id="year"></span> Jesus To The World Ministry</span><div class="socials"><a href="https://www.instagram.com/jonathan.perde" target="_blank" rel="noopener">Instagram ↗</a><a href="https://www.tiktok.com/@jonathan.perde" target="_blank" rel="noopener">TikTok ↗</a><a href="https://www.youtube.com/@jonathanperde" target="_blank" rel="noopener">YouTube ↗</a><a href="https://www.snapchat.com/" target="_blank" rel="noopener">Snapchat ↗</a></div></div>
     <div class="footer-signoff"><span>@ I LOVE JESUS</span><span>JESUSTOTHEWORLD.COMPANY</span></div>
     <div class="footer-brand">Jesus To The World</div>
@@ -796,107 +746,6 @@ a.pill.light:hover {
     // FAQ accordions.
     document.querySelectorAll('.faq-question').forEach(button=>button.addEventListener('click',()=>{const item=button.closest('.faq-item');const open=item.classList.toggle('open');button.setAttribute('aria-expanded',String(open))}));
 
-    // COMMUNITY MERCH POLL
-    // Add your Supabase project URL and anon public key here to enable shared totals
-    // across all visitors. The SQL setup is included with the handoff instructions.
-    const MERCH_POLL_CONFIG = {
-      url: 'PASTE_SUPABASE_PROJECT_URL_HERE',
-      anonKey: 'PASTE_SUPABASE_ANON_PUBLIC_KEY_HERE'
-    };
-    const merchPollButtons = [...document.querySelectorAll('[data-merch-choice]')];
-    const merchFeedback = document.getElementById('merch-feedback');
-    const merchPollReady = Boolean(
-      MERCH_POLL_CONFIG.url.startsWith('https://') &&
-      MERCH_POLL_CONFIG.anonKey.length > 30 &&
-      !MERCH_POLL_CONFIG.url.includes('PASTE_') &&
-      !MERCH_POLL_CONFIG.anonKey.includes('PASTE_')
-    );
-    const merchVoterKey = 'jttw_merch_poll_voter_v1';
-    function getMerchVoterId(){
-      let id = localStorage.getItem(merchVoterKey);
-      if(!id){
-        id = (window.crypto && crypto.randomUUID) ? crypto.randomUUID() :
-          'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g,c=>{
-            const r=Math.random()*16|0; return (c==='x'?r:(r&0x3|0x8)).toString(16);
-          });
-        localStorage.setItem(merchVoterKey,id);
-      }
-      return id;
-    }
-    function setMerchPollMessage(message){ if(merchFeedback) merchFeedback.textContent=message; }
-    function setMerchPollCounts(rows){
-      const counts={yes:0,no:0};
-      rows.forEach(row=>{if(row.choice==='yes')counts.yes++;if(row.choice==='no')counts.no++;});
-      const total=counts.yes+counts.no;
-      const yesPct=total?Math.round(counts.yes/total*100):0;
-      const noPct=total?100-yesPct:0;
-      const put=(id,value)=>{const el=document.getElementById(id);if(el)el.textContent=value;};
-      put('merch-total-votes',`${total} ${total===1?'vote':'votes'}`);
-      put('merch-yes-percent',`${yesPct}%`); put('merch-no-percent',`${noPct}%`);
-      put('merch-yes-count',`${counts.yes} ${counts.yes===1?'vote':'votes'}`);
-      put('merch-no-count',`${counts.no} ${counts.no===1?'vote':'votes'}`);
-      const yesBar=document.getElementById('merch-yes-bar'),noBar=document.getElementById('merch-no-bar');
-      if(yesBar)yesBar.style.width=`${yesPct}%`; if(noBar)noBar.style.width=`${noPct}%`;
-    }
-    async function loadMerchPoll(){
-      if(!merchPollReady){
-        setMerchPollCounts([]);
-        setMerchPollMessage('Poll setup is ready for connection. Add the Supabase details from the setup instructions to collect live votes from everyone.');
-        merchPollButtons.forEach(button=>button.disabled=true);
-        return;
-      }
-      try{
-        const response=await fetch(`${MERCH_POLL_CONFIG.url}/rest/v1/merch_poll_votes?select=choice`,{
-          headers:{apikey:MERCH_POLL_CONFIG.anonKey,Authorization:`Bearer ${MERCH_POLL_CONFIG.anonKey}`}
-        });
-        if(!response.ok)throw new Error(`Poll read failed (${response.status})`);
-        setMerchPollCounts(await response.json());
-        const existingVote=localStorage.getItem('jttw_merch_poll_choice_v1');
-        if(existingVote){
-          const selected=merchPollButtons.find(button=>button.dataset.merchChoice===existingVote);
-          if(selected){selected.classList.add('is-selected');selected.setAttribute('aria-pressed','true');}
-          setMerchPollMessage('Thanks for voting. Your vote is included in the community results.');
-          merchPollButtons.forEach(button=>button.disabled=true);
-        }else{
-          setMerchPollMessage('Cast your vote to see the live community results. One vote per browser.');
-        }
-      }catch(error){
-        console.error('Merch poll could not load:',error);
-        setMerchPollMessage('The poll results could not load right now. Please try again in a moment.');
-      }
-    }
-    merchPollButtons.forEach(button=>button.addEventListener('click',async()=>{
-      if(!merchPollReady){setMerchPollMessage('The community poll is not connected yet.');return;}
-      if(localStorage.getItem('jttw_merch_poll_choice_v1')){setMerchPollMessage('You have already voted from this browser. Thank you!');return;}
-      const choice=button.dataset.merchChoice;
-      merchPollButtons.forEach(option=>option.disabled=true);
-      setMerchPollMessage('Submitting your vote…');
-      try{
-        const response=await fetch(`${MERCH_POLL_CONFIG.url}/rest/v1/merch_poll_votes`,{
-          method:'POST',
-          headers:{apikey:MERCH_POLL_CONFIG.anonKey,Authorization:`Bearer ${MERCH_POLL_CONFIG.anonKey}`,'Content-Type':'application/json',Prefer:'resolution=ignore-duplicates,return=minimal'},
-          body:JSON.stringify({voter_id:getMerchVoterId(),choice})
-        });
-        if(!response.ok)throw new Error(`Vote submission failed (${response.status})`);
-        localStorage.setItem('jttw_merch_poll_choice_v1',choice);
-        merchPollButtons.forEach(option=>{
-          const selected=option.dataset.merchChoice===choice;
-          option.classList.toggle('is-selected',selected);
-          option.setAttribute('aria-pressed',String(selected));
-        });
-        const results=await fetch(`${MERCH_POLL_CONFIG.url}/rest/v1/merch_poll_votes?select=choice`,{
-          headers:{apikey:MERCH_POLL_CONFIG.anonKey,Authorization:`Bearer ${MERCH_POLL_CONFIG.anonKey}`}
-        });
-        if(!results.ok)throw new Error(`Poll refresh failed (${results.status})`);
-        setMerchPollCounts(await results.json());
-        setMerchPollMessage('Thank you — your vote has been counted in the community poll.');
-      }catch(error){
-        console.error('Merch vote could not be submitted:',error);
-        merchPollButtons.forEach(option=>option.disabled=false);
-        setMerchPollMessage('Your vote did not go through. Please try again.');
-      }
-    }));
-    loadMerchPoll();
         document.getElementById('year').textContent=new Date().getFullYear();
   </script>
 </body>
