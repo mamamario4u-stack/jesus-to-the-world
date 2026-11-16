@@ -147,25 +147,12 @@
     .tile .tile-label{font-size:10px;letter-spacing:.035em}
     .testimony-collage{grid-column:span 6;min-height:390px;background:#f0e9dc;color:#1d1b18}
     .testimony-collage:before{background:linear-gradient(0deg,rgba(245,241,232,.98) 0%,rgba(245,241,232,.0) 58%)}
-    /* Five instant-film photographs fly into a loose, editorial Polaroid cluster on scroll. */
-    .testimony-collage{overflow:hidden}
-    .polaroid-stack{position:absolute;inset:12px 18px 112px;display:block;overflow:visible;pointer-events:none}
-    .polaroid-stack img{position:absolute;inset:auto;left:50%;top:48%;width:30%;height:74%;object-fit:cover;z-index:1;background:#fff;padding:8px 8px 27px;box-shadow:0 13px 28px rgba(0,0,0,.18),0 2px 5px rgba(0,0,0,.1);transform:translate(-50%,125vh) rotate(-8deg) scale(.78);opacity:0;transition:transform .78s cubic-bezier(.16,.82,.22,1),opacity .32s ease;will-change:transform,opacity}
-    .polaroid-stack img:nth-child(1){left:25%;top:51%;width:29%;height:69%;transform:translate(-50%,125vh) rotate(-15deg) scale(.78);z-index:2}
-    .polaroid-stack img:nth-child(2){left:44%;top:37%;width:30%;height:74%;transform:translate(-50%,125vh) rotate(8deg) scale(.78);z-index:4}
-    .polaroid-stack img:nth-child(3){left:63%;top:53%;width:29%;height:69%;transform:translate(-50%,125vh) rotate(14deg) scale(.78);z-index:3}
-    .polaroid-stack img:nth-child(4){left:38%;top:63%;width:27%;height:64%;transform:translate(-50%,125vh) rotate(5deg) scale(.78);z-index:5}
-    .polaroid-stack img:nth-child(5){left:77%;top:43%;width:25%;height:62%;transform:translate(-50%,125vh) rotate(-9deg) scale(.78);z-index:1}
-    .testimony-collage.polaroids-in .polaroid-stack img{opacity:1;transform:translate(-50%,-50%) rotate(var(--film-rotation,0deg)) scale(1)}
-    .testimony-collage.polaroids-in .polaroid-stack img:nth-child(1){--film-rotation:-15deg;transition-delay:.04s}
-    .testimony-collage.polaroids-in .polaroid-stack img:nth-child(2){--film-rotation:8deg;transition-delay:.17s}
-    .testimony-collage.polaroids-in .polaroid-stack img:nth-child(3){--film-rotation:14deg;transition-delay:.30s}
-    .testimony-collage.polaroids-in .polaroid-stack img:nth-child(4){--film-rotation:5deg;transition-delay:.43s}
-    .testimony-collage.polaroids-in .polaroid-stack img:nth-child(5){--film-rotation:-9deg;transition-delay:.56s}
-    .testimony-collage:hover.polaroids-in .polaroid-stack img:nth-child(1){transform:translate(-50%,-54%) rotate(-17deg) scale(1.025)}
-    @media(max-width:640px){.polaroid-stack{inset:12px 8px 108px}.polaroid-stack img{padding:5px 5px 19px}.polaroid-stack img:nth-child(1){width:31%;height:64%;left:23%}.polaroid-stack img:nth-child(2){width:32%;height:68%;left:43%;top:37%}.polaroid-stack img:nth-child(3){width:30%;height:63%;left:64%}.polaroid-stack img:nth-child(4){width:28%;height:58%;left:38%;top:65%}.polaroid-stack img:nth-child(5){width:26%;height:56%;left:80%;top:43%}}
-    @media(prefers-reduced-motion:reduce){.polaroid-stack img{opacity:1!important;transform:translate(-50%,-50%) rotate(var(--film-rotation,0deg)) scale(1)!important;transition:none!important}}
-
+    .polaroid-stack{position:absolute;inset:18px 20px 105px;display:block;overflow:visible}
+    .polaroid-stack img{position:absolute;inset:auto;left:50%;top:50%;width:38%;height:70%;object-fit:cover;z-index:1;background:#fff;padding:7px 7px 22px;box-shadow:0 10px 22px rgba(0,0,0,.16);transform:translate(-50%,-50%) rotate(-8deg);transition:transform .5s}
+    .polaroid-stack img:nth-child(2){width:34%;height:66%;left:66%;top:39%;transform:translate(-50%,-50%) rotate(9deg)}
+    .polaroid-stack img:nth-child(3){width:34%;height:63%;left:35%;top:58%;transform:translate(-50%,-50%) rotate(5deg)}
+    .polaroid-stack img:nth-child(4){width:32%;height:58%;left:56%;top:61%;transform:translate(-50%,-50%) rotate(-13deg)}
+    .testimony-collage:hover .polaroid-stack img:first-child{transform:translate(-50%,-54%) rotate(-10deg)}
     .testimony-copy{position:absolute;left:clamp(22px,3vw,42px);right:24px;bottom:28px;z-index:2}
     .testimony-copy h3{font:600 clamp(34px,4vw,54px)/.95 var(--serif);letter-spacing:-.065em;margin:0 0 13px}
     .testimony-copy span{display:inline-flex;gap:22px;align-items:center;font:500 15px var(--sans);border-bottom:1px solid currentColor;padding-bottom:8px;min-width:130px}
@@ -436,32 +423,12 @@
     .merch-copy h3{font:800 clamp(30px,3.5vw,48px)/.9 var(--sans);letter-spacing:-.08em;text-transform:uppercase;margin:18px 0 13px}
     .merch-copy h3 em{font-family:var(--serif);font-weight:500;text-transform:none;letter-spacing:-.06em}
     .merch-copy>p{font-size:12px;line-height:1.65;color:#625b52;margin:0 0 18px;max-width:330px}
-    .merch-vote{display:flex;flex-wrap:wrap;gap:8px;width:100%}
-    .merch-choice{appearance:none;border:1px solid #28231e;background:transparent;color:#28231e;padding:12px 14px;font:700 9px var(--sans);letter-spacing:.09em;cursor:pointer;transition:background .2s,color .2s,transform .2s}
-    .merch-choice:hover{transform:translateY(-2px);background:#28231e;color:#f4f0e8}
-    .merch-choice-primary{background:#28231e;color:#f4f0e8}
-    .merch-choice-primary:hover{background:#44372d}
-    .merch-choice:focus-visible{outline:2px solid var(--orange);outline-offset:3px}
-    .merch-feedback{font:10px/1.5 var(--mono)!important;color:#6c6258!important;margin:13px 0 0!important;min-height:30px}
-    .merch-poll-results{width:100%;margin-top:17px;padding-top:14px;border-top:1px solid rgba(40,35,30,.18)}
-    .merch-poll-heading,.merch-result-label{display:flex;align-items:center;justify-content:space-between;gap:12px}
-    .merch-poll-heading{font:700 9px var(--sans);letter-spacing:.1em;color:#74695e;margin-bottom:12px}
-    .merch-poll-heading span:last-child,.merch-result-row small{font-weight:500;letter-spacing:0;color:#81766b}
-    .merch-result-row{margin:10px 0 12px}
-    .merch-result-label{font:700 9px var(--sans);letter-spacing:.06em;color:#28231e;margin-bottom:6px}
-    .merch-result-label strong{font-size:10px}
-    .merch-result-track{height:7px;border-radius:99px;background:rgba(40,35,30,.12);overflow:hidden}
-    .merch-result-track span{display:block;width:0;height:100%;border-radius:99px;background:#bd613b;transition:width .45s ease}
-    .merch-result-row:nth-of-type(3) .merch-result-track span{background:#6e7560}
-    .merch-result-row small{display:block;font:9px var(--mono);margin-top:5px}
-    .merch-choice.is-selected{outline:2px solid var(--orange);outline-offset:2px}
-    .merch-choice:disabled{opacity:.55;cursor:wait;transform:none}
     .book-tile{position:relative;isolation:isolate;background:#121212}
     .book-tile>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 38%;z-index:-2;transition:transform .7s ease}
     .book-tile:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.78),rgba(0,0,0,.08) 75%);z-index:-1}
     .book-tile:hover>img{transform:scale(1.035)}
     @media(max-width:900px){.merch-teaser{grid-column:span 6;grid-template-columns:1fr;}.merch-image-wrap,.merch-image-wrap img{min-height:260px;height:260px}.merch-copy{padding:23px}}
-    @media(max-width:640px){.merch-teaser{grid-column:span 12;grid-template-columns:1fr}.merch-image-wrap,.merch-image-wrap img{height:auto;min-height:0;aspect-ratio:1.22/1}.merch-copy{padding:24px}.merch-copy h3{font-size:42px}.merch-vote{display:grid;grid-template-columns:1fr 1fr}.merch-choice{min-height:46px;padding:10px 8px;font-size:8px}.book-tile{grid-column:span 6;min-height:270px}}
+    @media(max-width:640px){.merch-teaser{grid-column:span 12;grid-template-columns:1fr}.merch-image-wrap,.merch-image-wrap img{height:auto;min-height:0;aspect-ratio:1.22/1}.merch-copy{padding:24px}.merch-copy h3{font-size:42px}book-tile{grid-column:span 6;min-height:270px}}
 
   </style>
 
@@ -509,8 +476,8 @@ a.pill.light:hover {
 
   <style id="three-card-row-layout-fix">
     /* Podcast, merch preview and Book Jonathan: one balanced desktop row. */
-    .podcast-tile, .merch-teaser, .book-tile {
-      grid-column: span 4 !important;
+    .podcast-tile, .book-tile {
+      grid-column: span 6 !important;
       height: 500px !important;
       min-height: 500px !important;
       align-self: stretch !important;
@@ -530,13 +497,23 @@ a.pill.light:hover {
       padding: 0 !important;
     }
     .merch-image-wrap {
+      position: relative !important;
+      z-index: 0 !important;
+      display: block !important;
+      grid-row: 1 !important;
       width: 100% !important;
       height: 145px !important;
       min-height: 0 !important;
       background: #e9e2d7 !important;
       overflow: hidden !important;
     }
+    /* Override the generic .tile img absolute/negative-z styling.
+       The merch photo must stay inside its own image frame, not drift
+       behind the card or down over the poll copy. */
     .merch-image-wrap img {
+      position: absolute !important;
+      inset: 0 !important;
+      z-index: 1 !important;
       display: block !important;
       width: 100% !important;
       height: 100% !important;
@@ -545,18 +522,19 @@ a.pill.light:hover {
       object-position: center 48% !important;
     }
     .merch-copy {
+      position: relative !important;
+      z-index: 2 !important;
+      grid-row: 2 !important;
       min-width: 0;
       padding: 16px 19px 15px !important;
       justify-content: flex-start !important;
       overflow: auto !important;
+      background: #e9e2d7 !important;
     }
     .merch-copy h3 { font-size: clamp(27px, 2.5vw, 36px) !important; margin: 7px 0 7px !important; }
-    .merch-copy > p { font-size: 10px !important; line-height: 1.4 !important; margin: 7px 0 !important; }
-    .merch-vote { display: grid !important; grid-template-columns: 1fr 1fr !important; gap: 6px !important; }
-    .merch-choice { min-width: 0 !important; padding: 9px 7px !important; font-size: 8px !important; }
-    .merch-poll-results { margin-top: 8px !important; padding-top: 8px !important; }
-    .merch-result-row { margin: 6px 0 !important; }
-    .merch-feedback { margin-top: 6px !important; min-height: 0 !important; font-size: 8px !important; }
+    .merch-coming-soon { display:inline-flex; align-items:center; gap:18px; margin-top:5px; padding:11px 15px; border:1px solid rgba(40,35,30,.42); color:#28231e; font:700 9px var(--sans); letter-spacing:.13em; }
+    .merch-coming-soon span { font-size:14px; line-height:1; }
+    .merch-copy > p { font-size: 11px !important; line-height: 1.55 !important; margin: 9px 0 18px !important; max-width: 320px; }
 
     /* Reuse the existing hero photograph as requested; no separate missing image file. */
     .book-tile { position: relative !important; isolation: isolate !important; background: #121212 !important; }
@@ -574,24 +552,100 @@ a.pill.light:hover {
     .book-tile .tile-content { inset: auto 23px 24px !important; }
 
     @media (max-width: 900px) {
-      .podcast-tile, .merch-teaser, .book-tile {
+      .podcast-tile, .book-tile {
         grid-column: span 12 !important; height: auto !important; min-height: 0 !important;
       }
       .podcast-tile { min-height: 330px !important; }
-      .merch-teaser { grid-template-rows: 220px auto !important; }
-      .merch-image-wrap { height: 220px !important; }
-      .merch-copy { padding: 24px !important; overflow: visible !important; }
-      .merch-copy h3 { font-size: 42px !important; }
       .book-tile { min-height: 330px !important; }
     }
     @media (max-width: 640px) {
       .podcast-tile { min-height: 300px !important; }
-      .merch-teaser { grid-template-rows: auto auto !important; }
-      .merch-image-wrap { height: auto !important; min-height: 0 !important; aspect-ratio: 1.35 / 1; }
-      .merch-image-wrap img { height: 100% !important; min-height: 0 !important; }
-      .merch-copy { padding: 22px !important; }
       .book-tile { min-height: 300px !important; }
     }
+  </style>
+
+  <style id="podcast-tile-spacing-fix">
+    /* Keep the podcast title upright and give every element its own breathing room. */
+    .podcast-tile > .tile-content {
+      inset: 30px !important;
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: flex-start !important;
+      justify-content: flex-start !important;
+      gap: 0 !important;
+    }
+    .podcast-tile .tile-label {
+      margin: 0 0 22px !important;
+    }
+    .podcast-tile .slant {
+      display: block !important;
+      position: relative !important;
+      transform: none !important;
+      max-width: 100% !important;
+      margin: 0 0 19px !important;
+      font-size: clamp(34px, 3.5vw, 49px) !important;
+      line-height: .98 !important;
+      letter-spacing: -.065em !important;
+      overflow-wrap: normal !important;
+    }
+    .podcast-tile > .tile-content > p {
+      position: relative !important;
+      max-width: 340px !important;
+      margin: 0 0 21px !important;
+      line-height: 1.65 !important;
+    }
+    .podcast-tile .podcast-links {
+      position: relative !important;
+      display: flex !important;
+      flex-wrap: wrap !important;
+      gap: 10px !important;
+      margin: 0 !important;
+    }
+    @media (max-width: 640px) {
+      .podcast-tile > .tile-content { inset: 23px !important; }
+      .podcast-tile .tile-label { margin-bottom: 18px !important; }
+      .podcast-tile .slant { font-size: clamp(34px, 9vw, 46px) !important; margin-bottom: 16px !important; }
+      .podcast-tile > .tile-content > p { margin-bottom: 18px !important; }
+    }
+  </style>
+
+  <style id="jonathan-testimony-film-photos">
+    /* Personal testimony: three complete photographs in small disposable-camera / instant-film frames. */
+    .testimony-collage{background:#e8e0d2!important;isolation:isolate}
+    .testimony-collage:before{background:linear-gradient(0deg,rgba(232,224,210,.20) 0%,rgba(232,224,210,.02) 48%,rgba(232,224,210,.0) 100%)!important;z-index:0}
+    .testimony-collage .polaroid-stack{inset:12px 18px 18px!important;z-index:1;perspective:900px}
+    .testimony-collage .polaroid-stack img{
+      position:absolute!important;display:block!important;left:50%;top:50%;
+      width:29%!important;height:76%!important;max-height:260px;
+      object-fit:contain!important;object-position:center!important;
+      padding:7px 7px 22px!important;background:#fbf8ef!important;
+      border:1px solid rgba(70,55,38,.12);border-radius:2px;
+      box-shadow:0 12px 28px rgba(34,27,20,.2),0 2px 5px rgba(34,27,20,.12);
+      filter:saturate(.84) sepia(.09) contrast(.97);
+      transform:translate(-50%,24px) rotate(0deg) scale(.94)!important;
+      opacity:0;z-index:1;transition:transform .8s cubic-bezier(.2,.75,.25,1),opacity .65s ease;
+    }
+    .testimony-collage .polaroid-stack img:nth-child(1){left:25%;top:47%;transform:translate(-50%,24px) rotate(-9deg) scale(.94)!important;z-index:1}
+    .testimony-collage .polaroid-stack img:nth-child(2){left:51%;top:42%;transform:translate(-50%,24px) rotate(3deg) scale(.94)!important;z-index:3;transition-delay:.12s}
+    .testimony-collage .polaroid-stack img:nth-child(3){left:77%;top:48%;transform:translate(-50%,24px) rotate(10deg) scale(.94)!important;z-index:2;transition-delay:.24s}
+    .testimony-collage.in-view .polaroid-stack img:nth-child(1){opacity:1;transform:translate(-50%,-50%) rotate(-9deg) scale(1)!important}
+    .testimony-collage.in-view .polaroid-stack img:nth-child(2){opacity:1;transform:translate(-50%,-50%) rotate(3deg) scale(1)!important}
+    .testimony-collage.in-view .polaroid-stack img:nth-child(3){opacity:1;transform:translate(-50%,-50%) rotate(10deg) scale(1)!important}
+    .testimony-collage:hover .polaroid-stack img:nth-child(1){transform:translate(-50%,-53%) rotate(-12deg) scale(1.025)!important}
+    .testimony-collage:hover .polaroid-stack img:nth-child(2){transform:translate(-50%,-53%) rotate(1deg) scale(1.025)!important}
+    .testimony-collage:hover .polaroid-stack img:nth-child(3){transform:translate(-50%,-53%) rotate(13deg) scale(1.025)!important}
+    .testimony-collage .testimony-copy{z-index:5;left:clamp(22px,3vw,42px);right:24px;bottom:24px;pointer-events:none}
+    @media(max-width:640px){.testimony-collage .testimony-copy{left:18px;bottom:18px}.testimony-collage .testimony-copy h3{font-size:clamp(34px,10vw,46px)}}
+    .testimony-collage .testimony-copy h3{position:relative;display:block;width:max-content;max-width:100%;color:#171513;font-size:clamp(36px,4.6vw,61px);line-height:.88;letter-spacing:-.065em;text-shadow:0 2px 14px rgba(245,241,232,.72),0 1px 2px rgba(245,241,232,.55);margin:0 0 12px}
+    .testimony-collage .testimony-copy span{position:relative;z-index:6;pointer-events:auto;color:#171513;text-shadow:0 1px 8px rgba(245,241,232,.9)}
+    @media(max-width:640px){
+      .testimony-collage .polaroid-stack{inset:8px 8px 12px!important}
+      .testimony-collage .polaroid-stack img{width:29%!important;height:74%!important;padding:5px 5px 17px!important}
+      .testimony-collage .polaroid-stack img:nth-child(1){left:25%;top:46%}
+      .testimony-collage .polaroid-stack img:nth-child(2){left:51%;top:42%}
+      .testimony-collage .polaroid-stack img:nth-child(3){left:77%;top:47%}
+    }
+    @media(prefers-reduced-motion:reduce){.testimony-collage .polaroid-stack img{opacity:1!important;transform:translate(-50%,-50%) rotate(0deg)!important;transition:none!important}}
   </style>
 
 </head>
@@ -601,7 +655,7 @@ a.pill.light:hover {
     <a class="brand" href="#home" aria-label="Jesus To The World home"><span>JESUS TO</span><span>THE WORLD</span></a>
     <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false">☰</button>
     <nav class="navlinks" aria-label="Main navigation">
-      <a href="#about">About</a><a href="#shop">Shop</a><a href="#book">Book Jonathan</a><a href="#contact">Contact</a><a href="#podcast">Podcast</a><a class="nav-donate" href="give.html">Donate Now <span class="arrow">→</span></a>
+      <a href="#about">About</a><a href="#book">Book Jonathan</a><a href="#contact">Contact</a><a href="#podcast">Podcast</a><a class="nav-donate" href="give.html">Donate Now <span class="arrow">→</span></a>
     </nav>
   </header>
 
@@ -678,7 +732,7 @@ a.pill.light:hover {
       <div class="all-things-title reveal"><div class="section-kicker">The work beyond the screen</div><h2>all things</h2><p>Connect with us and stay updated on our journey. Find out about new events, interviews, merch drops, and more!</p></div>
       <div class="tile-grid">
         <a class="tile testimony-collage reveal" id="testimony" href="#testimony" aria-label="Watch Jonathan's testimony">
-          <div class="polaroid-stack" aria-hidden="true"><img src="testimony-01.jpg" alt=""/><img src="testimony-02.jpg" alt=""/><img src="testimony-03.jpg" alt=""/><img src="testimony-04.jpg" alt=""/><img src="testimony-05.jpg" alt=""/></div>
+          <div class="polaroid-stack" aria-hidden="true"><img src="testimony-01.jpg" alt=""/><img src="testimony-02.jpg" alt=""/><img src="testimony-03.jpg" alt=""/></div>
           <div class="testimony-copy"><h3>Jonathan's<br/>Testimony</h3><span>Watch the vid <b>↗</b></span><i aria-hidden="true"></i></div>
         </a>
         <a class="tile interview-mosaic reveal delay-1" href="https://www.youtube.com/@jonathanperde" target="_blank" rel="noopener" aria-label="Watch interviews and clips on YouTube">
@@ -691,24 +745,6 @@ a.pill.light:hover {
         <a class="tile globe-tile reveal" href="#give"><img src="globe.jpg" alt="Earth from space" onerror="this.style.display='none'" loading="lazy"/><div class="globe-copy"><span>If you live here,</span><strong>Jesus died<br/>to save you.</strong></div></a>
         <div class="tile giving-methods reveal"><div><span class="tile-label">How do I sow into the ministry?</span><h3>There are two main ways<br/>you can help.</h3></div><div class="bubble-list"><div class="bubble">Pray for the people we reach and the work ahead.</div><div class="bubble">Give to help carry the Gospel into more places.</div><div class="bubble">Share the message and invite someone to hear about Jesus.</div></div></div>
         <div class="tile podcast-tile reveal" id="podcast"><div class="tile-content" style="display:block;inset:28px"><span class="tile-label">The podcast</span><div class="slant">Jonathan Perde<br/>Podcast</div><p>Christ-centered conversations for your walk with Jesus.</p><div class="podcast-links"><a href="https://open.spotify.com/" target="_blank" rel="noopener">Listen · Spotify ↗</a><a href="https://www.youtube.com/@jonathanperde" target="_blank" rel="noopener">Watch · YouTube ↗</a></div></div></div>
-        <section class="merch-teaser tile reveal" id="shop" aria-labelledby="merch-title">
-          <div class="merch-image-wrap"><img src="merch-collection.png" alt="Preview of Trinity cross T-shirts and hoodies in several colors" loading="lazy"/></div>
-          <div class="merch-copy">
-            <span class="tile-label">A first look · Ministry merch</span>
-            <h3 id="merch-title">Wear the<br/><em>message.</em></h3>
-            <p>We're exploring a small collection of faith-inspired pieces. Which direction do you like?</p>
-            <div class="merch-vote" role="group" aria-label="Vote on the merchandise preview">
-              <button class="merch-choice merch-choice-primary" type="button" data-merch-choice="yes" aria-pressed="false">I WANT THIS <span aria-hidden="true">↗</span></button>
-              <button class="merch-choice" type="button" data-merch-choice="no" aria-pressed="false">NO, NOT REALLY</button>
-            </div>
-            <div class="merch-poll-results" id="merch-poll-results" aria-live="polite">
-              <div class="merch-poll-heading"><span>COMMUNITY POLL</span><span id="merch-total-votes">— votes</span></div>
-              <div class="merch-result-row"><div class="merch-result-label"><span>I WANT THIS</span><strong id="merch-yes-percent">—%</strong></div><div class="merch-result-track"><span id="merch-yes-bar"></span></div><small id="merch-yes-count">— votes</small></div>
-              <div class="merch-result-row"><div class="merch-result-label"><span>NO, NOT REALLY</span><strong id="merch-no-percent">—%</strong></div><div class="merch-result-track"><span id="merch-no-bar"></span></div><small id="merch-no-count">— votes</small></div>
-            </div>
-            <p class="merch-feedback" id="merch-feedback" aria-live="polite">Vote for the designs and see what the community thinks.</p>
-          </div>
-        </section>
         <a class="tile dark book-tile reveal delay-1" id="book" href="mailto:jonathanperde@yahoo.com?subject=Booking%20Jonathan" aria-label="Book Jonathan for an event or outreach">
           <img src="hero.jpg" alt="Jonathan speaking into a microphone at a preaching event" loading="lazy"/>
           <div class="tile-content"><div><span class="tile-label">Events · Churches · Outreach</span><h3>Book<br/>Jonathan</h3></div><span class="tile-arrow" aria-hidden="true">↗</span></div>
@@ -726,7 +762,7 @@ a.pill.light:hover {
 
   <footer class="footer" id="contact">
     <div class="footer-bg" aria-hidden="true"></div>
-    <div class="footer-top"><div><div class="footer-label">The mission continues</div><h2>Give now.<span>Go further.</span></h2></div><div><div class="footer-label">Contact Jonathan Perde</div><a class="footer-email" href="mailto:jonathanperde@yahoo.com">jonathanperde@yahoo.com</a><p style="font-size:11px;line-height:1.7;color:#aaa197;max-width:320px">For ministry, speaking, media, and partnership inquiries.</p></div><div class="footer-nav-wrap"><div class="footer-label">Explore</div><nav class="footer-nav"><a href="#home">Home</a><a href="#beliefs">Our Beliefs</a><a href="#all-things">All Things</a><a href="#shop">Shop</a><a href="#book">Book Jonathan</a><a href="#podcast">Podcast</a><a href="give.html">Give Now</a><a href="mailto:jonathanperde@yahoo.com">Contact</a></nav></div></div>
+    <div class="footer-top"><div><div class="footer-label">The mission continues</div><h2>Give now.<span>Go further.</span></h2></div><div><div class="footer-label">Contact Jonathan Perde</div><a class="footer-email" href="mailto:jonathanperde@yahoo.com">jonathanperde@yahoo.com</a><p style="font-size:11px;line-height:1.7;color:#aaa197;max-width:320px">For ministry, speaking, media, and partnership inquiries.</p></div><div class="footer-nav-wrap"><div class="footer-label">Explore</div><nav class="footer-nav"><a href="#home">Home</a><a href="#beliefs">Our Beliefs</a><a href="#all-things">All Things</a><a href="#book">Book Jonathan</a><a href="#podcast">Podcast</a><a href="give.html">Give Now</a><a href="mailto:jonathanperde@yahoo.com">Contact</a></nav></div></div>
     <div class="footer-bottom"><span>© <span id="year"></span> Jesus To The World Ministry</span><div class="socials"><a href="https://www.instagram.com/jonathan.perde" target="_blank" rel="noopener">Instagram ↗</a><a href="https://www.tiktok.com/@jonathan.perde" target="_blank" rel="noopener">TikTok ↗</a><a href="https://www.youtube.com/@jonathanperde" target="_blank" rel="noopener">YouTube ↗</a><a href="https://www.snapchat.com/" target="_blank" rel="noopener">Snapchat ↗</a></div></div>
     <div class="footer-signoff"><span>@ I LOVE JESUS</span><span>JESUSTOTHEWORLD.COMPANY</span></div>
     <div class="footer-brand">Jesus To The World</div>
@@ -736,19 +772,6 @@ a.pill.light:hover {
     // Scroll reveals: cards and text enter smoothly as they come into view.
     const revealObserver = new IntersectionObserver((entries)=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('in-view');revealObserver.unobserve(entry.target)}}),{threshold:.13});
     document.querySelectorAll('.reveal').forEach(el=>revealObserver.observe(el));
-    // Stagger the five Polaroids upward as the testimony tile enters the viewport.
-    const testimonyTile = document.querySelector('.testimony-collage');
-    if (testimonyTile && 'IntersectionObserver' in window) {
-      const polaroidObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            testimonyTile.classList.add('polaroids-in');
-            polaroidObserver.unobserve(testimonyTile);
-          }
-        });
-      }, { threshold: 0.28 });
-      polaroidObserver.observe(testimonyTile);
-    } else if (testimonyTile) { testimonyTile.classList.add('polaroids-in'); }
     // John 10:10 verse rail moves only in response to the visitor scrolling (never auto-plays).
     const verseRail=document.querySelector('#verse-marquee .marquee-track');
     const verseSection=document.querySelector('#verse-marquee');
@@ -807,107 +830,6 @@ a.pill.light:hover {
     // FAQ accordions.
     document.querySelectorAll('.faq-question').forEach(button=>button.addEventListener('click',()=>{const item=button.closest('.faq-item');const open=item.classList.toggle('open');button.setAttribute('aria-expanded',String(open))}));
 
-    // COMMUNITY MERCH POLL
-    // Add your Supabase project URL and anon public key here to enable shared totals
-    // across all visitors. The SQL setup is included with the handoff instructions.
-    const MERCH_POLL_CONFIG = {
-      url: 'PASTE_SUPABASE_PROJECT_URL_HERE',
-      anonKey: 'PASTE_SUPABASE_ANON_PUBLIC_KEY_HERE'
-    };
-    const merchPollButtons = [...document.querySelectorAll('[data-merch-choice]')];
-    const merchFeedback = document.getElementById('merch-feedback');
-    const merchPollReady = Boolean(
-      MERCH_POLL_CONFIG.url.startsWith('https://') &&
-      MERCH_POLL_CONFIG.anonKey.length > 30 &&
-      !MERCH_POLL_CONFIG.url.includes('PASTE_') &&
-      !MERCH_POLL_CONFIG.anonKey.includes('PASTE_')
-    );
-    const merchVoterKey = 'jttw_merch_poll_voter_v1';
-    function getMerchVoterId(){
-      let id = localStorage.getItem(merchVoterKey);
-      if(!id){
-        id = (window.crypto && crypto.randomUUID) ? crypto.randomUUID() :
-          'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g,c=>{
-            const r=Math.random()*16|0; return (c==='x'?r:(r&0x3|0x8)).toString(16);
-          });
-        localStorage.setItem(merchVoterKey,id);
-      }
-      return id;
-    }
-    function setMerchPollMessage(message){ if(merchFeedback) merchFeedback.textContent=message; }
-    function setMerchPollCounts(rows){
-      const counts={yes:0,no:0};
-      rows.forEach(row=>{if(row.choice==='yes')counts.yes++;if(row.choice==='no')counts.no++;});
-      const total=counts.yes+counts.no;
-      const yesPct=total?Math.round(counts.yes/total*100):0;
-      const noPct=total?100-yesPct:0;
-      const put=(id,value)=>{const el=document.getElementById(id);if(el)el.textContent=value;};
-      put('merch-total-votes',`${total} ${total===1?'vote':'votes'}`);
-      put('merch-yes-percent',`${yesPct}%`); put('merch-no-percent',`${noPct}%`);
-      put('merch-yes-count',`${counts.yes} ${counts.yes===1?'vote':'votes'}`);
-      put('merch-no-count',`${counts.no} ${counts.no===1?'vote':'votes'}`);
-      const yesBar=document.getElementById('merch-yes-bar'),noBar=document.getElementById('merch-no-bar');
-      if(yesBar)yesBar.style.width=`${yesPct}%`; if(noBar)noBar.style.width=`${noPct}%`;
-    }
-    async function loadMerchPoll(){
-      if(!merchPollReady){
-        setMerchPollCounts([]);
-        setMerchPollMessage('Poll setup is ready for connection. Add the Supabase details from the setup instructions to collect live votes from everyone.');
-        merchPollButtons.forEach(button=>button.disabled=true);
-        return;
-      }
-      try{
-        const response=await fetch(`${MERCH_POLL_CONFIG.url}/rest/v1/merch_poll_votes?select=choice`,{
-          headers:{apikey:MERCH_POLL_CONFIG.anonKey,Authorization:`Bearer ${MERCH_POLL_CONFIG.anonKey}`}
-        });
-        if(!response.ok)throw new Error(`Poll read failed (${response.status})`);
-        setMerchPollCounts(await response.json());
-        const existingVote=localStorage.getItem('jttw_merch_poll_choice_v1');
-        if(existingVote){
-          const selected=merchPollButtons.find(button=>button.dataset.merchChoice===existingVote);
-          if(selected){selected.classList.add('is-selected');selected.setAttribute('aria-pressed','true');}
-          setMerchPollMessage('Thanks for voting. Your vote is included in the community results.');
-          merchPollButtons.forEach(button=>button.disabled=true);
-        }else{
-          setMerchPollMessage('Cast your vote to see the live community results. One vote per browser.');
-        }
-      }catch(error){
-        console.error('Merch poll could not load:',error);
-        setMerchPollMessage('The poll results could not load right now. Please try again in a moment.');
-      }
-    }
-    merchPollButtons.forEach(button=>button.addEventListener('click',async()=>{
-      if(!merchPollReady){setMerchPollMessage('The community poll is not connected yet.');return;}
-      if(localStorage.getItem('jttw_merch_poll_choice_v1')){setMerchPollMessage('You have already voted from this browser. Thank you!');return;}
-      const choice=button.dataset.merchChoice;
-      merchPollButtons.forEach(option=>option.disabled=true);
-      setMerchPollMessage('Submitting your vote…');
-      try{
-        const response=await fetch(`${MERCH_POLL_CONFIG.url}/rest/v1/merch_poll_votes`,{
-          method:'POST',
-          headers:{apikey:MERCH_POLL_CONFIG.anonKey,Authorization:`Bearer ${MERCH_POLL_CONFIG.anonKey}`,'Content-Type':'application/json',Prefer:'resolution=ignore-duplicates,return=minimal'},
-          body:JSON.stringify({voter_id:getMerchVoterId(),choice})
-        });
-        if(!response.ok)throw new Error(`Vote submission failed (${response.status})`);
-        localStorage.setItem('jttw_merch_poll_choice_v1',choice);
-        merchPollButtons.forEach(option=>{
-          const selected=option.dataset.merchChoice===choice;
-          option.classList.toggle('is-selected',selected);
-          option.setAttribute('aria-pressed',String(selected));
-        });
-        const results=await fetch(`${MERCH_POLL_CONFIG.url}/rest/v1/merch_poll_votes?select=choice`,{
-          headers:{apikey:MERCH_POLL_CONFIG.anonKey,Authorization:`Bearer ${MERCH_POLL_CONFIG.anonKey}`}
-        });
-        if(!results.ok)throw new Error(`Poll refresh failed (${results.status})`);
-        setMerchPollCounts(await results.json());
-        setMerchPollMessage('Thank you — your vote has been counted in the community poll.');
-      }catch(error){
-        console.error('Merch vote could not be submitted:',error);
-        merchPollButtons.forEach(option=>option.disabled=false);
-        setMerchPollMessage('Your vote did not go through. Please try again.');
-      }
-    }));
-    loadMerchPoll();
         document.getElementById('year').textContent=new Date().getFullYear();
   </script>
 </body>
