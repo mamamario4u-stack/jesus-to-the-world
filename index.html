@@ -564,6 +564,50 @@ a.pill.light:hover {
     }
   </style>
 
+  <style id="podcast-tile-spacing-fix">
+    /* Keep the podcast title upright and give every element its own breathing room. */
+    .podcast-tile > .tile-content {
+      inset: 30px !important;
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: flex-start !important;
+      justify-content: flex-start !important;
+      gap: 0 !important;
+    }
+    .podcast-tile .tile-label {
+      margin: 0 0 22px !important;
+    }
+    .podcast-tile .slant {
+      display: block !important;
+      position: relative !important;
+      transform: none !important;
+      max-width: 100% !important;
+      margin: 0 0 19px !important;
+      font-size: clamp(34px, 3.5vw, 49px) !important;
+      line-height: .98 !important;
+      letter-spacing: -.065em !important;
+      overflow-wrap: normal !important;
+    }
+    .podcast-tile > .tile-content > p {
+      position: relative !important;
+      max-width: 340px !important;
+      margin: 0 0 21px !important;
+      line-height: 1.65 !important;
+    }
+    .podcast-tile .podcast-links {
+      position: relative !important;
+      display: flex !important;
+      flex-wrap: wrap !important;
+      gap: 10px !important;
+      margin: 0 !important;
+    }
+    @media (max-width: 640px) {
+      .podcast-tile > .tile-content { inset: 23px !important; }
+      .podcast-tile .tile-label { margin-bottom: 18px !important; }
+      .podcast-tile .slant { font-size: clamp(34px, 9vw, 46px) !important; margin-bottom: 16px !important; }
+      .podcast-tile > .tile-content > p { margin-bottom: 18px !important; }
+    }
+  </style>
 </head>
 <body>
   <div class="cursor-dot" aria-hidden="true"></div>
