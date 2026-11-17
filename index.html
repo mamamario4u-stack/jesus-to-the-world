@@ -728,6 +728,24 @@ a.pill.light:hover {
     }
   </style>
 
+  <style id="fuel-the-flame-hover-glow">
+    /* A warm, pointer-following ember glow for the orange Give tile. */
+    .give-tile{--glow-x:50%;--glow-y:50%;position:relative;isolation:isolate;transition:box-shadow .35s ease,transform .35s ease;}
+    .give-tile:after{
+      content:"";position:absolute;inset:0;z-index:0;pointer-events:none;opacity:0;
+      background:
+        radial-gradient(260px circle at var(--glow-x) var(--glow-y),rgba(255,231,164,.52),transparent 58%),
+        radial-gradient(430px circle at var(--glow-x) var(--glow-y),rgba(255,119,48,.34),transparent 68%),
+        linear-gradient(135deg,rgba(255,190,105,.08),rgba(117,31,12,.12));
+      mix-blend-mode:screen;transition:opacity .35s ease;
+    }
+    .give-tile .tile-content{z-index:1;}
+    .give-tile.is-glowing:after{opacity:1;}
+    .give-tile.is-glowing{box-shadow:0 0 0 1px rgba(255,190,130,.42),0 12px 38px rgba(194,72,31,.2),inset 0 0 42px rgba(255,197,118,.18);}
+    @media(hover:hover) and (pointer:fine){.give-tile:hover{transform:translateY(-3px);}}
+    @media(prefers-reduced-motion:reduce){.give-tile,.give-tile:after{transition:none!important}}
+  </style>
+
 </head>
 <body>
   <div class="cursor-dot" aria-hidden="true"></div>
@@ -930,6 +948,18 @@ a.pill.light:hover {
     window.addEventListener('scroll',requestMosaicUpdate,{passive:true});
     window.addEventListener('resize',requestMosaicUpdate);
     updateInterviewMosaic();
+    // Fuel the Flame: a soft orange-gold glow follows the pointer across the Give tile.
+    const giveTile=document.querySelector('.give-tile');
+    if(giveTile && window.matchMedia('(hover:hover) and (pointer:fine)').matches){
+      giveTile.addEventListener('pointermove',event=>{
+        const rect=giveTile.getBoundingClientRect();
+        giveTile.style.setProperty('--glow-x',`${event.clientX-rect.left}px`);
+        giveTile.style.setProperty('--glow-y',`${event.clientY-rect.top}px`);
+        giveTile.classList.add('is-glowing');
+      });
+      giveTile.addEventListener('pointerenter',()=>giveTile.classList.add('is-glowing'));
+      giveTile.addEventListener('pointerleave',()=>giveTile.classList.remove('is-glowing'));
+    }
     // Mobile navigation.
     const menuButton=document.querySelector('.menu-toggle'),nav=document.querySelector('.navlinks');menuButton.addEventListener('click',()=>{const open=nav.classList.toggle('open');menuButton.setAttribute('aria-expanded',String(open));menuButton.textContent=open?'×':'☰'});nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');menuButton.setAttribute('aria-expanded','false');menuButton.textContent='☰'}));
     // FAQ accordions.
