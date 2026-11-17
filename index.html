@@ -11,6 +11,7 @@
   <meta property="og:url" content="https://jesustotheworld.company/" />
   <meta property="og:site_name" content="Jesus To The World" />
   <title>Jesus To The World | Ministry</title>
+  <!-- TikTok tile update: separate background and foreground phone layers. Zeal House asset remains externally hosted in the repository as zeal-house-thumbnail.png. -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet" />
@@ -660,6 +661,18 @@ a.pill.light:hover {
     @media(prefers-reduced-motion:reduce){.testimony-collage .polaroid-stack img{opacity:1!important;transform:translate(-50%,-50%) rotate(0deg)!important;transition:none!important}}
   </style>
 
+
+  <style id="tiktok-phone-layer-fix">
+    /* TikTok tile: separate atmospheric background and transparent phone foreground. */
+    .connect-tiktok{position:relative;isolation:isolate;overflow:hidden;background:#101010;}
+    .connect-tiktok:after{display:none!important;}
+    .connect-tiktok .tiktok-background{position:absolute;inset:0;z-index:0;pointer-events:none;background-image:linear-gradient(180deg,rgba(0,0,0,.05),rgba(0,0,0,.34)),url("tiktok-background-photo.jpg");background-size:cover;background-position:center;background-repeat:no-repeat;}
+    .connect-tiktok img.tiktok-phone{position:absolute;inset:4% auto auto 50%;width:auto;height:78%;max-width:78%;object-fit:contain;object-position:center;z-index:1;transform:translateX(-50%);filter:drop-shadow(0 12px 24px rgba(0,0,0,.38));transition:transform .55s cubic-bezier(.2,.7,.2,1);}
+    .connect-tiktok:hover img.tiktok-phone{transform:translateX(-50%) scale(1.025);}
+    .connect-tiktok .tile-content{position:absolute;z-index:2;inset:auto 25px 25px;}
+    .connect-tiktok .tile-content h3,.connect-tiktok .tile-label,.connect-tiktok .tile-arrow{ text-shadow:0 2px 12px rgba(0,0,0,.55); }
+    @media(max-width:640px){.connect-tiktok{min-height:430px}.connect-tiktok img.tiktok-phone{height:72%;max-width:86%;top:3%;}.connect-tiktok .tile-content{inset:auto 18px 18px;}}
+  </style>
 </head>
 <body>
   <div class="cursor-dot" aria-hidden="true"></div>
@@ -751,8 +764,12 @@ a.pill.light:hover {
           <div class="mosaic-photos" aria-hidden="true"><img src="interview-01.jpg" alt="" onerror="this.style.display='none'"/><img src="interview-02.jpg" alt="" onerror="this.style.display='none'"/><img src="interview-03.jpg" alt="" onerror="this.style.display='none'"/><img src="interview-04.jpg" alt="" onerror="this.style.display='none'"/><img src="interview-05.jpg" alt="" onerror="this.style.display='none'"/><img src="interview-06.jpg" alt="" onerror="this.style.display='none'"/><img src="interview-07.jpg" alt="" onerror="this.style.display='none'"/><img src="interview-08.jpg" alt="" onerror="this.style.display='none'"/><img src="interview-09.jpg" alt="" onerror="this.style.display='none'"/></div>
           <div class="mosaic-caption">Watch interviews, clips, and powerful stories about the love of Jesus Christ on our YouTube channel <span>↗</span></div>
         </a>
-        <a class="tile dark connect-tiktok reveal" href="https://www.tiktok.com/@jonathan.perde" target="_blank" rel="noopener"><img src="tiktok-cover.jpg" alt="TikTok tile background" onerror="this.style.display='none'" loading="lazy"/><div class="tile-content"><div><span class="tile-label">Social · TikTok ↗</span><h3>Connect<br/>on TikTok</h3></div><span class="tile-arrow">↗</span></div></a>
-        <a class="tile dark zeal-tile reveal delay-1" href="https://www.youtube.com/@jonathanperde" target="_blank" rel="noopener"><img src="zealhouse-cover.jpg" alt="Zeal House interview background" onerror="this.style.display='none'" loading="lazy"/><div class="tile-content"><div><span class="tile-label">On YouTube</span><h3>Watch the<br/>Zeal House<br/>interview</h3></div><span class="tile-arrow">↗</span></div></a>
+        <a class="tile dark connect-tiktok reveal" href="https://www.tiktok.com/@jonathan.perde" target="_blank" rel="noopener" aria-label="Connect with Jonathan on TikTok">
+          <div class="tiktok-background" aria-hidden="true"></div>
+          <img class="tiktok-phone" src="tiktok-phone-foreground.png" alt="Jonathan Perde's TikTok profile displayed on an iPhone with 99 percent battery" loading="lazy"/>
+          <div class="tile-content"><div><span class="tile-label">Social · TikTok ↗</span><h3>Connect<br/>on TikTok</h3></div><span class="tile-arrow">↗</span></div>
+        </a>
+        <a class="tile dark zeal-tile reveal delay-1" href="https://www.youtube.com/@jonathanperde" target="_blank" rel="noopener"><img src="zeal-house-thumbnail.png" alt="Zeal House interview thumbnail" onerror="this.style.display='none'" loading="lazy"/><div class="tile-content"><div><span class="tile-label">On YouTube</span><h3>Watch the<br/>Zeal House<br/>interview</h3></div><span class="tile-arrow">↗</span></div></a>
         <a class="tile give-tile reveal delay-2" href="#give"><img src="give-cover.jpg" alt="Giving tile background" onerror="this.style.display='none'" loading="lazy"/><div class="tile-content"><span class="tile-label">Partner with the mission</span><h3>Give now</h3><p>Your generosity helps make an eternal impact on souls. Click here to give.</p><span class="tile-arrow">↗</span></div></a>
         <a class="tile globe-tile reveal" href="#give"><img src="globe.jpg" alt="Earth from space" onerror="this.style.display='none'" loading="lazy"/><div class="globe-copy"><span>If you live here,</span><strong>Jesus died<br/>to save you.</strong></div></a>
         <div class="tile giving-methods reveal"><div><span class="tile-label">How do I sow into the ministry?</span><h3>There are two main ways<br/>you can help.</h3></div><div class="bubble-list"><div class="bubble">Pray for the people we reach and the work ahead.</div><div class="bubble">Give to help carry the Gospel into more places.</div><div class="bubble">Share the message and invite someone to hear about Jesus.</div></div></div>
