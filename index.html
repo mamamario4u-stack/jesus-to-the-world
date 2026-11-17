@@ -431,6 +431,26 @@
     @media(max-width:900px){.merch-teaser{grid-column:span 6;grid-template-columns:1fr;}.merch-image-wrap,.merch-image-wrap img{min-height:260px;height:260px}.merch-copy{padding:23px}}
     @media(max-width:640px){.merch-teaser{grid-column:span 12;grid-template-columns:1fr}.merch-image-wrap,.merch-image-wrap img{height:auto;min-height:0;aspect-ratio:1.22/1}.merch-copy{padding:24px}.merch-copy h3{font-size:42px}book-tile{grid-column:span 6;min-height:270px}}
 
+  
+    /* Interview mosaic: three seamless image strips, driven only by page scrolling. */
+    .interview-mosaic{min-width:0;overflow:hidden}
+    .mosaic-photos{position:absolute;inset:0;display:flex;flex-direction:column;gap:3px;overflow:hidden;background:#151412}
+    .mosaic-row{height:calc((100% - 6px)/3);width:200%;flex:0 0 calc((100% - 6px)/3);display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:3px;will-change:transform;transform:translate3d(0,0,0)}
+    .mosaic-row img{position:relative;inset:auto;width:100%;height:100%;min-width:0;min-height:0;object-fit:cover;z-index:0}
+    /* Prevent any child or horizontal gallery from widening the page on phones. */
+    html,body{width:100%;max-width:100%;overflow-x:clip}
+    main,section,footer,.all-things,.tile-grid,.tile-grid>*{min-width:0;max-width:100%}
+    .tile-grid{width:100%}
+    @media(max-width:640px){
+      .all-things{padding-left:13px;padding-right:13px;overflow:hidden}
+      .tile-grid{grid-template-columns:repeat(12,minmax(0,1fr));width:100%}
+      .gallery-track{width:100%;max-width:100%;grid-template-columns:repeat(3,minmax(0,1fr));overflow:hidden;margin-right:0;gap:8px}
+      .gallery-track .gallery-tile{min-width:0;width:100%}
+      .mosaic-row{width:220%;grid-template-columns:repeat(6,minmax(0,1fr))}
+      .interview-mosaic{width:100%;max-width:100%}
+      .footer-email{overflow-wrap:anywhere;word-break:break-word}
+    }
+
   </style>
 
   <style id="hero-overlap-scroll-update">
@@ -761,20 +781,24 @@ a.pill.light:hover {
           <div class="testimony-copy"><h3>Jonathan's<br/>Testimony</h3><span>Watch the vid <b>↗</b></span><i aria-hidden="true"></i></div>
         </a>
         <a class="tile interview-mosaic reveal delay-1" href="https://www.youtube.com/@jonathanperde" target="_blank" rel="noopener" aria-label="Watch interviews and clips on YouTube">
-          <div class="mosaic-photos" aria-hidden="true"><img src="interview-01.jpg" alt="" onerror="this.style.display='none'"/><img src="interview-02.jpg" alt="" onerror="this.style.display='none'"/><img src="interview-03.jpg" alt="" onerror="this.style.display='none'"/><img src="interview-04.jpg" alt="" onerror="this.style.display='none'"/><img src="interview-05.jpg" alt="" onerror="this.style.display='none'"/><img src="interview-06.jpg" alt="" onerror="this.style.display='none'"/><img src="interview-07.jpg" alt="" onerror="this.style.display='none'"/><img src="interview-08.jpg" alt="" onerror="this.style.display='none'"/><img src="interview-09.jpg" alt="" onerror="this.style.display='none'"/></div>
+          <div class="mosaic-photos" aria-hidden="true">
+            <div class="mosaic-row"><img src="interview-01.jpg" alt="" onerror="this.style.display='none'"/><img src="interview-02.jpg" alt="" onerror="this.style.display='none'"/><img src="interview-03.jpg" alt="" onerror="this.style.display='none'"/><img src="interview-01.jpg" alt="" onerror="this.style.display='none'"/><img src="interview-02.jpg" alt="" onerror="this.style.display='none'"/><img src="interview-03.jpg" alt="" onerror="this.style.display='none'"/></div>
+            <div class="mosaic-row"><img src="interview-04.jpg" alt="" onerror="this.style.display='none'"/><img src="interview-05.jpg" alt="" onerror="this.style.display='none'"/><img src="interview-06.jpg" alt="" onerror="this.style.display='none'"/><img src="interview-04.jpg" alt="" onerror="this.style.display='none'"/><img src="interview-05.jpg" alt="" onerror="this.style.display='none'"/><img src="interview-06.jpg" alt="" onerror="this.style.display='none'"/></div>
+            <div class="mosaic-row"><img src="interview-07.jpg" alt="" onerror="this.style.display='none'"/><img src="interview-08.jpg" alt="" onerror="this.style.display='none'"/><img src="interview-09.jpg" alt="" onerror="this.style.display='none'"/><img src="interview-07.jpg" alt="" onerror="this.style.display='none'"/><img src="interview-08.jpg" alt="" onerror="this.style.display='none'"/><img src="interview-09.jpg" alt="" onerror="this.style.display='none'"/></div>
+          </div>
           <div class="mosaic-caption">Watch interviews, clips, and powerful stories about the love of Jesus Christ on our YouTube channel <span>↗</span></div>
         </a>
         <a class="tile dark connect-tiktok reveal" href="https://www.tiktok.com/@jonathan.perde" target="_blank" rel="noopener" aria-label="Connect with Jonathan on TikTok">
           <div class="tiktok-background" aria-hidden="true"></div>
           <img class="tiktok-phone" src="tiktok-phone-foreground.png" alt="Jonathan Perde's TikTok profile displayed on an iPhone with 99 percent battery" loading="lazy"/>
-          <div class="tile-content"><div><span class="tile-label">Social · TikTok ↗</span><h3>Connect<br/>on TikTok</h3></div><span class="tile-arrow">↗</span></div>
+          <div class="tile-content"><div><span class="tile-label">Social · TikTok</span><h3>Connect<br/>on TikTok</h3></div><span class="tile-arrow">↗</span></div>
         </a>
         <a class="tile dark zeal-tile reveal delay-1" href="https://www.youtube.com/@jonathanperde" target="_blank" rel="noopener"><img src="zeal-house-thumbnail.png" alt="Zeal House interview thumbnail" onerror="this.style.display='none'" loading="lazy"/><div class="tile-content"><div><span class="tile-label">On YouTube</span><h3>Watch the<br/>Zeal House<br/>interview</h3></div><span class="tile-arrow">↗</span></div></a>
         <a class="tile give-tile reveal delay-2" href="#give"><img src="give-cover.jpg" alt="Giving tile background" onerror="this.style.display='none'" loading="lazy"/><div class="tile-content"><span class="tile-label">Partner with the mission</span><h3>Give now</h3><p>Your generosity helps make an eternal impact on souls. Click here to give.</p><span class="tile-arrow">↗</span></div></a>
         <a class="tile globe-tile reveal" href="#give"><img src="globe.jpg" alt="Earth from space" onerror="this.style.display='none'" loading="lazy"/><div class="globe-copy"><span>If you live here,</span><strong>Jesus died<br/>to save you.</strong></div></a>
         <div class="tile giving-methods reveal"><div><span class="tile-label">How do I sow into the ministry?</span><h3>There are two main ways<br/>you can help.</h3></div><div class="bubble-list"><div class="bubble">Pray for the people we reach and the work ahead.</div><div class="bubble">Give to help carry the Gospel into more places.</div><div class="bubble">Share the message and invite someone to hear about Jesus.</div></div></div>
         <div class="tile podcast-tile reveal" id="podcast"><div class="tile-content" style="display:block;inset:28px"><span class="tile-label">The podcast</span><div class="slant">Jonathan Perde<br/>Podcast</div><p>Christ-centered conversations for your walk with Jesus.</p><div class="podcast-links"><a href="https://open.spotify.com/" target="_blank" rel="noopener">Listen · Spotify ↗</a><a href="https://www.youtube.com/@jonathanperde" target="_blank" rel="noopener">Watch · YouTube ↗</a></div></div></div>
-        <a class="tile dark book-tile reveal delay-1" id="book" href="mailto:jonathanperde@yahoo.com?subject=Booking%20Jonathan" aria-label="Book Jonathan for an event or outreach">
+        <a class="tile dark book-tile reveal delay-1" id="book" href="mailto:jonathanperdeyt@gmail.com?subject=Booking%20Jonathan" aria-label="Book Jonathan for an event or outreach">
           <img src="hero.jpg" alt="Jonathan speaking into a microphone at a preaching event" loading="lazy"/>
           <div class="tile-content"><div><span class="tile-label">Events · Churches · Outreach</span><h3>Book<br/>Jonathan</h3></div><span class="tile-arrow" aria-hidden="true">↗</span></div>
         </a>
@@ -791,7 +815,7 @@ a.pill.light:hover {
 
   <footer class="footer" id="contact">
     <div class="footer-bg" aria-hidden="true"></div>
-    <div class="footer-top"><div><div class="footer-label">The mission continues</div><h2>Give now.<span>Go further.</span></h2></div><div><div class="footer-label">Contact Jonathan Perde</div><a class="footer-email" href="mailto:jonathanperde@yahoo.com">jonathanperde@yahoo.com</a><p style="font-size:11px;line-height:1.7;color:#aaa197;max-width:320px">For ministry, speaking, media, and partnership inquiries.</p></div><div class="footer-nav-wrap"><div class="footer-label">Explore</div><nav class="footer-nav"><a href="#home">Home</a><a href="#beliefs">Our Beliefs</a><a href="#all-things">All Things</a><a href="#book">Book Jonathan</a><a href="#podcast">Podcast</a><a href="give.html">Give Now</a><a href="mailto:jonathanperde@yahoo.com">Contact</a></nav></div></div>
+    <div class="footer-top"><div><div class="footer-label">The mission continues</div><h2>Give now.<span>Go further.</span></h2></div><div><div class="footer-label">Contact Jonathan Perde</div><a class="footer-email" href="mailto:jonathanperdeyt@gmail.com">jonathanperdeyt@gmail.com</a><p style="font-size:11px;line-height:1.7;color:#aaa197;max-width:320px">For ministry, speaking, media, and partnership inquiries.</p></div><div class="footer-nav-wrap"><div class="footer-label">Explore</div><nav class="footer-nav"><a href="#home">Home</a><a href="#beliefs">Our Beliefs</a><a href="#all-things">All Things</a><a href="#book">Book Jonathan</a><a href="#podcast">Podcast</a><a href="give.html">Give Now</a><a href="mailto:jonathanperdeyt@gmail.com">Contact</a></nav></div></div>
     <div class="footer-bottom"><span>© <span id="year"></span> Jesus To The World Ministry</span><div class="socials"><a href="https://www.instagram.com/jonathan.perde" target="_blank" rel="noopener">Instagram ↗</a><a href="https://www.tiktok.com/@jonathan.perde" target="_blank" rel="noopener">TikTok ↗</a><a href="https://www.youtube.com/@jonathanperde" target="_blank" rel="noopener">YouTube ↗</a><a href="https://www.snapchat.com/" target="_blank" rel="noopener">Snapchat ↗</a></div></div>
     <div class="footer-signoff"><span>@ I LOVE JESUS</span><span>JESUSTOTHEWORLD.COMPANY</span></div>
     <div class="footer-brand">Jesus To The World</div>
@@ -852,8 +876,25 @@ a.pill.light:hover {
     document.querySelectorAll('.all-things-title h2').forEach(heading=>{const original=heading.textContent;heading.textContent='';heading.setAttribute('aria-label',original);[...original].forEach(char=>{if(char===' '){heading.appendChild(document.createTextNode(' '));return;}const span=document.createElement('span');span.className='letter-char';span.textContent=char;span.setAttribute('aria-hidden','true');heading.appendChild(span)})});
     // The dark doctrine image gently zooms outward as the section scrolls into view.
     const beliefSection=document.querySelector('.beliefs-section'),beliefBg=document.querySelector('.beliefs-bg');window.addEventListener('scroll',()=>{const r=beliefSection.getBoundingClientRect();const progress=Math.min(1,Math.max(0,(window.innerHeight-r.top)/(window.innerHeight+r.height)));beliefBg.style.transform=`scale(${1.1-progress*.07})`},{passive:true});
-    // Three gallery rows drift in alternating directions with scroll, very subtly.
-    const galleryRows=document.querySelectorAll('.gallery-track');window.addEventListener('scroll',()=>{if(window.matchMedia('(max-width: 640px)').matches)return;galleryRows.forEach((row,i)=>{const r=row.getBoundingClientRect();const offset=(window.innerHeight-r.top)*.018*(i%2===0?-1:1);row.style.transform=`translateX(${Math.max(-13,Math.min(13,offset))}px)`})},{passive:true});
+    // Interview collage moves only while the visitor scrolls; it stays still when scrolling stops.
+    const interviewMosaic=document.querySelector('.interview-mosaic');
+    const interviewRows=interviewMosaic?interviewMosaic.querySelectorAll('.mosaic-row'):[];
+    let mosaicFrame=0;
+    function updateInterviewMosaic(){
+      if(!interviewMosaic||!interviewRows.length)return;
+      const rect=interviewMosaic.getBoundingClientRect();
+      const travel=window.innerHeight+rect.height;
+      const progress=Math.min(1,Math.max(0,(window.innerHeight-rect.top)/Math.max(1,travel)));
+      interviewRows.forEach((row,i)=>{
+        const direction=i===1?1:-1;
+        const distance=progress*11*direction;
+        row.style.transform=`translate3d(${distance.toFixed(2)}%,0,0)`;
+      });
+    }
+    function requestMosaicUpdate(){if(!mosaicFrame)mosaicFrame=requestAnimationFrame(()=>{updateInterviewMosaic();mosaicFrame=0})}
+    window.addEventListener('scroll',requestMosaicUpdate,{passive:true});
+    window.addEventListener('resize',requestMosaicUpdate);
+    updateInterviewMosaic();
     // Mobile navigation.
     const menuButton=document.querySelector('.menu-toggle'),nav=document.querySelector('.navlinks');menuButton.addEventListener('click',()=>{const open=nav.classList.toggle('open');menuButton.setAttribute('aria-expanded',String(open));menuButton.textContent=open?'×':'☰'});nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');menuButton.setAttribute('aria-expanded','false');menuButton.textContent='☰'}));
     // FAQ accordions.
